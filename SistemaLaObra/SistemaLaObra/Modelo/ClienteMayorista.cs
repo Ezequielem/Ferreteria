@@ -30,7 +30,7 @@ namespace SistemaLaObra
         string depto;
         string piso;
         int codigoPostal;
-        string nombreBarrio; //Considerar como web car
+        string nombreBarrio;
         int codigoProvincia;
         int codigoDepartamento;
         int codigoLocalidad;

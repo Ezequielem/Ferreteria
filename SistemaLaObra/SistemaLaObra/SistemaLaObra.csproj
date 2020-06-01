@@ -114,9 +114,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccesoDatos.cs" />
-    <Compile Include="Articulo.cs" />
-    <Compile Include="Banco.cs" />
+    <Compile Include="Modelo\AccesoDatos.cs" />
+    <Compile Include="Modelo\Articulo.cs" />
+    <Compile Include="Modelo\Banco.cs" />
     <Compile Include="CerrarSesion\Controlador_CerrarSesion.cs" />
     <Compile Include="CerrarSesion\IU_CerrarSesion.cs">
       <SubType>Form</SubType>
@@ -124,8 +124,8 @@
     <Compile Include="CerrarSesion\IU_CerrarSesion.Designer.cs">
       <DependentUpon>IU_CerrarSesion.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClienteMayorista.cs" />
-    <Compile Include="Compra.cs" />
+    <Compile Include="Modelo\ClienteMayorista.cs" />
+    <Compile Include="Modelo\Compra.cs" />
     <Compile Include="Compras\ActualizarProveedor\Controlador_ActualizarProveedor.cs" />
     <Compile Include="Compras\ActualizarProveedor\IU_ActualizarProveedor.cs">
       <SubType>Form</SubType>
@@ -172,8 +172,8 @@
     <Compile Include="Estadística\IU_MenuPrincipalEstadistica.Designer.cs">
       <DependentUpon>IU_MenuPrincipalEstadistica.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListaFormaPagos.cs" />
-    <Compile Include="ListaTarjetas.cs" />
+    <Compile Include="Modelo\ListaFormaPagos.cs" />
+    <Compile Include="Modelo\ListaTarjetas.cs" />
     <Compile Include="Logistica\RegistrarIngresoDeProducto\Controlador_RegistrarIngresoDeProducto.cs" />
     <Compile Include="Compras\RegistrarProveedor\Controlador_RegistrarProveedor.cs" />
     <Compile Include="Compras\RegistrarProveedor\IU_RegistrarProveedor.cs">
@@ -182,22 +182,22 @@
     <Compile Include="Compras\RegistrarProveedor\IU_RegistrarProveedor.Designer.cs">
       <DependentUpon>IU_RegistrarProveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="DetalleCompra.cs" />
-    <Compile Include="Encargado.cs" />
-    <Compile Include="EstadoRecepcion.cs" />
-    <Compile Include="ListaProveedoresArticulo.cs" />
-    <Compile Include="ListaTipoEncargado.cs" />
+    <Compile Include="Modelo\DetalleCompra.cs" />
+    <Compile Include="Modelo\Encargado.cs" />
+    <Compile Include="Modelo\EstadoRecepcion.cs" />
+    <Compile Include="Modelo\ListaProveedoresArticulo.cs" />
+    <Compile Include="Modelo\ListaTipoEncargado.cs" />
     <Compile Include="Logistica\RegistrarIngresoDeProducto\IU_RegistroIngresoProducto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Logistica\RegistrarIngresoDeProducto\IU_RegistroIngresoProducto.Designer.cs">
       <DependentUpon>IU_RegistroIngresoProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Marca.cs" />
-    <Compile Include="Recepcion.cs" />
-    <Compile Include="FormaPago.cs" />
-    <Compile Include="HistorialSesion.cs" />
-    <Compile Include="ImprimirFormulario.cs" />
+    <Compile Include="Modelo\Marca.cs" />
+    <Compile Include="Modelo\Recepcion.cs" />
+    <Compile Include="Modelo\FormaPago.cs" />
+    <Compile Include="Modelo\HistorialSesion.cs" />
+    <Compile Include="Modelo\ImprimirFormulario.cs" />
     <Compile Include="InicioSesion\Controlador_InicioSesion.cs" />
     <Compile Include="InicioSesion\IU_InicioSesion.cs">
       <SubType>Form</SubType>
@@ -371,14 +371,14 @@
     <Compile Include="Soporte\Reportes\InformeTopEncargadosXPeriodo\IU_ReporteTopEncargadosXPeriodo.Designer.cs">
       <DependentUpon>IU_ReporteTopEncargadosXPeriodo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sub1TipoArticulo.cs" />
-    <Compile Include="Sub2TipoArticulo.cs" />
-    <Compile Include="Sub3TipoArticulo.cs" />
-    <Compile Include="TipoArticulo.cs" />
-    <Compile Include="TipoDocumento.cs" />
-    <Compile Include="TipoEncargado.cs" />
-    <Compile Include="Ubicacion.cs" />
-    <Compile Include="UnidadDeMedida.cs" />
+    <Compile Include="Modelo\Sub1TipoArticulo.cs" />
+    <Compile Include="Modelo\Sub2TipoArticulo.cs" />
+    <Compile Include="Modelo\Sub3TipoArticulo.cs" />
+    <Compile Include="Modelo\TipoArticulo.cs" />
+    <Compile Include="Modelo\TipoDocumento.cs" />
+    <Compile Include="Modelo\TipoEncargado.cs" />
+    <Compile Include="Modelo\Ubicacion.cs" />
+    <Compile Include="Modelo\UnidadDeMedida.cs" />
     <Compile Include="Ventas\ActualizarNotaDeCredito\Controlador_ActualizarNotaDeCredito.cs" />
     <Compile Include="Ventas\ActualizarNotaDeCredito\IU_ActualizarNotaDeCredito.cs">
       <SubType>Form</SubType>
@@ -412,27 +412,27 @@
     <Compile Include="Ventas\CobroConTarjeta\Venta Mayorista\IU_CobroConTarjetaMayorista .Designer.cs">
       <DependentUpon>IU_CobroConTarjetaMayorista .cs</DependentUpon>
     </Compile>
-    <Compile Include="Departamento.cs" />
-    <Compile Include="DetalleLogistica.cs" />
-    <Compile Include="Entrega.cs" />
-    <Compile Include="EstadoEntrega.cs" />
-    <Compile Include="Localidad.cs" />
-    <Compile Include="Provincia.cs" />
+    <Compile Include="Modelo\Departamento.cs" />
+    <Compile Include="Modelo\DetalleLogistica.cs" />
+    <Compile Include="Modelo\Entrega.cs" />
+    <Compile Include="Modelo\EstadoEntrega.cs" />
+    <Compile Include="Modelo\Localidad.cs" />
+    <Compile Include="Modelo\Provincia.cs" />
     <Compile Include="Soporte\IU_ConsultarArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Soporte\IU_ConsultarArticulo.Designer.cs">
       <DependentUpon>IU_ConsultarArticulo.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuOpciones.cs" />
+    <Compile Include="Modelo\MenuOpciones.cs" />
     <Compile Include="IU_MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="IU_MenuPrincipal.Designer.cs">
       <DependentUpon>IU_MenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Preferencias.cs" />
-    <Compile Include="Proveedor.cs" />
+    <Compile Include="Modelo\Preferencias.cs" />
+    <Compile Include="Modelo\Proveedor.cs" />
     <Compile Include="Soporte\IU_ActualizarArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -451,8 +451,8 @@
     <Compile Include="Soporte\IU_RegistrarArticulo.Designer.cs">
       <DependentUpon>IU_RegistrarArticulo.cs</DependentUpon>
     </Compile>
-    <Compile Include="TipoTelefono.cs" />
-    <Compile Include="Validaciones.cs" />
+    <Compile Include="Modelo\TipoTelefono.cs" />
+    <Compile Include="Modelo\Validaciones.cs" />
     <Compile Include="Ventas\ActualizarClienteMayorista\Controlador_ActualizarClienteMayorista.cs" />
     <Compile Include="Ventas\ActualizarClienteMayorista\IU_ActualizarClienteMayorista.cs">
       <SubType>Form</SubType>
@@ -474,9 +474,9 @@
     <Compile Include="Ventas\CobroConTarjeta\Venta Mostrador\IU_InfoTarjeta.Designer.cs">
       <DependentUpon>IU_InfoTarjeta.cs</DependentUpon>
     </Compile>
-    <Compile Include="NombreTarjeta.cs" />
-    <Compile Include="Tarjeta.cs" />
-    <Compile Include="TipoTarjeta.cs" />
+    <Compile Include="Modelo\NombreTarjeta.cs" />
+    <Compile Include="Modelo\Tarjeta.cs" />
+    <Compile Include="Modelo\TipoTarjeta.cs" />
     <Compile Include="Ventas\ConsultarVenta\Controlador_ConsultarVenta.cs" />
     <Compile Include="Ventas\ConsultarVenta\IU_ConsultarVenta.cs">
       <SubType>Form</SubType>
