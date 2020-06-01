@@ -1,0 +1,347 @@
+﻿namespace SistemaLaObra
+{
+    partial class IU_MenuPrincipal
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.ms_menuOpciones = new System.Windows.Forms.MenuStrip();
+            this.ms_btnInicioSesion = new System.Windows.Forms.ToolStripMenuItem();
+            this.ms_btnCerrarSesion = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lbl_tipoEncargado = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_usuario = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_nombreApellidoEncargado = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pnl_opciones = new System.Windows.Forms.Panel();
+            this.btn_estadistica = new System.Windows.Forms.Button();
+            this.btn_soporte = new System.Windows.Forms.Button();
+            this.btn_logistica = new System.Windows.Forms.Button();
+            this.btn_compras = new System.Windows.Forms.Button();
+            this.btn_ventas = new System.Windows.Forms.Button();
+            this.pnl_subMenu = new System.Windows.Forms.Panel();
+            this.ms_menuOpciones.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.pnl_opciones.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // ms_menuOpciones
+            // 
+            this.ms_menuOpciones.BackColor = System.Drawing.SystemColors.Control;
+            this.ms_menuOpciones.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ms_btnInicioSesion,
+            this.ms_btnCerrarSesion});
+            this.ms_menuOpciones.Location = new System.Drawing.Point(0, 0);
+            this.ms_menuOpciones.Name = "ms_menuOpciones";
+            this.ms_menuOpciones.Size = new System.Drawing.Size(1008, 24);
+            this.ms_menuOpciones.TabIndex = 15;
+            this.ms_menuOpciones.Text = "menuStrip1";
+            // 
+            // ms_btnInicioSesion
+            // 
+            this.ms_btnInicioSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ms_btnInicioSesion.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ms_btnInicioSesion.Name = "ms_btnInicioSesion";
+            this.ms_btnInicioSesion.Size = new System.Drawing.Size(98, 20);
+            this.ms_btnInicioSesion.Text = "Iniciar sesion";
+            this.ms_btnInicioSesion.Click += new System.EventHandler(this.ms_btnInicioSesion_Click);
+            // 
+            // ms_btnCerrarSesion
+            // 
+            this.ms_btnCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ms_btnCerrarSesion.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ms_btnCerrarSesion.Name = "ms_btnCerrarSesion";
+            this.ms_btnCerrarSesion.Size = new System.Drawing.Size(100, 20);
+            this.ms_btnCerrarSesion.Text = "Cerrar sesion";
+            this.ms_btnCerrarSesion.Visible = false;
+            this.ms_btnCerrarSesion.Click += new System.EventHandler(this.ms_btnCerrarSesion_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.lbl_tipoEncargado);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.lbl_usuario);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.lbl_nombreApellidoEncargado);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 703);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1008, 24);
+            this.panel2.TabIndex = 17;
+            // 
+            // lbl_tipoEncargado
+            // 
+            this.lbl_tipoEncargado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_tipoEncargado.AutoSize = true;
+            this.lbl_tipoEncargado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tipoEncargado.Location = new System.Drawing.Point(586, 2);
+            this.lbl_tipoEncargado.Name = "lbl_tipoEncargado";
+            this.lbl_tipoEncargado.Size = new System.Drawing.Size(127, 15);
+            this.lbl_tipoEncargado.TabIndex = 6;
+            this.lbl_tipoEncargado.Text = "Tipo de encargado";
+            this.lbl_tipoEncargado.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(491, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(96, 15);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Tipo encargado:";
+            // 
+            // lbl_usuario
+            // 
+            this.lbl_usuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_usuario.AutoSize = true;
+            this.lbl_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_usuario.Location = new System.Drawing.Point(63, 3);
+            this.lbl_usuario.Name = "lbl_usuario";
+            this.lbl_usuario.Size = new System.Drawing.Size(57, 15);
+            this.lbl_usuario.TabIndex = 3;
+            this.lbl_usuario.Text = "Usuario";
+            this.lbl_usuario.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(10, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 15);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Usuario:";
+            // 
+            // lbl_nombreApellidoEncargado
+            // 
+            this.lbl_nombreApellidoEncargado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_nombreApellidoEncargado.AutoSize = true;
+            this.lbl_nombreApellidoEncargado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_nombreApellidoEncargado.Location = new System.Drawing.Point(300, 3);
+            this.lbl_nombreApellidoEncargado.Name = "lbl_nombreApellidoEncargado";
+            this.lbl_nombreApellidoEncargado.Size = new System.Drawing.Size(123, 15);
+            this.lbl_nombreApellidoEncargado.TabIndex = 1;
+            this.lbl_nombreApellidoEncargado.Text = "Nombre - Apellido";
+            this.lbl_nombreApellidoEncargado.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(195, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Encargado actual:";
+            // 
+            // pnl_opciones
+            // 
+            this.pnl_opciones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.pnl_opciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
+            this.pnl_opciones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnl_opciones.Controls.Add(this.btn_estadistica);
+            this.pnl_opciones.Controls.Add(this.btn_soporte);
+            this.pnl_opciones.Controls.Add(this.btn_logistica);
+            this.pnl_opciones.Controls.Add(this.btn_compras);
+            this.pnl_opciones.Controls.Add(this.btn_ventas);
+            this.pnl_opciones.Location = new System.Drawing.Point(0, 25);
+            this.pnl_opciones.Name = "pnl_opciones";
+            this.pnl_opciones.Size = new System.Drawing.Size(200, 678);
+            this.pnl_opciones.TabIndex = 19;
+            this.pnl_opciones.Visible = false;
+            // 
+            // btn_estadistica
+            // 
+            this.btn_estadistica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
+            this.btn_estadistica.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_estadistica.Enabled = false;
+            this.btn_estadistica.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_estadistica.FlatAppearance.BorderSize = 2;
+            this.btn_estadistica.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_estadistica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_estadistica.ForeColor = System.Drawing.Color.White;
+            this.btn_estadistica.Location = new System.Drawing.Point(34, 228);
+            this.btn_estadistica.Name = "btn_estadistica";
+            this.btn_estadistica.Size = new System.Drawing.Size(126, 49);
+            this.btn_estadistica.TabIndex = 19;
+            this.btn_estadistica.Text = "Estadistica";
+            this.btn_estadistica.UseVisualStyleBackColor = false;
+            this.btn_estadistica.Visible = false;
+            this.btn_estadistica.Click += new System.EventHandler(this.btn_estadistica_Click);
+            // 
+            // btn_soporte
+            // 
+            this.btn_soporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
+            this.btn_soporte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_soporte.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_soporte.Enabled = false;
+            this.btn_soporte.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_soporte.FlatAppearance.BorderSize = 2;
+            this.btn_soporte.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_soporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_soporte.ForeColor = System.Drawing.Color.White;
+            this.btn_soporte.Location = new System.Drawing.Point(34, 300);
+            this.btn_soporte.Name = "btn_soporte";
+            this.btn_soporte.Size = new System.Drawing.Size(126, 49);
+            this.btn_soporte.TabIndex = 16;
+            this.btn_soporte.Text = "Soporte";
+            this.btn_soporte.UseVisualStyleBackColor = false;
+            this.btn_soporte.Visible = false;
+            this.btn_soporte.Click += new System.EventHandler(this.btn_soporte_Click);
+            // 
+            // btn_logistica
+            // 
+            this.btn_logistica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
+            this.btn_logistica.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_logistica.Enabled = false;
+            this.btn_logistica.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_logistica.FlatAppearance.BorderSize = 2;
+            this.btn_logistica.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_logistica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_logistica.ForeColor = System.Drawing.Color.White;
+            this.btn_logistica.Location = new System.Drawing.Point(34, 158);
+            this.btn_logistica.Name = "btn_logistica";
+            this.btn_logistica.Size = new System.Drawing.Size(126, 49);
+            this.btn_logistica.TabIndex = 17;
+            this.btn_logistica.Text = "Logística";
+            this.btn_logistica.UseVisualStyleBackColor = false;
+            this.btn_logistica.Visible = false;
+            this.btn_logistica.Click += new System.EventHandler(this.btn_logistica_Click);
+            // 
+            // btn_compras
+            // 
+            this.btn_compras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
+            this.btn_compras.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_compras.Enabled = false;
+            this.btn_compras.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_compras.FlatAppearance.BorderSize = 2;
+            this.btn_compras.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_compras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_compras.ForeColor = System.Drawing.Color.White;
+            this.btn_compras.Location = new System.Drawing.Point(34, 85);
+            this.btn_compras.Name = "btn_compras";
+            this.btn_compras.Size = new System.Drawing.Size(126, 49);
+            this.btn_compras.TabIndex = 18;
+            this.btn_compras.Text = "Compras";
+            this.btn_compras.UseVisualStyleBackColor = false;
+            this.btn_compras.Visible = false;
+            this.btn_compras.Click += new System.EventHandler(this.btn_compras_Click);
+            // 
+            // btn_ventas
+            // 
+            this.btn_ventas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
+            this.btn_ventas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_ventas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_ventas.Enabled = false;
+            this.btn_ventas.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_ventas.FlatAppearance.BorderSize = 2;
+            this.btn_ventas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_ventas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ventas.ForeColor = System.Drawing.Color.White;
+            this.btn_ventas.Location = new System.Drawing.Point(34, 15);
+            this.btn_ventas.Name = "btn_ventas";
+            this.btn_ventas.Size = new System.Drawing.Size(126, 49);
+            this.btn_ventas.TabIndex = 15;
+            this.btn_ventas.Text = "Ventas";
+            this.btn_ventas.UseVisualStyleBackColor = false;
+            this.btn_ventas.Visible = false;
+            this.btn_ventas.Click += new System.EventHandler(this.btn_ventas_Click);
+            // 
+            // pnl_subMenu
+            // 
+            this.pnl_subMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnl_subMenu.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnl_subMenu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnl_subMenu.Location = new System.Drawing.Point(200, 25);
+            this.pnl_subMenu.Name = "pnl_subMenu";
+            this.pnl_subMenu.Size = new System.Drawing.Size(808, 678);
+            this.pnl_subMenu.TabIndex = 21;
+            this.pnl_subMenu.Visible = false;
+            // 
+            // IU_MenuPrincipal
+            // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.ClientSize = new System.Drawing.Size(1008, 727);
+            this.Controls.Add(this.pnl_subMenu);
+            this.Controls.Add(this.pnl_opciones);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.ms_menuOpciones);
+            this.IsMdiContainer = true;
+            this.Name = "IU_MenuPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Ferro System v1.0.9";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.IU_MenuPrincipal_FormClosing);
+            this.Load += new System.EventHandler(this.IU_MenuPrincipal_Load);
+            this.ms_menuOpciones.ResumeLayout(false);
+            this.ms_menuOpciones.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.pnl_opciones.ResumeLayout(false);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+        private System.Windows.Forms.Panel panel2;
+        public System.Windows.Forms.Button btn_soporte;
+        public System.Windows.Forms.Button btn_logistica;
+        public System.Windows.Forms.Button btn_compras;
+        public System.Windows.Forms.Button btn_ventas;
+        public System.Windows.Forms.Panel pnl_opciones;
+        public System.Windows.Forms.Panel pnl_subMenu;
+        public System.Windows.Forms.MenuStrip ms_menuOpciones;
+        public System.Windows.Forms.ToolStripMenuItem ms_btnCerrarSesion;
+        public System.Windows.Forms.ToolStripMenuItem ms_btnInicioSesion;
+        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label lbl_nombreApellidoEncargado;
+        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label lbl_usuario;
+        public System.Windows.Forms.Label lbl_tipoEncargado;
+        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Button btn_estadistica;
+    }
+}
