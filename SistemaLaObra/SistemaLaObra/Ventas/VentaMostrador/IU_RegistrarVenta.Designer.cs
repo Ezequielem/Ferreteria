@@ -824,6 +824,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.gb_productos);
             this.Controls.Add(this.btn_registrarVenta);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "IU_RegistrarVenta";
