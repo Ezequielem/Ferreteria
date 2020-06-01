@@ -18,7 +18,6 @@ namespace SistemaLaObra.Soporte
         //VARIABLES PRIVADAS
         private string datoNombreTarjeta;
         private string datoNombreActual;
-        private List<NombreTarjeta> listaNombreTarjeta;
 
         public string DatoNombreTarjeta
             {

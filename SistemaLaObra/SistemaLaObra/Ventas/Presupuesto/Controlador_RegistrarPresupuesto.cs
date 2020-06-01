@@ -198,7 +198,7 @@ namespace SistemaLaObra.Ventas.Presupuesto
                 InterfazRegistrarPresupuesto.dgv_productos.Rows.RemoveAt(index);
                 listaDetalle.RemoveAt(index);
             }
-            catch (Exception error)
+            catch (Exception)
             {
                 MessageBox.Show("No se selecciono ninguna articulo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }

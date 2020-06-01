@@ -28,7 +28,6 @@ namespace SistemaLaObra
         Entrega entrega;
         Tarjeta tarjeta;
         NotaCredito notaCredito;
-        DetalleLogistica detalleLogistica;
         ListaFormaPago listaFormaPago;
         public List<DetalleVP> listaDetalle;
         public List<Entrega> listaEntrega; 

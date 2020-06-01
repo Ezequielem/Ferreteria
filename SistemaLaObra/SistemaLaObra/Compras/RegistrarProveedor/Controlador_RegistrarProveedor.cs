@@ -9,7 +9,6 @@ namespace SistemaLaObra.Compras.RegistrarProveedor
     class Controlador_RegistrarProveedor
     {
         //INSTANCIAS
-        IU_RegistrarProveedor interfazProvedor;
         Proveedor proveedor;
         Banco banco;
         Provincia provincia;

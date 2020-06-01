@@ -223,7 +223,6 @@
         private System.Windows.Forms.Label lbl_1;
         private System.Windows.Forms.TextBox txt_cantidadEnvios;
         private System.Windows.Forms.GroupBox gbx_datos;
-        private GMap.NET.WindowsForms.GMapControl gMapControl1;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Label lbl_importeParcial;
         private System.Windows.Forms.Label label1;

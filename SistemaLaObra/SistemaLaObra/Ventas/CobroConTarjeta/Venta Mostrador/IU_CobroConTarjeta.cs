@@ -15,10 +15,8 @@ namespace SistemaLaObra
 {
     public partial class IU_CobroConTarjeta : Form
     {
-        SqlConnection conexion;
         IU_RegistrarVenta interfazVenta;
         Controlador_Tarjeta controladorT;
-        TipoTarjeta tipoTarjeta;
         Controlador_Venta controladorV;
         Validaciones validacion;
         private List<Tarjeta> listaTarjeta;

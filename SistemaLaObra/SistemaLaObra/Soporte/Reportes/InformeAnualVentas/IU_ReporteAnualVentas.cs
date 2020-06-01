@@ -12,8 +12,6 @@ namespace SistemaLaObra.Soporte.Reportes.InformeAnualVentas
 {
     public partial class IU_ReporteAnualVentas : Form
     {
-        string a;
-
         private DateTime fechaDesde;
         private DateTime fechaHasta;
 

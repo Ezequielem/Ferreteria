@@ -812,11 +812,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_registrarVenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigoVentaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigoArticuloDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precioUnitarioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox gb_1;
         public System.Windows.Forms.DataGridView dgv_productos;
         public System.Windows.Forms.Label lbl_importeTotal;

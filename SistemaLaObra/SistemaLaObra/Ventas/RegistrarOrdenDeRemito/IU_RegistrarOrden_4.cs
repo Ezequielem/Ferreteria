@@ -35,7 +35,6 @@ namespace SistemaLaObra.Ventas.OrdenDeRemito
         private IU_MenuPrincipal _interfazContenedora;
 
         //ATRIBUTOS
-        private float precioDistancia = 0f;
 
         public IU_RegistrarVenta InterfazVenta
         {

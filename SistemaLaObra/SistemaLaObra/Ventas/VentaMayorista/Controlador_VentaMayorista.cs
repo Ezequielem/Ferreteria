@@ -20,7 +20,6 @@ namespace SistemaLaObra
     {
 
         //Instancias
-        AccesoDatos acceso;
         Articulo articulo;
         public Venta venta;
         Entrega entrega;

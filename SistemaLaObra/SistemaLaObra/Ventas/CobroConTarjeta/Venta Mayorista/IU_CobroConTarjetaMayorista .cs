@@ -15,10 +15,8 @@ namespace SistemaLaObra.Ventas.CobroConTarjeta.Venta_Mayorista
     {
 
         //Instancias referencias
-        SqlConnection conexion;
         IU_RegistrarVentaMayorista interfazVenta;
         Controlador_TarjetaVentaMayorista controladorT;
-        TipoTarjeta tipoTarjeta;
         Controlador_VentaMayorista controladorV;
         Validaciones validacion;
         private List<Tarjeta> listaTarjeta;

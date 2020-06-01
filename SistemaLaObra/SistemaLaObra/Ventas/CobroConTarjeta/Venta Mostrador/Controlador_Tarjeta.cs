@@ -156,8 +156,6 @@ namespace SistemaLaObra.Ventas.CobroConTarjeta
 
         public void opcionCalcularTomado()
         {
-            float acumulador = 0f;
-
             if (validacion.campoVacio(interfazTarjeta.txt_interes.Text))
             {
                 MessageBox.Show("No ingreso el interes", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -192,8 +190,6 @@ namespace SistemaLaObra.Ventas.CobroConTarjeta
 
         public void calcularTotal()
         {
-
-            float acumulador = 0f;
             /////////////// REVISAR ESTO - DEBE IR CON COUNT?//////////
             //    if (controladorV.listaEntrega.Count==0)
 

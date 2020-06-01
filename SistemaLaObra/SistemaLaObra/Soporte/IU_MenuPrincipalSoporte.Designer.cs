@@ -485,8 +485,6 @@
         private System.Windows.Forms.Button btn_registrarMarca;
         private System.Windows.Forms.Button btn_actualizarTipoArticulo;
         private System.Windows.Forms.Button btn_registrarTipoArticulo;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_actualizarTarjeta;
     }
 }

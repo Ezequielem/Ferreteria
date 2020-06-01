@@ -13,7 +13,6 @@ namespace SistemaLaObra
         SqlConnection conexion;
         SqlCommand consulta;
         SqlDataReader lector;
-        SqlDataAdapter adaptador;
         AccesoDatos acceso;
 
         //ATRIBUTOS

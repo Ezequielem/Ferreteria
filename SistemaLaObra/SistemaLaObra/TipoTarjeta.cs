@@ -13,8 +13,6 @@ namespace SistemaLaObra
     class TipoTarjeta
     {
         private SqlConnection conexion;
-        private SqlDataAdapter adaptador;
-        private SqlCommand modificacion;
         IU_CobroConTarjeta interfazTarjeta;
         IU_CobroConTarjetaMayorista interfazTarjetaMay;
         
