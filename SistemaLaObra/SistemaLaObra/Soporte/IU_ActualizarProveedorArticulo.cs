@@ -140,7 +140,7 @@ namespace SistemaLaObra.Soporte
             foreach (var item in ListaProveedoresArticulo)
             {
                 Articulo.mostrarDatos(item.CodigoArticulo);
-                dgv_proveedorArticulo.Rows.Add(Articulo.Descripcion, Proveedor.obtenerDatosProveedor(item.CodigoProveedor).RazonSocial, item.PrecioProveedor, "seleccionar", item.CodigoListaProveedoresArticulo);
+                dgv_proveedorArticulo.Rows.Add(Articulo.Descripcion, Proveedor.obtenerDatosProveedor(item.CodigoProveedor).RazonSocial, item.PrecioProveedor, "seleccionar", item.CodigoArticulo, item.CodigoProveedor);
             }
         }
 
@@ -150,13 +150,14 @@ namespace SistemaLaObra.Soporte
             foreach (var item in lista)
             {
                 Articulo.mostrarDatos(item.CodigoArticulo);
-                dgv_proveedorArticulo.Rows.Add(Articulo.Descripcion, Proveedor.obtenerDatosProveedor(item.CodigoProveedor).RazonSocial, item.PrecioProveedor, "seleccionar", item.CodigoListaProveedoresArticulo);
+                dgv_proveedorArticulo.Rows.Add(Articulo.Descripcion, Proveedor.obtenerDatosProveedor(item.CodigoProveedor).RazonSocial, item.PrecioProveedor, "seleccionar", item.CodigoArticulo, item.CodigoProveedor);
             }
         }
 
         public void tomarProveedorArticulo()
         {            
-            ProveedoresArticulo.CodigoListaProveedoresArticulo = int.Parse(dgv_proveedorArticulo.CurrentRow.Cells[4].Value.ToString());
+            ProveedoresArticulo.CodigoArticulo = int.Parse(dgv_proveedorArticulo.CurrentRow.Cells[4].Value.ToString());
+            ProveedoresArticulo.CodigoProveedor = int.Parse(dgv_proveedorArticulo.CurrentRow.Cells[5].Value.ToString());
             ProveedoresArticulo.PrecioProveedor = float.Parse(txt_precio.Text, CultureInfo.InvariantCulture);
         }
 

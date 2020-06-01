@@ -43,20 +43,43 @@ namespace SistemaLaObra
             unidadDeMedida = new UnidadDeMedida();
         }
 
-                
-        private void IU_RegistrarArticulo_Load(object sender, EventArgs e)
+        //BOTONES
+
+        private void btn_salir_Click(object sender, EventArgs e)
         {
-            cargarProveedor();
-            cargarMarca();
-            cargarUnidadesDeMedida();
-            cargarUbicaciones();
-            cargarCategoria();
-            cargarCategoria1(); 
-            cargarCategoria2();
-            cargarCategoria3();
+            this.Close();
         }
 
-        //METODOS
+        private void btn_registrar_Click(object sender, EventArgs e)
+        {
+            if (validar.campoVacio(txt_descripcion.Text) == true)
+                MessageBox.Show(this, "Debe Ingresar una descripción", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else if (validar.campoVacio(txt_precio.Text) == true)
+                MessageBox.Show(this, "Debe Ingresar el precio", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else if (validar.campoVacio(txt_coste.Text) == true)
+                MessageBox.Show(this, "Debe Ingresar el precio de costo", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else if (!validar.decimalValido(txt_precio.Text))
+                MessageBox.Show(this, "No ha ingresado un precio válido", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else if (!validar.decimalValido(txt_coste.Text))
+                MessageBox.Show(this, "No ha ingresado un precio de coste válido", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else if (validar.mayor(float.Parse(txt_coste.Text, CultureInfo.InvariantCulture), float.Parse(txt_precio.Text, CultureInfo.InvariantCulture)) == true)
+                MessageBox.Show(this, "El precio del artículo debe ser mayor al de costo", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else if (!validar.mayorACero(int.Parse(nud_stock.Value.ToString())))
+                MessageBox.Show(this, "El stock debe ser mayor a cero", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else if (validar.mayor(int.Parse(nud_stockMinimo.Value.ToString()), int.Parse(nud_stock.Value.ToString())) == true)
+                MessageBox.Show(this, "El stock debe ser mayor al stock mínimo", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+            {
+                tomarCampos();
+                articulo.crear(articulo);
+                tomarlistaProveedoresçarticulos();
+                listaProveedoresArticulo.crear(listaProveedoresArticulo);               
+                borrarCampos();
+                this.Close();
+            }
+        }
+
+        //METODOS      
 
         public void borrarCampos()
         {
@@ -198,44 +221,21 @@ namespace SistemaLaObra
             listaProveedoresArticulo.CodigoProveedor = articulo.CodigoProveedor;
             listaProveedoresArticulo.PrecioProveedor = articulo.PrecioCoste;
         }
-       
-        //BOTONES
-
-        private void btn_salir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btn_registrar_Click(object sender, EventArgs e)
-        {
-            if (validar.campoVacio(txt_descripcion.Text) == true)
-                MessageBox.Show(this, "Debe Ingresar una descripción", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            else if (validar.campoVacio(txt_precio.Text) == true)
-                MessageBox.Show(this, "Debe Ingresar el precio", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            else if (validar.campoVacio(txt_coste.Text) == true)
-                MessageBox.Show(this, "Debe Ingresar el precio de costo", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            else if (!validar.decimalValido(txt_precio.Text))
-                MessageBox.Show(this, "No ha ingresado un precio válido", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            else if (!validar.decimalValido(txt_coste.Text))
-                MessageBox.Show(this, "No ha ingresado un precio de coste válido", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);                       
-            else if (validar.mayor(float.Parse(txt_coste.Text, CultureInfo.InvariantCulture), float.Parse(txt_precio.Text, CultureInfo.InvariantCulture)) == true)
-                MessageBox.Show(this, "El precio del artículo debe ser mayor al de costo", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            else if (!validar.mayorACero(int.Parse(nud_stock.Value.ToString())))
-                MessageBox.Show(this, "El stock debe ser mayor a cero", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            else if (validar.mayor(int.Parse(nud_stockMinimo.Value.ToString()), int.Parse(nud_stock.Value.ToString())) == true)
-                MessageBox.Show(this, "El stock debe ser mayor al stock mínimo", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            else
-            {
-                tomarCampos();
-                articulo.crear(articulo);
-                tomarlistaProveedoresçarticulos();
-                listaProveedoresArticulo.crear(listaProveedoresArticulo);               
-                MessageBox.Show(this, "Se ha registrado correctamente el artículo", "ARTICULO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                borrarCampos();
-            }
-        }
 
         //EVENTOS
+
+        private void IU_RegistrarArticulo_Load(object sender, EventArgs e)
+        {
+            cargarProveedor();
+            cargarMarca();
+            cargarUnidadesDeMedida();
+            cargarUbicaciones();
+            cargarCategoria();
+            cargarCategoria1();
+            cargarCategoria2();
+            cargarCategoria3();
+        }
+
         private void txt_precio_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!e.KeyChar.Equals('.'))

@@ -57,9 +57,9 @@
             this.nud_stockMinimo = new System.Windows.Forms.NumericUpDown();
             this.lbl_8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.nud_stock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_stockMinimo)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -399,15 +399,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "INGRESE LOS DATOS";
             // 
-            // pictureBox1
+            // label2
             // 
-            this.pictureBox1.Image = global::SistemaLaObra.Properties.Resources.if_General_Office_48_2530806;
-            this.pictureBox1.Location = new System.Drawing.Point(673, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 33;
-            this.pictureBox1.TabStop = false;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(106, 166);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(19, 20);
+            this.label2.TabIndex = 35;
+            this.label2.Text = "$";
             // 
             // label1
             // 
@@ -419,15 +419,15 @@
             this.label1.TabIndex = 34;
             this.label1.Text = "$";
             // 
-            // label2
+            // pictureBox1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(106, 166);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(19, 20);
-            this.label2.TabIndex = 35;
-            this.label2.Text = "$";
+            this.pictureBox1.Image = global::SistemaLaObra.Properties.Resources.if_General_Office_48_2530806;
+            this.pictureBox1.Location = new System.Drawing.Point(673, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 33;
+            this.pictureBox1.TabStop = false;
             // 
             // IU_RegistrarArticulo
             // 
@@ -440,10 +440,10 @@
             this.Controls.Add(this.resultado);
             this.Controls.Add(this.btn_registrar);
             this.Controls.Add(this.btn_salir);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "IU_RegistrarArticulo";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "REGISTRAR ARTICULO";
             this.Load += new System.EventHandler(this.IU_RegistrarArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nud_stock)).EndInit();

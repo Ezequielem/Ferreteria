@@ -34,17 +34,18 @@
             this.txt_filtro = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_proveedorArticulo = new System.Windows.Forms.DataGridView();
-            this.articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.opcion = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.idListaPA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.txt_precio = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_actualizar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.opcion = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.idArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_proveedorArticulo)).BeginInit();
@@ -113,7 +114,8 @@
             this.proveedor,
             this.costo,
             this.opcion,
-            this.idListaPA});
+            this.idArticulo,
+            this.idProveedor});
             this.dgv_proveedorArticulo.Location = new System.Drawing.Point(6, 19);
             this.dgv_proveedorArticulo.MultiSelect = false;
             this.dgv_proveedorArticulo.Name = "dgv_proveedorArticulo";
@@ -123,44 +125,6 @@
             this.dgv_proveedorArticulo.Size = new System.Drawing.Size(360, 115);
             this.dgv_proveedorArticulo.TabIndex = 0;
             this.dgv_proveedorArticulo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_proveedorArticulo_CellContentClick);
-            // 
-            // articulo
-            // 
-            this.articulo.HeaderText = "Articulo";
-            this.articulo.MinimumWidth = 80;
-            this.articulo.Name = "articulo";
-            this.articulo.ReadOnly = true;
-            this.articulo.Width = 80;
-            // 
-            // proveedor
-            // 
-            this.proveedor.HeaderText = "Proveedor";
-            this.proveedor.MinimumWidth = 112;
-            this.proveedor.Name = "proveedor";
-            this.proveedor.ReadOnly = true;
-            this.proveedor.Width = 112;
-            // 
-            // costo
-            // 
-            this.costo.HeaderText = "Precio";
-            this.costo.MinimumWidth = 60;
-            this.costo.Name = "costo";
-            this.costo.ReadOnly = true;
-            this.costo.Width = 60;
-            // 
-            // opcion
-            // 
-            this.opcion.HeaderText = "Opción";
-            this.opcion.MinimumWidth = 105;
-            this.opcion.Name = "opcion";
-            this.opcion.ReadOnly = true;
-            this.opcion.Width = 105;
-            // 
-            // idListaPA
-            // 
-            this.idListaPA.HeaderText = "ID";
-            this.idListaPA.Name = "idListaPA";
-            this.idListaPA.ReadOnly = true;
             // 
             // groupBox2
             // 
@@ -174,6 +138,16 @@
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ACTUALIZAR PRECIO";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(90, 25);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(19, 20);
+            this.label3.TabIndex = 35;
+            this.label3.Text = "$";
             // 
             // txt_precio
             // 
@@ -222,15 +196,51 @@
             this.btn_cancelar.UseVisualStyleBackColor = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
-            // label3
+            // articulo
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(90, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(19, 20);
-            this.label3.TabIndex = 35;
-            this.label3.Text = "$";
+            this.articulo.HeaderText = "Articulo";
+            this.articulo.MinimumWidth = 80;
+            this.articulo.Name = "articulo";
+            this.articulo.ReadOnly = true;
+            this.articulo.Width = 80;
+            // 
+            // proveedor
+            // 
+            this.proveedor.HeaderText = "Proveedor";
+            this.proveedor.MinimumWidth = 112;
+            this.proveedor.Name = "proveedor";
+            this.proveedor.ReadOnly = true;
+            this.proveedor.Width = 112;
+            // 
+            // costo
+            // 
+            this.costo.HeaderText = "Precio";
+            this.costo.MinimumWidth = 60;
+            this.costo.Name = "costo";
+            this.costo.ReadOnly = true;
+            this.costo.Width = 60;
+            // 
+            // opcion
+            // 
+            this.opcion.HeaderText = "Opción";
+            this.opcion.MinimumWidth = 105;
+            this.opcion.Name = "opcion";
+            this.opcion.ReadOnly = true;
+            this.opcion.Width = 105;
+            // 
+            // idArticulo
+            // 
+            this.idArticulo.HeaderText = "IDA";
+            this.idArticulo.Name = "idArticulo";
+            this.idArticulo.ReadOnly = true;
+            this.idArticulo.Visible = false;
+            // 
+            // idProveedor
+            // 
+            this.idProveedor.HeaderText = "IDP";
+            this.idProveedor.Name = "idProveedor";
+            this.idProveedor.ReadOnly = true;
+            this.idProveedor.Visible = false;
             // 
             // IU_ActualizarProveedorArticulo
             // 
@@ -269,11 +279,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_actualizar;
         private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn articulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn proveedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn costo;
         private System.Windows.Forms.DataGridViewButtonColumn opcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idListaPA;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idArticulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProveedor;
     }
 }

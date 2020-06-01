@@ -998,7 +998,6 @@ namespace SistemaLaObra
                 {
                     listaProveedoresArticulo.Add(new ListaProveedoresArticulo
                     {
-                        CodigoListaProveedoresArticulo = int.Parse(lector["codigoListaProveedorArticulo"].ToString()),
                         CodigoProveedor = int.Parse(lector["codigoProveedor"].ToString()),
                         PrecioProveedor = float.Parse(lector["precioProveedor"].ToString()),
                         CodigoArticulo= int.Parse(lector["codigoArticulo"].ToString()), 

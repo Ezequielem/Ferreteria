@@ -17,80 +17,13 @@ namespace SistemaLaObra
         private SqlDataReader lector;
         private AccesoDatos acceso ;
 
-        private int _codigoListaProveedoresArticulo;
-        private int _codigoProveedor;
-        private int _codigoArticulo;
-        private float _precioProveedor;
-        private Articulo _articulo;
-
-        public int CodigoListaProveedoresArticulo
-        {
-            get
-            {
-                return _codigoListaProveedoresArticulo;
-            }
-
-            set
-            {
-                _codigoListaProveedoresArticulo = value;
-            }
-        }
-
-        public int CodigoProveedor
-        {
-            get
-            {
-                return _codigoProveedor;
-            }
-
-            set
-            {
-                _codigoProveedor = value;
-            }
-        }
-
-        public int CodigoArticulo
-        {
-            get
-            {
-                return _codigoArticulo;
-            }
-
-            set
-            {
-                _codigoArticulo = value;
-            }
-        }
-
-        public float PrecioProveedor
-        {
-            get
-            {
-                return _precioProveedor;
-            }
-
-            set
-            {
-                _precioProveedor = value;
-            }
-        }
-
-        public Articulo Articulo
-        {
-            get
-            {
-                return _articulo;
-            }
-
-            set
-            {
-                _articulo = value;
-            }
-        }
+        public int CodigoProveedor { get; set; }
+        public int CodigoArticulo { get; set; }
+        public float PrecioProveedor { get; set; }
+        public Articulo Articulo { get; set; }
 
         public ListaProveedoresArticulo()
     {
-            CodigoListaProveedoresArticulo = 0;
             CodigoProveedor = 0;
             CodigoArticulo = 0;
             PrecioProveedor = 0f;
@@ -134,13 +67,15 @@ namespace SistemaLaObra
         {
             acceso = new AccesoDatos();
             conexion = new SqlConnection(acceso.CadenaConexion());
-            comando = new SqlCommand("update ListaProveedoresArticulos set precioProveedor=@precioProveedor where codigoListaProveedorArticulo=@codigoListaProveedorArticulo", conexion);
+            comando = new SqlCommand("update ListaProveedoresArticulos set precioProveedor=@precioProveedor where codigoProveedor=@codigoProveedor and codigoArticulo=@codigoArticulo", conexion);
             adaptador = new SqlDataAdapter();
             adaptador.UpdateCommand = comando;            
-            adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@codigoListaProveedorArticulo", SqlDbType.Int));
+            adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@codigoProveedor", SqlDbType.Int));
+            adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@codigoArticulo", SqlDbType.Int));
             adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@precioProveedor", SqlDbType.Money));
             
-            adaptador.UpdateCommand.Parameters["@codigoListaProveedorArticulo"].Value = listaProveedoresArticulo.CodigoListaProveedoresArticulo;
+            adaptador.UpdateCommand.Parameters["@codigoProveedor"].Value = listaProveedoresArticulo.CodigoProveedor;
+            adaptador.UpdateCommand.Parameters["@codigoArticulo"].Value = listaProveedoresArticulo.CodigoArticulo;
             adaptador.UpdateCommand.Parameters["@precioProveedor"].Value = listaProveedoresArticulo.PrecioProveedor;
             try
             {
@@ -162,7 +97,7 @@ namespace SistemaLaObra
             List<ListaProveedoresArticulo> lista = new List<ListaProveedoresArticulo>();
             acceso = new AccesoDatos();
             conexion = new SqlConnection(acceso.CadenaConexion());
-            comando = new SqlCommand("select codigoListaProveedorArticulo, codigoProveedor, codigoArticulo, precioProveedor from ListaProveedoresArticulos", conexion);
+            comando = new SqlCommand("select codigoProveedor, codigoArticulo, precioProveedor from ListaProveedoresArticulos", conexion);
             try
             {
                 conexion.Open();
@@ -171,7 +106,6 @@ namespace SistemaLaObra
                 {
                     lista.Add(new ListaProveedoresArticulo()
                     {
-                        CodigoListaProveedoresArticulo = int.Parse(lector["codigoListaProveedorArticulo"].ToString()),
                         CodigoProveedor = int.Parse(lector["codigoProveedor"].ToString()),
                         CodigoArticulo = int.Parse(lector["codigoArticulo"].ToString()),
                         PrecioProveedor = float.Parse(lector["precioProveedor"].ToString()),
@@ -254,7 +188,7 @@ namespace SistemaLaObra
             List<ListaProveedoresArticulo> lista = new List<ListaProveedoresArticulo>();
             acceso = new AccesoDatos();
             conexion = new SqlConnection(acceso.CadenaConexion());
-            comando = new SqlCommand("select codigoListaProveedorArticulo, codigoProveedor, codigoArticulo, precioProveedor from ListaProveedoresArticulos where codigoArticulo='"+codigoArticulo+"'", conexion);
+            comando = new SqlCommand("select codigoProveedor, codigoArticulo, precioProveedor from ListaProveedoresArticulos where codigoArticulo='"+codigoArticulo+"'", conexion);
             try
             {
                 conexion.Open();
@@ -262,7 +196,6 @@ namespace SistemaLaObra
                 while (lector.Read())
                 {
                     lista.Add(new ListaProveedoresArticulo() {
-                        CodigoListaProveedoresArticulo = int.Parse(lector["codigoListaProveedorArticulo"].ToString()),
                         CodigoProveedor = int.Parse(lector["codigoProveedor"].ToString()),
                         CodigoArticulo = int.Parse(lector["codigoArticulo"].ToString()),
                         PrecioProveedor = float.Parse(lector["precioProveedor"].ToString())

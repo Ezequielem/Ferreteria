@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_registrar = new System.Windows.Forms.Button();
-            this.btn_actualizar = new System.Windows.Forms.Button();
             this.btn_consultar = new System.Windows.Forms.Button();
             this.btn_registrarUsuario = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -63,36 +61,6 @@
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btn_registrar
-            // 
-            this.btn_registrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
-            this.btn_registrar.FlatAppearance.BorderSize = 3;
-            this.btn_registrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_registrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_registrar.ForeColor = System.Drawing.Color.White;
-            this.btn_registrar.Location = new System.Drawing.Point(5, 20);
-            this.btn_registrar.Name = "btn_registrar";
-            this.btn_registrar.Size = new System.Drawing.Size(145, 55);
-            this.btn_registrar.TabIndex = 0;
-            this.btn_registrar.Text = "Registrar Artículo";
-            this.btn_registrar.UseVisualStyleBackColor = false;
-            this.btn_registrar.Click += new System.EventHandler(this.btn_registrar_Click);
-            // 
-            // btn_actualizar
-            // 
-            this.btn_actualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
-            this.btn_actualizar.FlatAppearance.BorderSize = 3;
-            this.btn_actualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_actualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_actualizar.ForeColor = System.Drawing.Color.White;
-            this.btn_actualizar.Location = new System.Drawing.Point(5, 80);
-            this.btn_actualizar.Name = "btn_actualizar";
-            this.btn_actualizar.Size = new System.Drawing.Size(145, 55);
-            this.btn_actualizar.TabIndex = 1;
-            this.btn_actualizar.Text = "Modificar Artículo";
-            this.btn_actualizar.UseVisualStyleBackColor = false;
-            this.btn_actualizar.Click += new System.EventHandler(this.btn_actualizar_Click);
-            // 
             // btn_consultar
             // 
             this.btn_consultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
@@ -100,7 +68,7 @@
             this.btn_consultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_consultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_consultar.ForeColor = System.Drawing.Color.White;
-            this.btn_consultar.Location = new System.Drawing.Point(5, 140);
+            this.btn_consultar.Location = new System.Drawing.Point(7, 20);
             this.btn_consultar.Name = "btn_consultar";
             this.btn_consultar.Size = new System.Drawing.Size(145, 55);
             this.btn_consultar.TabIndex = 3;
@@ -265,8 +233,6 @@
             this.groupBox2.Controls.Add(this.btn_registrarUbicacion);
             this.groupBox2.Controls.Add(this.btn_actualizarArticuloProveedor);
             this.groupBox2.Controls.Add(this.btn_articuloProveedor);
-            this.groupBox2.Controls.Add(this.btn_registrar);
-            this.groupBox2.Controls.Add(this.btn_actualizar);
             this.groupBox2.Controls.Add(this.btn_consultar);
             this.groupBox2.Location = new System.Drawing.Point(9, 194);
             this.groupBox2.Name = "groupBox2";
@@ -460,9 +426,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_registrar;
-        private System.Windows.Forms.Button btn_actualizar;
         private System.Windows.Forms.Button btn_consultar;
         private System.Windows.Forms.Button btn_registrarUsuario;
         private System.Windows.Forms.PictureBox pictureBox3;

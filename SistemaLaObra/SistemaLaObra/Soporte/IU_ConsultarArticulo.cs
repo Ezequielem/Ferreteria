@@ -55,7 +55,23 @@ namespace SistemaLaObra
             dgv_articulos.Rows.Clear();
             foreach (var item in listaProveedoresArticulos)
             {                
-                dgv_articulos.Rows.Add(item.Articulo.Descripcion, marca.mostrarDatos(item.Articulo.CodigoMarca).Descripcion, item.Articulo.CodigoDescripcion, item.Articulo.PrecioUnitario.ToString("$ 0.00"), item.PrecioProveedor.ToString("$ 0.00"), item.Articulo.Stock, item.Articulo.StockMinimo, unidadDeMedida.mostrarDatos(item.Articulo.CodigoUnidadesDeMedida).Descripcion, ubicacion.mostrarDatos(item.Articulo.CodigoUbicacion).Descripcion, proveedor.obtenerDatosProveedor(item.CodigoProveedor).RazonSocial, tipoArticulo.mostrarDatos(item.Articulo.CodigoTipoArticulo).Descripcion, sub1TipoArticulo.mostrarDatos(item.Articulo.CodigoSub1TipoArticulo).Descripcion, sub2TipoArticulo.mostrarDatos(item.Articulo.CodigoSub2TipoArticulo).Descripcion, sub3TipoArticulo.mostrarDatos(item.Articulo.CodigoSub3TipoArticulo).Descripcion);
+                dgv_articulos.Rows.Add(
+                    item.Articulo.Descripcion, 
+                    marca.mostrarDatos(item.Articulo.CodigoMarca).Descripcion,
+                    item.Articulo.CodigoDescripcion, 
+                    item.Articulo.PrecioUnitario.ToString("$ 0.00"),
+                    item.PrecioProveedor.ToString("$ 0.00"),
+                    item.Articulo.Stock,
+                    item.Articulo.StockMinimo,
+                    unidadDeMedida.mostrarDatos(item.Articulo.CodigoUnidadesDeMedida).Descripcion,
+                    ubicacion.mostrarDatos(item.Articulo.CodigoUbicacion).Descripcion,
+                    proveedor.obtenerDatosProveedor(item.CodigoProveedor).RazonSocial,
+                    tipoArticulo.mostrarDatos(item.Articulo.CodigoTipoArticulo).Descripcion,
+                    sub1TipoArticulo.mostrarDatos(item.Articulo.CodigoSub1TipoArticulo).Descripcion,
+                    sub2TipoArticulo.mostrarDatos(item.Articulo.CodigoSub2TipoArticulo).Descripcion,
+                    sub3TipoArticulo.mostrarDatos(item.Articulo.CodigoSub3TipoArticulo).Descripcion,
+                    item.CodigoArticulo
+                    );
                 limpiarObjetos();
             }                        
         }
@@ -65,7 +81,23 @@ namespace SistemaLaObra
             dgv_articulos.Rows.Clear();
             foreach (var item in lista)
             {                
-                dgv_articulos.Rows.Add(item.Articulo.Descripcion, marca.mostrarDatos(item.Articulo.CodigoMarca).Descripcion, item.Articulo.CodigoDescripcion, item.Articulo.PrecioUnitario.ToString("$ 0.00"), item.PrecioProveedor.ToString("$ 0.00"), item.Articulo.Stock, item.Articulo.StockMinimo, unidadDeMedida.mostrarDatos(item.Articulo.CodigoUnidadesDeMedida).Descripcion, ubicacion.mostrarDatos(item.Articulo.CodigoUbicacion).Descripcion, proveedor.obtenerDatosProveedor(item.CodigoProveedor).RazonSocial, tipoArticulo.mostrarDatos(item.Articulo.CodigoTipoArticulo).Descripcion, sub1TipoArticulo.mostrarDatos(item.Articulo.CodigoSub1TipoArticulo).Descripcion, sub2TipoArticulo.mostrarDatos(item.Articulo.CodigoSub2TipoArticulo).Descripcion, sub3TipoArticulo.mostrarDatos(item.Articulo.CodigoSub3TipoArticulo).Descripcion);
+                dgv_articulos.Rows.Add(
+                    item.Articulo.Descripcion,
+                    marca.mostrarDatos(item.Articulo.CodigoMarca).Descripcion,
+                    item.Articulo.CodigoDescripcion,
+                    item.Articulo.PrecioUnitario.ToString("$ 0.00"),
+                    item.PrecioProveedor.ToString("$ 0.00"),
+                    item.Articulo.Stock,
+                    item.Articulo.StockMinimo,
+                    unidadDeMedida.mostrarDatos(item.Articulo.CodigoUnidadesDeMedida).Descripcion,
+                    ubicacion.mostrarDatos(item.Articulo.CodigoUbicacion).Descripcion,
+                    proveedor.obtenerDatosProveedor(item.CodigoProveedor).RazonSocial,
+                    tipoArticulo.mostrarDatos(item.Articulo.CodigoTipoArticulo).Descripcion,
+                    sub1TipoArticulo.mostrarDatos(item.Articulo.CodigoSub1TipoArticulo).Descripcion,
+                    sub2TipoArticulo.mostrarDatos(item.Articulo.CodigoSub2TipoArticulo).Descripcion,
+                    sub3TipoArticulo.mostrarDatos(item.Articulo.CodigoSub3TipoArticulo).Descripcion,
+                    item.CodigoArticulo
+                    );
                 limpiarObjetos();
             }
         }
@@ -83,6 +115,21 @@ namespace SistemaLaObra
         }
 
         //BOTONES
+
+        private void btn_registrar_Click(object sender, EventArgs e)
+        {
+            IU_RegistrarArticulo interfaz = new IU_RegistrarArticulo();
+            interfaz.ShowDialog();
+            cargarDataGridView();
+        }
+
+        private void btn_modificar_Click(object sender, EventArgs e)
+        {
+            IU_ActualizarArticulo interfaz = new IU_ActualizarArticulo();
+            interfaz.tomarArticulo(int.Parse(dgv_articulos.CurrentRow.Cells[14].Value.ToString()));
+            interfaz.ShowDialog();
+            cargarDataGridView();
+        }
 
         private void btn_salir_Click(object sender, EventArgs e)
         {

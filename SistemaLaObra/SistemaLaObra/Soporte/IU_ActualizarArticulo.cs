@@ -47,7 +47,6 @@ namespace SistemaLaObra
         
         private void IU_ActualizarArticulo_Load(object sender, EventArgs e)
         {
-            cargarDataGridView();
             cargarMarca();
             cargarUnidadesDeMedida();
             cargarUbicaciones();
@@ -55,32 +54,16 @@ namespace SistemaLaObra
             cargarCategoria1();
             cargarCategoria2();
             cargarCategoria3();
-            btn_actualizar.Enabled = false; 
-            gb_actualizacion.Enabled = false;                       
+            btn_actualizar.Enabled = true; 
+            gb_actualizacion.Enabled = true;
+            cargarCampos();
         }
 
         //METODOS
 
-        private void cargarDataGridView()
+        public void tomarArticulo(int id)
         {
-            listaProveedoresArticulos.Clear();
-            listaProveedoresArticulos = listaProveedoresArticulo.mostrarDatos();
-            dgv_articulos.Rows.Clear();
-            foreach (var item in listaProveedoresArticulos)
-            {
-                dgv_articulos.Rows.Add(item.Articulo.Descripcion, marca.mostrarDatos(item.Articulo.CodigoMarca).Descripcion, item.Articulo.CodigoDescripcion, item.Articulo.PrecioUnitario.ToString("$ 0.00"), item.PrecioProveedor.ToString("$ 0.00"), item.Articulo.Stock, item.Articulo.StockMinimo, unidadDeMedida.mostrarDatos(item.Articulo.CodigoUnidadesDeMedida).Descripcion, ubicacion.mostrarDatos(item.Articulo.CodigoUbicacion).Descripcion, proveedor.obtenerDatosProveedor(item.CodigoProveedor).RazonSocial, tipoArticulo.mostrarDatos(item.Articulo.CodigoTipoArticulo).Descripcion, sub1TipoArticulo.mostrarDatos(item.Articulo.CodigoSub1TipoArticulo).Descripcion, sub2TipoArticulo.mostrarDatos(item.Articulo.CodigoSub2TipoArticulo).Descripcion, sub3TipoArticulo.mostrarDatos(item.Articulo.CodigoSub3TipoArticulo).Descripcion, item.CodigoArticulo);
-                limpiarObjetos();
-            }
-        }
-
-        private void cargarDataGridFiltrado(List<ListaProveedoresArticulo> lista)
-        {
-            dgv_articulos.Rows.Clear();
-            foreach (var item in lista)
-            {
-                dgv_articulos.Rows.Add(item.Articulo.Descripcion, marca.mostrarDatos(item.Articulo.CodigoMarca).Descripcion, item.Articulo.CodigoDescripcion, item.Articulo.PrecioUnitario.ToString("$ 0.00"), item.PrecioProveedor.ToString("$ 0.00"), item.Articulo.Stock, item.Articulo.StockMinimo, unidadDeMedida.mostrarDatos(item.Articulo.CodigoUnidadesDeMedida).Descripcion, ubicacion.mostrarDatos(item.Articulo.CodigoUbicacion).Descripcion, proveedor.obtenerDatosProveedor(item.CodigoProveedor).RazonSocial, tipoArticulo.mostrarDatos(item.Articulo.CodigoTipoArticulo).Descripcion, sub1TipoArticulo.mostrarDatos(item.Articulo.CodigoSub1TipoArticulo).Descripcion, sub2TipoArticulo.mostrarDatos(item.Articulo.CodigoSub2TipoArticulo).Descripcion, sub3TipoArticulo.mostrarDatos(item.Articulo.CodigoSub3TipoArticulo).Descripcion, item.CodigoArticulo);
-                limpiarObjetos();
-            }
+            articulo.mostrarDatos(id);
         }
 
         private void limpiarObjetos()
@@ -221,60 +204,34 @@ namespace SistemaLaObra
             }
         }
 
+        private void cargarCampos()
+        {
+            txt_descripcion.Text = articulo.Descripcion;            
+            txt_codigoDescripcion.Text = articulo.CodigoDescripcion ;
+            txt_precioUnitario.Text = articulo.PrecioUnitario.ToString();
+            txt_precioCoste.Text = articulo.PrecioCoste.ToString();
+            nud_stock.Value = articulo.Stock;
+            nud_stockMinimo.Value = articulo.StockMinimo;
+            cbx_marca.SelectedValue = articulo.CodigoMarca;
+            cbx_unidadDeMedida.SelectedValue = articulo.CodigoUnidadesDeMedida;
+            cbx_ubicacion.SelectedValue = articulo.CodigoUbicacion;
+            cbx_categoria.SelectedValue = articulo.CodigoTipoArticulo;
+            if (articulo.CodigoSub1TipoArticulo != 0)
+            {
+                cbx_categoria1.SelectedValue = articulo.CodigoSub1TipoArticulo;
+            }
+            if (articulo.CodigoSub2TipoArticulo != 0)
+            {
+                cbx_categoria2.SelectedValue = articulo.CodigoSub2TipoArticulo;
+            }
+            if (articulo.CodigoSub3TipoArticulo != 0)
+            {
+                cbx_categoria3.SelectedValue = articulo.CodigoSub3TipoArticulo;
+            }            
+        }
+
 
         //BOTONES
-
-        private void btn_editar_Click(object sender, EventArgs e)
-        {
-            if (dgv_articulos.CurrentRow!=null)
-            {                
-                articulo.mostrarDatos(int.Parse(this.dgv_articulos.CurrentRow.Cells[14].Value.ToString()));                
-                txt_descripcion.Text = articulo.Descripcion;
-                txt_codigoDescripcion.Text = articulo.CodigoDescripcion;
-                txt_precioUnitario.Text = articulo.PrecioUnitario.ToString();
-                txt_precioCoste.Text = articulo.PrecioCoste.ToString();
-                nud_stock.Value = int.Parse(articulo.Stock.ToString());
-                nud_stockMinimo.Value = int.Parse(articulo.StockMinimo.ToString());
-                cbx_marca.SelectedValue = articulo.CodigoMarca;
-                cbx_ubicacion.SelectedValue = articulo.CodigoUbicacion;
-                cbx_unidadDeMedida.SelectedValue = articulo.CodigoUnidadesDeMedida;
-                txt_proveedor.Text = dgv_articulos.CurrentRow.Cells[9].Value.ToString();                
-                cbx_categoria.SelectedValue =articulo.CodigoTipoArticulo;
-                if (articulo.CodigoSub1TipoArticulo!=0)
-                {
-                    cbx_categoria1.SelectedValue = articulo.CodigoSub1TipoArticulo;
-                }
-                else
-                {
-                    cbx_categoria1.Refresh();
-                }
-                if (articulo.CodigoSub2TipoArticulo!=0)
-                {
-                    cbx_categoria2.SelectedValue = articulo.CodigoSub2TipoArticulo;
-                }
-                else
-                {
-                    cbx_categoria2.Refresh();
-                }
-                if (articulo.CodigoSub3TipoArticulo!=0)
-                {
-                    cbx_categoria3.SelectedValue = articulo.CodigoSub3TipoArticulo;
-                }
-                else
-                {
-                    cbx_categoria3.Refresh();
-                }                
-                btn_actualizar.Enabled = true;
-                gb_articulo.Enabled = false;
-                gb_actualizacion.Enabled = true;
-            }
-            else
-            {
-                MessageBox.Show(this, "Debe seleccionar un artículo", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            
-
-        }
 
         private void btn_salir_Click(object sender, EventArgs e)
         {
@@ -326,24 +283,20 @@ namespace SistemaLaObra
                                 tomarCampos();
                                 articulo.actualizarDatos(articulo);
                                 borrarDatos();
-                                cargarDataGridView();
                                 gb_actualizacion.Enabled = false;
-                                gb_articulo.Enabled = true;
                                 MessageBox.Show(this, "Se ha modificado modificado correctamente el artículo", "ARTICULO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                             }
                         }                        
                     }
                 }
-            }                                
+            }
+            this.Close();
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             btn_actualizar.Enabled = false;
-            gb_articulo.Enabled = true;
             gb_actualizacion.Enabled = false;
-            txt_filtro.Text = "";
-            cargarDataGridView();
             borrarDatos();
         }
 
@@ -367,8 +320,6 @@ namespace SistemaLaObra
             TextBox txt = sender as TextBox;
             string descripcion = txt.Text;
             List<ListaProveedoresArticulo> listaFiltrada = listaProveedoresArticulos.FindAll(a => a.Articulo.Descripcion.Contains(descripcion));
-            cargarDataGridFiltrado(listaFiltrada);
-
         }
 
         private void cbx_categoria_SelectedIndexChanged(object sender, EventArgs e)
