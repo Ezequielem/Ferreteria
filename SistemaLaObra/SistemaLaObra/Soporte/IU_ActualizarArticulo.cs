@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Globalization;
+using System.Web.UI.WebControls;
 
 namespace SistemaLaObra
 {
@@ -208,8 +209,8 @@ namespace SistemaLaObra
         {
             txt_descripcion.Text = articulo.Descripcion;            
             txt_codigoDescripcion.Text = articulo.CodigoDescripcion ;
-            txt_precioUnitario.Text = articulo.PrecioUnitario.ToString();
-            txt_precioCoste.Text = articulo.PrecioCoste.ToString();
+            txt_precioUnitario.Text = articulo.PrecioUnitario.ToString(CultureInfo.InvariantCulture);
+            txt_precioCoste.Text = articulo.PrecioCoste.ToString(CultureInfo.InvariantCulture);
             nud_stock.Value = articulo.Stock;
             nud_stockMinimo.Value = articulo.StockMinimo;
             cbx_marca.SelectedValue = articulo.CodigoMarca;
@@ -283,21 +284,12 @@ namespace SistemaLaObra
                                 tomarCampos();
                                 articulo.actualizarDatos(articulo);
                                 borrarDatos();
-                                gb_actualizacion.Enabled = false;
-                                MessageBox.Show(this, "Se ha modificado modificado correctamente el artículo", "ARTICULO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                             }
                         }                        
                     }
                 }
             }
             this.Close();
-        }
-
-        private void btn_cancelar_Click(object sender, EventArgs e)
-        {
-            btn_actualizar.Enabled = false;
-            gb_actualizacion.Enabled = false;
-            borrarDatos();
         }
 
         //EVENTOS
@@ -313,13 +305,6 @@ namespace SistemaLaObra
             {
                 validar.soloNumeros(e);
             }            
-        }
-
-        private void textBox1_KeyUp(object sender, KeyEventArgs e)
-        {
-            TextBox txt = sender as TextBox;
-            string descripcion = txt.Text;
-            List<ListaProveedoresArticulo> listaFiltrada = listaProveedoresArticulos.FindAll(a => a.Articulo.Descripcion.Contains(descripcion));
         }
 
         private void cbx_categoria_SelectedIndexChanged(object sender, EventArgs e)
