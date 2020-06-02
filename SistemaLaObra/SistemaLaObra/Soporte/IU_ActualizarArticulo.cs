@@ -178,7 +178,8 @@ namespace SistemaLaObra
             articulo.StockMinimo = int.Parse(nud_stockMinimo.Value.ToString());
             articulo.CodigoUnidadesDeMedida = int.Parse(cbx_unidadDeMedida.SelectedValue.ToString());
             articulo.CodigoUbicacion = int.Parse(cbx_ubicacion.SelectedValue.ToString());
-            articulo.CodigoTipoArticulo = int.Parse(cbx_categoria.SelectedValue.ToString());            
+            articulo.CodigoTipoArticulo = int.Parse(cbx_categoria.SelectedValue.ToString());
+            articulo.CodigoProveedor = articulo.conocerProveedor(articulo.CodigoArticulo);
             if (cbx_categoria1.SelectedValue == null)
             {
                 articulo.CodigoSub1TipoArticulo = 0;
@@ -217,6 +218,7 @@ namespace SistemaLaObra
             cbx_unidadDeMedida.SelectedValue = articulo.CodigoUnidadesDeMedida;
             cbx_ubicacion.SelectedValue = articulo.CodigoUbicacion;
             cbx_categoria.SelectedValue = articulo.CodigoTipoArticulo;
+            txt_proveedor.Text = articulo.buscarNombreProveedor(articulo.CodigoProveedor);
             if (articulo.CodigoSub1TipoArticulo != 0)
             {
                 cbx_categoria1.SelectedValue = articulo.CodigoSub1TipoArticulo;
