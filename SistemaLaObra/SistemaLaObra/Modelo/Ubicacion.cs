@@ -166,5 +166,63 @@ namespace SistemaLaObra
                 conexion.Close();
             }
         }
+
+        public bool existe(int id)
+        {
+            acceso = new AccesoDatos();
+            conexion = new SqlConnection(acceso.CadenaConexion());
+            consulta = new SqlCommand("select codigoUbicacion, descripcion from Ubicaciones where codigoUbicacion='"+ id +"'", conexion);
+            try
+            {
+                conexion.Open();
+                lector = consulta.ExecuteReader();
+                if (lector.Read())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                conexion.Close();
+                lector.Close();
+            }
+        }
+
+        public bool existe(string nombre)
+        {
+            acceso = new AccesoDatos();
+            conexion = new SqlConnection(acceso.CadenaConexion());
+            consulta = new SqlCommand("select codigoUbicacion, descripcion from Ubicaciones where descripcion='" + nombre + "'", conexion);
+            try
+            {
+                conexion.Open();
+                lector = consulta.ExecuteReader();
+                if (lector.Read())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                conexion.Close();
+                lector.Close();
+            }
+        }
     }
 }

@@ -16,18 +16,7 @@ namespace SistemaLaObra.Soporte
         private Validaciones validar;
         private Ubicacion _ubicacion;
 
-        public Ubicacion Ubicacion
-        {
-            get
-            {
-                return _ubicacion;
-            }
-
-            set
-            {
-                _ubicacion = value;
-            }
-        }
+        public Ubicacion Ubicacion { get; set; }
 
         public IU_RegistrarUbicacion()
         {
@@ -44,12 +33,15 @@ namespace SistemaLaObra.Soporte
             {
                 MessageBox.Show(this , "Debe ingresar una descripción", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else if (Ubicacion.existe(txt_descripcion.Text))
+            {
+                MessageBox.Show(this, "La Ubicación ya existe", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             else
             {
                 tomarDescripcion();
                 Ubicacion.crear(Ubicacion);
-                MessageBox.Show(this, "Se ha registrado correctamente la ubicación", "UBICACION", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                borrarCampos();
+                this.Close();
             }
         }        
 
@@ -63,11 +55,6 @@ namespace SistemaLaObra.Soporte
         public void tomarDescripcion()
         {
             Ubicacion.Descripcion = txt_descripcion.Text;
-        }
-
-        private void borrarCampos()
-        {
-            txt_descripcion.Text = "";
         }
     }
 }

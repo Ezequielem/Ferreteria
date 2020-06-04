@@ -16,18 +16,7 @@ namespace SistemaLaObra.Soporte
         private Validaciones validar;
         private Marca _marca;
 
-        public Marca Marca
-        {
-            get
-            {
-                return _marca;
-            }
-
-            set
-            {
-                _marca = value;
-            }
-        }
+        public Marca Marca { get; set; }
 
         public IU_RegistrarMarca()
         {
@@ -43,6 +32,10 @@ namespace SistemaLaObra.Soporte
             if (validar.campoVacio(txt_descripcion.Text))
             {
                 MessageBox.Show(this, "Debe ingresar una descripción", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (Marca.existe(txt_descripcion.Text))
+            {
+                MessageBox.Show(this, "La Marca ya existe", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {

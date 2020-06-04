@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_ConsultarUbicacion));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_registrar = new System.Windows.Forms.Button();
@@ -36,14 +37,14 @@
             this.gb_articulo = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txt_filtro = new System.Windows.Forms.TextBox();
-            this.dgv_marcas = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
+            this.dgv_ubicaciones = new System.Windows.Forms.DataGridView();
             this.col_marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.gb_articulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_marcas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ubicaciones)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -80,6 +81,7 @@
             this.btn_registrar.Text = "Registrar";
             this.btn_registrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_registrar.UseVisualStyleBackColor = false;
+            this.btn_registrar.Click += new System.EventHandler(this.btn_registrar_Click);
             // 
             // btn_modificar
             // 
@@ -94,6 +96,7 @@
             this.btn_modificar.Text = "Modificar";
             this.btn_modificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_modificar.UseVisualStyleBackColor = false;
+            this.btn_modificar.Click += new System.EventHandler(this.btn_modificar_Click);
             // 
             // btn_salir
             // 
@@ -108,13 +111,14 @@
             this.btn_salir.Text = "Aceptar";
             this.btn_salir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_salir.UseVisualStyleBackColor = false;
+            this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
             // 
             // gb_articulo
             // 
             this.gb_articulo.BackColor = System.Drawing.SystemColors.ControlLight;
             this.gb_articulo.Controls.Add(this.pictureBox1);
             this.gb_articulo.Controls.Add(this.txt_filtro);
-            this.gb_articulo.Controls.Add(this.dgv_marcas);
+            this.gb_articulo.Controls.Add(this.dgv_ubicaciones);
             this.gb_articulo.Controls.Add(this.label2);
             this.gb_articulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_articulo.Location = new System.Drawing.Point(12, 12);
@@ -136,40 +140,40 @@
             // 
             // txt_filtro
             // 
+            this.txt_filtro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_filtro.Location = new System.Drawing.Point(120, 274);
             this.txt_filtro.Multiline = true;
             this.txt_filtro.Name = "txt_filtro";
             this.txt_filtro.Size = new System.Drawing.Size(187, 20);
             this.txt_filtro.TabIndex = 5;
+            this.txt_filtro.TextChanged += new System.EventHandler(this.txt_filtro_TextChanged);
             // 
-            // dgv_marcas
+            // dgv_ubicaciones
             // 
-            this.dgv_marcas.AllowUserToAddRows = false;
-            this.dgv_marcas.AllowUserToDeleteRows = false;
-            this.dgv_marcas.AllowUserToResizeColumns = false;
-            this.dgv_marcas.AllowUserToResizeRows = false;
-            this.dgv_marcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_marcas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv_ubicaciones.AllowUserToAddRows = false;
+            this.dgv_ubicaciones.AllowUserToDeleteRows = false;
+            this.dgv_ubicaciones.AllowUserToResizeColumns = false;
+            this.dgv_ubicaciones.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ubicaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_ubicaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_ubicaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_marca,
             this.id});
-            this.dgv_marcas.Location = new System.Drawing.Point(6, 19);
-            this.dgv_marcas.MultiSelect = false;
-            this.dgv_marcas.Name = "dgv_marcas";
-            this.dgv_marcas.ReadOnly = true;
-            this.dgv_marcas.RowHeadersVisible = false;
-            this.dgv_marcas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_marcas.Size = new System.Drawing.Size(329, 245);
-            this.dgv_marcas.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 277);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 15);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Filtrar por nombre:";
+            this.dgv_ubicaciones.Location = new System.Drawing.Point(6, 19);
+            this.dgv_ubicaciones.MultiSelect = false;
+            this.dgv_ubicaciones.Name = "dgv_ubicaciones";
+            this.dgv_ubicaciones.ReadOnly = true;
+            this.dgv_ubicaciones.RowHeadersVisible = false;
+            this.dgv_ubicaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_ubicaciones.Size = new System.Drawing.Size(329, 245);
+            this.dgv_ubicaciones.TabIndex = 3;
             // 
             // col_marca
             // 
@@ -186,6 +190,16 @@
             this.id.ReadOnly = true;
             this.id.Visible = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 277);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 15);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Filtrar por nombre:";
+            // 
             // IU_ConsultarUbicacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -199,11 +213,12 @@
             this.Name = "IU_ConsultarUbicacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "CONSULTAR UBICACION";
+            this.Load += new System.EventHandler(this.IU_ConsultarUbicacion_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.gb_articulo.ResumeLayout(false);
             this.gb_articulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_marcas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ubicaciones)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -217,7 +232,7 @@
         private System.Windows.Forms.GroupBox gb_articulo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txt_filtro;
-        private System.Windows.Forms.DataGridView dgv_marcas;
+        private System.Windows.Forms.DataGridView dgv_ubicaciones;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
