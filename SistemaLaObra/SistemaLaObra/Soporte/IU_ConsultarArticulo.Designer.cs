@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_ConsultarArticulo));
             this.gb_articulo = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txt_filtro = new System.Windows.Forms.TextBox();
@@ -98,6 +100,14 @@
             this.dgv_articulos.AllowUserToDeleteRows = false;
             this.dgv_articulos.AllowUserToResizeColumns = false;
             this.dgv_articulos.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_articulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_articulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_articulos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -271,7 +281,7 @@
             // 
             // Column12
             // 
-            this.Column12.HeaderText = "Subcategoría 1";
+            this.Column12.HeaderText = "Subcategoría";
             this.Column12.MinimumWidth = 120;
             this.Column12.Name = "Column12";
             this.Column12.ReadOnly = true;
@@ -279,7 +289,7 @@
             // 
             // Column13
             // 
-            this.Column13.HeaderText = "Subcategoría 2";
+            this.Column13.HeaderText = "Subcategoría";
             this.Column13.MinimumWidth = 120;
             this.Column13.Name = "Column13";
             this.Column13.ReadOnly = true;
@@ -287,7 +297,7 @@
             // 
             // Column14
             // 
-            this.Column14.HeaderText = "Subcategoría 3";
+            this.Column14.HeaderText = "Subcategoría";
             this.Column14.MinimumWidth = 120;
             this.Column14.Name = "Column14";
             this.Column14.ReadOnly = true;
@@ -310,6 +320,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.gb_articulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "IU_ConsultarArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

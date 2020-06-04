@@ -68,6 +68,26 @@ namespace SistemaLaObra
                 MessageBox.Show(this, "El stock debe ser mayor a cero", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else if (validar.mayor(int.Parse(nud_stockMinimo.Value.ToString()), int.Parse(nud_stock.Value.ToString())) == true)
                 MessageBox.Show(this, "El stock debe ser mayor al stock mínimo", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else if (cbx_proveedor.Items.Count == 0)
+            {
+                MessageBox.Show(this, "No hay Proveedores cargados", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (cbx_categoria.Items.Count == 0)
+            {
+                MessageBox.Show(this, "No hay categorías cargadas", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (cbx_ubicacion.Items.Count == 0)
+            {
+                MessageBox.Show(this, "No hay Ubicaciones cargadas", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (cbx_unidadDeMedida.Items.Count == 0)
+            {
+                MessageBox.Show(this, "No hay Unidades de Medida cargadas", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (cbx_marca.Items.Count == 0)
+            {
+                MessageBox.Show(this, "No hay Marcas cargadas", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             else
             {
                 tomarCampos();

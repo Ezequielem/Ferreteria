@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_VistaPrevia));
             this.lbl_titulo = new System.Windows.Forms.Label();
             this.btn_imprimir = new System.Windows.Forms.Button();
             this.btn_salir = new System.Windows.Forms.Button();
@@ -111,6 +112,7 @@
             this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.btn_imprimir);
             this.Controls.Add(this.lbl_titulo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "IU_VistaPrevia";

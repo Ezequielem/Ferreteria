@@ -125,10 +125,13 @@ namespace SistemaLaObra
 
         private void btn_modificar_Click(object sender, EventArgs e)
         {
-            IU_ActualizarArticulo interfaz = new IU_ActualizarArticulo();
-            interfaz.tomarArticulo(int.Parse(dgv_articulos.CurrentRow.Cells[14].Value.ToString()));
-            interfaz.ShowDialog();
-            cargarDataGridView();
+            if (dgv_articulos.Rows.Count!=0)
+            {
+                IU_ActualizarArticulo interfaz = new IU_ActualizarArticulo();
+                interfaz.tomarArticulo(int.Parse(dgv_articulos.CurrentRow.Cells[14].Value.ToString()));
+                interfaz.ShowDialog();
+                cargarDataGridView();
+            }            
         }
 
         private void btn_salir_Click(object sender, EventArgs e)

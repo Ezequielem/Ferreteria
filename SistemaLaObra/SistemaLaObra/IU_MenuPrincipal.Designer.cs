@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_MenuPrincipal));
             this.ms_menuOpciones = new System.Windows.Forms.MenuStrip();
             this.ms_btnInicioSesion = new System.Windows.Forms.ToolStripMenuItem();
             this.ms_btnCerrarSesion = new System.Windows.Forms.ToolStripMenuItem();
@@ -308,6 +309,7 @@
             this.Controls.Add(this.pnl_opciones);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.ms_menuOpciones);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "IU_MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

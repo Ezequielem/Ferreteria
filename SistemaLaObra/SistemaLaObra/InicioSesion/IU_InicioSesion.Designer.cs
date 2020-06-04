@@ -113,7 +113,6 @@
             this.txt_usuario.Name = "txt_usuario";
             this.txt_usuario.Size = new System.Drawing.Size(195, 21);
             this.txt_usuario.TabIndex = 1;
-            this.txt_usuario.Text = "root";
             // 
             // txt_contraseña
             // 
@@ -123,7 +122,6 @@
             this.txt_contraseña.PasswordChar = '•';
             this.txt_contraseña.Size = new System.Drawing.Size(195, 21);
             this.txt_contraseña.TabIndex = 2;
-            this.txt_contraseña.Text = "root";
             // 
             // btn_cerrar
             // 
