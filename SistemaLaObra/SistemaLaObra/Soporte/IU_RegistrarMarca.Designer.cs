@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_RegistrarMarca));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_descripcion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,9 +51,11 @@
             // 
             // txt_descripcion
             // 
+            this.txt_descripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_descripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_descripcion.Location = new System.Drawing.Point(24, 64);
             this.txt_descripcion.Name = "txt_descripcion";
-            this.txt_descripcion.Size = new System.Drawing.Size(308, 20);
+            this.txt_descripcion.Size = new System.Drawing.Size(308, 22);
             this.txt_descripcion.TabIndex = 1;
             // 
             // label1
@@ -102,7 +105,8 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_registrar);
             this.Controls.Add(this.btn_salir);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "IU_RegistrarMarca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

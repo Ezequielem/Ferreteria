@@ -289,6 +289,18 @@
     <Compile Include="Soporte\IU_ConsultarHistorialSesiones.Designer.cs">
       <DependentUpon>IU_ConsultarHistorialSesiones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Soporte\IU_ConsultarMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Soporte\IU_ConsultarMarca.Designer.cs">
+      <DependentUpon>IU_ConsultarMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Soporte\IU_ConsultarUbicacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Soporte\IU_ConsultarUbicacion.Designer.cs">
+      <DependentUpon>IU_ConsultarUbicacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Soporte\IU_ConsultarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -716,6 +728,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Soporte\IU_ConsultarHistorialSesiones.resx">
       <DependentUpon>IU_ConsultarHistorialSesiones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Soporte\IU_ConsultarMarca.resx">
+      <DependentUpon>IU_ConsultarMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Soporte\IU_ConsultarUbicacion.resx">
+      <DependentUpon>IU_ConsultarUbicacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Soporte\IU_ConsultarUsuario.resx">
       <DependentUpon>IU_ConsultarUsuario.cs</DependentUpon>

@@ -43,14 +43,12 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_actualizarTipoArticulo = new System.Windows.Forms.Button();
             this.btn_registrarTipoArticulo = new System.Windows.Forms.Button();
-            this.btn_actualizarMarca = new System.Windows.Forms.Button();
-            this.btn_registrarMarca = new System.Windows.Forms.Button();
-            this.btn_actualizarUbicacion = new System.Windows.Forms.Button();
-            this.btn_registrarUbicacion = new System.Windows.Forms.Button();
             this.btn_actualizarArticuloProveedor = new System.Windows.Forms.Button();
             this.btn_articuloProveedor = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btn_actualizarTarjeta = new System.Windows.Forms.Button();
+            this.btn_ConsultarMarca = new System.Windows.Forms.Button();
+            this.btn_ConsultarUbicacion = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -147,6 +145,7 @@
             // 
             this.btn_registrarTarjeta.AutoSize = true;
             this.btn_registrarTarjeta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
+            this.btn_registrarTarjeta.Enabled = false;
             this.btn_registrarTarjeta.FlatAppearance.BorderSize = 3;
             this.btn_registrarTarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_registrarTarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -225,18 +224,16 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.btn_ConsultarUbicacion);
+            this.groupBox2.Controls.Add(this.btn_ConsultarMarca);
             this.groupBox2.Controls.Add(this.btn_actualizarTipoArticulo);
             this.groupBox2.Controls.Add(this.btn_registrarTipoArticulo);
-            this.groupBox2.Controls.Add(this.btn_actualizarMarca);
-            this.groupBox2.Controls.Add(this.btn_registrarMarca);
-            this.groupBox2.Controls.Add(this.btn_actualizarUbicacion);
-            this.groupBox2.Controls.Add(this.btn_registrarUbicacion);
             this.groupBox2.Controls.Add(this.btn_actualizarArticuloProveedor);
             this.groupBox2.Controls.Add(this.btn_articuloProveedor);
             this.groupBox2.Controls.Add(this.btn_consultar);
             this.groupBox2.Location = new System.Drawing.Point(9, 194);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(872, 232);
+            this.groupBox2.Size = new System.Drawing.Size(872, 151);
             this.groupBox2.TabIndex = 27;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Articulo";
@@ -248,7 +245,7 @@
             this.btn_actualizarTipoArticulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_actualizarTipoArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_actualizarTipoArticulo.ForeColor = System.Drawing.Color.White;
-            this.btn_actualizarTipoArticulo.Location = new System.Drawing.Point(645, 80);
+            this.btn_actualizarTipoArticulo.Location = new System.Drawing.Point(325, 80);
             this.btn_actualizarTipoArticulo.Name = "btn_actualizarTipoArticulo";
             this.btn_actualizarTipoArticulo.Size = new System.Drawing.Size(145, 55);
             this.btn_actualizarTipoArticulo.TabIndex = 11;
@@ -263,73 +260,13 @@
             this.btn_registrarTipoArticulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_registrarTipoArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_registrarTipoArticulo.ForeColor = System.Drawing.Color.White;
-            this.btn_registrarTipoArticulo.Location = new System.Drawing.Point(645, 20);
+            this.btn_registrarTipoArticulo.Location = new System.Drawing.Point(165, 81);
             this.btn_registrarTipoArticulo.Name = "btn_registrarTipoArticulo";
             this.btn_registrarTipoArticulo.Size = new System.Drawing.Size(145, 55);
             this.btn_registrarTipoArticulo.TabIndex = 10;
             this.btn_registrarTipoArticulo.Text = "Registrar Tipo Artículo";
             this.btn_registrarTipoArticulo.UseVisualStyleBackColor = false;
             this.btn_registrarTipoArticulo.Click += new System.EventHandler(this.btn_registrarTipoArticulo_Click);
-            // 
-            // btn_actualizarMarca
-            // 
-            this.btn_actualizarMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
-            this.btn_actualizarMarca.FlatAppearance.BorderSize = 3;
-            this.btn_actualizarMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_actualizarMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_actualizarMarca.ForeColor = System.Drawing.Color.White;
-            this.btn_actualizarMarca.Location = new System.Drawing.Point(325, 80);
-            this.btn_actualizarMarca.Name = "btn_actualizarMarca";
-            this.btn_actualizarMarca.Size = new System.Drawing.Size(145, 55);
-            this.btn_actualizarMarca.TabIndex = 9;
-            this.btn_actualizarMarca.Text = "Modificar Marca";
-            this.btn_actualizarMarca.UseVisualStyleBackColor = false;
-            this.btn_actualizarMarca.Click += new System.EventHandler(this.btn_actualizarMarca_Click);
-            // 
-            // btn_registrarMarca
-            // 
-            this.btn_registrarMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
-            this.btn_registrarMarca.FlatAppearance.BorderSize = 3;
-            this.btn_registrarMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_registrarMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_registrarMarca.ForeColor = System.Drawing.Color.White;
-            this.btn_registrarMarca.Location = new System.Drawing.Point(325, 20);
-            this.btn_registrarMarca.Name = "btn_registrarMarca";
-            this.btn_registrarMarca.Size = new System.Drawing.Size(145, 55);
-            this.btn_registrarMarca.TabIndex = 8;
-            this.btn_registrarMarca.Text = "Registrar Marca";
-            this.btn_registrarMarca.UseVisualStyleBackColor = false;
-            this.btn_registrarMarca.Click += new System.EventHandler(this.btn_registrarMarca_Click);
-            // 
-            // btn_actualizarUbicacion
-            // 
-            this.btn_actualizarUbicacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
-            this.btn_actualizarUbicacion.FlatAppearance.BorderSize = 3;
-            this.btn_actualizarUbicacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_actualizarUbicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_actualizarUbicacion.ForeColor = System.Drawing.Color.White;
-            this.btn_actualizarUbicacion.Location = new System.Drawing.Point(485, 80);
-            this.btn_actualizarUbicacion.Name = "btn_actualizarUbicacion";
-            this.btn_actualizarUbicacion.Size = new System.Drawing.Size(145, 55);
-            this.btn_actualizarUbicacion.TabIndex = 7;
-            this.btn_actualizarUbicacion.Text = "Modificar Ubicación";
-            this.btn_actualizarUbicacion.UseVisualStyleBackColor = false;
-            this.btn_actualizarUbicacion.Click += new System.EventHandler(this.btn_actualizarUbicacion_Click);
-            // 
-            // btn_registrarUbicacion
-            // 
-            this.btn_registrarUbicacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
-            this.btn_registrarUbicacion.FlatAppearance.BorderSize = 3;
-            this.btn_registrarUbicacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_registrarUbicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_registrarUbicacion.ForeColor = System.Drawing.Color.White;
-            this.btn_registrarUbicacion.Location = new System.Drawing.Point(485, 20);
-            this.btn_registrarUbicacion.Name = "btn_registrarUbicacion";
-            this.btn_registrarUbicacion.Size = new System.Drawing.Size(145, 55);
-            this.btn_registrarUbicacion.TabIndex = 6;
-            this.btn_registrarUbicacion.Text = "Registrar Ubicación";
-            this.btn_registrarUbicacion.UseVisualStyleBackColor = false;
-            this.btn_registrarUbicacion.Click += new System.EventHandler(this.btn_registrarUbicacion_Click);
             // 
             // btn_actualizarArticuloProveedor
             // 
@@ -338,7 +275,7 @@
             this.btn_actualizarArticuloProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_actualizarArticuloProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_actualizarArticuloProveedor.ForeColor = System.Drawing.Color.White;
-            this.btn_actualizarArticuloProveedor.Location = new System.Drawing.Point(165, 80);
+            this.btn_actualizarArticuloProveedor.Location = new System.Drawing.Point(6, 80);
             this.btn_actualizarArticuloProveedor.Name = "btn_actualizarArticuloProveedor";
             this.btn_actualizarArticuloProveedor.Size = new System.Drawing.Size(145, 55);
             this.btn_actualizarArticuloProveedor.TabIndex = 5;
@@ -353,12 +290,13 @@
             this.btn_articuloProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_articuloProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_articuloProveedor.ForeColor = System.Drawing.Color.White;
-            this.btn_articuloProveedor.Location = new System.Drawing.Point(165, 20);
+            this.btn_articuloProveedor.Location = new System.Drawing.Point(486, 19);
             this.btn_articuloProveedor.Name = "btn_articuloProveedor";
             this.btn_articuloProveedor.Size = new System.Drawing.Size(145, 55);
             this.btn_articuloProveedor.TabIndex = 4;
             this.btn_articuloProveedor.Text = "Registrar  Proveedor Artículo";
             this.btn_articuloProveedor.UseVisualStyleBackColor = false;
+            this.btn_articuloProveedor.Visible = false;
             this.btn_articuloProveedor.Click += new System.EventHandler(this.btn_articuloProveedor_Click);
             // 
             // groupBox3
@@ -367,7 +305,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.btn_actualizarTarjeta);
             this.groupBox3.Controls.Add(this.btn_registrarTarjeta);
-            this.groupBox3.Location = new System.Drawing.Point(9, 404);
+            this.groupBox3.Enabled = false;
+            this.groupBox3.Location = new System.Drawing.Point(9, 351);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(872, 90);
             this.groupBox3.TabIndex = 28;
@@ -378,6 +317,7 @@
             // 
             this.btn_actualizarTarjeta.AutoSize = true;
             this.btn_actualizarTarjeta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
+            this.btn_actualizarTarjeta.Enabled = false;
             this.btn_actualizarTarjeta.FlatAppearance.BorderSize = 3;
             this.btn_actualizarTarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_actualizarTarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -389,6 +329,36 @@
             this.btn_actualizarTarjeta.Text = "Actualizar Tarjeta";
             this.btn_actualizarTarjeta.UseVisualStyleBackColor = false;
             this.btn_actualizarTarjeta.Click += new System.EventHandler(this.btn_actualizarTarjeta_Click);
+            // 
+            // btn_ConsultarMarca
+            // 
+            this.btn_ConsultarMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
+            this.btn_ConsultarMarca.FlatAppearance.BorderSize = 3;
+            this.btn_ConsultarMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ConsultarMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ConsultarMarca.ForeColor = System.Drawing.Color.White;
+            this.btn_ConsultarMarca.Location = new System.Drawing.Point(165, 20);
+            this.btn_ConsultarMarca.Name = "btn_ConsultarMarca";
+            this.btn_ConsultarMarca.Size = new System.Drawing.Size(145, 55);
+            this.btn_ConsultarMarca.TabIndex = 12;
+            this.btn_ConsultarMarca.Text = "Consultar Marca";
+            this.btn_ConsultarMarca.UseVisualStyleBackColor = false;
+            this.btn_ConsultarMarca.Click += new System.EventHandler(this.btn_ConsultarMarca_Click);
+            // 
+            // btn_ConsultarUbicacion
+            // 
+            this.btn_ConsultarUbicacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
+            this.btn_ConsultarUbicacion.FlatAppearance.BorderSize = 3;
+            this.btn_ConsultarUbicacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ConsultarUbicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ConsultarUbicacion.ForeColor = System.Drawing.Color.White;
+            this.btn_ConsultarUbicacion.Location = new System.Drawing.Point(325, 20);
+            this.btn_ConsultarUbicacion.Name = "btn_ConsultarUbicacion";
+            this.btn_ConsultarUbicacion.Size = new System.Drawing.Size(145, 55);
+            this.btn_ConsultarUbicacion.TabIndex = 13;
+            this.btn_ConsultarUbicacion.Text = "Consultar Ubicación";
+            this.btn_ConsultarUbicacion.UseVisualStyleBackColor = false;
+            this.btn_ConsultarUbicacion.Click += new System.EventHandler(this.btn_ConsultarUbicacion_Click);
             // 
             // IU_MenuPrincipalSoporte
             // 
@@ -442,12 +412,10 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btn_articuloProveedor;
         private System.Windows.Forms.Button btn_actualizarArticuloProveedor;
-        private System.Windows.Forms.Button btn_registrarUbicacion;
-        private System.Windows.Forms.Button btn_actualizarUbicacion;
-        private System.Windows.Forms.Button btn_actualizarMarca;
-        private System.Windows.Forms.Button btn_registrarMarca;
         private System.Windows.Forms.Button btn_actualizarTipoArticulo;
         private System.Windows.Forms.Button btn_registrarTipoArticulo;
         private System.Windows.Forms.Button btn_actualizarTarjeta;
+        private System.Windows.Forms.Button btn_ConsultarMarca;
+        private System.Windows.Forms.Button btn_ConsultarUbicacion;
     }
 }

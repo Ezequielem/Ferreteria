@@ -112,18 +112,18 @@ namespace SistemaLaObra
             }
         }
 
-        public Marca mostrarDatos(int codigoMarca)
+        public Marca mostrarDatos(int id)
         {
             acceso = new AccesoDatos();
             conexion = new SqlConnection(acceso.CadenaConexion());
-            consulta = new SqlCommand("select codigoMarca, descripcion from Marcas where codigoMarca='" + codigoMarca + "'", conexion);
+            consulta = new SqlCommand("select codigoMarca, descripcion from Marcas where codigoMarca='" + id + "'", conexion);
             try
             {
                 conexion.Open();
                 lector = consulta.ExecuteReader();
                 if (lector.Read())
                 {
-                    codigoMarca= int.Parse(lector["codigoMarca"].ToString());
+                    CodigoMarca= int.Parse(lector["codigoMarca"].ToString());
                     Descripcion = lector["descripcion"].ToString();
                 }
                 return this;
@@ -168,6 +168,58 @@ namespace SistemaLaObra
             {
                 lector.Close();
                 conexion.Close();
+            }
+        }
+
+        public bool existe(int id)
+        {
+            acceso = new AccesoDatos();
+            conexion = new SqlConnection(acceso.CadenaConexion());
+            consulta = new SqlCommand("select codigoMarca, descripcion from Marcas where codigoMarca='"+ id +"'", conexion);
+            try
+            {
+                lector = consulta.ExecuteReader();
+                if (lector.Read())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+         }
+
+        public bool existe(string nombre)
+        {
+            acceso = new AccesoDatos();
+            conexion = new SqlConnection(acceso.CadenaConexion());
+            consulta = new SqlCommand("select codigoMarca, descripcion from Marcas where descripcion='" + nombre + "'", conexion);
+            try
+            {
+                conexion.Open();
+                lector = consulta.ExecuteReader();
+                if (lector.Read())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            finally
+            {
+                conexion.Close();
+                lector.Close();
             }
         }
     }

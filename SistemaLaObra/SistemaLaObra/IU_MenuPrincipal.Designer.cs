@@ -311,6 +311,7 @@
             this.Controls.Add(this.ms_menuOpciones);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
+            this.MaximizeBox = false;
             this.Name = "IU_MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ferro System v1.0.9";

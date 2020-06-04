@@ -31,6 +31,8 @@ namespace SistemaLaObra
         public IU_ActualizarTiposArticulo InterfazActualizarTiposArticulo { get; set; }
         public IU_RegistrarProveedorArticulo InterfazRegistrarProveedorArticulo { get; set; }
         public IU_ActualizarProveedorArticulo InterfazActualizarProveedorArticulo { get; set; }
+        public IU_ConsultarMarca InterfazConsultarMarca { get; set; }
+        public IU_ConsultarUbicacion InterfazConsultarUbicacion { get; set; }
 
         public IU_MenuPrincipalSoporte()
         {
@@ -136,7 +138,19 @@ namespace SistemaLaObra
         private void btn_actualizarTarjeta_Click(object sender, EventArgs e)
         {
             InterfazActualizarTarjeta = new IU_ActualizarTarjeta();
-            InterfazActualizarTarjeta.Show();
+            InterfazActualizarTarjeta.ShowDialog();
+        }
+
+        private void btn_ConsultarMarca_Click(object sender, EventArgs e)
+        {
+            InterfazConsultarMarca = new IU_ConsultarMarca();
+            InterfazConsultarMarca.ShowDialog();
+        }
+
+        private void btn_ConsultarUbicacion_Click(object sender, EventArgs e)
+        {
+            InterfazConsultarUbicacion = new IU_ConsultarUbicacion();
+            InterfazConsultarUbicacion.ShowDialog();
         }
     }
 }

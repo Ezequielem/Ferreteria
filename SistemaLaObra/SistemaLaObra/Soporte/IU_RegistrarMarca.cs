@@ -48,8 +48,8 @@ namespace SistemaLaObra.Soporte
             {
                 tomarDescripcion();
                 Marca.crear(Marca);                
-                MessageBox.Show(this, "Se ha registrado correctamente la marca", "MARCA", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 borrarCampos();
+                this.Close();
             }
         }
 
