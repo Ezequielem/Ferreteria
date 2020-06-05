@@ -29,23 +29,24 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_ActualizarProveedorArticulo));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txt_filtro = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_proveedorArticulo = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txt_precio = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btn_actualizar = new System.Windows.Forms.Button();
-            this.btn_cancelar = new System.Windows.Forms.Button();
             this.articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.opcion = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_precio = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btn_actualizar = new System.Windows.Forms.Button();
+            this.btn_cancelar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_proveedorArticulo)).BeginInit();
@@ -126,6 +127,52 @@
             this.dgv_proveedorArticulo.TabIndex = 0;
             this.dgv_proveedorArticulo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_proveedorArticulo_CellContentClick);
             // 
+            // articulo
+            // 
+            this.articulo.HeaderText = "Articulo";
+            this.articulo.MinimumWidth = 80;
+            this.articulo.Name = "articulo";
+            this.articulo.ReadOnly = true;
+            this.articulo.Width = 80;
+            // 
+            // proveedor
+            // 
+            this.proveedor.HeaderText = "Proveedor";
+            this.proveedor.MinimumWidth = 112;
+            this.proveedor.Name = "proveedor";
+            this.proveedor.ReadOnly = true;
+            this.proveedor.Width = 112;
+            // 
+            // costo
+            // 
+            this.costo.HeaderText = "Precio";
+            this.costo.MinimumWidth = 60;
+            this.costo.Name = "costo";
+            this.costo.ReadOnly = true;
+            this.costo.Width = 60;
+            // 
+            // opcion
+            // 
+            this.opcion.HeaderText = "Opción";
+            this.opcion.MinimumWidth = 105;
+            this.opcion.Name = "opcion";
+            this.opcion.ReadOnly = true;
+            this.opcion.Width = 105;
+            // 
+            // idArticulo
+            // 
+            this.idArticulo.HeaderText = "IDA";
+            this.idArticulo.Name = "idArticulo";
+            this.idArticulo.ReadOnly = true;
+            this.idArticulo.Visible = false;
+            // 
+            // idProveedor
+            // 
+            this.idProveedor.HeaderText = "IDP";
+            this.idProveedor.Name = "idProveedor";
+            this.idProveedor.ReadOnly = true;
+            this.idProveedor.Visible = false;
+            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -196,52 +243,6 @@
             this.btn_cancelar.UseVisualStyleBackColor = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
-            // articulo
-            // 
-            this.articulo.HeaderText = "Articulo";
-            this.articulo.MinimumWidth = 80;
-            this.articulo.Name = "articulo";
-            this.articulo.ReadOnly = true;
-            this.articulo.Width = 80;
-            // 
-            // proveedor
-            // 
-            this.proveedor.HeaderText = "Proveedor";
-            this.proveedor.MinimumWidth = 112;
-            this.proveedor.Name = "proveedor";
-            this.proveedor.ReadOnly = true;
-            this.proveedor.Width = 112;
-            // 
-            // costo
-            // 
-            this.costo.HeaderText = "Precio";
-            this.costo.MinimumWidth = 60;
-            this.costo.Name = "costo";
-            this.costo.ReadOnly = true;
-            this.costo.Width = 60;
-            // 
-            // opcion
-            // 
-            this.opcion.HeaderText = "Opción";
-            this.opcion.MinimumWidth = 105;
-            this.opcion.Name = "opcion";
-            this.opcion.ReadOnly = true;
-            this.opcion.Width = 105;
-            // 
-            // idArticulo
-            // 
-            this.idArticulo.HeaderText = "IDA";
-            this.idArticulo.Name = "idArticulo";
-            this.idArticulo.ReadOnly = true;
-            this.idArticulo.Visible = false;
-            // 
-            // idProveedor
-            // 
-            this.idProveedor.HeaderText = "IDP";
-            this.idProveedor.Name = "idProveedor";
-            this.idProveedor.ReadOnly = true;
-            this.idProveedor.Visible = false;
-            // 
             // IU_ActualizarProveedorArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -251,10 +252,11 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btn_actualizar);
             this.Controls.Add(this.btn_cancelar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "IU_ActualizarProveedorArticulo";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MODIFICAR PROVEEDOR ARTICULO";
             this.Load += new System.EventHandler(this.IU_ActualizarProveedorArticulo_Load);
             this.groupBox1.ResumeLayout(false);
