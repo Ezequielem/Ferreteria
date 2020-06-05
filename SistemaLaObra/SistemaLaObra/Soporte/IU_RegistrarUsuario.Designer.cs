@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_RegistrarUsuario));
             this.label1 = new System.Windows.Forms.Label();
             this.txt_nombreUsuario = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -568,11 +569,11 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_registrar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "IU_RegistrarUsuario";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "REGISTRAR USUARIO";
             this.Load += new System.EventHandler(this.IU_RegistrarUsuario_Load);
             this.groupBox1.ResumeLayout(false);

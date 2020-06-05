@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_ConsultarUsuario));
             this.gb_datosUsuario = new System.Windows.Forms.GroupBox();
             this.dgv_usuarios = new System.Windows.Forms.DataGridView();
             this.col_nombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +69,14 @@
             this.dgv_usuarios.AllowUserToAddRows = false;
             this.dgv_usuarios.AllowUserToDeleteRows = false;
             this.dgv_usuarios.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_usuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_usuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_nombreUsuario,
@@ -113,10 +123,10 @@
             // btn_seleccion
             // 
             this.btn_seleccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Transparent;
-            this.btn_seleccion.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Transparent;
+            this.btn_seleccion.DefaultCellStyle = dataGridViewCellStyle2;
             this.btn_seleccion.HeaderText = "Seleccionar";
             this.btn_seleccion.Name = "btn_seleccion";
             this.btn_seleccion.ReadOnly = true;
@@ -201,10 +211,11 @@
             this.ClientSize = new System.Drawing.Size(736, 416);
             this.Controls.Add(this.btn_aceptar);
             this.Controls.Add(this.gb_datosUsuario);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "IU_ConsultarUsuario";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "CONSULTAR USUARIO";
             this.gb_datosUsuario.ResumeLayout(false);
             this.gb_datosUsuario.PerformLayout();

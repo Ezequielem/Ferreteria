@@ -311,10 +311,9 @@
             this.Controls.Add(this.ms_menuOpciones);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
-            this.MaximizeBox = false;
             this.Name = "IU_MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ferro System v1.0.9";
+            this.Text = "Ferro System v2.0";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.IU_MenuPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.IU_MenuPrincipal_Load);
