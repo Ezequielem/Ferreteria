@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_ActualizarOrdenDeRemito1));
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_siguiente = new System.Windows.Forms.Button();
             this.gbx_datos = new System.Windows.Forms.GroupBox();
@@ -591,9 +592,11 @@
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_siguiente);
             this.Controls.Add(this.gbx_datos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "IU_ActualizarOrdenDeRemito1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MODIFICAR ORDEN DE REMITO";
             this.Load += new System.EventHandler(this.IU_ActualizarOrdenDeRemito1_Load);
             this.gbx_datos.ResumeLayout(false);

@@ -596,6 +596,7 @@
             this.groupBox4.Controls.Add(this.label1);
             this.groupBox4.Controls.Add(this.btn_detalleTarjeta);
             this.groupBox4.Controls.Add(this.btn_cobroTarjeta);
+            this.groupBox4.Enabled = false;
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.groupBox4.Location = new System.Drawing.Point(922, 331);
             this.groupBox4.Name = "groupBox4";
@@ -780,10 +781,11 @@
             this.Controls.Add(this.gb_1);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.btn_registrarVenta);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "IU_RegistrarVentaMayorista";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "REGISTRAR VENTA MAYORISTA";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.IU_RegistrarVentaMayorista_FormClosed);
             this.Load += new System.EventHandler(this.IU_RegistrarVentaMayorista_Load);

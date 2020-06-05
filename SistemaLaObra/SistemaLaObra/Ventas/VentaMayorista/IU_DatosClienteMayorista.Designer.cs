@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_DatosClienteMayorista));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbl_provincia = new System.Windows.Forms.Label();
             this.lbl_departamento = new System.Windows.Forms.Label();
@@ -304,11 +305,12 @@
             this.Controls.Add(this.btn_actualizarDatos);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "IU_DatosClienteMayorista";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "VERIFICACION DE DATOS DEL CLIENTE MAYORISTA";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

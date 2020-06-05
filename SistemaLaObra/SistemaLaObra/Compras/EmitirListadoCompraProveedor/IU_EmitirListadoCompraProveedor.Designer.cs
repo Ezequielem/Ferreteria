@@ -34,6 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_EmitirListadoCompraProveedor));
             this.gbx_ordenesDeCompra = new System.Windows.Forms.GroupBox();
             this.dgv_listaArticulos = new System.Windows.Forms.DataGridView();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -163,9 +164,11 @@
             this.ClientSize = new System.Drawing.Size(809, 460);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.gbx_ordenesDeCompra);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "IU_EmitirListadoCompraProveedor";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "EMITIR COMPRA POR PROVEEDOR";
             this.Load += new System.EventHandler(this.IU_EmitirListadoCompraProveedor_Load);
             this.gbx_ordenesDeCompra.ResumeLayout(false);

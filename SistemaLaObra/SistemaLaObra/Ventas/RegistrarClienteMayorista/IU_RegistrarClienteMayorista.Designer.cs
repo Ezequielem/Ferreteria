@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_RegistrarClienteMayorista));
             this.label1 = new System.Windows.Forms.Label();
             this.txt_razonSocial = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -410,10 +411,11 @@
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.gb_domicilio);
             this.Controls.Add(this.gb_datosPrincipales);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "IU_RegistrarClienteMayorista";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "REGISTRAR CLIENTE MAYORISTA";
             this.Load += new System.EventHandler(this.IU_RegistrarClienteMayorista_Load);
             this.gb_datosPrincipales.ResumeLayout(false);

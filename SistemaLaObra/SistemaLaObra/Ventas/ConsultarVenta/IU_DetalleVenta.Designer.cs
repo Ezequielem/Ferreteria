@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_DetalleVenta));
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_nroVenta = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -401,11 +402,11 @@
             this.Controls.Add(this.btn_aceptar);
             this.Controls.Add(this.gb_detalleVenta);
             this.Controls.Add(this.gb_venta);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "IU_DetalleVenta";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "DETALLE DE LA VENTA";
             this.gb_venta.ResumeLayout(false);
             this.gb_venta.PerformLayout();

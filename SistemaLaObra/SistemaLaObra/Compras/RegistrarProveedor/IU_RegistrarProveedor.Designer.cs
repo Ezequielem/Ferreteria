@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_RegistrarProveedor));
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_Cuit = new System.Windows.Forms.Label();
             this.txt_Cuit = new System.Windows.Forms.TextBox();
@@ -468,8 +469,11 @@
             this.Controls.Add(this.txt_Cuit);
             this.Controls.Add(this.lbl_Cuit);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "IU_RegistrarProveedor";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "REGISTRAR PROVEEDOR";
             this.Load += new System.EventHandler(this.IU_RegistrarProveedor_Load);
             this.groupBox1.ResumeLayout(false);

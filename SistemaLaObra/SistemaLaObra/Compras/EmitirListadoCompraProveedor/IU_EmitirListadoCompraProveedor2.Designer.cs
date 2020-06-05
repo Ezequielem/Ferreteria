@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_EmitirListadoCompraProveedor2));
             this.tbc_Proveedores = new System.Windows.Forms.TabControl();
             this.btn_volver = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -62,9 +63,11 @@
             this.ClientSize = new System.Drawing.Size(809, 452);
             this.Controls.Add(this.btn_volver);
             this.Controls.Add(this.tbc_Proveedores);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "IU_EmitirListadoCompraProveedor2";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "DETALLE PROVEEDORES";
             this.Load += new System.EventHandler(this.IU_EmitirListadoCompraProveedor2_Load);
             this.ResumeLayout(false);

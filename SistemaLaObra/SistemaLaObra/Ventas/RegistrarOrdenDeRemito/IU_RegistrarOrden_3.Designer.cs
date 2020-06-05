@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_RegistrarOrden_3));
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_volver = new System.Windows.Forms.Button();
             this.btn_siguiente = new System.Windows.Forms.Button();
@@ -195,9 +196,11 @@
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_volver);
             this.Controls.Add(this.btn_siguiente);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "IU_RegistrarOrden_3";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SELECCIONAR ARTICULOS";
             this.Load += new System.EventHandler(this.IU_RegistrarOrden_3_Load);
             this.groupBox1.ResumeLayout(false);

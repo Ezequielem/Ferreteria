@@ -25,6 +25,8 @@ namespace SistemaLaObra
 
             //connectionString="Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\eemen\Documents\FerroSystem\Base de Datos\LaObra.mdf; Integrated Security = True"; DIRECCION A DOCUMENTOS
 
+            //Data Source=DESKTOP-HSJCUE2\SQLEXPRESS;Initial Catalog=LaObra;Integrated Security=True
+
             //return conexion;
 
             return Settings.Default.LaObraConnectionString;

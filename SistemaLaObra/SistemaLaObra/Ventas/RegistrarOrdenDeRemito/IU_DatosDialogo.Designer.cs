@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_DatosDialogo));
             this.gbx_datos = new System.Windows.Forms.GroupBox();
             this.gbx_distancia = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -460,11 +461,11 @@
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_cargarDatos);
             this.Controls.Add(this.gbx_datos);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "IU_DatosDialogo";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "CARGAR DATOS DE ENVIO";
             this.Load += new System.EventHandler(this.IU_DatosDialogo_Load);
             this.gbx_datos.ResumeLayout(false);

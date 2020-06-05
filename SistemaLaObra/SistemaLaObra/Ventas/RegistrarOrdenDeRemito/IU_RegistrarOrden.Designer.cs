@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_RegistrarOrden));
             this.lbl_1 = new System.Windows.Forms.Label();
             this.lbl_2 = new System.Windows.Forms.Label();
             this.txt_cantidadEnvios = new System.Windows.Forms.TextBox();
@@ -204,9 +205,11 @@
             this.Controls.Add(this.lbl_2);
             this.Controls.Add(this.lbl_1);
             this.Controls.Add(this.gbx_datos);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "IU_RegistrarOrden";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "INGRESAR DATOS";
             this.Load += new System.EventHandler(this.IU_RegistrarOrden_Load);
             this.gbx_datos.ResumeLayout(false);

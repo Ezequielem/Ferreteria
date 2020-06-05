@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_RegistrarNotaCredito));
             this.label5 = new System.Windows.Forms.Label();
             this.txt_numeroVenta = new System.Windows.Forms.TextBox();
             this.dgv_productos = new System.Windows.Forms.DataGridView();
@@ -680,10 +681,11 @@
             this.Controls.Add(this.btn_buscarVenta);
             this.Controls.Add(this.txt_numeroVenta);
             this.Controls.Add(this.label5);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "IU_RegistrarNotaCredito";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "REGISTRAR NOTA DE CREDITO";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_productos)).EndInit();
             this.groupBox1.ResumeLayout(false);

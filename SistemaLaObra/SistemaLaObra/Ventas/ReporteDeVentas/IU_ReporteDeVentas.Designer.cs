@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_ReporteDeVentas));
             this.lbl_1 = new System.Windows.Forms.Label();
             this.lbl_2 = new System.Windows.Forms.Label();
             this.lbl_3 = new System.Windows.Forms.Label();
@@ -193,7 +194,11 @@
             this.Controls.Add(this.btn_reporte);
             this.Controls.Add(this.gbx_fecha);
             this.Controls.Add(this.lbl_1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "IU_ReporteDeVentas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "IU_ReporteDeVentas";
             this.Load += new System.EventHandler(this.IU_ReporteDeVentas_Load);
             this.gbx_fecha.ResumeLayout(false);

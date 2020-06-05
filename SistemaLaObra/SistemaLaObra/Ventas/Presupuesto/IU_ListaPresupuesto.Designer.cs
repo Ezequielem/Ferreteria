@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_ListaPresupuesto));
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_seleccionar = new System.Windows.Forms.Button();
             this.dgv_presupuestos = new System.Windows.Forms.DataGridView();
@@ -241,10 +242,11 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_seleccionar);
             this.Controls.Add(this.btn_cancelar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "IU_ListaPresupuesto";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "LISTA DE PRESUPUESTOS";
             this.Load += new System.EventHandler(this.IU_ListaPresupuesto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_presupuestos)).EndInit();

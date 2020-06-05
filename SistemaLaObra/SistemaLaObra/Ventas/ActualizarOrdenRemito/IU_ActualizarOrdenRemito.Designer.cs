@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_ActualizarOrdenRemito));
             this.txt_codigoVenta = new System.Windows.Forms.TextBox();
             this.lbl_1 = new System.Windows.Forms.Label();
             this.gbx_datos = new System.Windows.Forms.GroupBox();
@@ -245,9 +246,11 @@
             this.Controls.Add(this.btn_siguiente);
             this.Controls.Add(this.lbl_1);
             this.Controls.Add(this.gbx_datos);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "IU_ActualizarOrdenRemito";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MODIFICAR ORDEN DE REMITO";
             this.Load += new System.EventHandler(this.IU_ActualizarOrdenRemito_Load);
             this.gbx_datos.ResumeLayout(false);

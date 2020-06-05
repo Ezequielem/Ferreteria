@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_RegistrarOrden_2));
             this.gbx_datosViajes = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.btn_siguiente = new System.Windows.Forms.Button();
@@ -112,9 +113,11 @@
             this.Controls.Add(this.btn_volver);
             this.Controls.Add(this.btn_siguiente);
             this.Controls.Add(this.gbx_datosViajes);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "IU_RegistrarOrden_2";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "INGRESAR FECHA Y HORA";
             this.Load += new System.EventHandler(this.IU_RegistrarOrden_2_Load);
             this.gbx_datosViajes.ResumeLayout(false);

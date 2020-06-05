@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_ActualizarClienteMayorista));
             this.gb_datosPrincipales = new System.Windows.Forms.GroupBox();
             this.txt_nroCuentaCorriente = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -410,10 +411,11 @@
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.gb_domicilio);
             this.Controls.Add(this.gb_datosPrincipales);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "IU_ActualizarClienteMayorista";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MODIFICAR DATOS DEL CLIENTE MAYORISTA";
             this.Load += new System.EventHandler(this.IU_ActualizarClienteMayorista_Load);
             this.gb_datosPrincipales.ResumeLayout(false);

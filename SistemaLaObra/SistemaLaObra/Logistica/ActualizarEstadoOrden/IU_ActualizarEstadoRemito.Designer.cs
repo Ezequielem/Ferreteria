@@ -36,10 +36,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_ActualizarEstadoRemito));
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.dgv_listadoEntrega = new System.Windows.Forms.DataGridView();
-            this.btn_actualizar = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.idPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.horaDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +46,8 @@
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Finalizar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btn_actualizar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listadoEntrega)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -74,7 +75,7 @@
             this.dgv_listadoEntrega.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -99,32 +100,6 @@
             this.dgv_listadoEntrega.Size = new System.Drawing.Size(848, 322);
             this.dgv_listadoEntrega.TabIndex = 2;
             this.dgv_listadoEntrega.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tomarSeleccionPedido);
-            // 
-            // btn_actualizar
-            // 
-            this.btn_actualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_actualizar.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_actualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_actualizar.Image = global::SistemaLaObra.Properties.Resources.actualizar;
-            this.btn_actualizar.Location = new System.Drawing.Point(732, 382);
-            this.btn_actualizar.Name = "btn_actualizar";
-            this.btn_actualizar.Size = new System.Drawing.Size(140, 50);
-            this.btn_actualizar.TabIndex = 3;
-            this.btn_actualizar.Text = "Modificar";
-            this.btn_actualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_actualizar.UseVisualStyleBackColor = false;
-            this.btn_actualizar.Click += new System.EventHandler(this.btn_actualizar_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dgv_listadoEntrega);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(860, 354);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "LISTADO DE REMITOS";
             // 
             // idPedido
             // 
@@ -197,6 +172,32 @@
             this.Finalizar.HeaderText = "Recibido";
             this.Finalizar.Name = "Finalizar";
             // 
+            // btn_actualizar
+            // 
+            this.btn_actualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_actualizar.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_actualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_actualizar.Image = global::SistemaLaObra.Properties.Resources.actualizar;
+            this.btn_actualizar.Location = new System.Drawing.Point(732, 382);
+            this.btn_actualizar.Name = "btn_actualizar";
+            this.btn_actualizar.Size = new System.Drawing.Size(140, 50);
+            this.btn_actualizar.TabIndex = 3;
+            this.btn_actualizar.Text = "Modificar";
+            this.btn_actualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_actualizar.UseVisualStyleBackColor = false;
+            this.btn_actualizar.Click += new System.EventHandler(this.btn_actualizar_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dgv_listadoEntrega);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(860, 354);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "LISTADO DE REMITOS";
+            // 
             // IU_ActualizarEstadoRemito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -207,11 +208,11 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_actualizar);
             this.Controls.Add(this.btn_cancelar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "IU_ActualizarEstadoRemito";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MODIFICAR ESTADO DE REMITO";
             this.Load += new System.EventHandler(this.IU_ActualizarEstadoRemito_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listadoEntrega)).EndInit();

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_ActualizarProveedor));
             this.cb_Banco = new System.Windows.Forms.ComboBox();
             this.cb_TipoTelefonoDos = new System.Windows.Forms.ComboBox();
             this.cb_TipoTelefonoUno = new System.Windows.Forms.ComboBox();
@@ -467,8 +468,11 @@
             this.Controls.Add(this.txt_Cuit);
             this.Controls.Add(this.lbl_Cuit);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "IU_ActualizarProveedor";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MODIFICAR PROVEEDOR";
             this.Load += new System.EventHandler(this.IU_ActualizarProveedor_Load);
             this.groupBox1.ResumeLayout(false);

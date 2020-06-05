@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_RegistrarPedidoCompra));
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.gbx_listaArticulos = new System.Windows.Forms.GroupBox();
             this.lbl_saldoCompra = new System.Windows.Forms.Label();
@@ -390,9 +391,11 @@
             this.Controls.Add(this.gbx_agregarArticulo);
             this.Controls.Add(this.gbx_listaArticulos);
             this.Controls.Add(this.btn_cancelar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "IU_RegistrarPedidoCompra";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "REGISTRAR PEDIDO DE COMPRA";
             this.gbx_listaArticulos.ResumeLayout(false);
             this.gbx_listaArticulos.PerformLayout();
