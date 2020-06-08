@@ -199,7 +199,6 @@ namespace SistemaLaObra.Compras.RegistrarProveedor
             tomarCodigoPostal();
             tomarBarrio();
             controladorProveedor.opcionConfirmarTomado();
-            MessageBox.Show("Se ha registrado con exito", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
             
 

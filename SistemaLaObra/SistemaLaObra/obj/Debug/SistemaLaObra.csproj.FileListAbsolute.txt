@@ -324,3 +324,4 @@ C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra
 C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.application
 C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_ConsultarMarca.resources
 C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_ConsultarUbicacion.resources
+C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Ventas.VentaMostrador.IU_DetalleArticulo.resources

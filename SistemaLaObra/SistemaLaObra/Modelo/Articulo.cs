@@ -928,6 +928,114 @@ namespace SistemaLaObra
             return codigo;
         }
 
+        public string buscarNombreTipoArticulo(int codigo)
+        {
+            AccesoDatos s = new AccesoDatos();
+            conexion = new SqlConnection(s.CadenaConexion());
+            SqlCommand consulta = new SqlCommand("select descripcion from TiposArticulos where codigoTipoArticulo='" + codigo + "'", conexion);
+            string descripcion = string.Empty;
+            try
+            {
+                conexion.Open();
+                lector = consulta.ExecuteReader();
+                if (lector.Read())
+                {
+                    descripcion = lector["descripcion"].ToString();
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.ToString());
+            }
+            finally
+            {
+                lector.Close();
+                conexion.Close();
+            }
+            return descripcion;
+        }
+
+        public string buscarNombreSubTipo1(int codigo)
+        {
+            AccesoDatos s = new AccesoDatos();
+            conexion = new SqlConnection(s.CadenaConexion());
+            SqlCommand consulta = new SqlCommand("select descripcion from Sub1TiposArticulos where codigoSub1TipoArticulo='" + codigo + "'", conexion);
+            string descripcion = string.Empty;
+            try
+            {
+                conexion.Open();
+                lector = consulta.ExecuteReader();
+                if (lector.Read())
+                {
+                    descripcion = lector["descripcion"].ToString();
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.ToString());
+            }
+            finally
+            {
+                lector.Close();
+                conexion.Close();
+            }
+            return descripcion;
+        }
+
+        public string buscarNombreSubTipo2(int codigo)
+        {
+            AccesoDatos s = new AccesoDatos();
+            conexion = new SqlConnection(s.CadenaConexion());
+            SqlCommand consulta = new SqlCommand("select descripcion from Sub2TiposArticulos where codigoSub2TipoArticulo='" + codigo + "'", conexion);
+            string descripcion = string.Empty;
+            try
+            {
+                conexion.Open();
+                lector = consulta.ExecuteReader();
+                if (lector.Read())
+                {
+                    descripcion = lector["descripcion"].ToString();
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.ToString());
+            }
+            finally
+            {
+                lector.Close();
+                conexion.Close();
+            }
+            return descripcion;
+        }
+
+        public string buscarNombreSubTipo3(int codigo)
+        {
+            AccesoDatos s = new AccesoDatos();
+            conexion = new SqlConnection(s.CadenaConexion());
+            SqlCommand consulta = new SqlCommand("select descripcion from Sub3TiposArticulos where codigoSub3TipoArticulo='" + codigo + "'", conexion);
+            string descripcion = string.Empty;
+            try
+            {
+                conexion.Open();
+                lector = consulta.ExecuteReader();
+                if (lector.Read())
+                {
+                    descripcion = lector["descripcion"].ToString();
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.ToString());
+            }
+            finally
+            {
+                lector.Close();
+                conexion.Close();
+            }
+            return descripcion;
+        }
+
         public string mostrarMarca(Articulo articuloRecibido)
         {
             string nombreMarca = "";
@@ -960,7 +1068,7 @@ namespace SistemaLaObra
             string nombreUbicacion = "";
             AccesoDatos s = new AccesoDatos();
             conexion = new SqlConnection(s.CadenaConexion());
-            SqlCommand consulta = new SqlCommand("select descripcion from Ubicaciones where codigoUbicacion='" + articuloRecibido.CodigoMarca + "'", conexion);
+            SqlCommand consulta = new SqlCommand("select descripcion from Ubicaciones where codigoUbicacion='" + articuloRecibido.CodigoUbicacion + "'", conexion);
             try
             {
                 conexion.Open();

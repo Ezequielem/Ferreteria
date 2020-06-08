@@ -129,7 +129,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 235);
+            this.label3.Location = new System.Drawing.Point(6, 191);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 15);
             this.label3.TabIndex = 4;
@@ -183,7 +183,7 @@
             // 
             // txt_cantidad
             // 
-            this.txt_cantidad.Location = new System.Drawing.Point(110, 232);
+            this.txt_cantidad.Location = new System.Drawing.Point(110, 188);
             this.txt_cantidad.Name = "txt_cantidad";
             this.txt_cantidad.Size = new System.Drawing.Size(116, 21);
             this.txt_cantidad.TabIndex = 6;
@@ -197,10 +197,10 @@
             this.dgv_productos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.NullValue = "0";
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_productos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
@@ -212,7 +212,7 @@
             this.Column5,
             this.Column6,
             this.Column7});
-            this.dgv_productos.Location = new System.Drawing.Point(5, 268);
+            this.dgv_productos.Location = new System.Drawing.Point(5, 224);
             this.dgv_productos.MultiSelect = false;
             this.dgv_productos.Name = "dgv_productos";
             this.dgv_productos.ReadOnly = true;
@@ -220,7 +220,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgv_productos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_productos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_productos.Size = new System.Drawing.Size(823, 176);
+            this.dgv_productos.Size = new System.Drawing.Size(823, 220);
             this.dgv_productos.TabIndex = 19;
             // 
             // Column1
@@ -337,8 +337,9 @@
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgv_articulosDisponibles.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_articulosDisponibles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_articulosDisponibles.Size = new System.Drawing.Size(822, 151);
+            this.dgv_articulosDisponibles.Size = new System.Drawing.Size(822, 106);
             this.dgv_articulosDisponibles.TabIndex = 20;
+            this.dgv_articulosDisponibles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_articulosDisponibles_CellDoubleClick);
             // 
             // Column8
             // 
@@ -401,7 +402,7 @@
             this.btn_cargar.BackColor = System.Drawing.SystemColors.Control;
             this.btn_cargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cargar.Image = global::SistemaLaObra.Properties.Resources.cargar;
-            this.btn_cargar.Location = new System.Drawing.Point(232, 222);
+            this.btn_cargar.Location = new System.Drawing.Point(232, 178);
             this.btn_cargar.Name = "btn_cargar";
             this.btn_cargar.Size = new System.Drawing.Size(136, 40);
             this.btn_cargar.TabIndex = 7;
@@ -416,7 +417,7 @@
             this.btn_quitarArticulo.Enabled = false;
             this.btn_quitarArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_quitarArticulo.Image = global::SistemaLaObra.Properties.Resources.quitar;
-            this.btn_quitarArticulo.Location = new System.Drawing.Point(689, 222);
+            this.btn_quitarArticulo.Location = new System.Drawing.Point(689, 178);
             this.btn_quitarArticulo.Name = "btn_quitarArticulo";
             this.btn_quitarArticulo.Size = new System.Drawing.Size(140, 40);
             this.btn_quitarArticulo.TabIndex = 8;

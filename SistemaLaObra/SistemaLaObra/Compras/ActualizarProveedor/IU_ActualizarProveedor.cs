@@ -240,7 +240,6 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
             tomarCodigoPostal();
             tomarBarrio();
             controladorProveedor.opcionConfirmarTomado();
-            MessageBox.Show("Los datos han sido actualizados con exito!", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
            
         }

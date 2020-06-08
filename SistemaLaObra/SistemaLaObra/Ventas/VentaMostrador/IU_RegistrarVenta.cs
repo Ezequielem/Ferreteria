@@ -12,6 +12,7 @@ using SistemaLaObra.Ventas;
 using SistemaLaObra.Ventas.CobroConTarjeta;
 using SistemaLaObra.Ventas.OrdenDeRemito;
 using SistemaLaObra.Ventas.RegistrarClienteMayorista;
+using SistemaLaObra.Ventas.VentaMostrador;
 
 namespace SistemaLaObra
 {
@@ -344,6 +345,13 @@ namespace SistemaLaObra
             gb_productos.Enabled = true;
             gb_cliente.Enabled = false;
             txt_razonSocial.Text = "";
+        }
+
+        private void dgv_articulosDisponibles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            IU_DetalleArticulo interfaz = new IU_DetalleArticulo();
+            interfaz.opcionDetalle(int.Parse(dgv_articulosDisponibles.CurrentRow.Cells[0].Value.ToString()));
+            interfaz.ShowDialog();
         }
         //////////////////
     }

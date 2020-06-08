@@ -15,11 +15,13 @@ namespace SistemaLaObra
 
         public string CadenaConexion()
         {
-            //conexion = @"Data Source=PC-EZEQUIEL\SQLEXPRESS;Initial Catalog=LaObra;Integrated Security=True"; EZEQUIEL
+            //conexion = @"Data Source=PC-EZEQUIEL\SQLEXPRESS;Initial Catalog=LaObra;Integrated Security=True"; EZEQUIEL            
 
             //conexion = @"Data Source=DESKTOP-928I2N6\SQLEXPRESS;Initial Catalog=LaObra;Integrated Security=True"; //NOTEBOOK EZE
 
             //conexion = @"Data Source=FRONTERA\SQLEXPRESS;Initial Catalog=LaObra;Integrated Security=True"; //MARTIN
+
+            //conexion = @Data Source=DESKTOP-HSJCUE2\SQLEXPRESS;Initial Catalog=LaObra;Integrated Security=True // PC FERRETERIA ARGUELLO
 
             //conexion = @"Data Source=DESKTOP-GJK2S05\SQLEXPRESS;Initial Catalog=LaObra;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"; //GERARDO
 
