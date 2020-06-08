@@ -20,15 +20,6 @@ namespace SistemaLaObra.Estadística
 {
     public partial class IU_MenuPrincipalEstadistica : Form
     {
-        private IU_ReporteMensualVentas iu_reporteVentasMensualVentas;
-        private IU_ReporteMensualEncargados _reporteMensualEncargados;
-        private IU_ReporteMensualClientes _reporteMensualClientes;
-        private IU_ReporteTopArticulos _reporteTopArticulos;
-        private IU_ReporteTopClientesXPeriodo _reporteTopClientePeriodo;
-        private IU_ReporteTopEncargadosXPeriodo _reporteTopEncargados;
-        private IU_ReporteAnualVentas _reporteAnualVentas;
-
-
         public IU_MenuPrincipal interfazContenedora { get; set; }
         public IU_ReporteMensualEncargados ReporteMensualEncargados { get; set; }
         public IU_ReporteMensualClientes ReporteMensualClientes { get; set; }
