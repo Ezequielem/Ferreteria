@@ -248,7 +248,7 @@
             this.btn_ventas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_ventas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ventas.ForeColor = System.Drawing.Color.White;
-            this.btn_ventas.Image = global::SistemaLaObra.Properties.Resources.venta1_32;
+            this.btn_ventas.Image = global::SistemaLaObra.Properties.Resources.venta2_32;
             this.btn_ventas.Location = new System.Drawing.Point(16, 30);
             this.btn_ventas.Name = "btn_ventas";
             this.btn_ventas.Size = new System.Drawing.Size(150, 50);
@@ -292,7 +292,7 @@
             this.btn_compras.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_compras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_compras.ForeColor = System.Drawing.Color.White;
-            this.btn_compras.Image = global::SistemaLaObra.Properties.Resources.compra_32;
+            this.btn_compras.Image = global::SistemaLaObra.Properties.Resources.compra3_32;
             this.btn_compras.Location = new System.Drawing.Point(16, 101);
             this.btn_compras.Name = "btn_compras";
             this.btn_compras.Size = new System.Drawing.Size(150, 50);
@@ -314,7 +314,7 @@
             this.btn_logistica.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_logistica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_logistica.ForeColor = System.Drawing.Color.White;
-            this.btn_logistica.Image = global::SistemaLaObra.Properties.Resources.logistica_32;
+            this.btn_logistica.Image = global::SistemaLaObra.Properties.Resources.logistica3_32;
             this.btn_logistica.Location = new System.Drawing.Point(16, 172);
             this.btn_logistica.Name = "btn_logistica";
             this.btn_logistica.Size = new System.Drawing.Size(150, 50);

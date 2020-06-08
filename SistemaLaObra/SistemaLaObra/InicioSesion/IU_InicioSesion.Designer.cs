@@ -140,11 +140,11 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = global::SistemaLaObra.Properties.Resources.login;
-            this.pictureBox5.Location = new System.Drawing.Point(344, 48);
+            this.pictureBox5.Image = global::SistemaLaObra.Properties.Resources.login_128;
+            this.pictureBox5.Location = new System.Drawing.Point(354, 57);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(128, 128);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox5.Size = new System.Drawing.Size(110, 110);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 10;
             this.pictureBox5.TabStop = false;
             // 

@@ -153,6 +153,26 @@ namespace SistemaLaObra.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap compra2_32 {
+            get {
+                object obj = ResourceManager.GetObject("compra2_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap compra3_32 {
+            get {
+                object obj = ResourceManager.GetObject("compra3_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap detalle {
             get {
                 object obj = ResourceManager.GetObject("detalle", resourceCulture);
@@ -176,6 +196,16 @@ namespace SistemaLaObra.Properties {
         internal static System.Drawing.Bitmap estadisticas_32 {
             get {
                 object obj = ResourceManager.GetObject("estadisticas_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exit_128 {
+            get {
+                object obj = ResourceManager.GetObject("exit_128", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -313,6 +343,16 @@ namespace SistemaLaObra.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap login_128 {
+            get {
+                object obj = ResourceManager.GetObject("login_128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logistica_32 {
             get {
                 object obj = ResourceManager.GetObject("logistica_32", resourceCulture);
@@ -326,6 +366,16 @@ namespace SistemaLaObra.Properties {
         internal static System.Drawing.Bitmap logistica1_32 {
             get {
                 object obj = ResourceManager.GetObject("logistica1_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logistica3_32 {
+            get {
+                object obj = ResourceManager.GetObject("logistica3_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -526,6 +576,16 @@ namespace SistemaLaObra.Properties {
         internal static System.Drawing.Bitmap venta1_32 {
             get {
                 object obj = ResourceManager.GetObject("venta1_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap venta2_32 {
+            get {
+                object obj = ResourceManager.GetObject("venta2_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

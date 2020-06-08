@@ -52,7 +52,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(260, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "¿Esta seguro de cerrar sesion?";
+            this.label1.Text = "¿Está seguro de cerrar sesión?";
             // 
             // btn_aceptar
             // 
@@ -139,11 +139,11 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = global::SistemaLaObra.Properties.Resources.if_xfce_system_exit_23651;
-            this.pictureBox5.Location = new System.Drawing.Point(145, 69);
+            this.pictureBox5.Image = global::SistemaLaObra.Properties.Resources.exit_128;
+            this.pictureBox5.Location = new System.Drawing.Point(148, 76);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(128, 128);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox5.Size = new System.Drawing.Size(110, 110);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 12;
             this.pictureBox5.TabStop = false;
             // 

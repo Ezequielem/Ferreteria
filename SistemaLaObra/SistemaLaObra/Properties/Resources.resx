@@ -262,4 +262,22 @@
   <data name="soporte_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\soporte_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="compra2_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\compra2_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logistica3_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logistica3_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="compra3_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\compra3_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="venta2_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\venta2_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="login_128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\login_128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="exit_128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\exit_128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

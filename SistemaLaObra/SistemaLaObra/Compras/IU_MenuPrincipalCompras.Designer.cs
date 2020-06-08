@@ -36,13 +36,12 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btn_articulosBajoStock = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.btn_emitirListadoCompraProveedor = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_registrarPedidoCompra
@@ -145,15 +144,6 @@
             this.btn_articulosBajoStock.UseVisualStyleBackColor = false;
             this.btn_articulosBajoStock.Click += new System.EventHandler(this.btn_articulosBajoStock_Click);
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::SistemaLaObra.Properties.Resources.TituloCompras;
-            this.pictureBox5.Location = new System.Drawing.Point(9, 9);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(775, 83);
-            this.pictureBox5.TabIndex = 20;
-            this.pictureBox5.TabStop = false;
-            // 
             // btn_emitirListadoCompraProveedor
             // 
             this.btn_emitirListadoCompraProveedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
@@ -169,6 +159,19 @@
             this.btn_emitirListadoCompraProveedor.UseVisualStyleBackColor = false;
             this.btn_emitirListadoCompraProveedor.Click += new System.EventHandler(this.btn_emitirListadoCompraProveedor_Click);
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Modern No. 20", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(329, 65);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "COMPRAS";
+            // 
             // IU_MenuPrincipalCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,8 +179,8 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(794, 561);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_emitirListadoCompraProveedor);
-            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.btn_articulosBajoStock);
             this.Controls.Add(this.btn_ActualizarProveedor);
             this.Controls.Add(this.pictureBox3);
@@ -196,8 +199,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -210,7 +213,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         public System.Windows.Forms.Button btn_ActualizarProveedor;
         public System.Windows.Forms.Button btn_articulosBajoStock;
-        private System.Windows.Forms.PictureBox pictureBox5;
         public System.Windows.Forms.Button btn_emitirListadoCompraProveedor;
+        private System.Windows.Forms.Label label1;
     }
 }

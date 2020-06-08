@@ -34,26 +34,25 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.btn_registrarTarjeta = new System.Windows.Forms.Button();
             this.btn_actualizarUsuario = new System.Windows.Forms.Button();
             this.btn_consultarHistorialSesiones = new System.Windows.Forms.Button();
             this.btn_consultarUsuario = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_ConsultarUbicacion = new System.Windows.Forms.Button();
+            this.btn_ConsultarMarca = new System.Windows.Forms.Button();
             this.btn_actualizarTipoArticulo = new System.Windows.Forms.Button();
             this.btn_registrarTipoArticulo = new System.Windows.Forms.Button();
             this.btn_actualizarArticuloProveedor = new System.Windows.Forms.Button();
             this.btn_articuloProveedor = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btn_actualizarTarjeta = new System.Windows.Forms.Button();
-            this.btn_ConsultarMarca = new System.Windows.Forms.Button();
-            this.btn_ConsultarUbicacion = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -129,17 +128,6 @@
             this.pictureBox2.Size = new System.Drawing.Size(884, 3);
             this.pictureBox2.TabIndex = 16;
             this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox5.Image = global::SistemaLaObra.Properties.Resources.TituloSoporte;
-            this.pictureBox5.Location = new System.Drawing.Point(9, 9);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(808, 83);
-            this.pictureBox5.TabIndex = 21;
-            this.pictureBox5.TabStop = false;
             // 
             // btn_registrarTarjeta
             // 
@@ -238,6 +226,36 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Articulo";
             // 
+            // btn_ConsultarUbicacion
+            // 
+            this.btn_ConsultarUbicacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
+            this.btn_ConsultarUbicacion.FlatAppearance.BorderSize = 3;
+            this.btn_ConsultarUbicacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ConsultarUbicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ConsultarUbicacion.ForeColor = System.Drawing.Color.White;
+            this.btn_ConsultarUbicacion.Location = new System.Drawing.Point(325, 20);
+            this.btn_ConsultarUbicacion.Name = "btn_ConsultarUbicacion";
+            this.btn_ConsultarUbicacion.Size = new System.Drawing.Size(145, 55);
+            this.btn_ConsultarUbicacion.TabIndex = 13;
+            this.btn_ConsultarUbicacion.Text = "Consultar Ubicación";
+            this.btn_ConsultarUbicacion.UseVisualStyleBackColor = false;
+            this.btn_ConsultarUbicacion.Click += new System.EventHandler(this.btn_ConsultarUbicacion_Click);
+            // 
+            // btn_ConsultarMarca
+            // 
+            this.btn_ConsultarMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
+            this.btn_ConsultarMarca.FlatAppearance.BorderSize = 3;
+            this.btn_ConsultarMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ConsultarMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ConsultarMarca.ForeColor = System.Drawing.Color.White;
+            this.btn_ConsultarMarca.Location = new System.Drawing.Point(165, 20);
+            this.btn_ConsultarMarca.Name = "btn_ConsultarMarca";
+            this.btn_ConsultarMarca.Size = new System.Drawing.Size(145, 55);
+            this.btn_ConsultarMarca.TabIndex = 12;
+            this.btn_ConsultarMarca.Text = "Consultar Marca";
+            this.btn_ConsultarMarca.UseVisualStyleBackColor = false;
+            this.btn_ConsultarMarca.Click += new System.EventHandler(this.btn_ConsultarMarca_Click);
+            // 
             // btn_actualizarTipoArticulo
             // 
             this.btn_actualizarTipoArticulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
@@ -330,35 +348,18 @@
             this.btn_actualizarTarjeta.UseVisualStyleBackColor = false;
             this.btn_actualizarTarjeta.Click += new System.EventHandler(this.btn_actualizarTarjeta_Click);
             // 
-            // btn_ConsultarMarca
+            // label1
             // 
-            this.btn_ConsultarMarca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
-            this.btn_ConsultarMarca.FlatAppearance.BorderSize = 3;
-            this.btn_ConsultarMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ConsultarMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ConsultarMarca.ForeColor = System.Drawing.Color.White;
-            this.btn_ConsultarMarca.Location = new System.Drawing.Point(165, 20);
-            this.btn_ConsultarMarca.Name = "btn_ConsultarMarca";
-            this.btn_ConsultarMarca.Size = new System.Drawing.Size(145, 55);
-            this.btn_ConsultarMarca.TabIndex = 12;
-            this.btn_ConsultarMarca.Text = "Consultar Marca";
-            this.btn_ConsultarMarca.UseVisualStyleBackColor = false;
-            this.btn_ConsultarMarca.Click += new System.EventHandler(this.btn_ConsultarMarca_Click);
-            // 
-            // btn_ConsultarUbicacion
-            // 
-            this.btn_ConsultarUbicacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
-            this.btn_ConsultarUbicacion.FlatAppearance.BorderSize = 3;
-            this.btn_ConsultarUbicacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ConsultarUbicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ConsultarUbicacion.ForeColor = System.Drawing.Color.White;
-            this.btn_ConsultarUbicacion.Location = new System.Drawing.Point(325, 20);
-            this.btn_ConsultarUbicacion.Name = "btn_ConsultarUbicacion";
-            this.btn_ConsultarUbicacion.Size = new System.Drawing.Size(145, 55);
-            this.btn_ConsultarUbicacion.TabIndex = 13;
-            this.btn_ConsultarUbicacion.Text = "Consultar Ubicación";
-            this.btn_ConsultarUbicacion.UseVisualStyleBackColor = false;
-            this.btn_ConsultarUbicacion.Click += new System.EventHandler(this.btn_ConsultarUbicacion_Click);
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Modern No. 20", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(319, 65);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "SOPORTE";
             // 
             // IU_MenuPrincipalSoporte
             // 
@@ -367,10 +368,10 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(890, 621);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox1);
@@ -385,13 +386,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -402,7 +403,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button btn_registrarTarjeta;
         private System.Windows.Forms.Button btn_actualizarUsuario;
         private System.Windows.Forms.Button btn_consultarHistorialSesiones;
@@ -417,5 +417,6 @@
         private System.Windows.Forms.Button btn_actualizarTarjeta;
         private System.Windows.Forms.Button btn_ConsultarMarca;
         private System.Windows.Forms.Button btn_ConsultarUbicacion;
+        private System.Windows.Forms.Label label1;
     }
 }
