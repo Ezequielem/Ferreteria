@@ -835,14 +835,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaLaObra.exe" size="2299864">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SistemaLaObra.exe" size="2306520">
       <assemblyIdentity name="SistemaLaObra" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>jMuT+S5ehXtT80/9oy+pxoyvHF9h+uvTJzeE0rgNmIw=</dsig:DigestValue>
+        <dsig:DigestValue>zUmISAHSZayCWn2WMWt10wNxe7Um5MFXKb+ReZpTvYw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -854,7 +854,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9TuEw2p43JHEzoO3rLkKTdMOZdsv1c6joyVh1l5n6FI=</dsig:DigestValue>
+        <dsig:DigestValue>IPik/UUesS1tE8cDxYVXNKt+jpZRRO38gOcj9JX6HBI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

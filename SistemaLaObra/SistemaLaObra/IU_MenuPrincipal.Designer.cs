@@ -46,9 +46,11 @@
             this.btn_compras = new System.Windows.Forms.Button();
             this.btn_ventas = new System.Windows.Forms.Button();
             this.pnl_subMenu = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.ms_menuOpciones.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnl_opciones.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ms_menuOpciones
@@ -179,11 +181,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.pnl_opciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
             this.pnl_opciones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnl_opciones.Controls.Add(this.btn_estadistica);
-            this.pnl_opciones.Controls.Add(this.btn_soporte);
-            this.pnl_opciones.Controls.Add(this.btn_logistica);
-            this.pnl_opciones.Controls.Add(this.btn_compras);
-            this.pnl_opciones.Controls.Add(this.btn_ventas);
+            this.pnl_opciones.Controls.Add(this.tableLayoutPanel1);
             this.pnl_opciones.Location = new System.Drawing.Point(0, 25);
             this.pnl_opciones.Name = "pnl_opciones";
             this.pnl_opciones.Size = new System.Drawing.Size(200, 678);
@@ -192,6 +190,7 @@
             // 
             // btn_estadistica
             // 
+            this.btn_estadistica.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_estadistica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
             this.btn_estadistica.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_estadistica.Enabled = false;
@@ -200,17 +199,20 @@
             this.btn_estadistica.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_estadistica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_estadistica.ForeColor = System.Drawing.Color.White;
-            this.btn_estadistica.Location = new System.Drawing.Point(34, 228);
+            this.btn_estadistica.Image = global::SistemaLaObra.Properties.Resources.estadisticas_32;
+            this.btn_estadistica.Location = new System.Drawing.Point(16, 243);
             this.btn_estadistica.Name = "btn_estadistica";
-            this.btn_estadistica.Size = new System.Drawing.Size(126, 49);
+            this.btn_estadistica.Size = new System.Drawing.Size(150, 50);
             this.btn_estadistica.TabIndex = 19;
             this.btn_estadistica.Text = "Estadistica";
+            this.btn_estadistica.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_estadistica.UseVisualStyleBackColor = false;
             this.btn_estadistica.Visible = false;
             this.btn_estadistica.Click += new System.EventHandler(this.btn_estadistica_Click);
             // 
             // btn_soporte
             // 
+            this.btn_soporte.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_soporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
             this.btn_soporte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_soporte.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -220,9 +222,9 @@
             this.btn_soporte.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_soporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_soporte.ForeColor = System.Drawing.Color.White;
-            this.btn_soporte.Location = new System.Drawing.Point(34, 300);
+            this.btn_soporte.Location = new System.Drawing.Point(16, 314);
             this.btn_soporte.Name = "btn_soporte";
-            this.btn_soporte.Size = new System.Drawing.Size(126, 49);
+            this.btn_soporte.Size = new System.Drawing.Size(150, 50);
             this.btn_soporte.TabIndex = 16;
             this.btn_soporte.Text = "Soporte";
             this.btn_soporte.UseVisualStyleBackColor = false;
@@ -231,6 +233,7 @@
             // 
             // btn_logistica
             // 
+            this.btn_logistica.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_logistica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
             this.btn_logistica.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_logistica.Enabled = false;
@@ -239,9 +242,9 @@
             this.btn_logistica.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_logistica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_logistica.ForeColor = System.Drawing.Color.White;
-            this.btn_logistica.Location = new System.Drawing.Point(34, 158);
+            this.btn_logistica.Location = new System.Drawing.Point(16, 172);
             this.btn_logistica.Name = "btn_logistica";
-            this.btn_logistica.Size = new System.Drawing.Size(126, 49);
+            this.btn_logistica.Size = new System.Drawing.Size(150, 50);
             this.btn_logistica.TabIndex = 17;
             this.btn_logistica.Text = "Logística";
             this.btn_logistica.UseVisualStyleBackColor = false;
@@ -250,6 +253,7 @@
             // 
             // btn_compras
             // 
+            this.btn_compras.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_compras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
             this.btn_compras.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_compras.Enabled = false;
@@ -258,9 +262,9 @@
             this.btn_compras.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_compras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_compras.ForeColor = System.Drawing.Color.White;
-            this.btn_compras.Location = new System.Drawing.Point(34, 85);
+            this.btn_compras.Location = new System.Drawing.Point(16, 101);
             this.btn_compras.Name = "btn_compras";
-            this.btn_compras.Size = new System.Drawing.Size(126, 49);
+            this.btn_compras.Size = new System.Drawing.Size(150, 50);
             this.btn_compras.TabIndex = 18;
             this.btn_compras.Text = "Compras";
             this.btn_compras.UseVisualStyleBackColor = false;
@@ -269,6 +273,7 @@
             // 
             // btn_ventas
             // 
+            this.btn_ventas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_ventas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
             this.btn_ventas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn_ventas.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -278,9 +283,9 @@
             this.btn_ventas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_ventas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ventas.ForeColor = System.Drawing.Color.White;
-            this.btn_ventas.Location = new System.Drawing.Point(34, 15);
+            this.btn_ventas.Location = new System.Drawing.Point(16, 30);
             this.btn_ventas.Name = "btn_ventas";
-            this.btn_ventas.Size = new System.Drawing.Size(126, 49);
+            this.btn_ventas.Size = new System.Drawing.Size(150, 50);
             this.btn_ventas.TabIndex = 15;
             this.btn_ventas.Text = "Ventas";
             this.btn_ventas.UseVisualStyleBackColor = false;
@@ -299,6 +304,31 @@
             this.pnl_subMenu.Size = new System.Drawing.Size(808, 678);
             this.pnl_subMenu.TabIndex = 21;
             this.pnl_subMenu.Visible = false;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.btn_soporte, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.btn_ventas, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btn_estadistica, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.btn_compras, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btn_logistica, 0, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 10;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(182, 667);
+            this.tableLayoutPanel1.TabIndex = 20;
             // 
             // IU_MenuPrincipal
             // 
@@ -322,6 +352,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.pnl_opciones.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,5 +376,6 @@
         public System.Windows.Forms.Label lbl_tipoEncargado;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.Button btn_estadistica;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

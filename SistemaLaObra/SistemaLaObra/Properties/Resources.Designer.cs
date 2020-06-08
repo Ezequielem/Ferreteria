@@ -123,6 +123,16 @@ namespace SistemaLaObra.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cliente_32 {
+            get {
+                object obj = ResourceManager.GetObject("cliente_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap detalle {
             get {
                 object obj = ResourceManager.GetObject("detalle", resourceCulture);
@@ -136,6 +146,16 @@ namespace SistemaLaObra.Properties {
         internal static System.Drawing.Bitmap envioPaquete {
             get {
                 object obj = ResourceManager.GetObject("envioPaquete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap estadisticas_32 {
+            get {
+                object obj = ResourceManager.GetObject("estadisticas_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

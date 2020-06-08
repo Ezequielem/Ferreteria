@@ -74,7 +74,12 @@ namespace SistemaLaObra.Ventas.ConsultarVenta
 
                     encargado.mostrarDatos(item.CodigoEncargado);
 
-                    interfazConsultarVenta.dgv_listadoVentas.Rows.Add(item.CodigoVenta.ToString(),item.FechaHora.ToString("dd/MM/yyyy"),item.ImporteTotal.ToString("0.00"),envio,cliente,encargado.Nombre + " " + encargado.Apellido,"SELECCIONAR");
+                    interfazConsultarVenta.dgv_listadoVentas.Rows.Add(
+                        item.CodigoVenta.ToString("00000000"),
+                        item.FechaHora.ToString("dd/MM/yyyy"),
+                        item.ImporteTotal.ToString("0.00"),
+                        envio,cliente,encargado.Nombre + " " + encargado.Apellido,"SELECCIONAR"
+                        );
                 }
                 return true;
             }
@@ -103,7 +108,7 @@ namespace SistemaLaObra.Ventas.ConsultarVenta
             interfazDetalleVenta = new IU_DetalleVenta();
             interfazDetalleVenta.controladorConsultarVenta = this;
 
-            interfazDetalleVenta.lbl_nroVenta.Text = venta.CodigoVenta.ToString();
+            interfazDetalleVenta.lbl_nroVenta.Text = venta.CodigoVenta.ToString("00000000");
 
             interfazDetalleVenta.lbl_fechaHora.Text = venta.FechaHora.ToString("dd/MM/yyyy") + " - " + venta.FechaHora.ToString("HH:mm") + " Hs";
 

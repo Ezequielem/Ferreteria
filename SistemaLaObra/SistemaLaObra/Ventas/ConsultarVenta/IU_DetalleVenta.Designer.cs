@@ -52,19 +52,21 @@
             this.label6 = new System.Windows.Forms.Label();
             this.gb_detalleVenta = new System.Windows.Forms.GroupBox();
             this.dgv_productos = new System.Windows.Forms.DataGridView();
+            this.btn_aceptar = new System.Windows.Forms.Button();
+            this.btn_consultarDatosCliente = new System.Windows.Forms.Button();
+            this.btn_detalleEnvio = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_aceptar = new System.Windows.Forms.Button();
-            this.btn_consultarDatosCliente = new System.Windows.Forms.Button();
-            this.btn_detalleEnvio = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gb_venta.SuspendLayout();
             this.gb_detalleVenta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_productos)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -259,14 +261,13 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(299, 30);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 13);
+            this.label6.Size = new System.Drawing.Size(39, 13);
             this.label6.TabIndex = 10;
-            this.label6.Text = "Envio:";
+            this.label6.Text = "Envío:";
             // 
             // gb_detalleVenta
             // 
-            this.gb_detalleVenta.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.gb_detalleVenta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gb_detalleVenta.Controls.Add(this.dgv_productos);
             this.gb_detalleVenta.Location = new System.Drawing.Point(12, 214);
@@ -287,7 +288,7 @@
             this.dgv_productos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.NullValue = "0";
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -312,10 +313,78 @@
             this.dgv_productos.Size = new System.Drawing.Size(681, 181);
             this.dgv_productos.TabIndex = 20;
             // 
+            // btn_aceptar
+            // 
+            this.btn_aceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_aceptar.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_aceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_aceptar.Image = global::SistemaLaObra.Properties.Resources.aceptarSeleccionar;
+            this.btn_aceptar.Location = new System.Drawing.Point(555, 436);
+            this.btn_aceptar.Name = "btn_aceptar";
+            this.btn_aceptar.Size = new System.Drawing.Size(150, 50);
+            this.btn_aceptar.TabIndex = 13;
+            this.btn_aceptar.Text = "Aceptar";
+            this.btn_aceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_aceptar.UseVisualStyleBackColor = false;
+            this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
+            // 
+            // btn_consultarDatosCliente
+            // 
+            this.btn_consultarDatosCliente.Enabled = false;
+            this.btn_consultarDatosCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_consultarDatosCliente.Image = global::SistemaLaObra.Properties.Resources.cliente_32;
+            this.btn_consultarDatosCliente.Location = new System.Drawing.Point(3, 100);
+            this.btn_consultarDatosCliente.Name = "btn_consultarDatosCliente";
+            this.btn_consultarDatosCliente.Size = new System.Drawing.Size(142, 50);
+            this.btn_consultarDatosCliente.TabIndex = 18;
+            this.btn_consultarDatosCliente.Text = "Cliente";
+            this.btn_consultarDatosCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_consultarDatosCliente.UseVisualStyleBackColor = true;
+            this.btn_consultarDatosCliente.Click += new System.EventHandler(this.btn_consultarDatosCliente_Click);
+            // 
+            // btn_detalleEnvio
+            // 
+            this.btn_detalleEnvio.Enabled = false;
+            this.btn_detalleEnvio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_detalleEnvio.Image = global::SistemaLaObra.Properties.Resources.envioPaquete;
+            this.btn_detalleEnvio.Location = new System.Drawing.Point(3, 31);
+            this.btn_detalleEnvio.Name = "btn_detalleEnvio";
+            this.btn_detalleEnvio.Size = new System.Drawing.Size(142, 50);
+            this.btn_detalleEnvio.TabIndex = 19;
+            this.btn_detalleEnvio.Text = "Envío\r\n";
+            this.btn_detalleEnvio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_detalleEnvio.UseVisualStyleBackColor = true;
+            this.btn_detalleEnvio.Click += new System.EventHandler(this.btn_detalleEnvio_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.tableLayoutPanel1);
+            this.groupBox1.Location = new System.Drawing.Point(517, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(188, 196);
+            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "INFORMACION ADICIONAL";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.btn_detalleEnvio, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btn_consultarDatosCliente, 0, 2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 19);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.37427F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.35088F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.69006F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(176, 171);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "Codigo de articulo";
+            this.Column1.HeaderText = "Cód. de artículo";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
@@ -347,57 +416,12 @@
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
-            // btn_aceptar
-            // 
-            this.btn_aceptar.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_aceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_aceptar.Location = new System.Drawing.Point(567, 426);
-            this.btn_aceptar.Name = "btn_aceptar";
-            this.btn_aceptar.Size = new System.Drawing.Size(138, 41);
-            this.btn_aceptar.TabIndex = 13;
-            this.btn_aceptar.Text = "ACEPTAR";
-            this.btn_aceptar.UseVisualStyleBackColor = false;
-            this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
-            // 
-            // btn_consultarDatosCliente
-            // 
-            this.btn_consultarDatosCliente.Enabled = false;
-            this.btn_consultarDatosCliente.Location = new System.Drawing.Point(24, 53);
-            this.btn_consultarDatosCliente.Name = "btn_consultarDatosCliente";
-            this.btn_consultarDatosCliente.Size = new System.Drawing.Size(142, 23);
-            this.btn_consultarDatosCliente.TabIndex = 18;
-            this.btn_consultarDatosCliente.Text = "Consultar datos del cliente";
-            this.btn_consultarDatosCliente.UseVisualStyleBackColor = true;
-            this.btn_consultarDatosCliente.Click += new System.EventHandler(this.btn_consultarDatosCliente_Click);
-            // 
-            // btn_detalleEnvio
-            // 
-            this.btn_detalleEnvio.Enabled = false;
-            this.btn_detalleEnvio.Location = new System.Drawing.Point(24, 25);
-            this.btn_detalleEnvio.Name = "btn_detalleEnvio";
-            this.btn_detalleEnvio.Size = new System.Drawing.Size(142, 23);
-            this.btn_detalleEnvio.TabIndex = 19;
-            this.btn_detalleEnvio.Text = "Detalles del envio";
-            this.btn_detalleEnvio.UseVisualStyleBackColor = true;
-            this.btn_detalleEnvio.Click += new System.EventHandler(this.btn_detalleEnvio_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btn_detalleEnvio);
-            this.groupBox1.Controls.Add(this.btn_consultarDatosCliente);
-            this.groupBox1.Location = new System.Drawing.Point(517, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(188, 196);
-            this.groupBox1.TabIndex = 14;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "INFORMACION ADICIONAL";
-            // 
             // IU_DetalleVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(717, 475);
+            this.ClientSize = new System.Drawing.Size(717, 498);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_aceptar);
             this.Controls.Add(this.gb_detalleVenta);
@@ -413,6 +437,7 @@
             this.gb_detalleVenta.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_productos)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -427,11 +452,6 @@
         private System.Windows.Forms.GroupBox gb_venta;
         private System.Windows.Forms.GroupBox gb_detalleVenta;
         public System.Windows.Forms.DataGridView dgv_productos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -449,5 +469,11 @@
         public System.Windows.Forms.Label lbl_envio;
         public System.Windows.Forms.Button btn_detalleEnvio;
         public System.Windows.Forms.Button btn_consultarDatosCliente;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

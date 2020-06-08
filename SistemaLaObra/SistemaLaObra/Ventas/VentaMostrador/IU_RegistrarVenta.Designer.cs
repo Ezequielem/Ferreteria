@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_RegistrarVenta));
             this.label4 = new System.Windows.Forms.Label();
             this.lbl_importeTotal = new System.Windows.Forms.Label();
@@ -45,8 +45,9 @@
             this.lbl_cargoEnvio = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.gb_productos = new System.Windows.Forms.GroupBox();
-            this.btn_cargar = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_quitarArticulo = new System.Windows.Forms.Button();
+            this.btn_cargar = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_detallesEnvioDomicilio = new System.Windows.Forms.Button();
@@ -78,9 +79,9 @@
             this.txt_razonSocial = new System.Windows.Forms.TextBox();
             this.btn_buscarDatos = new System.Windows.Forms.Button();
             this.lbl_cliente = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_productos)).BeginInit();
             this.gb_productos.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -88,7 +89,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.gb_tipoCliente.SuspendLayout();
             this.gb_cliente.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label4
@@ -143,15 +143,15 @@
             this.dgv_productos.AllowUserToDeleteRows = false;
             this.dgv_productos.AllowUserToResizeRows = false;
             this.dgv_productos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.NullValue = "0";
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_productos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.NullValue = "0";
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_productos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_productos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -165,8 +165,8 @@
             this.dgv_productos.Name = "dgv_productos";
             this.dgv_productos.ReadOnly = true;
             this.dgv_productos.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgv_productos.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgv_productos.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_productos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_productos.Size = new System.Drawing.Size(823, 369);
             this.dgv_productos.TabIndex = 19;
@@ -248,20 +248,21 @@
             this.gb_productos.TabStop = false;
             this.gb_productos.Text = "CARGA VENTA DE PRODUCTOS";
             // 
-            // btn_cargar
+            // tableLayoutPanel1
             // 
-            this.btn_cargar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btn_cargar.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_cargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cargar.Image = global::SistemaLaObra.Properties.Resources.cargar;
-            this.btn_cargar.Location = new System.Drawing.Point(473, 4);
-            this.btn_cargar.Name = "btn_cargar";
-            this.btn_cargar.Size = new System.Drawing.Size(136, 40);
-            this.btn_cargar.TabIndex = 7;
-            this.btn_cargar.Text = "Cargar articulo";
-            this.btn_cargar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_cargar.UseVisualStyleBackColor = false;
-            this.btn_cargar.Click += new System.EventHandler(this.btn_cargar_Click);
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.btn_quitarArticulo, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btn_cargar, 2, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 20);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(819, 49);
+            this.tableLayoutPanel1.TabIndex = 20;
             // 
             // btn_quitarArticulo
             // 
@@ -278,6 +279,21 @@
             this.btn_quitarArticulo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_quitarArticulo.UseVisualStyleBackColor = false;
             this.btn_quitarArticulo.Click += new System.EventHandler(this.btn_quitarArticulo_Click);
+            // 
+            // btn_cargar
+            // 
+            this.btn_cargar.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btn_cargar.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_cargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cargar.Image = global::SistemaLaObra.Properties.Resources.cargar;
+            this.btn_cargar.Location = new System.Drawing.Point(473, 4);
+            this.btn_cargar.Name = "btn_cargar";
+            this.btn_cargar.Size = new System.Drawing.Size(136, 40);
+            this.btn_cargar.TabIndex = 7;
+            this.btn_cargar.Text = "Cargar articulo";
+            this.btn_cargar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_cargar.UseVisualStyleBackColor = false;
+            this.btn_cargar.Click += new System.EventHandler(this.btn_cargar_Click);
             // 
             // groupBox3
             // 
@@ -653,22 +669,6 @@
             this.lbl_cliente.TabIndex = 10;
             this.lbl_cliente.Text = "Venta Minorista";
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.btn_quitarArticulo, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btn_cargar, 2, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 20);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(819, 49);
-            this.tableLayoutPanel1.TabIndex = 20;
-            // 
             // IU_RegistrarVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -705,6 +705,7 @@
             this.Load += new System.EventHandler(this.IU_RegistrarVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_productos)).EndInit();
             this.gb_productos.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -716,7 +717,6 @@
             this.gb_tipoCliente.PerformLayout();
             this.gb_cliente.ResumeLayout(false);
             this.gb_cliente.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

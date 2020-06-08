@@ -88,5 +88,16 @@ namespace SistemaLaObra.Ventas.ConsultarVenta
                 }
             }
         }
+
+        private void IU_ConsultarVenta_Load(object sender, EventArgs e)
+        {
+            dt_fechaDesde.Value = DateTime.Now;
+            dt_fechaHasta.Value = DateTime.Now;
+        }
+
+        private void btn_aceptar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

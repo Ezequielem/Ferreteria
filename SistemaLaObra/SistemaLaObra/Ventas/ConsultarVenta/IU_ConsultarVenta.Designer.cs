@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_ConsultarVenta));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgv_listadoVentas = new System.Windows.Forms.DataGridView();
@@ -48,10 +49,17 @@
             this.btn_buscarVenta = new System.Windows.Forms.Button();
             this.txt_nroVenta = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btn_aceptar = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listadoVentas)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -60,9 +68,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.dgv_listadoVentas);
-            this.groupBox1.Location = new System.Drawing.Point(12, 110);
+            this.groupBox1.Location = new System.Drawing.Point(12, 125);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(715, 339);
+            this.groupBox1.Size = new System.Drawing.Size(934, 416);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "LISTADO DE VENTAS";
@@ -75,6 +83,14 @@
             this.dgv_listadoVentas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_listadoVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_listadoVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_listadoVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -88,7 +104,7 @@
             this.dgv_listadoVentas.Name = "dgv_listadoVentas";
             this.dgv_listadoVentas.ReadOnly = true;
             this.dgv_listadoVentas.RowHeadersVisible = false;
-            this.dgv_listadoVentas.Size = new System.Drawing.Size(703, 314);
+            this.dgv_listadoVentas.Size = new System.Drawing.Size(922, 391);
             this.dgv_listadoVentas.TabIndex = 0;
             this.dgv_listadoVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_listadoVentas_CellContentClick);
             // 
@@ -144,16 +160,19 @@
             // 
             // dt_fechaDesde
             // 
-            this.dt_fechaDesde.Location = new System.Drawing.Point(64, 22);
+            this.dt_fechaDesde.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dt_fechaDesde.Location = new System.Drawing.Point(62, 3);
             this.dt_fechaDesde.Name = "dt_fechaDesde";
             this.dt_fechaDesde.Size = new System.Drawing.Size(212, 20);
             this.dt_fechaDesde.TabIndex = 1;
+            this.dt_fechaDesde.Value = new System.DateTime(2020, 6, 8, 13, 14, 12, 0);
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 27);
+            this.label1.Location = new System.Drawing.Point(3, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 15);
             this.label1.TabIndex = 2;
@@ -161,14 +180,13 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btn_buscarPeriodoVenta);
-            this.groupBox2.Controls.Add(this.dt_fechaHasta);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.dt_fechaDesde);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 12);
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.tableLayoutPanel3);
+            this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(403, 92);
+            this.groupBox2.Size = new System.Drawing.Size(461, 101);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "PERIODO DE VENTAS";
@@ -177,27 +195,31 @@
             // 
             this.btn_buscarPeriodoVenta.BackColor = System.Drawing.SystemColors.Control;
             this.btn_buscarPeriodoVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_buscarPeriodoVenta.Location = new System.Drawing.Point(301, 37);
+            this.btn_buscarPeriodoVenta.Image = global::SistemaLaObra.Properties.Resources.buscar;
+            this.btn_buscarPeriodoVenta.Location = new System.Drawing.Point(301, 29);
             this.btn_buscarPeriodoVenta.Name = "btn_buscarPeriodoVenta";
-            this.btn_buscarPeriodoVenta.Size = new System.Drawing.Size(75, 23);
+            this.btn_buscarPeriodoVenta.Size = new System.Drawing.Size(106, 42);
             this.btn_buscarPeriodoVenta.TabIndex = 5;
             this.btn_buscarPeriodoVenta.Text = "BUSCAR";
+            this.btn_buscarPeriodoVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_buscarPeriodoVenta.UseVisualStyleBackColor = false;
             this.btn_buscarPeriodoVenta.Click += new System.EventHandler(this.btn_buscarPeriodoVenta_Click);
             // 
             // dt_fechaHasta
             // 
-            this.dt_fechaHasta.Location = new System.Drawing.Point(64, 54);
+            this.dt_fechaHasta.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dt_fechaHasta.Location = new System.Drawing.Point(62, 41);
             this.dt_fechaHasta.Name = "dt_fechaHasta";
             this.dt_fechaHasta.Size = new System.Drawing.Size(212, 20);
             this.dt_fechaHasta.TabIndex = 4;
-            this.dt_fechaHasta.Value = new System.DateTime(2018, 7, 24, 0, 0, 0, 0);
+            this.dt_fechaHasta.Value = new System.DateTime(2020, 6, 8, 0, 0, 0, 0);
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 58);
+            this.label2.Location = new System.Drawing.Point(3, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 15);
             this.label2.TabIndex = 3;
@@ -205,53 +227,128 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.btn_buscarVenta);
-            this.groupBox3.Controls.Add(this.txt_nroVenta);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Location = new System.Drawing.Point(421, 12);
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.tableLayoutPanel2);
+            this.groupBox3.Location = new System.Drawing.Point(470, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(306, 92);
+            this.groupBox3.Size = new System.Drawing.Size(461, 101);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "VENTA ESPECIFICA";
             // 
             // btn_buscarVenta
             // 
+            this.btn_buscarVenta.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btn_buscarVenta.BackColor = System.Drawing.SystemColors.Control;
             this.btn_buscarVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_buscarVenta.Location = new System.Drawing.Point(195, 37);
+            this.btn_buscarVenta.Image = global::SistemaLaObra.Properties.Resources.buscar;
+            this.btn_buscarVenta.Location = new System.Drawing.Point(230, 29);
             this.btn_buscarVenta.Name = "btn_buscarVenta";
-            this.btn_buscarVenta.Size = new System.Drawing.Size(75, 23);
+            this.btn_buscarVenta.Size = new System.Drawing.Size(106, 42);
             this.btn_buscarVenta.TabIndex = 6;
             this.btn_buscarVenta.Text = "BUSCAR";
+            this.btn_buscarVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_buscarVenta.UseVisualStyleBackColor = false;
             this.btn_buscarVenta.Click += new System.EventHandler(this.btn_buscarVenta_Click);
             // 
             // txt_nroVenta
             // 
-            this.txt_nroVenta.Location = new System.Drawing.Point(9, 57);
+            this.txt_nroVenta.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_nroVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nroVenta.Location = new System.Drawing.Point(3, 39);
             this.txt_nroVenta.Name = "txt_nroVenta";
-            this.txt_nroVenta.Size = new System.Drawing.Size(144, 20);
+            this.txt_nroVenta.Size = new System.Drawing.Size(221, 22);
             this.txt_nroVenta.TabIndex = 1;
             this.txt_nroVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nroVenta_KeyPress);
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 29);
+            this.label3.Location = new System.Drawing.Point(3, 12);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 13);
+            this.label3.Size = new System.Drawing.Size(218, 13);
             this.label3.TabIndex = 0;
-            this.label3.Text = "INGRESAR NRO DE VENTA";
+            this.label3.Text = "INGRESAR NUMERO DE COMPROBANTE";
+            // 
+            // btn_aceptar
+            // 
+            this.btn_aceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_aceptar.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_aceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_aceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_aceptar.Image = global::SistemaLaObra.Properties.Resources.aceptarSeleccionar;
+            this.btn_aceptar.Location = new System.Drawing.Point(796, 547);
+            this.btn_aceptar.Name = "btn_aceptar";
+            this.btn_aceptar.Size = new System.Drawing.Size(150, 50);
+            this.btn_aceptar.TabIndex = 17;
+            this.btn_aceptar.Text = "Aceptar";
+            this.btn_aceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_aceptar.UseVisualStyleBackColor = false;
+            this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox3, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(934, 107);
+            this.tableLayoutPanel1.TabIndex = 18;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.btn_buscarVenta, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.txt_nroVenta, 0, 1);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 19);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.21053F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.78947F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(455, 76);
+            this.tableLayoutPanel2.TabIndex = 7;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.17945F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.38794F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.43261F));
+            this.tableLayoutPanel3.Controls.Add(this.btn_buscarPeriodoVenta, 2, 1);
+            this.tableLayoutPanel3.Controls.Add(this.dt_fechaHasta, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.dt_fechaDesde, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(6, 19);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(449, 76);
+            this.tableLayoutPanel3.TabIndex = 0;
             // 
             // IU_ConsultarVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(739, 454);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
+            this.ClientSize = new System.Drawing.Size(958, 609);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.btn_aceptar);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -259,12 +356,16 @@
             this.Name = "IU_ConsultarVenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "CONSULTAR VENTA";
+            this.Load += new System.EventHandler(this.IU_ConsultarVenta_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_listadoVentas)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -290,5 +391,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewButtonColumn Column7;
+        public System.Windows.Forms.Button btn_aceptar;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
     }
 }

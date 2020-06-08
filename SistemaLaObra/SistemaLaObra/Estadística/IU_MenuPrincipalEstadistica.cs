@@ -30,97 +30,12 @@ namespace SistemaLaObra.Estadística
 
 
         public IU_MenuPrincipal interfazContenedora { get; set; }
-
-        public IU_ReporteMensualVentas Iu_reporteVentasMensualVentas
-        {
-            get
-            {
-                return iu_reporteVentasMensualVentas;
-            }
-
-            set
-            {
-                iu_reporteVentasMensualVentas = value;
-            }
-        }
-
-        public IU_ReporteMensualEncargados ReporteMensualEncargados
-        {
-            get
-            {
-                return _reporteMensualEncargados;
-            }
-
-            set
-            {
-                _reporteMensualEncargados = value;
-            }
-        }
-
-        public IU_ReporteMensualClientes ReporteMensualClientes
-        {
-            get
-            {
-                return _reporteMensualClientes;
-            }
-
-            set
-            {
-                _reporteMensualClientes = value;
-            }
-        }
-
-        public IU_ReporteTopArticulos ReporteTopArticulos
-        {
-            get
-            {
-                return _reporteTopArticulos;
-            }
-
-            set
-            {
-                _reporteTopArticulos = value;
-            }
-        }
-
-        public IU_ReporteTopClientesXPeriodo ReporteTopClientePeriodo
-        {
-            get
-            {
-                return _reporteTopClientePeriodo;
-            }
-
-            set
-            {
-                _reporteTopClientePeriodo = value;
-            }
-        }
-
-        public IU_ReporteTopEncargadosXPeriodo ReporteTopEncargados
-        {
-            get
-            {
-                return _reporteTopEncargados;
-            }
-
-            set
-            {
-                _reporteTopEncargados = value;
-            }
-        }
-
-        public IU_ReporteAnualVentas ReporteAnualVentas
-        {
-            get
-            {
-                return _reporteAnualVentas;
-            }
-
-            set
-            {
-                _reporteAnualVentas = value;
-            }
-        }
+        public IU_ReporteMensualEncargados ReporteMensualEncargados { get; set; }
+        public IU_ReporteMensualClientes ReporteMensualClientes { get; set; }
+        public IU_ReporteTopArticulos ReporteTopArticulos { get; set; }
+        public IU_ReporteTopClientesXPeriodo ReporteTopClientePeriodo { get; set; }
+        public IU_ReporteTopEncargadosXPeriodo ReporteTopEncargados { get; set; }
+        public IU_ReporteAnualVentas ReporteAnualVentas { get; set; }
 
         public IU_MenuPrincipalEstadistica()
         {
@@ -130,45 +45,45 @@ namespace SistemaLaObra.Estadística
         private void btnReporteMensualVentas_Click(object sender, EventArgs e)
         {
             IU_ReporteMensualVentas reporteVentas = new IU_ReporteMensualVentas();
-            reporteVentas.Show();
+            reporteVentas.ShowDialog();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             ReporteAnualVentas = new IU_ReporteAnualVentas();
-            ReporteAnualVentas.Show();
+            ReporteAnualVentas.ShowDialog();
         }
 
         private void btn_InformeMensualCliente_Click(object sender, EventArgs e)
         {
             ReporteMensualClientes = new IU_ReporteMensualClientes();
-            ReporteMensualClientes.Show();
+            ReporteMensualClientes.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             ReporteTopClientePeriodo = new IU_ReporteTopClientesXPeriodo();
-            ReporteTopClientePeriodo.Show();
+            ReporteTopClientePeriodo.ShowDialog();
         }
 
         private void btn_ReporteMensualEncargados_Click(object sender, EventArgs e)
         {
 
             ReporteMensualEncargados = new IU_ReporteMensualEncargados();
-            ReporteMensualEncargados.Show();
+            ReporteMensualEncargados.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             ReporteTopEncargados = new IU_ReporteTopEncargadosXPeriodo();
-            ReporteTopEncargados.Show();
+            ReporteTopEncargados.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
 
             ReporteTopArticulos = new IU_ReporteTopArticulos();
-            ReporteTopArticulos.Show();
+            ReporteTopArticulos.ShowDialog();
         }
     }
 }

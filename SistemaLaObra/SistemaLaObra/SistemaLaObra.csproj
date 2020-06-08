@@ -952,6 +952,8 @@
     </Content>
     <Content Include="images\icono-ferreteria_32.ico" />
     <Content Include="images\icono-ferreteria_64.ico" />
+    <None Include="Resources\estadisticas_32.png" />
+    <None Include="Resources\cliente_32.png" />
     <None Include="Resources\icono-ferreteria_64.ico" />
     <None Include="Resources\icono-ferreteria_32.ico" />
     <None Include="Resources\Modelo_BajoStock2.JPG" />

@@ -20,90 +20,13 @@ namespace SistemaLaObra.Ventas
         //Instancias
         AccesoDatos acceso;
 
-        private int _codigoVenta;
-        private DateTime _fechaHora;
-        private float _importeTotal;
-        private int _codigoClienteMayorista;
-        private int _codigoEncargado;     
-        private List<DetalleVP> detalleVP;
+        public int CodigoVenta { get; set; }
+        public DateTime FechaHora { get; set; }
+        public float ImporteTotal { get; set; }
+        public int CodigoClienteMayorista { get; set; }
+        public int CodigoEncargado { get; set; }
+        public List<DetalleVP> DetalleVP { get; set; }
 
-        public int CodigoVenta
-        {
-            get
-            {
-                return _codigoVenta;
-            }
-
-            set
-            {
-                _codigoVenta = value;
-            }
-        }
-
-        public DateTime FechaHora
-        {
-            get
-            {
-                return _fechaHora;
-            }
-
-            set
-            {
-                _fechaHora = value;
-            }
-        }
-
-        public float ImporteTotal
-        {
-            get
-            {
-                return _importeTotal;
-            }
-
-            set
-            {
-                _importeTotal = value;
-            }
-        }
-
-        public int CodigoClienteMayorista
-        {
-            get
-            {
-                return _codigoClienteMayorista;
-            }
-
-            set
-            {
-                _codigoClienteMayorista = value;
-            }
-        }
-
-        public int CodigoEncargado
-        {
-            get
-            {
-                return _codigoEncargado;
-            }
-
-            set
-            {
-                _codigoEncargado = value;
-            }
-        }
-
-        public List<DetalleVP> DetalleVP
-        {
-            get
-            {
-                return detalleVP;
-            }
-
-            set
-            {
-                detalleVP = value;
-            }
-        }
 
         public Venta()
         {
