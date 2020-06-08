@@ -30,17 +30,11 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_RegistrarVenta));
-            this.label2 = new System.Windows.Forms.Label();
-            this.txt_descripcion = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbl_importeTotal = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cbx_formaPago = new System.Windows.Forms.ComboBox();
-            this.txt_cantidad = new System.Windows.Forms.TextBox();
             this.dgv_productos = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,15 +45,6 @@
             this.lbl_cargoEnvio = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.gb_productos = new System.Windows.Forms.GroupBox();
-            this.dgv_articulosDisponibles = new System.Windows.Forms.DataGridView();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_cargar = new System.Windows.Forms.Button();
             this.btn_quitarArticulo = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -93,9 +78,9 @@
             this.txt_razonSocial = new System.Windows.Forms.TextBox();
             this.btn_buscarDatos = new System.Windows.Forms.Button();
             this.lbl_cliente = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_productos)).BeginInit();
             this.gb_productos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_articulosDisponibles)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -103,37 +88,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.gb_tipoCliente.SuspendLayout();
             this.gb_cliente.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 37);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Descripcion:";
-            // 
-            // txt_descripcion
-            // 
-            this.txt_descripcion.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txt_descripcion.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txt_descripcion.Location = new System.Drawing.Point(87, 34);
-            this.txt_descripcion.Name = "txt_descripcion";
-            this.txt_descripcion.Size = new System.Drawing.Size(741, 21);
-            this.txt_descripcion.TabIndex = 5;
-            this.txt_descripcion.TextChanged += new System.EventHandler(this.txt_descripcion_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 191);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 15);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Ingrese cantidad";
             // 
             // label4
             // 
@@ -181,14 +137,6 @@
             this.cbx_formaPago.TabIndex = 11;
             this.cbx_formaPago.SelectedIndexChanged += new System.EventHandler(this.cbx_formaPago_SelectedIndexChanged);
             // 
-            // txt_cantidad
-            // 
-            this.txt_cantidad.Location = new System.Drawing.Point(110, 188);
-            this.txt_cantidad.Name = "txt_cantidad";
-            this.txt_cantidad.Size = new System.Drawing.Size(116, 21);
-            this.txt_cantidad.TabIndex = 6;
-            this.txt_cantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cantidad_KeyPress);
-            // 
             // dgv_productos
             // 
             this.dgv_productos.AllowUserToAddRows = false;
@@ -212,7 +160,7 @@
             this.Column5,
             this.Column6,
             this.Column7});
-            this.dgv_productos.Location = new System.Drawing.Point(5, 224);
+            this.dgv_productos.Location = new System.Drawing.Point(5, 75);
             this.dgv_productos.MultiSelect = false;
             this.dgv_productos.Name = "dgv_productos";
             this.dgv_productos.ReadOnly = true;
@@ -220,7 +168,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgv_productos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_productos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_productos.Size = new System.Drawing.Size(823, 220);
+            this.dgv_productos.Size = new System.Drawing.Size(823, 369);
             this.dgv_productos.TabIndex = 19;
             this.dgv_productos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_productos_CellDoubleClick);
             // 
@@ -289,14 +237,8 @@
             // 
             // gb_productos
             // 
-            this.gb_productos.Controls.Add(this.dgv_articulosDisponibles);
-            this.gb_productos.Controls.Add(this.label3);
-            this.gb_productos.Controls.Add(this.label2);
-            this.gb_productos.Controls.Add(this.txt_cantidad);
-            this.gb_productos.Controls.Add(this.txt_descripcion);
+            this.gb_productos.Controls.Add(this.tableLayoutPanel1);
             this.gb_productos.Controls.Add(this.dgv_productos);
-            this.gb_productos.Controls.Add(this.btn_cargar);
-            this.gb_productos.Controls.Add(this.btn_quitarArticulo);
             this.gb_productos.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.gb_productos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_productos.Location = new System.Drawing.Point(12, 77);
@@ -304,105 +246,15 @@
             this.gb_productos.Size = new System.Drawing.Size(835, 455);
             this.gb_productos.TabIndex = 20;
             this.gb_productos.TabStop = false;
-            this.gb_productos.Text = "CARGA VENTAS DE PRODUCTOS";
-            // 
-            // dgv_articulosDisponibles
-            // 
-            this.dgv_articulosDisponibles.AllowUserToAddRows = false;
-            this.dgv_articulosDisponibles.AllowUserToDeleteRows = false;
-            this.dgv_articulosDisponibles.AllowUserToOrderColumns = true;
-            this.dgv_articulosDisponibles.AllowUserToResizeRows = false;
-            this.dgv_articulosDisponibles.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_articulosDisponibles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_articulosDisponibles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_articulosDisponibles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column8,
-            this.Column9,
-            this.Column10,
-            this.Column11,
-            this.Column12,
-            this.Column13,
-            this.Column14,
-            this.Column15});
-            this.dgv_articulosDisponibles.Location = new System.Drawing.Point(6, 65);
-            this.dgv_articulosDisponibles.Name = "dgv_articulosDisponibles";
-            this.dgv_articulosDisponibles.ReadOnly = true;
-            this.dgv_articulosDisponibles.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgv_articulosDisponibles.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgv_articulosDisponibles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_articulosDisponibles.Size = new System.Drawing.Size(822, 106);
-            this.dgv_articulosDisponibles.TabIndex = 20;
-            // 
-            // Column8
-            // 
-            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column8.HeaderText = "Codigo de articulo";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column9.HeaderText = "Descripcion";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column10.HeaderText = "Marca";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            // 
-            // Column11
-            // 
-            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column11.HeaderText = "Proveedor";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            // 
-            // Column12
-            // 
-            this.Column12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column12.HeaderText = "Stock";
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            // 
-            // Column13
-            // 
-            this.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column13.HeaderText = "Udad. medida";
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            // 
-            // Column14
-            // 
-            this.Column14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column14.HeaderText = "Precio unitario";
-            this.Column14.Name = "Column14";
-            this.Column14.ReadOnly = true;
-            // 
-            // Column15
-            // 
-            this.Column15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column15.HeaderText = "Precio coste";
-            this.Column15.Name = "Column15";
-            this.Column15.ReadOnly = true;
+            this.gb_productos.Text = "CARGA VENTA DE PRODUCTOS";
             // 
             // btn_cargar
             // 
+            this.btn_cargar.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btn_cargar.BackColor = System.Drawing.SystemColors.Control;
             this.btn_cargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cargar.Image = global::SistemaLaObra.Properties.Resources.cargar;
-            this.btn_cargar.Location = new System.Drawing.Point(232, 178);
+            this.btn_cargar.Location = new System.Drawing.Point(473, 4);
             this.btn_cargar.Name = "btn_cargar";
             this.btn_cargar.Size = new System.Drawing.Size(136, 40);
             this.btn_cargar.TabIndex = 7;
@@ -413,11 +265,12 @@
             // 
             // btn_quitarArticulo
             // 
+            this.btn_quitarArticulo.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btn_quitarArticulo.BackColor = System.Drawing.SystemColors.Control;
             this.btn_quitarArticulo.Enabled = false;
             this.btn_quitarArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_quitarArticulo.Image = global::SistemaLaObra.Properties.Resources.quitar;
-            this.btn_quitarArticulo.Location = new System.Drawing.Point(689, 178);
+            this.btn_quitarArticulo.Location = new System.Drawing.Point(676, 4);
             this.btn_quitarArticulo.Name = "btn_quitarArticulo";
             this.btn_quitarArticulo.Size = new System.Drawing.Size(140, 40);
             this.btn_quitarArticulo.TabIndex = 8;
@@ -800,6 +653,22 @@
             this.lbl_cliente.TabIndex = 10;
             this.lbl_cliente.Text = "Venta Minorista";
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.btn_quitarArticulo, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btn_cargar, 2, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 20);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(819, 49);
+            this.tableLayoutPanel1.TabIndex = 20;
+            // 
             // IU_RegistrarVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -836,8 +705,6 @@
             this.Load += new System.EventHandler(this.IU_RegistrarVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_productos)).EndInit();
             this.gb_productos.ResumeLayout(false);
-            this.gb_productos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_articulosDisponibles)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -849,14 +716,13 @@
             this.gb_tipoCliente.PerformLayout();
             this.gb_cliente.ResumeLayout(false);
             this.gb_cliente.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -866,15 +732,12 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label11;
-        public System.Windows.Forms.DataGridView dgv_articulosDisponibles;
         public System.Windows.Forms.Label lbl_cargoEnvio;
         public System.Windows.Forms.Label lbl_cantidadEnvios;
         public System.Windows.Forms.Button btn_detallesEnvioDomicilio;
         public System.Windows.Forms.Label lbl_subTotal;
         private System.Windows.Forms.Label label9;
         public System.Windows.Forms.CheckBox ch_cargoEnvio;
-        public System.Windows.Forms.TextBox txt_descripcion;
-        public System.Windows.Forms.TextBox txt_cantidad;
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.ComboBox cbx_formaPago;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -889,14 +752,6 @@
         public System.Windows.Forms.Label lbl_saldoAPagar;
         private System.Windows.Forms.Label label10;
         public System.Windows.Forms.Button btn_cargar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -915,6 +770,7 @@
         public System.Windows.Forms.RadioButton rb_clienteMayorista;
         public System.Windows.Forms.GroupBox gb_tipoCliente;
         public System.Windows.Forms.Button btn_registrarVenta;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
 

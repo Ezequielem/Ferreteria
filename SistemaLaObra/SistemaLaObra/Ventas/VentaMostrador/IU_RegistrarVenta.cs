@@ -55,24 +55,10 @@ namespace SistemaLaObra
 
         private void btn_cargar_Click(object sender, EventArgs e)
         {
-            if (!validacion.campoVacio(txt_cantidad.Text))
-            {
-                if (dgv_articulosDisponibles.Rows.Count != 0)
-                {
-                    controlador.buscarDatosArticulos(int.Parse(dgv_articulosDisponibles.CurrentRow.Cells[0].Value.ToString()));
-                    tomarCantidadArticulo();
-                    rb_clienteMayorista.Enabled = false;
-                    rb_clienteMinorista.Enabled = false;
-                }
-                else
-                {
-                    MessageBox.Show("No tiene un articulo seleccionado","Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-            }
-            else
-            {
-                MessageBox.Show("No ingreso una cantidad","Advertencia",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
+            rb_clienteMayorista.Enabled = false;
+            rb_clienteMinorista.Enabled = false;
+            IU_CargaArticulo interfaz = new IU_CargaArticulo(controlador);
+            interfaz.ShowDialog();
         }
 
         private void btn_quitarArticulo_Click(object sender, EventArgs e)
@@ -128,18 +114,11 @@ namespace SistemaLaObra
             }
         }
 
-        private void txt_cantidad_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validacion.soloNumeros(e);
-        }
-
         private void cbx_formaPago_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbx_formaPago.SelectedIndex == 2)
             {
                 btn_cobroTarjeta.Enabled = true;
-                txt_descripcion.Enabled = false;
-                txt_cantidad.Enabled = false;
                 btn_cargar.Enabled = false;
                 btn_quitarArticulo.Enabled = false;
                 btn_envioDomicilio.Enabled = false;
@@ -155,8 +134,6 @@ namespace SistemaLaObra
             else
             {
                 btn_cobroTarjeta.Enabled = false;
-                txt_descripcion.Enabled = true;
-                txt_cantidad.Enabled = true;
                 btn_cargar.Enabled = true;
                 btn_quitarArticulo.Enabled = true;
                 btn_envioDomicilio.Enabled = true;
@@ -172,16 +149,6 @@ namespace SistemaLaObra
         }
 
         //METODOS//
-
-        private void tomarDescripcionArticulo()
-        {
-            controlador.articuloSolicitado(txt_descripcion.Text);
-        }
-
-        private void tomarCantidadArticulo()
-        {
-            controlador.cantidadSolicitada(int.Parse(txt_cantidad.Text));
-        }
 
         public void mostrarImporteTotal()
         {
@@ -274,14 +241,6 @@ namespace SistemaLaObra
             IU_InfoTarjeta formInfo = new IU_InfoTarjeta(controlador.listaTarjeta);
             formInfo.ShowDialog();
 
-        }
-
-        private void txt_descripcion_TextChanged(object sender, EventArgs e)
-        {
-            if (!validacion.campoVacio(txt_descripcion.Text))
-            {
-                tomarDescripcionArticulo();
-            }
         }
 
         private void ch_cargoEnvio_CheckedChanged(object sender, EventArgs e)

@@ -129,31 +129,6 @@ namespace SistemaLaObra
             return formaPago.mostrarDatosColeccion();
         }
 
-        public void completar_dgvArticulosDisponibles(string descripcion)
-        {
-            InterfazVenta.dgv_articulosDisponibles.Rows.Clear();
-
-            List<int> codigoArticulos = new List<int>();
-            codigoArticulos = articulo.buscarListaDeArticulos(descripcion);
-            foreach (var item in codigoArticulos)
-            {
-                articulo.mostrarDatos(item);
-                InterfazVenta.dgv_articulosDisponibles.Rows.Add(articulo.CodigoArticulo,
-                                                                articulo.Descripcion,
-                                                                articulo.buscarNombreMarca(articulo.CodigoMarca),
-                                                                articulo.buscarNombreProveedor(articulo.conocerProveedor(item)),
-                                                                articulo.Stock,
-                                                                articulo.buscarNombreUdadMedida(articulo.CodigoUnidadesDeMedida),
-                                                                articulo.PrecioUnitario,
-                                                                articulo.PrecioCoste);
-            }
-        }
-
-        public void articuloSolicitado(string descripcion)
-        {
-            completar_dgvArticulosDisponibles(descripcion);
-        }
-
         public void cantidadSolicitada(int cantidad)
         {
             this.cantidad = cantidad;
@@ -177,8 +152,6 @@ namespace SistemaLaObra
                 InterfazVenta.mostrarOpcionEnvioDomicilio();
                 InterfazVenta.mostrarOpcionPago();
                 InterfazVenta.mostrarOpcionRegistrarVenta();
-                InterfazVenta.txt_descripcion.Text = "";
-                InterfazVenta.txt_cantidad.Text = "";
                 return true;
             }
             else
