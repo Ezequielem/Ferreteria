@@ -65,37 +65,5 @@ namespace SistemaLaObra.Ventas.CobroConTarjeta
             }
 
         }
-
-
-      /*  private int obtenerCodigoBanco()
-        {
-            try
-            {
-                conexion = new SqlConnection(acceso.CadenaConexion());
-                conexion.Open();
-                consulta = new SqlCommand("select codigoBanco from Bancos where descripcion='" + nombreBanco + "'", conexion);
-                lector = consulta.ExecuteReader();
-                if (lector.Read())
-                {
-                    return int.Parse(lector["codigoBanco"].ToString());
-                }
-                else
-                {
-                    return 0;
-                }
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show(error.ToString());
-                return 0;
-            }
-            finally
-            {
-                lector.Close();
-                conexion.Close();
-            }
-
-        }
-        */
     }
 }

@@ -25,98 +25,14 @@ namespace SistemaLaObra.Ventas.Presupuesto
         float _importeTotal;
         int _codigoClienteMayorista;
         int _codigoEncargado;
-   
-        
-        public int CodigoPresupuesto
-        {
-            get
-            {
-                return _codigoPresupuesto;
-            }
 
-            set
-            {
-                _codigoPresupuesto = value;
-            }
-        }
-
-        public string NombreCliente
-        {
-            get
-            {
-                return _nombreCliente;
-            }
-
-            set
-            {
-                _nombreCliente = value;
-            }
-        }
-
-        public DateTime Fecha
-        {
-            get
-            {
-                return _fecha;
-            }
-
-            set
-            {
-                _fecha = value;
-            }
-        }
-
-        public DateTime FechaVencimiento
-        {
-            get
-            {
-                return _fechaVencimiento;
-            }
-
-            set
-            {
-                _fechaVencimiento = value;
-            }
-        }
-
-        public float ImporteTotal
-        {
-            get
-            {
-                return _importeTotal;
-            }
-
-            set
-            {
-                _importeTotal = value;
-            }
-        }
-
-        public int CodigoClienteMayorista
-        {
-            get
-            {
-                return _codigoClienteMayorista;
-            }
-
-            set
-            {
-                _codigoClienteMayorista = value;
-            }
-        }
-
-        public int CodigoEncargado
-        {
-            get
-            {
-                return _codigoEncargado;
-            }
-
-            set
-            {
-                _codigoEncargado = value;
-            }
-        }
+        public int CodigoPresupuesto { get; set; }
+        public string NombreCliente { get; set; }
+        public DateTime Fecha { get; set; }
+        public DateTime FechaVencimiento { get; set; }
+        public float ImporteTotal { get; set; }
+        public int CodigoClienteMayorista { get; set; }
+        public int CodigoEncargado { get; set; }
 
         public Presupuesto()
         {

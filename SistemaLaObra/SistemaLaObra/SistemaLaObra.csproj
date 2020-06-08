@@ -550,7 +550,7 @@
     <Compile Include="Ventas\RegistrarNotaDeCredito\IU_RegistrarNotaCredito.Designer.cs">
       <DependentUpon>IU_RegistrarNotaCredito.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventas\RegistrarNotaDeCredito\NotaCredito.cs" />
+    <Compile Include="Modelo\NotaCredito.cs" />
     <Compile Include="Ventas\RegistrarOrdenDeRemito\Controlador_RegistrarOrden.cs" />
     <Compile Include="Ventas\RegistrarOrdenDeRemito\IU_DatosDialogo.cs">
       <SubType>Form</SubType>
@@ -628,7 +628,7 @@
     </Compile>
     <Compile Include="Ventas\VentaMostrador\Controlador_Venta.cs" />
     <Compile Include="Ventas\VentaMayorista\Controlador_VentaMayorista.cs" />
-    <Compile Include="Ventas\DetalleVP.cs" />
+    <Compile Include="Modelo\DetalleVP.cs" />
     <Compile Include="Ventas\IU_MenuPrincipalVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -647,10 +647,10 @@
     <Compile Include="IU_VistaPrevia.Designer.cs">
       <DependentUpon>IU_VistaPrevia.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventas\Presupuesto\Presupuesto.cs" />
+    <Compile Include="Modelo\Presupuesto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ventas\Venta.cs" />
+    <Compile Include="Modelo\Venta.cs" />
     <Compile Include="Ventas\VentaMostrador\IU_CargaArticulo.cs">
       <SubType>Form</SubType>
     </Compile>

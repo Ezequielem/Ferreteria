@@ -17,121 +17,17 @@ namespace SistemaLaObra
         SqlCommand consulta;
         SqlDataReader lector;
         SqlDataAdapter adaptador;
-
         AccesoDatos acceso;
         Articulo articulo;
 
-        private int _codigoDetalleVP;
-        private int _codigoArticulo;
-        private float _precioUnitario;
-        private int _cantidad;
-        private int _codigoVenta;
-        private int _codigoPresupuesto;
-        private int _codigoNotaCredito;
-        private int _cantidadDevuelta;
-
-        public int CodigoDetalleVP
-        {
-            get
-            {
-                return _codigoDetalleVP;
-            }
-
-            set
-            {
-                _codigoDetalleVP = value;
-            }
-        }
-
-        public int CodigoArticulo
-        {
-            get
-            {
-                return _codigoArticulo;
-            }
-
-            set
-            {
-                _codigoArticulo = value;
-            }
-        }
-
-        public float PrecioUnitario
-        {
-            get
-            {
-                return _precioUnitario;
-            }
-
-            set
-            {
-                _precioUnitario = value;
-            }
-        }
-
-        public int Cantidad
-        {
-            get
-            {
-                return _cantidad;
-            }
-
-            set
-            {
-                _cantidad = value;
-            }
-        }
-
-        public int CodigoVenta
-        {
-            get
-            {
-                return _codigoVenta;
-            }
-
-            set
-            {
-                _codigoVenta = value;
-            }
-        }
-
-        public int CodigoPresupuesto
-        {
-            get
-            {
-                return _codigoPresupuesto;
-            }
-
-            set
-            {
-                _codigoPresupuesto = value;
-            }
-        }
-
-        public int CodigoNotaCredito
-        {
-            get
-            {
-                return _codigoNotaCredito;
-            }
-
-            set
-            {
-                _codigoNotaCredito = value;
-            } 
-        }
-
-        public int CantidadDevuelta
-        {
-            get
-            {
-                return _cantidadDevuelta;
-            }
-            set
-            {
-                _cantidadDevuelta = value;
-            }
-        }
+        public int CodigoDetalleVP { get; set; }
+        public int CodigoArticulo { get; set; }
+        public float PrecioUnitario { get; set; }
+        public int Cantidad { get; set; }
+        public int CodigoVenta { get; set; }
+        public int CodigoPresupuesto { get; set; }
+        public int CodigoNotaCredito { get; set; }
+        public int CantidadDevuelta { get; set; }
 
         public DetalleVP()
         {
