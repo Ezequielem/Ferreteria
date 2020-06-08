@@ -14,7 +14,6 @@ namespace SistemaLaObra.Soporte
     {
         //INSTANCIAS
         private Validaciones validar;
-        private Ubicacion _ubicacion;
 
         public Ubicacion Ubicacion { get; set; }
 

@@ -347,10 +347,10 @@ namespace SistemaLaObra
             txt_razonSocial.Text = "";
         }
 
-        private void dgv_articulosDisponibles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dgv_productos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             IU_DetalleArticulo interfaz = new IU_DetalleArticulo();
-            interfaz.opcionDetalle(int.Parse(dgv_articulosDisponibles.CurrentRow.Cells[0].Value.ToString()));
+            interfaz.opcionDetalle(int.Parse(dgv_productos.CurrentRow.Cells[0].Value.ToString()));
             interfaz.ShowDialog();
         }
         //////////////////
