@@ -27,25 +27,20 @@ namespace SistemaLaObra.Compras.RegistrarProveedor
 
         private void btn_Registrar_Click(object sender, EventArgs e)
         {
-            if (txt_RazonSocial.Text == "")
+            if (validaciones.campoVacio(txt_RazonSocial.Text))
             {
                 MessageBox.Show("El campo Razon Social no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txt_RazonSocial.Focus();
             }
-            else if (txt_CuentaCorriente.Text == "")
+            else if (validaciones.campoVacio(txt_nombreFantasia.Text))
             {
-                MessageBox.Show("El campo Cuenta Corriente no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txt_CuentaCorriente.Focus();
+                MessageBox.Show("El campo Nombre de fantasía no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txt_nombreFantasia.Focus();
             }
-            else if (txt_NumeroTelefono.Text == "")
+            else if (validaciones.campoVacio(txt_Cuit.Text))
             {
-                MessageBox.Show("El campo Numero de telefono 1 no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txt_NumeroTelefono.Focus();
-            }
-            else if (txt_NumeroTelefono2.Text == "")
-            {
-                MessageBox.Show("El campo Numero de telefono 2 no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txt_NumeroTelefono2.Focus();
+                MessageBox.Show("El campo CUIT no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txt_Cuit.Focus();
             }
             else if (txt_Barrio.Text == "")
             {
@@ -70,6 +65,7 @@ namespace SistemaLaObra.Compras.RegistrarProveedor
             else if (controladorProveedor.verificarExistencia(long.Parse(txt_Cuit.Text)))
             {
                 MessageBox.Show("El numero de cuit ingresado ya existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txt_Cuit.Focus();
             }
             else
             {
@@ -88,7 +84,7 @@ namespace SistemaLaObra.Compras.RegistrarProveedor
 
         public void tomarNumeroCuit()
         {
-            controladorProveedor.numeroCuitIngresado(long.Parse(txt_Cuit.Text));
+            controladorProveedor.numeroCuitIngresado(txt_Cuit.Text);
         }
 
         public void tomarRazonSocial()
@@ -103,7 +99,7 @@ namespace SistemaLaObra.Compras.RegistrarProveedor
 
         public void tomarCuentaCorriente()
         {
-            controladorProveedor.cuentaCorrienteIngresada(long.Parse(txt_CuentaCorriente.Text));
+            controladorProveedor.cuentaCorrienteIngresada(txt_CuentaCorriente.Text);
         }
 
         public void tomarTipoTelefono1()
@@ -113,7 +109,7 @@ namespace SistemaLaObra.Compras.RegistrarProveedor
 
         public void tomarNumeroTelefono1()
         {
-            controladorProveedor.numeroTelefono1Ingresado(long.Parse(txt_NumeroTelefono.Text));
+            controladorProveedor.numeroTelefono1Ingresado(txt_NumeroTelefono.Text);
         }
 
         public void tomarTipoTelefono2()
@@ -123,7 +119,7 @@ namespace SistemaLaObra.Compras.RegistrarProveedor
 
         public void tomarNumeroTelefono2()
         {
-            controladorProveedor.numeroTelefono2Ingresado(long.Parse(txt_NumeroTelefono2.Text));
+            controladorProveedor.numeroTelefono2Ingresado(txt_NumeroTelefono2.Text);
         }
 
         public void tomarProvincia()
@@ -153,12 +149,37 @@ namespace SistemaLaObra.Compras.RegistrarProveedor
 
         public void tomarNumeroDomicilio()
         {
-            controladorProveedor.numeroDomicilioIngresado(int.Parse(txt_NumeroCalle.Text));
+            controladorProveedor.numeroDomicilioIngresado(txt_NumeroCalle.Text);
         }
 
         public void tomarCodigoPostal()
         {
-            controladorProveedor.codigoPostalIngresado(int.Parse(txt_CPostal.Text));
+            controladorProveedor.codigoPostalIngresado(txt_CPostal.Text);
+        }
+
+        public void tomarNombreFantasia()
+        {
+            controladorProveedor.nombreFantasiaTomado(txt_nombreFantasia.Text);
+        }
+
+        public void tomarNombreContacto1()
+        {
+            controladorProveedor.nombreContacto1Tomado(txt_nombreContacto1.Text);
+        }
+
+        public void tomarCargoContacto1()
+        {
+            controladorProveedor.nombreCargoContacto1Tomado(txt_cargoContacto1.Text);
+        }
+
+        public void tomarNombreContacto2()
+        {
+            controladorProveedor.nombreContacto2Tomado(txt_nombreContacto2.Text);
+        }
+
+        public void tomarCargoContacto2()
+        {
+            controladorProveedor.nombreCargoContacto2Tomado(txt_cargoContacto2.Text);
         }
 
         public void cargarDatosBanco()
@@ -213,8 +234,13 @@ namespace SistemaLaObra.Compras.RegistrarProveedor
         {
             tomarNumeroCuit();
             tomarRazonSocial();
+            tomarNombreFantasia();
             tomarBanco();
             tomarCuentaCorriente();
+            tomarNombreContacto1();
+            tomarCargoContacto1();
+            tomarNombreContacto2();
+            tomarCargoContacto2();
             tomarTipoTelefono1();
             tomarNumeroTelefono1();
             tomarTipoTelefono2();
@@ -232,6 +258,7 @@ namespace SistemaLaObra.Compras.RegistrarProveedor
 
         private void IU_RegistrarProveedor_Load(object sender, EventArgs e)
         {
+            txt_Cuit.Focus();
             cargarDatosBanco();
             cargarDatosTiposTelefonos();
             cargarDatosProvincias();

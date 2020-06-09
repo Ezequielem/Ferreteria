@@ -33,6 +33,7 @@
             this.btn_registrar = new System.Windows.Forms.Button();
             this.btn_modificar = new System.Windows.Forms.Button();
             this.btn_salir = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.gb_articulo = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txt_filtro = new System.Windows.Forms.TextBox();
@@ -45,12 +46,11 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.gb_articulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_proveedores)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -59,10 +59,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.btn_registrar, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.btn_modificar, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.btn_salir, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btn_registrar, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btn_modificar, 0, 4);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(765, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
@@ -82,7 +82,7 @@
             this.btn_registrar.BackColor = System.Drawing.SystemColors.Control;
             this.btn_registrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_registrar.Image = global::SistemaLaObra.Properties.Resources.registrar;
-            this.btn_registrar.Location = new System.Drawing.Point(10, 82);
+            this.btn_registrar.Location = new System.Drawing.Point(10, 147);
             this.btn_registrar.Name = "btn_registrar";
             this.btn_registrar.Size = new System.Drawing.Size(140, 50);
             this.btn_registrar.TabIndex = 8;
@@ -97,7 +97,7 @@
             this.btn_modificar.BackColor = System.Drawing.SystemColors.Control;
             this.btn_modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_modificar.Image = global::SistemaLaObra.Properties.Resources.actualizar;
-            this.btn_modificar.Location = new System.Drawing.Point(10, 212);
+            this.btn_modificar.Location = new System.Drawing.Point(10, 277);
             this.btn_modificar.Name = "btn_modificar";
             this.btn_modificar.Size = new System.Drawing.Size(140, 50);
             this.btn_modificar.TabIndex = 9;
@@ -120,6 +120,16 @@
             this.btn_salir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_salir.UseVisualStyleBackColor = false;
             this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox2.Image = global::SistemaLaObra.Properties.Resources.proveedores_64;
+            this.pictureBox2.Location = new System.Drawing.Point(44, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
             // 
             // gb_articulo
             // 
@@ -148,6 +158,7 @@
             // 
             // txt_filtro
             // 
+            this.txt_filtro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_filtro.Location = new System.Drawing.Point(120, 426);
             this.txt_filtro.Multiline = true;
             this.txt_filtro.Name = "txt_filtro";
@@ -244,16 +255,6 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Filtrar por nombre:";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.Image = global::SistemaLaObra.Properties.Resources.proveedores_64;
-            this.pictureBox2.Location = new System.Drawing.Point(44, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
-            // 
             // IU_ConsultarProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -269,11 +270,11 @@
             this.Text = "CONSULTAR PROVEEDOR";
             this.Load += new System.EventHandler(this.IU_ConsultarProveedor_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.gb_articulo.ResumeLayout(false);
             this.gb_articulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_proveedores)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -37,7 +37,7 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
 
         }
 
-        public void numeroCuitIngresado(long cuit)
+        public void numeroCuitIngresado(string cuit)
         {
             Proveedor.Cuit = cuit;
         }
@@ -52,7 +52,7 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
             Proveedor.Banco = banco;
         }
 
-        public void cuentaCorrienteIngresada(long cc)
+        public void cuentaCorrienteIngresada(string cc)
         {
             Proveedor.NroCuentaCorriente = cc;
         }
@@ -62,7 +62,7 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
             Proveedor.TipoTelefonoUno = tipoTel;
         }
 
-        public void numeroTelefono1Ingresado(long telefono)
+        public void numeroTelefono1Ingresado(string telefono)
         {
             Proveedor.NumeroDeTelefonoUno = telefono;
         }
@@ -72,7 +72,7 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
             Proveedor.TipoTelefonoDos = tipoTel;
         }
 
-        public void numeroTelefono2Ingresado(long telefono)
+        public void numeroTelefono2Ingresado(string telefono)
         {
             Proveedor.NumeroDeTelefonoDos = telefono;
         }
@@ -103,12 +103,12 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
             Proveedor.Calle = calle;
         }
 
-        public void numeroDomicilioIngresado(int numeroDomicilio)
+        public void numeroDomicilioIngresado(string numeroDomicilio)
         {
             Proveedor.NumeroCasa = numeroDomicilio;
         }
 
-        public void codigoPostalIngresado(int codPostal)
+        public void codigoPostalIngresado(string codPostal)
         {
             Proveedor.CodigoPostal = codPostal;
         }

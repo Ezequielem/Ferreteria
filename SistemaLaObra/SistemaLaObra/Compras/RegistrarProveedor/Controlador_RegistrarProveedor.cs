@@ -27,7 +27,7 @@ namespace SistemaLaObra.Compras.RegistrarProveedor
 
         //METODOS
 
-        public void numeroCuitIngresado(long cuit)
+        public void numeroCuitIngresado(string cuit)
         {
             Proveedor.Cuit = cuit;
         }
@@ -42,7 +42,7 @@ namespace SistemaLaObra.Compras.RegistrarProveedor
             Proveedor.Banco = banco;
         }
 
-        public void cuentaCorrienteIngresada(long cc)
+        public void cuentaCorrienteIngresada(string cc)
         {
             Proveedor.NroCuentaCorriente = cc;
         }
@@ -52,7 +52,7 @@ namespace SistemaLaObra.Compras.RegistrarProveedor
             Proveedor.TipoTelefonoUno = tipoTel;
         }
 
-        public void numeroTelefono1Ingresado(long telefono)
+        public void numeroTelefono1Ingresado(string telefono)
         {
             Proveedor.NumeroDeTelefonoUno = telefono;
         }
@@ -62,7 +62,7 @@ namespace SistemaLaObra.Compras.RegistrarProveedor
             Proveedor.TipoTelefonoDos = tipoTel;
         }
 
-        public void numeroTelefono2Ingresado(long telefono)
+        public void numeroTelefono2Ingresado(string telefono)
         {
             Proveedor.NumeroDeTelefonoDos = telefono;
         }
@@ -92,14 +92,39 @@ namespace SistemaLaObra.Compras.RegistrarProveedor
             Proveedor.Calle = calle;
         }
 
-        public void numeroDomicilioIngresado(int numeroDomicilio)
+        public void numeroDomicilioIngresado(string numeroDomicilio)
         {
             Proveedor.NumeroCasa = numeroDomicilio;
         }
 
-        public void codigoPostalIngresado(int codPostal)
+        public void codigoPostalIngresado(string codPostal)
         {
             Proveedor.CodigoPostal = codPostal;
+        }
+
+        public void nombreFantasiaTomado(string nombre)
+        {
+            Proveedor.NombreFantasia = nombre;
+        }
+
+        public void nombreContacto1Tomado(string nombreContacto1)
+        {
+            Proveedor.NombreContactoUno = nombreContacto1;
+        }
+
+        public void nombreCargoContacto1Tomado(string nombreCargo1)
+        {
+            Proveedor.CargoContactoUno = nombreCargo1;
+        }
+
+        public void nombreContacto2Tomado(string nombreContacto2)
+        {
+            Proveedor.NombreContactoDos = nombreContacto2;
+        }
+
+        public void nombreCargoContacto2Tomado(string nombreCargo2)
+        {
+            Proveedor.CargoContactoDos = nombreCargo2;
         }
 
         public bool verificarExistencia(long cuit)

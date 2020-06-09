@@ -18,27 +18,27 @@ namespace SistemaLaObra
         SqlDataAdapter adaptador;
 
         public int CodigoProveedor { get; set; }
-        public long Cuit { get; set; }
+        public string Cuit { get; set; }
         public string NombreFantasia { get; set; }
         public string RazonSocial { get; set; }
         public string Banco { get; set; }
         public int CodigoBanco { get; set; }
-        public long NroCuentaCorriente { get; set; }
+        public string NroCuentaCorriente { get; set; }
         public string NombreContactoUno { get; set; }
         public string CargoContactoUno { get; set; }
         public string TipoTelefonoUno { get; set; }
-        public long NumeroDeTelefonoUno { get; set; }
+        public string NumeroDeTelefonoUno { get; set; }
         public string NombreContactoDos { get; set; }
         public string CargoContactoDos { get; set; }
         public string TipoTelefonoDos { get; set; }
-        public long NumeroDeTelefonoDos { get; set; }
+        public string NumeroDeTelefonoDos { get; set; }
         public string Calle { get; set; }
         public string Barrio { get; set; }
-        public int NumeroCasa { get; set; }
+        public string NumeroCasa { get; set; }
         public string Provincia { get; set; }
         public string Departamento { get; set; }
         public string Localidad { get; set; }
-        public int CodigoPostal { get; set; }
+        public string CodigoPostal { get; set; }
 
         public Proveedor()
         {
@@ -90,20 +90,20 @@ namespace SistemaLaObra
         
                 adaptador.InsertCommand = consulta;
                 adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoProveedor", SqlDbType.Int));
-                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@cuit", SqlDbType.BigInt));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@cuit", SqlDbType.VarChar));
                 adaptador.InsertCommand.Parameters.Add(new SqlParameter("@razonSocial", SqlDbType.VarChar));
                 adaptador.InsertCommand.Parameters.Add(new SqlParameter("@banco", SqlDbType.VarChar));
-                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nroCuentaCorriente", SqlDbType.BigInt));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nroCuentaCorriente", SqlDbType.VarChar));
                 adaptador.InsertCommand.Parameters.Add(new SqlParameter("@tipoTelefono1", SqlDbType.VarChar));
-                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nroTelefono1", SqlDbType.BigInt));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nroTelefono1", SqlDbType.VarChar));
                 adaptador.InsertCommand.Parameters.Add(new SqlParameter("@tipoTelefono2", SqlDbType.VarChar));
-                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nroTelefono2", SqlDbType.BigInt));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nroTelefono2", SqlDbType.VarChar));
                 adaptador.InsertCommand.Parameters.Add(new SqlParameter("@calle", SqlDbType.VarChar));
-                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@numero", SqlDbType.Int));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@numero", SqlDbType.VarChar));
                 adaptador.InsertCommand.Parameters.Add(new SqlParameter("@provincia", SqlDbType.VarChar));
                 adaptador.InsertCommand.Parameters.Add(new SqlParameter("@departamento", SqlDbType.VarChar));
                 adaptador.InsertCommand.Parameters.Add(new SqlParameter("@localidad", SqlDbType.VarChar));
-                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoPostal", SqlDbType.Int));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoPostal", SqlDbType.VarChar));
                 adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nombreBarrio", SqlDbType.VarChar));
 
                 adaptador.InsertCommand.Parameters["@codigoProveedor"].Value = objeto.CodigoProveedor;
@@ -147,25 +147,25 @@ namespace SistemaLaObra
                 SqlCommand alta = new SqlCommand("insert into Proveedores (codigoProveedor, cuit, razonSocial, nombreFantasia, banco, nroCuentaCorriente, nombreContactoUno, cargoContactoUno, tipoTelefono1, nroTelefono1, nombreContactoDos, cargoContactoDos, tipoTelefono2, nroTelefono2, calle, numero, provincia, departamento, localidad, codigoPostal, nombreBarrio) values (@codigoProveedor, @cuit, @razonSocial, @nombreFantasia, @banco, @nroCuentaCorriente, @nombreContactoUno, @cargoContactoUno, @tipoTelefono1, @nroTelefono1, @nombreContactoDos, @cargoContactoDos, @tipoTelefono2, @nroTelefono2, @calle, @numero, @provincia, @departamento, @localidad, @codigoPostal, @nombreBarrio)", conexion);
                 adaptador.InsertCommand = alta;
                 adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoProveedor", SqlDbType.Int));
-                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@cuit", SqlDbType.BigInt));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@cuit", SqlDbType.VarChar));
                 adaptador.InsertCommand.Parameters.Add(new SqlParameter("@razonSocial", SqlDbType.VarChar));
                 adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nombreFantasia", SqlDbType.VarChar));
                 adaptador.InsertCommand.Parameters.Add(new SqlParameter("@banco", SqlDbType.VarChar));
-                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nroCuentaCorriente", SqlDbType.BigInt));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nroCuentaCorriente", SqlDbType.VarChar));
                 adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nombreContactoUno", SqlDbType.VarChar));
                 adaptador.InsertCommand.Parameters.Add(new SqlParameter("@cargoContactoUno", SqlDbType.VarChar));
                 adaptador.InsertCommand.Parameters.Add(new SqlParameter("@tipoTelefono1", SqlDbType.VarChar));
-                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nroTelefono1", SqlDbType.BigInt));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nroTelefono1", SqlDbType.VarChar));
                 adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nombreContactoDos", SqlDbType.VarChar));
                 adaptador.InsertCommand.Parameters.Add(new SqlParameter("@cargoContactoDos", SqlDbType.VarChar));
                 adaptador.InsertCommand.Parameters.Add(new SqlParameter("@tipoTelefono2", SqlDbType.VarChar));
-                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nroTelefono2", SqlDbType.BigInt));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nroTelefono2", SqlDbType.VarChar));
                 adaptador.InsertCommand.Parameters.Add(new SqlParameter("@calle", SqlDbType.VarChar));
-                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@numero", SqlDbType.Int));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@numero", SqlDbType.VarChar));
                 adaptador.InsertCommand.Parameters.Add(new SqlParameter("@provincia", SqlDbType.VarChar));
                 adaptador.InsertCommand.Parameters.Add(new SqlParameter("@departamento", SqlDbType.VarChar));
                 adaptador.InsertCommand.Parameters.Add(new SqlParameter("@localidad", SqlDbType.VarChar));
-                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoPostal", SqlDbType.Int));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoPostal", SqlDbType.VarChar));
                 adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nombreBarrio", SqlDbType.VarChar));
 
                 adaptador.InsertCommand.Parameters["@codigoProveedor"].Value = objeto.CodigoProveedor;
@@ -241,7 +241,7 @@ namespace SistemaLaObra
             acceso = new AccesoDatos();
             conexion = new SqlConnection(acceso.CadenaConexion());
             adaptador = new SqlDataAdapter();
-            consulta = new SqlCommand("select codigoProveedor, cuit, razonSocial, nombreFantasia, banco, nroCuentaCorriente, nombreContactoUno, cargoContactoUno, tipoTelefono1, nombreContactoDos, cargoContactoDos, tipoTelefono2, nroTelefono2, calle, numero, provincia, departamento, localidad, codigoPostal, nombreBarrio from Proveedores WHERE codigoProveedor = '" + codigoProveedor + "'", conexion);
+            consulta = new SqlCommand("select codigoProveedor, cuit, razonSocial, nombreFantasia, banco, nroCuentaCorriente, nombreContactoUno, cargoContactoUno, tipoTelefono1, nroTelefono1, nombreContactoDos, cargoContactoDos, tipoTelefono2, nroTelefono2, calle, numero, provincia, departamento, localidad, codigoPostal, nombreBarrio from Proveedores WHERE codigoProveedor = '" + codigoProveedor + "'", conexion);
             try
             {
                 conexion.Open();
@@ -249,25 +249,25 @@ namespace SistemaLaObra
                 if (lector.Read())
                 {
                     CodigoProveedor = int.Parse(lector["codigoProveedor"].ToString());
-                    Cuit = long.Parse(lector["cuit"].ToString());
+                    Cuit = lector["cuit"].ToString();
                     RazonSocial = lector["razonSocial"].ToString();
                     NombreFantasia = lector["nombreFantasia"].ToString();
                     Banco = lector["banco"].ToString();
-                    NroCuentaCorriente = long.Parse(lector["nroCuentaCorriente"].ToString());
+                    NroCuentaCorriente = lector["nroCuentaCorriente"].ToString();
                     NombreContactoUno = lector["nombreContactoUno"].ToString();
                     CargoContactoUno = lector["cargoContactoUno"].ToString();
                     TipoTelefonoUno = lector["tipoTelefono1"].ToString();
-                    NumeroDeTelefonoUno = long.Parse(lector["nroTelefono1"].ToString());
+                    NumeroDeTelefonoUno = lector["nroTelefono1"].ToString();
                     NombreContactoDos = lector["nombreContactoDos"].ToString();
                     CargoContactoDos = lector["cargoContactoDos"].ToString();
                     TipoTelefonoDos = lector["tipoTelefono2"].ToString();
-                    NumeroDeTelefonoDos = long.Parse(lector["nroTelefono2"].ToString());
+                    NumeroDeTelefonoDos = lector["nroTelefono2"].ToString();
                     Calle = lector["calle"].ToString();
-                    NumeroCasa = int.Parse(lector["numero"].ToString());
+                    NumeroCasa = lector["numero"].ToString();
                     Provincia = lector["provincia"].ToString();
                     Departamento = lector["departamento"].ToString();
                     Localidad = lector["localidad"].ToString();
-                    CodigoPostal = int.Parse(lector["codigoPostal"].ToString());
+                    CodigoPostal = lector["codigoPostal"].ToString();
                     Barrio = lector["nombreBarrio"].ToString();
                 }
             }
@@ -297,20 +297,20 @@ namespace SistemaLaObra
                 if (lector.Read())
                 {
                     objeto.CodigoProveedor = int.Parse(lector["codigoProveedor"].ToString());
-                    objeto.Cuit = long.Parse(lector["cuit"].ToString());
+                    objeto.Cuit = lector["cuit"].ToString();
                     objeto.RazonSocial = lector["razonSocial"].ToString();
                     objeto.Banco = lector["banco"].ToString();
-                    objeto.NroCuentaCorriente = long.Parse(lector["nroCuentaCorriente"].ToString());
+                    objeto.NroCuentaCorriente = lector["nroCuentaCorriente"].ToString();
                     objeto.TipoTelefonoUno = lector["tipoTelefono1"].ToString();
-                    objeto.NumeroDeTelefonoUno = long.Parse(lector["nroTelefono1"].ToString());
+                    objeto.NumeroDeTelefonoUno = lector["nroTelefono1"].ToString();
                     objeto.TipoTelefonoDos = lector["tipoTelefono2"].ToString();
-                    objeto.NumeroDeTelefonoDos = long.Parse(lector["nroTelefono2"].ToString());
+                    objeto.NumeroDeTelefonoDos = lector["nroTelefono2"].ToString();
                     objeto.Calle = lector["calle"].ToString();
-                    objeto.NumeroCasa = int.Parse(lector["numero"].ToString());
+                    objeto.NumeroCasa = lector["numero"].ToString();
                     objeto.Provincia = lector["provincia"].ToString();
                     objeto.Departamento = lector["departamento"].ToString();
                     objeto.Localidad = lector["localidad"].ToString();
-                    objeto.CodigoPostal = int.Parse(lector["codigoPostal"].ToString());
+                    objeto.CodigoPostal = lector["codigoPostal"].ToString();
                     objeto.Barrio = lector["nombreBarrio"].ToString();
                 }
                 return objeto;
@@ -327,7 +327,7 @@ namespace SistemaLaObra
             }
         }
 
-        public int mostrarCodigoProveedor (long cuit)
+        public int mostrarCodigoProveedor (string cuit)
         {
             int nroCodigoProveedor = 0;
             acceso = new AccesoDatos();
@@ -364,7 +364,7 @@ namespace SistemaLaObra
             List<Proveedor> lista = new List<Proveedor>();
             acceso = new AccesoDatos();
             conexion = new SqlConnection(acceso.CadenaConexion());            
-            consulta = new SqlCommand("select codigoProveedor, cuit, razonSocial, nombreFantasia, banco, nroCuentaCorriente, nombreContactoUno, cargoContactoUno, tipoTelefono1, nombreContactoDos, cargoContactoDos, tipoTelefono2, nroTelefono2, calle, numero, provincia, departamento, localidad, codigoPostal, nombreBarrio from Proveedores", conexion);
+            consulta = new SqlCommand("select codigoProveedor, cuit, razonSocial, nombreFantasia, banco, nroCuentaCorriente, nombreContactoUno, cargoContactoUno, tipoTelefono1, nroTelefono1, nombreContactoDos, cargoContactoDos, tipoTelefono2, nroTelefono2, calle, numero, provincia, departamento, localidad, codigoPostal, nombreBarrio from Proveedores", conexion);
             try
             {
                 conexion.Open();
@@ -373,32 +373,32 @@ namespace SistemaLaObra
                 {
                     lista.Add(new Proveedor() {
                                             CodigoProveedor = int.Parse(lector["codigoProveedor"].ToString()),
-                                            Cuit = long.Parse(lector["cuit"].ToString()),
+                                            Cuit = lector["cuit"].ToString(),
                                             RazonSocial = lector["razonSocial"].ToString(),
                                             NombreFantasia = lector["nombreFantasia"].ToString(),
                                             Banco = lector["banco"].ToString(),
-                                            NroCuentaCorriente = long.Parse(lector["nroCuentaCorriente"].ToString()),
+                                            NroCuentaCorriente = lector["nroCuentaCorriente"].ToString(),
                                             NombreContactoUno = lector["nombreContactoUno"].ToString(),
                                             CargoContactoUno = lector["cargoContactoUno"].ToString(),
                                             TipoTelefonoUno = lector["tipoTelefono1"].ToString(),
-                                            NumeroDeTelefonoUno = long.Parse(lector["nroTelefono1"].ToString()),
+                                            NumeroDeTelefonoUno = lector["nroTelefono1"].ToString(),
                                             NombreContactoDos = lector["nombreContactoDos"].ToString(),
                                             CargoContactoDos = lector["cargoContactoDos"].ToString(),
                                             TipoTelefonoDos = lector["tipoTelefono2"].ToString(),
-                                            NumeroDeTelefonoDos = long.Parse(lector["nroTelefono2"].ToString()),
+                                            NumeroDeTelefonoDos = lector["nroTelefono2"].ToString(),
                                             Calle = lector["calle"].ToString(),
-                                            NumeroCasa = int.Parse(lector["numero"].ToString()),
+                                            NumeroCasa = lector["numero"].ToString(),
                                             Provincia = lector["provincia"].ToString(),
                                             Departamento = lector["departamento"].ToString(),
                                             Localidad = lector["localidad"].ToString(),
-                                            CodigoPostal = int.Parse(lector["codigoPostal"].ToString()),
+                                            CodigoPostal = lector["codigoPostal"].ToString(),
                                             Barrio = lector["nombreBarrio"].ToString()
                                             });                    
                 }
                 return lista;
             }
             catch (Exception)
-            {
+            {               
                 return lista;
             }
             finally

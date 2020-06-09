@@ -42,7 +42,7 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
 
         public void tomarNumeroCuit()
         {
-            controladorProveedor.numeroCuitIngresado(long.Parse(txt_Cuit.Text));
+            controladorProveedor.numeroCuitIngresado(txt_Cuit.Text);
         }
 
         public void tomarRazonSocial()
@@ -57,7 +57,7 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
 
         public void tomarCuentaCorriente()
         {
-            controladorProveedor.cuentaCorrienteIngresada(long.Parse(txt_CuentaCorriente.Text));
+            controladorProveedor.cuentaCorrienteIngresada(txt_CuentaCorriente.Text);
         }
 
         public void tomarTipoTelefono1()
@@ -67,7 +67,7 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
 
         public void tomarNumeroTelefono1()
         {
-            controladorProveedor.numeroTelefono1Ingresado(long.Parse(txt_NumeroTelefono.Text));
+            controladorProveedor.numeroTelefono1Ingresado(txt_NumeroTelefono.Text);
         }
 
         public void tomarTipoTelefono2()
@@ -77,7 +77,7 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
 
         public void tomarNumeroTelefono2()
         {
-            controladorProveedor.numeroTelefono2Ingresado(long.Parse(txt_NumeroTelefono2.Text));
+            controladorProveedor.numeroTelefono2Ingresado(txt_NumeroTelefono2.Text);
         }
 
         public void tomarProvincia()
@@ -107,12 +107,12 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
 
         public void tomarNumeroDomicilio()
         {
-            controladorProveedor.numeroDomicilioIngresado(int.Parse(txt_NumeroCalle.Text));
+            controladorProveedor.numeroDomicilioIngresado(txt_NumeroCalle.Text);
         }
 
         public void tomarCodigoPostal()
         {
-            controladorProveedor.codigoPostalIngresado(int.Parse(txt_CPostal.Text));
+            controladorProveedor.codigoPostalIngresado(txt_CPostal.Text);
         }
 
         public void cargarDatosBanco()
