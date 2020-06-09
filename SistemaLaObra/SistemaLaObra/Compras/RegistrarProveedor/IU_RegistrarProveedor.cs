@@ -197,17 +197,15 @@ namespace SistemaLaObra.Compras.RegistrarProveedor
             cb_Provincia.DataSource = controladorProveedor.mostrarDatosProvincias();
         }
 
-        public void cargarDatosDepartamento()
-        {
-            int codigoProv = int.Parse(cb_Provincia.SelectedValue.ToString());
+        public void cargarDatosDepartamento(int codigoProv)
+        {            
             cb_departamento.ValueMember = "CodigoDepartamento";
             cb_departamento.DisplayMember = "NombreDepartamento";
             cb_departamento.DataSource = controladorProveedor.mostrarDatosDepartamento(codigoProv);
         }
 
-        public void cargarDatosLocalidades()
-        {
-            int codigoDepto = int.Parse(cb_departamento.SelectedValue.ToString());
+        public void cargarDatosLocalidades(int codigoDepto)
+        {             
             cb_Localidad.ValueMember = "CodigoLocalidad";
             cb_Localidad.DisplayMember = "NombreLocalidad";
             cb_Localidad.DataSource = controladorProveedor.mostrarDatosLocalidad(codigoDepto);
@@ -255,40 +253,15 @@ namespace SistemaLaObra.Compras.RegistrarProveedor
 
         private void cb_Provincia_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cargarDatosDepartamento();
+            cargarDatosDepartamento(int.Parse(cb_Provincia.SelectedValue.ToString()));
         }
 
         private void cb_departamento_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cargarDatosLocalidades();
+            cargarDatosLocalidades(int.Parse(cb_departamento.SelectedValue.ToString()));
         }
 
-        private void txt_Cuit_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validaciones.soloNumeros(e);
-        }
-
-        private void txt_CuentaCorriente_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validaciones.soloNumeros(e);
-        }
-
-        private void txt_NumeroTelefono_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validaciones.soloNumeros(e);
-        }
-
-        private void txt_NumeroTelefono2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validaciones.soloNumeros(e);
-        }
-
-        private void txt_CPostal_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validaciones.soloNumeros(e);
-        }
-
-        private void txt_NumeroCalle_KeyPress(object sender, KeyPressEventArgs e)
+        private void txt_Cuit_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             validaciones.soloNumeros(e);
         }

@@ -163,7 +163,6 @@
             this.txt_CPostal.Name = "txt_CPostal";
             this.txt_CPostal.Size = new System.Drawing.Size(86, 20);
             this.txt_CPostal.TabIndex = 38;
-            this.txt_CPostal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_CPostal_KeyPress);
             // 
             // label4
             // 
@@ -261,7 +260,6 @@
             this.txt_NumeroCalle.Name = "txt_NumeroCalle";
             this.txt_NumeroCalle.Size = new System.Drawing.Size(86, 20);
             this.txt_NumeroCalle.TabIndex = 34;
-            this.txt_NumeroCalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_NumeroCalle_KeyPress);
             // 
             // lbl_Barrio
             // 
@@ -545,6 +543,7 @@
             this.txt_Cuit.Name = "txt_Cuit";
             this.txt_Cuit.Size = new System.Drawing.Size(112, 20);
             this.txt_Cuit.TabIndex = 4;
+            this.txt_Cuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Cuit_KeyPress_1);
             // 
             // lbl_TipoTelefono2
             // 

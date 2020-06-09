@@ -89,7 +89,7 @@ namespace SistemaLaObra
                 adaptador.UpdateCommand.Parameters["@cuit"].Value = objeto.Cuit;
                 adaptador.UpdateCommand.Parameters["@razonSocial"].Value = objeto.RazonSocial;
                 adaptador.UpdateCommand.Parameters["@nombreFantasia"].Value = objeto.NombreFantasia;
-                adaptador.UpdateCommand.Parameters["@banco"].Value = objeto.IdBanco;
+                adaptador.UpdateCommand.Parameters["@banco"].Value = objeto.Banco.CodigoBanco;
                 adaptador.UpdateCommand.Parameters["@nroCuentaCorriente"].Value = objeto.NroCuentaCorriente;
                 adaptador.UpdateCommand.Parameters["@nombreContactoUno"].Value = objeto.NombreContactoUno;
                 adaptador.UpdateCommand.Parameters["@cargoContactoUno"].Value = objeto.CargoContactoUno;

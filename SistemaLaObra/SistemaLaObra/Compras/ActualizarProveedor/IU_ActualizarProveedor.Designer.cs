@@ -100,7 +100,6 @@
             // btn_Registrar
             // 
             this.btn_Registrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_Registrar.Enabled = false;
             this.btn_Registrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Registrar.Image = global::SistemaLaObra.Properties.Resources.actualizar;
             this.btn_Registrar.Location = new System.Drawing.Point(552, 456);
@@ -335,6 +334,7 @@
             this.txt_Cuit.Name = "txt_Cuit";
             this.txt_Cuit.Size = new System.Drawing.Size(112, 20);
             this.txt_Cuit.TabIndex = 4;
+            this.txt_Cuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Cuit_KeyPress);
             // 
             // lbl_TipoTelefono2
             // 

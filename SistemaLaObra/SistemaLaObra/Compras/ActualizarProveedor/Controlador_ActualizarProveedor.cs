@@ -82,10 +82,34 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
         {
             Proveedor.CodigoPostal = codPostal;
         }
+        public void nombreFantasiaTomado(string nombre)
+        {
+            Proveedor.NombreFantasia = nombre;
+        }
 
-        public bool verificarExistencia(long cuit)
+        public void nombreContacto1Tomado(string nombreContacto1)
+        {
+            Proveedor.NombreContactoUno = nombreContacto1;
+        }
+
+        public void nombreCargoContacto1Tomado(string nombreCargo1)
+        {
+            Proveedor.CargoContactoUno = nombreCargo1;
+        }
+
+        public void nombreContacto2Tomado(string nombreContacto2)
+        {
+            Proveedor.NombreContactoDos = nombreContacto2;
+        }
+
+        public void nombreCargoContacto2Tomado(string nombreCargo2)
+        {
+            Proveedor.CargoContactoDos = nombreCargo2;
+        }
+
+        public bool verificarExistencia(string cuit)
         {            
-            if (Proveedor.existe(cuit))
+            if (Proveedor.existe(long.Parse(cuit)))
                 return true;
             else
                 return false;

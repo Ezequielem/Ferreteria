@@ -60,7 +60,7 @@ namespace SistemaLaObra
         {
             acceso = new AccesoDatos();
             conexion = new SqlConnection(acceso.CadenaConexion());
-            SqlCommand consulta = new SqlCommand("select codigoLocalidad, descripcion from Localidades where codigoLocalidad='" + localidad + "'", conexion);
+            SqlCommand consulta = new SqlCommand("select codigoDepartamento, codigoLocalidad, descripcion from Localidades where codigoLocalidad='" + localidad + "'", conexion);
             try
             {
                 conexion.Open();
@@ -69,6 +69,7 @@ namespace SistemaLaObra
                 {
                     CodigoLocalidad = int.Parse(lector["codigoLocalidad"].ToString());
                     NombreLocalidad = lector["descripcion"].ToString() ;
+                    Departamento.mostrarDatos(int.Parse(lector["codigoDepartamento"].ToString()));
             }
             }
             catch (SqlException excepcion)

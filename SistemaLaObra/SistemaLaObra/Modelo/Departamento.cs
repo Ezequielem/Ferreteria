@@ -41,6 +41,7 @@ namespace SistemaLaObra
                 {
                     CodigoDepartamento = int.Parse(lector["codigoDepartamento"].ToString());
                     NombreDepartamento = lector["descripcion"].ToString();
+                    Provincia.mostrarDatos(int.Parse(lector["codigoProvincia"].ToString()));
                 }
             }
             catch (SqlException excepcion)

@@ -34,45 +34,45 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
         private void btn_Registrar_Click(object sender, EventArgs e)
         {
 
-            if (txt_RazonSocial.Text == "")
+            if (validaciones.campoVacio(txt_RazonSocial.Text))
             {
                 MessageBox.Show("El campo Razon Social no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txt_RazonSocial.Focus();
             }
-            else if (txt_CuentaCorriente.Text == "")
+            else if (validaciones.campoVacio(txt_Cuit.Text))
             {
-                MessageBox.Show("El campo Cuenta Corriente no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txt_CuentaCorriente.Focus();
+                MessageBox.Show("El campo CUIT no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txt_Cuit.Focus();
             }
-            else if (txt_NumeroTelefono.Text == "")
+            else if (validaciones.campoVacio(txt_nombreFantasia.Text))
             {
-                MessageBox.Show("El campo Numero de telefono 1 no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txt_NumeroTelefono.Focus();
+                MessageBox.Show("El campo Nombre de fantasía no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txt_nombreFantasia.Focus();
             }
-            else if (txt_NumeroTelefono2.Text == "")
-            {
-                MessageBox.Show("El campo Numero de telefono 2 no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txt_NumeroTelefono2.Focus();
-            }
-            else if (txt_Barrio.Text == "")
-            {
-                MessageBox.Show("El campo Barrio no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txt_Barrio.Focus();
-            }
-            else if (txt_CPostal.Text == "")
-            {
-                MessageBox.Show("El campo Codigo Postal no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txt_CPostal.Focus();
-            }
-            else if (txt_Calle.Text == "")
+            else if (validaciones.campoVacio(txt_Calle.Text))
             {
                 MessageBox.Show("El campo Calle no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txt_Calle.Focus();
             }
-            else if (txt_NumeroCalle.Text == "")
+            else if (validaciones.campoVacio(txt_NumeroCalle.Text))
             {
                 MessageBox.Show("El campo Numero no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txt_NumeroCalle.Focus();
+            }
+            else if (validaciones.campoVacio(txt_Barrio.Text))
+            {
+                MessageBox.Show("El campo Barrio no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txt_Barrio.Focus();
+            }
+            else if (validaciones.campoVacio(txt_CPostal.Text))
+            {
+                MessageBox.Show("El campo Código Postal no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txt_CPostal.Focus();
+            }
+            else if (controladorProveedor.Proveedor.Cuit != txt_Cuit.Text && controladorProveedor.verificarExistencia(txt_Cuit.Text))
+            {
+                MessageBox.Show("El CUIT ingresado ya está registrado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txt_Cuit.Focus();
             }
             else
             {
@@ -87,6 +87,7 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
         public void opcionModificarProveedor(int id)
         {
             controladorProveedor.Proveedor = controladorProveedor.Proveedor.mostrarDatos(id);
+            controladorProveedor.Proveedor.Localidad.mostrarDatos(controladorProveedor.Proveedor.IdLocalidad);
         }
 
         public void tomarNumeroCuit()
@@ -154,6 +155,31 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
             controladorProveedor.codigoPostalIngresado(txt_CPostal.Text);
         }
 
+        public void tomarNombreFantasia()
+        {
+            controladorProveedor.nombreFantasiaTomado(txt_nombreFantasia.Text);
+        }
+
+        public void tomarNombreContacto1()
+        {
+            controladorProveedor.nombreContacto1Tomado(txt_nombreContacto1.Text);
+        }
+
+        public void tomarCargoContacto1()
+        {
+            controladorProveedor.nombreCargoContacto1Tomado(txt_cargoContacto1.Text);
+        }
+
+        public void tomarNombreContacto2()
+        {
+            controladorProveedor.nombreContacto2Tomado(txt_nombreContacto2.Text);
+        }
+
+        public void tomarCargoContacto2()
+        {
+            controladorProveedor.nombreCargoContacto2Tomado(txt_cargoContacto2.Text);
+        }
+
         public void cargarDatosBanco()
         {
             cb_Banco.ValueMember = "CodigoBanco";
@@ -179,30 +205,33 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
             cb_Provincia.DataSource = controladorProveedor.mostrarDatosProvincias();
         }
 
-        public void cargarDatosDepartamento()
+        public void cargarDatosDepartamento(int idProvincia)
         {
-            int codigoProv = int.Parse(cb_Provincia.SelectedValue.ToString());
             cb_departamento.ValueMember = "CodigoDepartamento";
             cb_departamento.DisplayMember = "NombreDepartamento";
-            cb_departamento.DataSource = controladorProveedor.mostrarDatosDepartamento(codigoProv);
+            cb_departamento.DataSource = controladorProveedor.mostrarDatosDepartamento(idProvincia);
         }
 
-        public void cargarDatosLocalidades()
+        public void cargarDatosLocalidades(int idDepto)
         {
-            int codigoDepto = int.Parse(cb_departamento.SelectedValue.ToString());
             cb_Localidad.ValueMember = "CodigoLocalidad";
             cb_Localidad.DisplayMember = "NombreLocalidad";
-            cb_Localidad.DataSource = controladorProveedor.mostrarDatosLocalidad(codigoDepto);
+            cb_Localidad.DataSource = controladorProveedor.mostrarDatosLocalidad(idDepto);
         }
 
         private void opcionConfirmar()
         {
             tomarNumeroCuit();
             tomarRazonSocial();
+            tomarNombreFantasia();
             tomarBanco();
             tomarCuentaCorriente();
+            tomarNombreContacto1();
+            tomarCargoContacto1();
             tomarTipoTelefono1();
             tomarNumeroTelefono1();
+            tomarNombreContacto2();
+            tomarCargoContacto2();
             tomarTipoTelefono2();
             tomarNumeroTelefono2();
             tomarCalle();
@@ -240,21 +269,26 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
 
         private void cb_Provincia_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cargarDatosDepartamento();
+            cargarDatosDepartamento(int.Parse(cb_Provincia.SelectedValue.ToString()));
         }
 
         private void cb_departamento_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cargarDatosLocalidades();
+            cargarDatosLocalidades(int.Parse(cb_departamento.SelectedValue.ToString()));
         }                
 
         private void IU_ActualizarProveedor_Load(object sender, EventArgs e)
-        {
+        {   
             txt_Cuit.Focus();
             cargarDatosBanco();
             cargarDatosTiposTelefonos();
             cargarDatosProvincias();
             cargarDatos();
+        }
+
+        private void txt_Cuit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validaciones.soloNumeros(e);
         }
     }
 }
