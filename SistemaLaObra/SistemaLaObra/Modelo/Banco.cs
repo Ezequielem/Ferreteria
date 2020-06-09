@@ -16,60 +16,30 @@ namespace SistemaLaObra
         SqlCommand consulta;
         SqlCommand alta;
         SqlDataReader lector;
-        List<Banco> bancos;
-        SqlDataAdapter adaptador = new SqlDataAdapter();
+        SqlDataAdapter adaptador;
 
-        int codigoBanco;
-        string descripcion;
-
-        public int CodigoBanco
-        {
-            get
-            {
-                return codigoBanco;
-            }
-
-            set
-            {
-                codigoBanco = value;
-            }
-        }
-
-        public string Descripcion
-        {
-            get
-            {
-                return descripcion;
-            }
-
-            set
-            {
-                descripcion = value;
-            }
-        }
+        public int CodigoBanco { get; set; }
+        public string Descripcion { get; set; }
 
         public Banco()
         {
-            codigoBanco = 0;
-            descripcion = "";
-            bancos = new List<Banco>();
+            CodigoBanco = 0;
+            Descripcion = "";
         }
-
 
       public void crear(int codigoBanco, string descripcion)
         {
             acceso = new AccesoDatos();
             conexion = new SqlConnection(acceso.CadenaConexion());
             alta = new SqlCommand("insert into Bancos (codigoBanco, descripcion) values (@codigoBanco, @descripcion)", conexion);
-            adaptador.InsertCommand = alta;
-
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoBanco", SqlDbType.Int));
-            adaptador.InsertCommand.Parameters["@codigoBanco"].Value = codigoBanco;
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@descripcion", SqlDbType.VarChar));
-            adaptador.InsertCommand.Parameters["@descripcion"].Value = descripcion;
-
+            adaptador = new SqlDataAdapter();
             try
-            {
+            {                
+                adaptador.InsertCommand = alta;
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoBanco", SqlDbType.Int));
+                adaptador.InsertCommand.Parameters["@codigoBanco"].Value = codigoBanco;
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@descripcion", SqlDbType.VarChar));
+                adaptador.InsertCommand.Parameters["@descripcion"].Value = descripcion;
                 conexion.Open();
                 adaptador.InsertCommand.ExecuteNonQuery();
             }
@@ -83,11 +53,35 @@ namespace SistemaLaObra
             }
         }
 
-    
-
-
-        public List<Banco> mostrarDatosColeccion()
+        public void mostrarDatos(int id)
         {
+            acceso = new AccesoDatos();
+            conexion = new SqlConnection(acceso.CadenaConexion());
+            consulta = new SqlCommand("select * from Bancos where codigoBanco='"+ id +"'", conexion);
+            try
+            {
+                conexion.Open();
+                lector = consulta.ExecuteReader();
+                if (lector.Read())
+                {
+                    CodigoBanco = int.Parse(lector["codigoBanco"].ToString()); 
+                    Descripcion = lector["descripcion"].ToString();
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
+            finally
+            {
+                lector.Close();
+                conexion.Close();
+            }
+        }
+
+        public List<Banco> mostrarDatos()
+        {
+            List<Banco> lista = new List<Banco>();
             acceso = new AccesoDatos();
             conexion = new SqlConnection(acceso.CadenaConexion());
             consulta = new SqlCommand("select * from Bancos",conexion);
@@ -97,17 +91,14 @@ namespace SistemaLaObra
                 lector = consulta.ExecuteReader();
                 while (lector.Read())
                 {
-                    bancos.Add(new Banco { CodigoBanco = int.Parse(lector["codigoBanco"].ToString()), Descripcion = lector["descripcion"].ToString()});
-                }
-
-               
-
-                return bancos;
+                    lista.Add(new Banco { CodigoBanco = int.Parse(lector["codigoBanco"].ToString()), Descripcion = lector["descripcion"].ToString()});
+                }              
+                return lista;
             }
             catch (Exception error)
             {
                 MessageBox.Show(error.Message);
-                return null;
+                return lista;
             }
             finally
             {
@@ -129,8 +120,6 @@ namespace SistemaLaObra
                 if (lector.Read())
                 {
                     return lector["descripcion"].ToString();
-
-
                 }
                 else
                 {
@@ -195,8 +184,6 @@ namespace SistemaLaObra
                 if (lector.Read())
                 {
                     return int.Parse(lector["codigoBanco"].ToString());
-
-
                 }
                 else
                 {
@@ -215,7 +202,6 @@ namespace SistemaLaObra
 
 
         public int existeBanco (string banco)
-
         {
             AccesoDatos s = new AccesoDatos();
             conexion = new SqlConnection(s.CadenaConexion());
@@ -227,8 +213,6 @@ namespace SistemaLaObra
                 if (lector.Read())
                 {
                     return int.Parse(lector["codigoBanco"].ToString());
-
-
                 }
                 else
                 {

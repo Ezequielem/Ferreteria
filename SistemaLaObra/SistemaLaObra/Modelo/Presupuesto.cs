@@ -15,16 +15,7 @@ namespace SistemaLaObra.Ventas.Presupuesto
         SqlDataAdapter adaptador;
         SqlDataReader lector;
         SqlCommand consulta;
-
         AccesoDatos acceso;
-
-        int _codigoPresupuesto;
-        string _nombreCliente;
-        DateTime _fecha;
-        DateTime _fechaVencimiento;
-        float _importeTotal;
-        int _codigoClienteMayorista;
-        int _codigoEncargado;
 
         public int CodigoPresupuesto { get; set; }
         public string NombreCliente { get; set; }

@@ -123,7 +123,7 @@ namespace SistemaLaObra
         {            
             cbx_proveedor.ValueMember = "CodigoProveedor";
             cbx_proveedor.DisplayMember = "RazonSocial";
-            cbx_proveedor.DataSource = proveedor.mostrarColeccionProveedores();
+            cbx_proveedor.DataSource = proveedor.mostrarDatos();
         }
 
         public void cargarMarca()

@@ -12,14 +12,13 @@ using SistemaLaObra.Compras.RegistrarProveedor;
 using SistemaLaObra.Compras.ActualizarProveedor;
 using SistemaLaObra.Compras.ArticulosBajoStock;
 using SistemaLaObra.Compras.EmitirListadoCompraProveedor;
+using SistemaLaObra.Compras.ConsultarProveedor;
 
 namespace SistemaLaObra.Compras
 {
     public partial class IU_MenuPrincipalCompras : Form
     {
-
-        public IU_RegistrarProveedor interfazProveedor;
-        public IU_ActualizarProveedor actualizarProveedor;
+        public IU_ConsultarProveedor consultarProveedor;
         public IU_RegistrarPedidoCompra iu_registrarPedidoCompra;
         public IU_EmitirListadoCompraProveedor iu_emitirListadoCompraProveedor;
         public IU_MenuPrincipal interfazContenedora { get; set; }
@@ -38,17 +37,6 @@ namespace SistemaLaObra.Compras
             iu_registrarPedidoCompra.ShowDialog();
         }
 
-        private void btn_registrarProveedor_Click(object sender, EventArgs e)
-        {
-            interfazProveedor = new IU_RegistrarProveedor();
-            interfazProveedor.ShowDialog();
-        }
-
-        private void btn_ActualizarProveedor_Click(object sender, EventArgs e)
-        {
-            actualizarProveedor = new IU_ActualizarProveedor();
-            actualizarProveedor.ShowDialog();
-        }
 
         private void btn_articulosBajoStock_Click(object sender, EventArgs e)
         {
@@ -63,6 +51,12 @@ namespace SistemaLaObra.Compras
             iu_emitirListadoCompraProveedor = new IU_EmitirListadoCompraProveedor();
             iu_emitirListadoCompraProveedor.InterfazContenedora= interfazContenedora;
             iu_emitirListadoCompraProveedor.ShowDialog();
+        }
+
+        private void btn_consultarProveedor_Click(object sender, EventArgs e)
+        {
+            consultarProveedor = new IU_ConsultarProveedor();
+            consultarProveedor.ShowDialog();
         }
     }
 }

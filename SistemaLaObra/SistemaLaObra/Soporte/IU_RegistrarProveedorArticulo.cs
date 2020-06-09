@@ -183,7 +183,7 @@ namespace SistemaLaObra.Soporte
         public void buscarProveedores()
         {
             ListaProveedor.Clear();
-            ListaProveedor = Proveedor.mostrarColeccionProveedores();
+            ListaProveedor = Proveedor.mostrarDatos();
         }
 
         public void cargaCombo()

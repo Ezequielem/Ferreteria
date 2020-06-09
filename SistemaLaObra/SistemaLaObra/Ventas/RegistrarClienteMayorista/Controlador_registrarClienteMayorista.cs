@@ -64,7 +64,7 @@ namespace SistemaLaObra.Ventas.RegistrarClienteMayorista
         public List<Banco> mostrarSeleccionBanco()
         {
             banco = new Banco();
-            return banco.mostrarDatosColeccion();
+            return banco.mostrarDatos();
         }
 
         public void nombreBancoNvoCliente(int codigoBanco)

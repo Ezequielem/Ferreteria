@@ -11,12 +11,12 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
     {
         //INSTANCIAS
 
-        Proveedor proveedor;
-        Banco banco;
-        Provincia provincia;
-        Localidad localidad;
-        Departamento departamento;
-        TipoTelefono tipoTelefono;
+        public Proveedor Proveedor { get; set; }
+        public Banco Banco { get; set; }
+        public Provincia Provincia { get; set; }
+        public Localidad Localidad { get; set; }
+        public Departamento Departamento { get; set; }
+        public TipoTelefono TipoTelefono { get; set; }
         IU_ActualizarProveedor interfazProveedor;
 
         //Atributos privados
@@ -28,104 +28,103 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
 
         public Controlador_ActualizarProveedor()
         {
-            proveedor = new Proveedor();
-            banco = new Banco();
-            provincia = new Provincia();
-            localidad = new Localidad();
-            departamento = new Departamento();
-            tipoTelefono = new TipoTelefono();
+            Proveedor = new Proveedor();
+            Banco = new Banco();
+            Provincia = new Provincia();
+            Localidad = new Localidad();
+            Departamento = new Departamento();
+            TipoTelefono = new TipoTelefono();
 
         }
 
         public void numeroCuitIngresado(long cuit)
         {
-            proveedor.Cuit = cuit;
+            Proveedor.Cuit = cuit;
         }
 
         public void razonSocialIngresada(string razonSocial)
         {
-            proveedor.RazonSocial = razonSocial;
+            Proveedor.RazonSocial = razonSocial;
         }
 
         public void nombreBancoSeleccionado(string banco)
         {
-            proveedor.Banco = banco;
+            Proveedor.Banco = banco;
         }
 
         public void cuentaCorrienteIngresada(long cc)
         {
-            proveedor.NroCuentaCorriente = cc;
+            Proveedor.NroCuentaCorriente = cc;
         }
 
         public void tipoTelefono1Ingresado(string tipoTel)
         {
-            proveedor.TipoTelefonoUno = tipoTel;
+            Proveedor.TipoTelefonoUno = tipoTel;
         }
 
         public void numeroTelefono1Ingresado(long telefono)
         {
-            proveedor.NumeroDeTelefonoUno = telefono;
+            Proveedor.NumeroDeTelefonoUno = telefono;
         }
 
         public void tipoTelefono2Ingresado(string tipoTel)
         {
-            proveedor.TipoTelefonoDos = tipoTel;
+            Proveedor.TipoTelefonoDos = tipoTel;
         }
 
         public void numeroTelefono2Ingresado(long telefono)
         {
-            proveedor.NumeroDeTelefonoDos = telefono;
+            Proveedor.NumeroDeTelefonoDos = telefono;
         }
 
         public void provinciaSeleccionada(string provincia)
         {
-            proveedor.Provincia = provincia;
+            Proveedor.Provincia = provincia;
         }
 
         public void localidadSeleccionada(string localidad)
         {
-            proveedor.Localidad = localidad;
+            Proveedor.Localidad = localidad;
         }
 
         public void departamentoSeleccionado(string departamento)
         {
-            proveedor.Departamento = departamento;
+            Proveedor.Departamento = departamento;
         }
 
         public void barrioSeleccionado(string barrio)
         {
-            proveedor.Barrio = barrio;
+            Proveedor.Barrio = barrio;
         }
 
 
         public void calleIngresada(string calle)
         {
-            proveedor.Calle = calle;
+            Proveedor.Calle = calle;
         }
 
         public void numeroDomicilioIngresado(int numeroDomicilio)
         {
-            proveedor.NumeroCasa = numeroDomicilio;
+            Proveedor.NumeroCasa = numeroDomicilio;
         }
 
         public void codigoPostalIngresado(int codPostal)
         {
-            proveedor.CodigoPostal = codPostal;
+            Proveedor.CodigoPostal = codPostal;
         }
 
-        public bool verificarExistencia()
-        {
-            int i = proveedor.esProveedor(proveedor.Cuit);
-            if (i == 0)
-                return false;
-            else
+        public bool verificarExistencia(long cuit)
+        {            
+            if (Proveedor.existe(cuit))
                 return true;
+            else
+                return false;
 
         }
 
         public bool verificarExistenciaRSocial()
         {
-            int i = proveedor.esProveedorRSocial(proveedor.RazonSocial);
+            int i = Proveedor.esProveedorRSocial(Proveedor.RazonSocial);
             if (i == 0)
                 return false;
             else
@@ -135,90 +134,90 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
 
         private void buscarUltimoProveedor()
         {
-            int valor = proveedor.ultimoNroProveedor();
+            int valor = Proveedor.ultimoNroProveedor();
             if (valor != 0)
             {
-                proveedor.CodigoProveedor = (int)valor + 1;
+                Proveedor.CodigoProveedor = (int)valor + 1;
             }
             else
             {
-                proveedor.CodigoProveedor = 1;
+                Proveedor.CodigoProveedor = 1;
             }
         }
 
 
         public List<Banco> mostrarDatosBancos()
         {
-            return banco.mostrarDatosColeccion();
+            return Banco.mostrarDatos();
         }
 
         public List<TipoTelefono> mostrarDatosTiposTelefonos()
         {
-            tipoTelefono = new TipoTelefono();
-            return tipoTelefono.mostrarDatosColeccion();
+            TipoTelefono = new TipoTelefono();
+            return TipoTelefono.mostrarDatosColeccion();
         }
 
 
         public List<Provincia> mostrarDatosProvincias()
         {
-            return provincia.mostrarDatosColeccion();
+            return Provincia.mostrarDatosColeccion();
         }
 
 
         public List<Departamento> mostrarDatosDepartamento(int codigoProvincia)
         {
-            provincia = new Provincia();
-            return provincia.conocerDepartamento(codigoProvincia);
+            Provincia = new Provincia();
+            return Provincia.conocerDepartamento(codigoProvincia);
         }
 
 
         public List<Localidad> mostrarDatosLocalidad(int codigoDepto)
         {
-            departamento = new Departamento();
-            return departamento.conocerLocalidad(codigoDepto);
+            Departamento = new Departamento();
+            return Departamento.conocerLocalidad(codigoDepto);
         }
 
         public void conocerCodigoBanco()
         {
-           i = banco.mostrarCodigo(proveedor.Banco);
+           i = Banco.mostrarCodigo(Proveedor.Banco);
            
         }
 
         public void conocerCodigoTipoTel()
         {
-           i = tipoTelefono.mostrarCodigo(proveedor.TipoTelefonoUno);
+           i = TipoTelefono.mostrarCodigo(Proveedor.TipoTelefonoUno);
             
         }
 
         public void conocerCodigoTipoTel2()
         {
-            i = tipoTelefono.mostrarCodigo(proveedor.TipoTelefonoDos);
+            i = TipoTelefono.mostrarCodigo(Proveedor.TipoTelefonoDos);
             
         }
 
         public void conocerCodigoProvincia()
         {
-            codP = provincia.mostrarCodigo(proveedor.Provincia);
+            codP = Provincia.mostrarCodigo(Proveedor.Provincia);
             
            
         }
 
         public void conocerCodigoDepartamento()
         {
-         codD = departamento.mostrarCodigo(proveedor.Departamento, codP);
+         codD = Departamento.mostrarCodigo(Proveedor.Departamento, codP);
            
         }
 
         public void conocerCodigoLocalidad()
         {
-         codL = localidad.mostrarCodigo(proveedor.Localidad, codD);
+         codL = Localidad.mostrarCodigo(Proveedor.Localidad, codD);
           ;
         }
 
         public void conocerCodigoProveedor()
         {
-            int a=proveedor.mostrarCodigoProveedor(proveedor.Cuit);
-            proveedor.CodigoProveedor = a;
+            int a= Proveedor.mostrarCodigoProveedor(Proveedor.Cuit);
+            Proveedor.CodigoProveedor = a;
         }
 
         public void opcionConfirmarTomado()
@@ -228,27 +227,27 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
 
         public void actualizarDatos()
         {
-            proveedor.actualizar(proveedor.CodigoProveedor, proveedor.Cuit, proveedor.RazonSocial, proveedor.Banco, proveedor.NroCuentaCorriente, proveedor.TipoTelefonoUno, proveedor.NumeroDeTelefonoUno, proveedor.TipoTelefonoDos, proveedor.NumeroDeTelefonoDos, proveedor.Calle, proveedor.NumeroCasa, proveedor.Provincia, proveedor.Departamento, proveedor.Localidad, proveedor.CodigoPostal, proveedor.Barrio);
+            Proveedor.actualizar(Proveedor);
         }
 
 
         public void cargarDatosInterfaz()
         {
-            interfazProveedor.txt_Cuit.Text = proveedor.Cuit.ToString();
-            interfazProveedor.txt_RazonSocial.Text = proveedor.RazonSocial;
+            interfazProveedor.txt_Cuit.Text = Proveedor.Cuit.ToString();
+            interfazProveedor.txt_RazonSocial.Text = Proveedor.RazonSocial;
             conocerCodigoBanco();
             interfazProveedor.cb_Banco.SelectedValue = i;
-            interfazProveedor.txt_CuentaCorriente.Text = proveedor.NroCuentaCorriente.ToString();
+            interfazProveedor.txt_CuentaCorriente.Text = Proveedor.NroCuentaCorriente.ToString();
             conocerCodigoTipoTel();
             interfazProveedor.cb_TipoTelefonoUno.SelectedValue = i;
             conocerCodigoTipoTel2();
             interfazProveedor.cb_TipoTelefonoDos.SelectedValue = i;
-            interfazProveedor.txt_NumeroTelefono.Text = proveedor.NumeroDeTelefonoUno.ToString();
-            interfazProveedor.txt_NumeroTelefono2.Text = proveedor.NumeroDeTelefonoDos.ToString();
-            interfazProveedor.txt_Barrio.Text = proveedor.Barrio;
-            interfazProveedor.txt_CPostal.Text = proveedor.CodigoPostal.ToString();
-            interfazProveedor.txt_Calle.Text = proveedor.Calle;
-            interfazProveedor.txt_NumeroCalle.Text = proveedor.NumeroCasa.ToString();
+            interfazProveedor.txt_NumeroTelefono.Text = Proveedor.NumeroDeTelefonoUno.ToString();
+            interfazProveedor.txt_NumeroTelefono2.Text = Proveedor.NumeroDeTelefonoDos.ToString();
+            interfazProveedor.txt_Barrio.Text = Proveedor.Barrio;
+            interfazProveedor.txt_CPostal.Text = Proveedor.CodigoPostal.ToString();
+            interfazProveedor.txt_Calle.Text = Proveedor.Calle;
+            interfazProveedor.txt_NumeroCalle.Text = Proveedor.NumeroCasa.ToString();
             conocerCodigoProvincia();
             interfazProveedor.cb_Provincia.SelectedValue = codP;
             interfazProveedor.cargarDatosDepartamento();
@@ -256,18 +255,14 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
             interfazProveedor.cb_departamento.SelectedValue  = codD;
             interfazProveedor.cargarDatosLocalidades();
             conocerCodigoLocalidad();
-            interfazProveedor.cb_Localidad.SelectedValue = codL;
-            
-
+            interfazProveedor.cb_Localidad.SelectedValue = codL;            
         }
 
         public void cargarDatos(IU_ActualizarProveedor interfaz)
         {
             interfazProveedor = interfaz;
-            proveedor.mostrarDatos();
+            Proveedor.mostrarDatos();
             cargarDatosInterfaz();
-
-
         }
 
 

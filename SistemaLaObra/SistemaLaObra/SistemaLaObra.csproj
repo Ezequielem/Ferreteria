@@ -130,6 +130,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Compras\ConsultarProveedor\Controlador_ConsultarProveedor.cs" />
+    <Compile Include="Compras\ConsultarProveedor\IU_ConsultarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\ConsultarProveedor\IU_ConsultarProveedor.Designer.cs">
+      <DependentUpon>IU_ConsultarProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\AccesoDatos.cs" />
     <Compile Include="Modelo\Articulo.cs" />
     <Compile Include="Modelo\Banco.cs" />
@@ -678,6 +685,9 @@
     <EmbeddedResource Include="Compras\ArticulosBajoStock\IU_ArticulosBajoStock.resx">
       <DependentUpon>IU_ArticulosBajoStock.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Compras\ConsultarProveedor\IU_ConsultarProveedor.resx">
+      <DependentUpon>IU_ConsultarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Compras\EmitirListadoCompraProveedor\IU_EmitirListadoCompraProveedor.resx">
       <DependentUpon>IU_EmitirListadoCompraProveedor.cs</DependentUpon>
     </EmbeddedResource>
@@ -952,6 +962,9 @@
     </Content>
     <Content Include="images\icono-ferreteria_32.ico" />
     <Content Include="images\icono-ferreteria_64.ico" />
+    <None Include="Resources\proveedores_32.png" />
+    <None Include="Resources\proveedores_64.png" />
+    <None Include="Resources\proveedores_128.png" />
     <None Include="Resources\exit_128.png" />
     <None Include="Resources\login_128.png" />
     <None Include="Resources\venta2_32.png" />

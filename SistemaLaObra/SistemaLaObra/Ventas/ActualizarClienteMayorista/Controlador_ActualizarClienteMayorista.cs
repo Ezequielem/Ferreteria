@@ -80,7 +80,7 @@ namespace SistemaLaObra.Ventas.ActualizarClienteMayorista
         public List<Banco> mostrarSeleccionBanco()
         {
             banco = new Banco();
-            return banco.mostrarDatosColeccion();
+            return banco.mostrarDatos();
         }
 
         public void nombreBancoCliente(int codigoBanco)

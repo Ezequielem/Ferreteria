@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.btn_registrarPedidoCompra = new System.Windows.Forms.Button();
-            this.btn_registrarProveedor = new System.Windows.Forms.Button();
-            this.btn_ActualizarProveedor = new System.Windows.Forms.Button();
+            this.btn_consultarProveedor = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -65,35 +64,22 @@
             this.btn_registrarPedidoCompra.UseVisualStyleBackColor = false;
             this.btn_registrarPedidoCompra.Click += new System.EventHandler(this.btn_registrarPedidoCompra_Click);
             // 
-            // btn_registrarProveedor
+            // btn_consultarProveedor
             // 
-            this.btn_registrarProveedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
-            this.btn_registrarProveedor.FlatAppearance.BorderSize = 3;
-            this.btn_registrarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_registrarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btn_registrarProveedor.ForeColor = System.Drawing.Color.White;
-            this.btn_registrarProveedor.Location = new System.Drawing.Point(165, 20);
-            this.btn_registrarProveedor.Name = "btn_registrarProveedor";
-            this.btn_registrarProveedor.Size = new System.Drawing.Size(150, 54);
-            this.btn_registrarProveedor.TabIndex = 5;
-            this.btn_registrarProveedor.Text = "Registrar Proveedor";
-            this.btn_registrarProveedor.UseVisualStyleBackColor = false;
-            this.btn_registrarProveedor.Click += new System.EventHandler(this.btn_registrarProveedor_Click);
-            // 
-            // btn_ActualizarProveedor
-            // 
-            this.btn_ActualizarProveedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
-            this.btn_ActualizarProveedor.FlatAppearance.BorderSize = 3;
-            this.btn_ActualizarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ActualizarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btn_ActualizarProveedor.ForeColor = System.Drawing.Color.White;
-            this.btn_ActualizarProveedor.Location = new System.Drawing.Point(7, 20);
-            this.btn_ActualizarProveedor.Name = "btn_ActualizarProveedor";
-            this.btn_ActualizarProveedor.Size = new System.Drawing.Size(150, 54);
-            this.btn_ActualizarProveedor.TabIndex = 18;
-            this.btn_ActualizarProveedor.Text = "Consultar/Modificar Proveedor";
-            this.btn_ActualizarProveedor.UseVisualStyleBackColor = false;
-            this.btn_ActualizarProveedor.Click += new System.EventHandler(this.btn_ActualizarProveedor_Click);
+            this.btn_consultarProveedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
+            this.btn_consultarProveedor.FlatAppearance.BorderSize = 3;
+            this.btn_consultarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_consultarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btn_consultarProveedor.ForeColor = System.Drawing.Color.White;
+            this.btn_consultarProveedor.Image = global::SistemaLaObra.Properties.Resources.proveedores_32;
+            this.btn_consultarProveedor.Location = new System.Drawing.Point(7, 20);
+            this.btn_consultarProveedor.Name = "btn_consultarProveedor";
+            this.btn_consultarProveedor.Size = new System.Drawing.Size(150, 54);
+            this.btn_consultarProveedor.TabIndex = 18;
+            this.btn_consultarProveedor.Text = "Consultar Proveedor";
+            this.btn_consultarProveedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_consultarProveedor.UseVisualStyleBackColor = false;
+            this.btn_consultarProveedor.Click += new System.EventHandler(this.btn_consultarProveedor_Click);
             // 
             // pictureBox3
             // 
@@ -157,7 +143,7 @@
             this.btn_emitirListadoCompraProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_emitirListadoCompraProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btn_emitirListadoCompraProveedor.ForeColor = System.Drawing.Color.White;
-            this.btn_emitirListadoCompraProveedor.Location = new System.Drawing.Point(325, 20);
+            this.btn_emitirListadoCompraProveedor.Location = new System.Drawing.Point(165, 20);
             this.btn_emitirListadoCompraProveedor.Name = "btn_emitirListadoCompraProveedor";
             this.btn_emitirListadoCompraProveedor.Size = new System.Drawing.Size(150, 54);
             this.btn_emitirListadoCompraProveedor.TabIndex = 21;
@@ -183,6 +169,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.btn_registrarPedidoCompra);
+            this.groupBox1.Controls.Add(this.btn_emitirListadoCompraProveedor);
             this.groupBox1.Location = new System.Drawing.Point(9, 98);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(773, 90);
@@ -194,9 +181,7 @@
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.btn_registrarProveedor);
-            this.groupBox2.Controls.Add(this.btn_ActualizarProveedor);
-            this.groupBox2.Controls.Add(this.btn_emitirListadoCompraProveedor);
+            this.groupBox2.Controls.Add(this.btn_consultarProveedor);
             this.groupBox2.Location = new System.Drawing.Point(9, 194);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(773, 90);
@@ -251,12 +236,11 @@
 
         #endregion
         private System.Windows.Forms.Button btn_registrarPedidoCompra;
-        public System.Windows.Forms.Button btn_registrarProveedor;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
-        public System.Windows.Forms.Button btn_ActualizarProveedor;
+        public System.Windows.Forms.Button btn_consultarProveedor;
         public System.Windows.Forms.Button btn_articulosBajoStock;
         public System.Windows.Forms.Button btn_emitirListadoCompraProveedor;
         private System.Windows.Forms.Label label1;

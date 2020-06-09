@@ -55,7 +55,7 @@ namespace SistemaLaObra.Soporte
 
        public void cargarDatosBanco()
         {
-            listaBancos = banco.mostrarDatosColeccion();
+            listaBancos = banco.mostrarDatos();
             cb_nombreBanco.DataSource = listaBancos;
             cb_nombreBanco.DisplayMember = "Descripcion";       
         }

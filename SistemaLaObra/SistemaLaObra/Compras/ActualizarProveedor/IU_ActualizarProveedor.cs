@@ -34,6 +34,12 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
 
         //METODOS
 
+        public void opcionModificarProveedor(int id)
+        {
+            controladorProveedor.Proveedor.mostrarDatos(id);
+        }
+
+
         public void tomarNumeroCuit()
         {
             controladorProveedor.numeroCuitIngresado(long.Parse(txt_Cuit.Text));
@@ -150,8 +156,6 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
             cb_Localidad.DataSource = controladorProveedor.mostrarDatosLocalidad(codigoDepto);
         }
 
-
-
         private void formularioEnable()
         {
             lbl_Cuit.Enabled = false;
@@ -188,7 +192,7 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
             else if (txt_Cuit.Text != "")
             {
                 tomarNumeroCuit();
-                bool a = controladorProveedor.verificarExistencia();
+                bool a = controladorProveedor.verificarExistencia(long.Parse(txt_Cuit.Text));
                 if (a == false)
                 {
                     MessageBox.Show("El numero de cuit ingresado no existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
