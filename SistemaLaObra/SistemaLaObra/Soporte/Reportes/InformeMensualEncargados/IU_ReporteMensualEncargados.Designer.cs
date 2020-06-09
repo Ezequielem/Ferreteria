@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_ReporteMensualEncargados));
             this.Reporte_mensualEncargadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetPrincipal = new SistemaLaObra.Soporte.Reportes.DataSetPrincipal();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -39,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.btn_salir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Reporte_mensualEncargadosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetPrincipal)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +65,7 @@
             this.reportViewer1.Location = new System.Drawing.Point(12, 86);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(959, 620);
+            this.reportViewer1.Size = new System.Drawing.Size(959, 564);
             this.reportViewer1.TabIndex = 0;
             // 
             // Reporte_mensualEncargadosTableAdapter
@@ -115,21 +117,39 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btn_salir
+            // 
+            this.btn_salir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_salir.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_salir.Image = global::SistemaLaObra.Properties.Resources.aceptarSeleccionar;
+            this.btn_salir.Location = new System.Drawing.Point(831, 656);
+            this.btn_salir.Name = "btn_salir";
+            this.btn_salir.Size = new System.Drawing.Size(140, 50);
+            this.btn_salir.TabIndex = 22;
+            this.btn_salir.Text = "Aceptar";
+            this.btn_salir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_salir.UseVisualStyleBackColor = false;
+            this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
+            // 
             // IU_ReporteMensualEncargados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(983, 718);
+            this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateHasta);
             this.Controls.Add(this.dateDesde);
             this.Controls.Add(this.reportViewer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "IU_ReporteMensualEncargados";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "REPORTE MENSUAL DE ENCARGADOS";
             this.Load += new System.EventHandler(this.IU_ReporteMensualEncargados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Reporte_mensualEncargadosBindingSource)).EndInit();
@@ -150,5 +170,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_salir;
     }
 }

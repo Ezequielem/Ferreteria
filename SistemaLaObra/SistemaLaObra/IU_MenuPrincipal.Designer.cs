@@ -71,7 +71,7 @@
             this.ms_btnInicioSesion.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ms_btnInicioSesion.Name = "ms_btnInicioSesion";
             this.ms_btnInicioSesion.Size = new System.Drawing.Size(98, 20);
-            this.ms_btnInicioSesion.Text = "Iniciar sesion";
+            this.ms_btnInicioSesion.Text = "Iniciar sesión";
             this.ms_btnInicioSesion.Click += new System.EventHandler(this.ms_btnInicioSesion_Click);
             // 
             // ms_btnCerrarSesion
@@ -80,7 +80,7 @@
             this.ms_btnCerrarSesion.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ms_btnCerrarSesion.Name = "ms_btnCerrarSesion";
             this.ms_btnCerrarSesion.Size = new System.Drawing.Size(100, 20);
-            this.ms_btnCerrarSesion.Text = "Cerrar sesion";
+            this.ms_btnCerrarSesion.Text = "Cerrar sesión";
             this.ms_btnCerrarSesion.Visible = false;
             this.ms_btnCerrarSesion.Click += new System.EventHandler(this.ms_btnCerrarSesion_Click);
             // 

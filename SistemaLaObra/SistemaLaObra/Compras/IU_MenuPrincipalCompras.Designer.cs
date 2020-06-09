@@ -38,10 +38,16 @@
             this.btn_articulosBajoStock = new System.Windows.Forms.Button();
             this.btn_emitirListadoCompraProveedor = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_registrarPedidoCompra
@@ -51,7 +57,7 @@
             this.btn_registrarPedidoCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_registrarPedidoCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_registrarPedidoCompra.ForeColor = System.Drawing.Color.White;
-            this.btn_registrarPedidoCompra.Location = new System.Drawing.Point(9, 111);
+            this.btn_registrarPedidoCompra.Location = new System.Drawing.Point(7, 20);
             this.btn_registrarPedidoCompra.Name = "btn_registrarPedidoCompra";
             this.btn_registrarPedidoCompra.Size = new System.Drawing.Size(150, 54);
             this.btn_registrarPedidoCompra.TabIndex = 4;
@@ -66,7 +72,7 @@
             this.btn_registrarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_registrarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btn_registrarProveedor.ForeColor = System.Drawing.Color.White;
-            this.btn_registrarProveedor.Location = new System.Drawing.Point(165, 111);
+            this.btn_registrarProveedor.Location = new System.Drawing.Point(165, 20);
             this.btn_registrarProveedor.Name = "btn_registrarProveedor";
             this.btn_registrarProveedor.Size = new System.Drawing.Size(150, 54);
             this.btn_registrarProveedor.TabIndex = 5;
@@ -81,7 +87,7 @@
             this.btn_ActualizarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ActualizarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btn_ActualizarProveedor.ForeColor = System.Drawing.Color.White;
-            this.btn_ActualizarProveedor.Location = new System.Drawing.Point(322, 111);
+            this.btn_ActualizarProveedor.Location = new System.Drawing.Point(7, 20);
             this.btn_ActualizarProveedor.Name = "btn_ActualizarProveedor";
             this.btn_ActualizarProveedor.Size = new System.Drawing.Size(150, 54);
             this.btn_ActualizarProveedor.TabIndex = 18;
@@ -136,7 +142,7 @@
             this.btn_articulosBajoStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_articulosBajoStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btn_articulosBajoStock.ForeColor = System.Drawing.Color.White;
-            this.btn_articulosBajoStock.Location = new System.Drawing.Point(478, 111);
+            this.btn_articulosBajoStock.Location = new System.Drawing.Point(7, 20);
             this.btn_articulosBajoStock.Name = "btn_articulosBajoStock";
             this.btn_articulosBajoStock.Size = new System.Drawing.Size(150, 54);
             this.btn_articulosBajoStock.TabIndex = 19;
@@ -151,7 +157,7 @@
             this.btn_emitirListadoCompraProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_emitirListadoCompraProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btn_emitirListadoCompraProveedor.ForeColor = System.Drawing.Color.White;
-            this.btn_emitirListadoCompraProveedor.Location = new System.Drawing.Point(634, 111);
+            this.btn_emitirListadoCompraProveedor.Location = new System.Drawing.Point(325, 20);
             this.btn_emitirListadoCompraProveedor.Name = "btn_emitirListadoCompraProveedor";
             this.btn_emitirListadoCompraProveedor.Size = new System.Drawing.Size(150, 54);
             this.btn_emitirListadoCompraProveedor.TabIndex = 21;
@@ -172,6 +178,44 @@
             this.label1.TabIndex = 36;
             this.label1.Text = "COMPRAS";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.btn_registrarPedidoCompra);
+            this.groupBox1.Location = new System.Drawing.Point(9, 98);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(773, 90);
+            this.groupBox1.TabIndex = 37;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "COMPRAS";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.btn_registrarProveedor);
+            this.groupBox2.Controls.Add(this.btn_ActualizarProveedor);
+            this.groupBox2.Controls.Add(this.btn_emitirListadoCompraProveedor);
+            this.groupBox2.Location = new System.Drawing.Point(9, 194);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(773, 90);
+            this.groupBox2.TabIndex = 38;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "PROVEEDORES";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.btn_articulosBajoStock);
+            this.groupBox3.Location = new System.Drawing.Point(9, 290);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(773, 90);
+            this.groupBox3.TabIndex = 39;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "ARTICULO";
+            // 
             // IU_MenuPrincipalCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,16 +223,14 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(794, 561);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btn_emitirListadoCompraProveedor);
-            this.Controls.Add(this.btn_articulosBajoStock);
-            this.Controls.Add(this.btn_ActualizarProveedor);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.btn_registrarProveedor);
-            this.Controls.Add(this.btn_registrarPedidoCompra);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -199,6 +241,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,5 +260,8 @@
         public System.Windows.Forms.Button btn_articulosBajoStock;
         public System.Windows.Forms.Button btn_emitirListadoCompraProveedor;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }

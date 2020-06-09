@@ -76,6 +76,9 @@ namespace SistemaLaObra.Soporte.Reportes.InformeMensualVentas
             this.reportViewer1.RefreshReport();
         }
 
-       
+        private void btn_salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

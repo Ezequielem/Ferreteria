@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_ReporteAnualVentas));
             this.reporte_ventasAnualBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetPrincipal = new SistemaLaObra.Soporte.Reportes.DataSetPrincipal();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -40,6 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dateHasta = new System.Windows.Forms.DateTimePicker();
             this.dateDesde = new System.Windows.Forms.DateTimePicker();
+            this.btn_salir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.reporte_ventasAnualBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetPrincipal)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +65,7 @@
             this.reportViewer1.Location = new System.Drawing.Point(12, 103);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(959, 603);
+            this.reportViewer1.Size = new System.Drawing.Size(959, 547);
             this.reportViewer1.TabIndex = 0;
             // 
             // reporte_ventasAnualTableAdapter
@@ -121,21 +123,39 @@
             this.dateDesde.Size = new System.Drawing.Size(200, 20);
             this.dateDesde.TabIndex = 16;
             // 
+            // btn_salir
+            // 
+            this.btn_salir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_salir.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_salir.Image = global::SistemaLaObra.Properties.Resources.aceptarSeleccionar;
+            this.btn_salir.Location = new System.Drawing.Point(831, 656);
+            this.btn_salir.Name = "btn_salir";
+            this.btn_salir.Size = new System.Drawing.Size(140, 50);
+            this.btn_salir.TabIndex = 21;
+            this.btn_salir.Text = "Aceptar";
+            this.btn_salir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_salir.UseVisualStyleBackColor = false;
+            this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
+            // 
             // IU_ReporteAnualVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(983, 718);
+            this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateHasta);
             this.Controls.Add(this.dateDesde);
             this.Controls.Add(this.reportViewer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "IU_ReporteAnualVentas";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "REPORTE ANUAL DE VENTAS";
             this.Load += new System.EventHandler(this.IU_ReporteAnualVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.reporte_ventasAnualBindingSource)).EndInit();
@@ -157,5 +177,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateHasta;
         private System.Windows.Forms.DateTimePicker dateDesde;
+        private System.Windows.Forms.Button btn_salir;
     }
 }

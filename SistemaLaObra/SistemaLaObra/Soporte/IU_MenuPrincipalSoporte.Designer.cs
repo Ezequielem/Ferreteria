@@ -206,7 +206,7 @@
             this.groupBox1.Size = new System.Drawing.Size(872, 90);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Usuario";
+            this.groupBox1.Text = "USUARIO";
             // 
             // groupBox2
             // 
@@ -224,7 +224,7 @@
             this.groupBox2.Size = new System.Drawing.Size(872, 151);
             this.groupBox2.TabIndex = 27;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Articulo";
+            this.groupBox2.Text = "ARTICULO";
             // 
             // btn_ConsultarUbicacion
             // 
@@ -329,7 +329,7 @@
             this.groupBox3.Size = new System.Drawing.Size(872, 90);
             this.groupBox3.TabIndex = 28;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Tarjeta";
+            this.groupBox3.Text = "TARJETA";
             // 
             // btn_actualizarTarjeta
             // 

@@ -71,7 +71,7 @@ namespace SistemaLaObra
             remito = new IU_RegistrarOrden();
             remito.InterfazContenedora = interfazContenedora;
             remito.opcionEnvioDomicilio();
-            remito.Show(this);
+            remito.ShowDialog(this);
         }
 
         private void btn_registrarClienteMayorista_Click(object sender, EventArgs e)
@@ -84,7 +84,7 @@ namespace SistemaLaObra
         {
             actualizarOrdenRemito = new IU_ActualizarOrdenRemito();
             actualizarOrdenRemito.InterfazContenedora = interfazContenedora;
-            actualizarOrdenRemito.Show(this);
+            actualizarOrdenRemito.ShowDialog(this);
         }
 
         private void btn_consultarPrespuesto_Click(object sender, EventArgs e)

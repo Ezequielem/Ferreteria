@@ -36,10 +36,14 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btn_registrarIngresoProductos = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_emitirOrdenRemito
@@ -49,7 +53,7 @@
             this.btn_emitirOrdenRemito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_emitirOrdenRemito.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_emitirOrdenRemito.ForeColor = System.Drawing.Color.White;
-            this.btn_emitirOrdenRemito.Location = new System.Drawing.Point(9, 107);
+            this.btn_emitirOrdenRemito.Location = new System.Drawing.Point(7, 20);
             this.btn_emitirOrdenRemito.Name = "btn_emitirOrdenRemito";
             this.btn_emitirOrdenRemito.Size = new System.Drawing.Size(141, 54);
             this.btn_emitirOrdenRemito.TabIndex = 0;
@@ -64,7 +68,7 @@
             this.btn_actualizarOrdenRemito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_actualizarOrdenRemito.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_actualizarOrdenRemito.ForeColor = System.Drawing.Color.White;
-            this.btn_actualizarOrdenRemito.Location = new System.Drawing.Point(156, 107);
+            this.btn_actualizarOrdenRemito.Location = new System.Drawing.Point(165, 20);
             this.btn_actualizarOrdenRemito.Name = "btn_actualizarOrdenRemito";
             this.btn_actualizarOrdenRemito.Size = new System.Drawing.Size(141, 54);
             this.btn_actualizarOrdenRemito.TabIndex = 1;
@@ -119,7 +123,7 @@
             this.btn_registrarIngresoProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_registrarIngresoProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_registrarIngresoProductos.ForeColor = System.Drawing.Color.White;
-            this.btn_registrarIngresoProductos.Location = new System.Drawing.Point(303, 107);
+            this.btn_registrarIngresoProductos.Location = new System.Drawing.Point(7, 20);
             this.btn_registrarIngresoProductos.Name = "btn_registrarIngresoProductos";
             this.btn_registrarIngresoProductos.Size = new System.Drawing.Size(141, 54);
             this.btn_registrarIngresoProductos.TabIndex = 22;
@@ -140,6 +144,31 @@
             this.label1.TabIndex = 36;
             this.label1.Text = "LOGÍSTICA";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.btn_registrarIngresoProductos);
+            this.groupBox1.Location = new System.Drawing.Point(9, 98);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(763, 90);
+            this.groupBox1.TabIndex = 37;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "INGRESOS";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.btn_emitirOrdenRemito);
+            this.groupBox2.Controls.Add(this.btn_actualizarOrdenRemito);
+            this.groupBox2.Location = new System.Drawing.Point(9, 194);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(763, 90);
+            this.groupBox2.TabIndex = 38;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "EGRESOS";
+            // 
             // IU_MenuPrincipalLogistica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -147,14 +176,13 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btn_registrarIngresoProductos);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btn_actualizarOrdenRemito);
-            this.Controls.Add(this.btn_emitirOrdenRemito);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -166,6 +194,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,5 +211,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button btn_registrarIngresoProductos;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

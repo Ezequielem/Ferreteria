@@ -75,5 +75,10 @@ namespace SistemaLaObra.Soporte.Reportes.InformeTopEncargadosXPeriodo
             this.reporte_ventasTopEncargadosPeriodoTableAdapter.Fill(this.dataSetPrincipal.Reporte_ventasTopEncargadosPeriodo, FechaDesde, FechaHasta);
             this.reportViewer1.RefreshReport();
         }
+
+        private void btn_salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
