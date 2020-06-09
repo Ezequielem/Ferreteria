@@ -9,20 +9,10 @@ namespace SistemaLaObra.Compras.RegistrarProveedor
     class Controlador_RegistrarProveedor
     {
         public Proveedor Proveedor { get; set; }
-        public Banco Banco { get; set; }
-        public Provincia Provincia { get; set; }
-        public Localidad Localidad { get; set; }
-        public Departamento Departamento { get; set; }
-        public TipoTelefono TipoTelefono { get; set; }
 
         public Controlador_RegistrarProveedor()
         {
-            Proveedor = new Proveedor();
-            Banco = new Banco();
-            Provincia = new Provincia();
-            Localidad = new Localidad();
-            Departamento = new Departamento();
-            TipoTelefono = new TipoTelefono();            
+            Proveedor = new Proveedor();           
         }
 
         //METODOS
@@ -37,9 +27,10 @@ namespace SistemaLaObra.Compras.RegistrarProveedor
             Proveedor.RazonSocial = razonSocial;
         }
 
-        public void nombreBancoSeleccionado(string banco)
+        public void nombreBancoSeleccionado(int banco)
         {
-            Proveedor.Banco = banco;
+            Proveedor.Banco.mostrarDatos(banco);
+            Proveedor.IdBanco = Proveedor.Banco.CodigoBanco;
         }
 
         public void cuentaCorrienteIngresada(string cc)
@@ -47,9 +38,9 @@ namespace SistemaLaObra.Compras.RegistrarProveedor
             Proveedor.NroCuentaCorriente = cc;
         }
 
-        public void tipoTelefono1Ingresado(string tipoTel)
+        public void tipoTelefono1Ingresado(int tipoTel)
         {
-            Proveedor.TipoTelefonoUno = tipoTel;
+            Proveedor.IdTipoTelefonoUno = tipoTel;
         }
 
         public void numeroTelefono1Ingresado(string telefono)
@@ -57,9 +48,9 @@ namespace SistemaLaObra.Compras.RegistrarProveedor
             Proveedor.NumeroDeTelefonoUno = telefono;
         }
 
-        public void tipoTelefono2Ingresado(string tipoTel)
+        public void tipoTelefono2Ingresado(int tipoTel)
         {
-            Proveedor.TipoTelefonoDos = tipoTel;
+            Proveedor.IdTipoTelefonoDos = tipoTel;
         }
 
         public void numeroTelefono2Ingresado(string telefono)
@@ -67,19 +58,10 @@ namespace SistemaLaObra.Compras.RegistrarProveedor
             Proveedor.NumeroDeTelefonoDos = telefono;
         }
 
-        public void provinciaSeleccionada(string provincia)
+        public void localidadSeleccionada(int localidad)
         {
-            Proveedor.Provincia= provincia;
-        }
-
-        public void localidadSeleccionada(string localidad)
-        {
-            Proveedor.Localidad = localidad;
-        }
-
-        public void departamentoSeleccionado(string departamento)
-        {
-            Proveedor.Departamento = departamento;
+            Proveedor.Localidad.mostrarDatos(localidad);
+            Proveedor.IdLocalidad = Proveedor.Localidad.CodigoLocalidad;
         }
 
         public void barrioSeleccionado(string barrio)
@@ -150,30 +132,27 @@ namespace SistemaLaObra.Compras.RegistrarProveedor
 
         public List<Banco> mostrarDatosBancos()
         {
-           return  Banco.mostrarDatos();
+           return  Proveedor.Banco.mostrarDatos();
         }
 
         public List<TipoTelefono> mostrarDatosTiposTelefonos()
         {
-            TipoTelefono = new TipoTelefono();
-            return TipoTelefono.mostrarDatosColeccion();
+            return Proveedor.TipoTelefono.mostrarDatos();
         }
 
         public List<Provincia> mostrarDatosProvincias()
         {
-            return Provincia.mostrarDatosColeccion();
+            return Proveedor.Localidad.Departamento.Provincia.mostrarDatos();
         }
 
         public List<Departamento> mostrarDatosDepartamento(int codigoProvincia)
         {
-            Provincia = new Provincia();
-            return Provincia.conocerDepartamento(codigoProvincia);
+            return Proveedor.Localidad.Departamento.Provincia.conocerDepartamento(codigoProvincia);
         }
 
         public List<Localidad> mostrarDatosLocalidad(int codigoDepto)
         {
-            Departamento = new Departamento();
-            return Departamento.conocerLocalidad(codigoDepto);
+            return Proveedor.Localidad.Departamento.conocerLocalidad(codigoDepto);
         }
 
         public void crear()

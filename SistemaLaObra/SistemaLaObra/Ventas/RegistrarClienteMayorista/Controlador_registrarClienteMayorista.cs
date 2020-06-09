@@ -48,7 +48,7 @@ namespace SistemaLaObra.Ventas.RegistrarClienteMayorista
         public List<TipoTelefono> mostrarSeleccionTipoTelefono()
         {
             tipoTelefono = new TipoTelefono();
-            return tipoTelefono.mostrarDatosColeccion();
+            return tipoTelefono.mostrarDatos();
         }
 
         public void tipoTelefonoNvoCliente(int codigoTipoTelefono)
@@ -110,7 +110,7 @@ namespace SistemaLaObra.Ventas.RegistrarClienteMayorista
         public List<Provincia> mostrarSeleccionProvincia()
         {
             provincia = new Provincia();
-            return provincia.mostrarDatosColeccion();
+            return provincia.mostrarDatos();
         }
 
         public void provinciaNvoCliente(int codigoProvincia)

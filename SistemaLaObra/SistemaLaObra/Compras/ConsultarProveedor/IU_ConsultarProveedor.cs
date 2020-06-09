@@ -57,12 +57,13 @@ namespace SistemaLaObra.Compras.ConsultarProveedor
             controladorCP.listadoProveedores();
             foreach (var item in controladorCP.ListaProveedores)
             {
+                item.TipoTelefono.mostrarDatos(item.IdTipoTelefonoUno);
                 dgv_proveedores.Rows.Add(
                     item.NombreFantasia,
                     item.Cuit,
                     item.NombreContactoUno,
                     item.CargoContactoUno,
-                    item.TipoTelefonoUno,
+                    item.TipoTelefono.mostrarNombre(item.IdTipoTelefonoUno),
                     item.NumeroDeTelefonoUno,
                     item.CodigoProveedor
                     );
@@ -81,7 +82,7 @@ namespace SistemaLaObra.Compras.ConsultarProveedor
                     item.Cuit,
                     item.NombreContactoUno,
                     item.CargoContactoUno,
-                    item.TipoTelefonoUno,
+                    item.TipoTelefono.mostrarNombre(item.IdTipoTelefonoUno),
                     item.NumeroDeTelefonoUno,
                     item.CodigoProveedor
                     );

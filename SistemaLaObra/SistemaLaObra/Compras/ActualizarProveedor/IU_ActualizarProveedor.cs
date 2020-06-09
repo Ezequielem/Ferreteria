@@ -17,28 +17,77 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
         Controlador_ActualizarProveedor controladorProveedor;
         Validaciones validaciones;
 
-
         public IU_ActualizarProveedor()
         {
-            controladorProveedor = new Controlador_ActualizarProveedor();
-            validaciones = new Validaciones();
             InitializeComponent();
+            controladorProveedor = new Controlador_ActualizarProveedor(this);
+            validaciones = new Validaciones();
         }
 
-        private void IU_ActualizarProveedor_Load(object sender, EventArgs e)
+        //BOTONES
+
+        private void btn_Cancelar_Click(object sender, EventArgs e)
         {
-            cargarDatosBanco();
-            cargarDatosTiposTelefonos();
-            cargarDatosProvincias();
+            this.Close();
+        }
+
+        private void btn_Registrar_Click(object sender, EventArgs e)
+        {
+
+            if (txt_RazonSocial.Text == "")
+            {
+                MessageBox.Show("El campo Razon Social no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txt_RazonSocial.Focus();
+            }
+            else if (txt_CuentaCorriente.Text == "")
+            {
+                MessageBox.Show("El campo Cuenta Corriente no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txt_CuentaCorriente.Focus();
+            }
+            else if (txt_NumeroTelefono.Text == "")
+            {
+                MessageBox.Show("El campo Numero de telefono 1 no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txt_NumeroTelefono.Focus();
+            }
+            else if (txt_NumeroTelefono2.Text == "")
+            {
+                MessageBox.Show("El campo Numero de telefono 2 no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txt_NumeroTelefono2.Focus();
+            }
+            else if (txt_Barrio.Text == "")
+            {
+                MessageBox.Show("El campo Barrio no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txt_Barrio.Focus();
+            }
+            else if (txt_CPostal.Text == "")
+            {
+                MessageBox.Show("El campo Codigo Postal no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txt_CPostal.Focus();
+            }
+            else if (txt_Calle.Text == "")
+            {
+                MessageBox.Show("El campo Calle no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txt_Calle.Focus();
+            }
+            else if (txt_NumeroCalle.Text == "")
+            {
+                MessageBox.Show("El campo Numero no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txt_NumeroCalle.Focus();
+            }
+            else
+            {
+                opcionConfirmar();
+                controladorProveedor.modificar();
+                this.Close();
+            }
         }
 
         //METODOS
 
         public void opcionModificarProveedor(int id)
         {
-            controladorProveedor.Proveedor.mostrarDatos(id);
+            controladorProveedor.Proveedor = controladorProveedor.Proveedor.mostrarDatos(id);
         }
-
 
         public void tomarNumeroCuit()
         {
@@ -52,7 +101,7 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
 
         public void tomarBanco()
         {
-            controladorProveedor.nombreBancoSeleccionado(cb_Banco.Text);
+            controladorProveedor.nombreBancoSeleccionado(int.Parse(cb_Banco.SelectedValue.ToString()));
         }
 
         public void tomarCuentaCorriente()
@@ -62,7 +111,7 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
 
         public void tomarTipoTelefono1()
         {
-            controladorProveedor.tipoTelefono1Ingresado(cb_TipoTelefonoUno.Text);
+            controladorProveedor.tipoTelefono1Ingresado(int.Parse(cb_TipoTelefonoUno.SelectedValue.ToString()));
         }
 
         public void tomarNumeroTelefono1()
@@ -72,7 +121,7 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
 
         public void tomarTipoTelefono2()
         {
-            controladorProveedor.tipoTelefono2Ingresado(cb_TipoTelefonoDos.Text);
+            controladorProveedor.tipoTelefono2Ingresado(int.Parse(cb_TipoTelefonoDos.SelectedValue.ToString()));
         }
 
         public void tomarNumeroTelefono2()
@@ -80,19 +129,9 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
             controladorProveedor.numeroTelefono2Ingresado(txt_NumeroTelefono2.Text);
         }
 
-        public void tomarProvincia()
-        {
-            controladorProveedor.provinciaSeleccionada(cb_Provincia.Text);
-        }
-
-        public void tomarDepartamento()
-        {
-            controladorProveedor.departamentoSeleccionado(cb_departamento.Text);
-        }
-
         public void tomarLocalidad()
         {
-            controladorProveedor.localidadSeleccionada(cb_Localidad.Text);
+            controladorProveedor.localidadSeleccionada(int.Parse(cb_Localidad.SelectedValue.ToString()));
         }
 
         public void tomarBarrio()
@@ -156,79 +195,9 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
             cb_Localidad.DataSource = controladorProveedor.mostrarDatosLocalidad(codigoDepto);
         }
 
-        private void formularioEnable()
+        private void opcionConfirmar()
         {
-            lbl_Cuit.Enabled = false;
-            lbl_RazonSocial.Enabled = true;
-            txt_RazonSocial.Enabled = true;
-            lbl_Banco.Enabled = true;
-            cb_Banco.Enabled = true;
-            txt_Barrio.Enabled = true;
-            lbl_CuentaCorriente.Enabled = true;
-            txt_CuentaCorriente.Enabled = true;
-            lbl_TipoTelefono1.Enabled = true;
-            lbl_NumTelefono1.Enabled = true;
-            cb_TipoTelefonoUno.Enabled = true;
-            txt_NumeroTelefono.Enabled = true;
-            lbl_TipoTelefono2.Enabled = true;
-            lbl_NumeroTelefono2.Enabled = true;
-            cb_TipoTelefonoDos.Enabled = true;
-            txt_NumeroTelefono2.Enabled = true;
-            groupBox1.Enabled = true;
-            btn_Registrar.Enabled = true;
-            btn_Cancelar.Enabled = true;
-        }
-
-        private void btn_Buscar_Click(object sender, EventArgs e)
-        {
-            if (txt_Cuit.Text != "" && txt_RazonSocial.Text != "")
-            {
-                MessageBox.Show("Debe buscar solo mediante un campo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txt_Cuit.Text = "";
-                txt_RazonSocial.Text = "";
-                txt_Cuit.Focus();
-            }
-
-            else if (txt_Cuit.Text != "")
-            {
-                tomarNumeroCuit();
-                bool a = controladorProveedor.verificarExistencia(long.Parse(txt_Cuit.Text));
-                if (a == false)
-                {
-                    MessageBox.Show("El numero de cuit ingresado no existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txt_Cuit.Text = "";
-                    txt_Cuit.Focus();
-                }
-                if (a == true)
-                {
-                    formularioEnable();
-                    controladorProveedor.cargarDatos(this);
-                }
-            }
-            else
-            {
-                tomarRazonSocial();
-                bool a = controladorProveedor.verificarExistenciaRSocial();
-                if (a == false)
-                {
-                    MessageBox.Show("El nombre razon social ingresada no existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    txt_RazonSocial.Text = "";
-                    txt_RazonSocial.Focus();
-                }
-                if (a == true)
-                {
-                    formularioEnable();
-                    controladorProveedor.cargarDatos(this);
-                    tomarNumeroCuit();
-                }
-
-            }
-            controladorProveedor.conocerCodigoProveedor();
-            }
-
-        public void opcionConfirmar()
-        {
-
+            tomarNumeroCuit();
             tomarRazonSocial();
             tomarBanco();
             tomarCuentaCorriente();
@@ -238,20 +207,36 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
             tomarNumeroTelefono2();
             tomarCalle();
             tomarNumeroDomicilio();
-            tomarProvincia();
-            tomarDepartamento();
             tomarLocalidad();
             tomarCodigoPostal();
             tomarBarrio();
-            controladorProveedor.opcionConfirmarTomado();
-            this.Close();
-           
         }
 
-        private void btn_Cancelar_Click(object sender, EventArgs e)
+        private void cargarDatos()
         {
-            this.Close();
+            txt_Cuit.Text = controladorProveedor.Proveedor.Cuit;
+            txt_RazonSocial.Text = controladorProveedor.Proveedor.RazonSocial;
+            txt_nombreFantasia.Text = controladorProveedor.Proveedor.NombreFantasia;
+            cb_Banco.SelectedValue = controladorProveedor.Proveedor.Banco.CodigoBanco;
+            txt_CuentaCorriente.Text = controladorProveedor.Proveedor.NroCuentaCorriente;
+            txt_nombreContacto1.Text = controladorProveedor.Proveedor.NombreContactoUno;
+            txt_cargoContacto1.Text = controladorProveedor.Proveedor.CargoContactoUno;
+            cb_TipoTelefonoUno.SelectedValue = controladorProveedor.Proveedor.IdTipoTelefonoUno;            
+            txt_NumeroTelefono.Text = controladorProveedor.Proveedor.NumeroDeTelefonoUno;
+            txt_nombreContacto2.Text = controladorProveedor.Proveedor.NombreContactoDos;
+            txt_cargoContacto2.Text = controladorProveedor.Proveedor.CargoContactoDos;
+            cb_TipoTelefonoDos.SelectedValue = controladorProveedor.Proveedor.IdTipoTelefonoDos;            
+            txt_NumeroTelefono2.Text = controladorProveedor.Proveedor.NumeroDeTelefonoDos;
+            txt_Calle.Text = controladorProveedor.Proveedor.Calle;
+            txt_NumeroCalle.Text = controladorProveedor.Proveedor.NumeroCasa;
+            txt_Barrio.Text = controladorProveedor.Proveedor.Barrio;
+            txt_CPostal.Text = controladorProveedor.Proveedor.CodigoPostal;
+            cb_Provincia.SelectedValue = controladorProveedor.Proveedor.Localidad.Departamento.Provincia.CodigoProvincia;
+            cb_departamento.SelectedValue = controladorProveedor.Proveedor.Localidad.Departamento.CodigoDepartamento;
+            cb_Localidad.SelectedValue = controladorProveedor.Proveedor.IdLocalidad;
         }
+
+        //EVENTOS
 
         private void cb_Provincia_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -261,110 +246,16 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
         private void cb_departamento_SelectedIndexChanged(object sender, EventArgs e)
         {
             cargarDatosLocalidades();
-        }
+        }                
 
-        private void btn_Registrar_Click(object sender, EventArgs e)
+        private void IU_ActualizarProveedor_Load(object sender, EventArgs e)
         {
-
-            if (txt_RazonSocial.Text == "")
-            {
-                MessageBox.Show("El campo Razon Social no puede quedar vacio","Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txt_RazonSocial.Focus();
-            }
-            else if (txt_CuentaCorriente.Text == "")
-            {
-                MessageBox.Show("El campo Cuenta Corriente no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txt_CuentaCorriente.Focus();
-            }
-            else if (txt_NumeroTelefono.Text == "")
-            {
-                MessageBox.Show("El campo Numero de telefono 1 no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txt_NumeroTelefono.Focus();
-            }
-            else if (txt_NumeroTelefono2.Text == "")
-            {
-                MessageBox.Show("El campo Numero de telefono 2 no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txt_NumeroTelefono2.Focus();
-            }
-            else if (txt_Barrio.Text == "")
-            {
-                MessageBox.Show("El campo Barrio no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txt_Barrio.Focus();
-            }
-            else if (txt_CPostal.Text == "")
-            {
-                MessageBox.Show("El campo Codigo Postal no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txt_CPostal.Focus();
-            }
-            else if (txt_Calle.Text == "")
-            {
-                MessageBox.Show("El campo Calle no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txt_Calle.Focus();
-            }
-            else if (txt_NumeroCalle.Text == "")
-            {
-                MessageBox.Show("El campo Numero no puede quedar vacio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txt_NumeroCalle.Focus();
-            }
-            else
-            {
-                opcionConfirmar();
-
-            }
-        }
-
-
-        //EVENTOS
-
-        private void txt_Cuit_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validaciones.soloNumeros(e);
-        }
-
-        private void txt_CuentaCorriente_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validaciones.soloNumeros(e);
-        }
-
-        private void txt_NumeroTelefono_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validaciones.soloNumeros(e);
-        }
-
-        private void txt_NumeroTelefono2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validaciones.soloNumeros(e);
-        }
-
-        private void txt_CPostal_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validaciones.soloNumeros(e);
-        }
-
-        private void txt_NumeroCalle_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validaciones.soloNumeros(e);
-        }
-
-        private void txt_NumeroTelefono_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            validaciones.soloNumeros(e);
-        }
-
-        private void txt_NumeroTelefono2_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            validaciones.soloNumeros(e);
-        }
-
-        private void txt_CPostal_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            validaciones.soloNumeros(e);
-        }
-
-        private void txt_NumeroCalle_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            validaciones.soloNumeros(e);
+            txt_Cuit.Focus();
+            cargarDatosBanco();
+            cargarDatosTiposTelefonos();
+            cargarDatosProvincias();
+            cargarDatos();
         }
     }
-    }
+}
 

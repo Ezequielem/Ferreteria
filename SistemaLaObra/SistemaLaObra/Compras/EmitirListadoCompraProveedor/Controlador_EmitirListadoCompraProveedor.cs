@@ -85,14 +85,14 @@ namespace SistemaLaObra.Compras.EmitirListadoCompraProveedor
                 if (b==0)
                 {
                     
-                    _proveedores.Add(_proveedor.obtenerDatosProveedor(item.CodigoProveedor));
+                    _proveedores.Add(_proveedor.mostrarDatos(item.CodigoProveedor));
                     b = 1;
                 }
                 else
                 {                    
                     if (!_proveedores.Exists(x=>x.CodigoProveedor==item.CodigoProveedor))
                     {
-                        _proveedores.Add(_proveedor.obtenerDatosProveedor(item.CodigoProveedor));
+                        _proveedores.Add(_proveedor.mostrarDatos(item.CodigoProveedor));
                     }                    
                 }
             }

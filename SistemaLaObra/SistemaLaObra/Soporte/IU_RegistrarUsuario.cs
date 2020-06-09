@@ -146,7 +146,7 @@ namespace SistemaLaObra.Soporte
         {
             cbx_tipoTelefono.ValueMember = "CodigoTipoTelefono";
             cbx_tipoTelefono.DisplayMember = "Descripcion";
-            cbx_tipoTelefono.DataSource = tipoTelefono.mostrarDatosColeccion();
+            cbx_tipoTelefono.DataSource = tipoTelefono.mostrarDatos();
         }
 
         private void tomarSeleccionTipoTelefono()
@@ -209,7 +209,7 @@ namespace SistemaLaObra.Soporte
         {
             cbx_provincia.ValueMember = "CodigoProvincia";
             cbx_provincia.DisplayMember = "NombreProvincia";
-            cbx_provincia.DataSource = provincia.mostrarDatosColeccion();
+            cbx_provincia.DataSource = provincia.mostrarDatos();
         }
 
         private void tomarSeleccionProvincia()

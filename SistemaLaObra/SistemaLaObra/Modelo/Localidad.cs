@@ -12,52 +12,26 @@ namespace SistemaLaObra
     public class Localidad
     {
         //INSTANCIAS
-        private List<Localidad> listaLocalidad;
         private AccesoDatos acceso;
         private SqlDataReader lector;
-        private SqlConnection conexion;        
+        private SqlConnection conexion;
 
-        //ATRIBUTOS
-        private int _codigoLocalidad;
-        private string _nombreLocalidad;
-
-        public int CodigoLocalidad
-        {
-            get
-            {
-                return _codigoLocalidad;
-            }
-
-            set
-            {
-                _codigoLocalidad = value;
-            }
-        }
-
-        public string NombreLocalidad
-        {
-            get
-            {
-                return _nombreLocalidad;
-            }
-
-            set
-            {
-                _nombreLocalidad = value;
-            }
-        }
+        public int CodigoLocalidad { get; set; }
+        public string NombreLocalidad { get; set; }
+        public Departamento Departamento { get; set; }
 
         public Localidad()
         {
             CodigoLocalidad = 0;
             NombreLocalidad = "";
+            Departamento = new Departamento();
         }
 
         //METODOS
 
-        public List<Localidad> mostrarDatosColeccion()
+        public List<Localidad> mostrarDatos()
         {
-            listaLocalidad = new List<Localidad>();
+            List<Localidad> listaLocalidad = new List<Localidad>();
             acceso = new AccesoDatos();
             conexion = new SqlConnection(acceso.CadenaConexion());
             SqlCommand consulta = new SqlCommand("select codigoLocalidad, descripcion from Localidades", conexion);
@@ -80,6 +54,32 @@ namespace SistemaLaObra
                 conexion.Close();
             }
             return listaLocalidad;
+        }
+
+        public void mostrarDatos(int localidad)
+        {
+            acceso = new AccesoDatos();
+            conexion = new SqlConnection(acceso.CadenaConexion());
+            SqlCommand consulta = new SqlCommand("select codigoLocalidad, descripcion from Localidades where codigoLocalidad='" + localidad + "'", conexion);
+            try
+            {
+                conexion.Open();
+                lector = consulta.ExecuteReader();
+                if (lector.Read())
+                {
+                    CodigoLocalidad = int.Parse(lector["codigoLocalidad"].ToString());
+                    NombreLocalidad = lector["descripcion"].ToString() ;
+            }
+            }
+            catch (SqlException excepcion)
+            {
+                MessageBox.Show(excepcion.ToString());
+            }
+            finally
+            {
+                lector.Close();
+                conexion.Close();
+            }
         }
 
         public int mostrarCodigo (string nombreLocalidad, int codigoLocalidad)

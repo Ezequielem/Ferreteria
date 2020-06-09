@@ -200,7 +200,6 @@ namespace SistemaLaObra
             }
         }
 
-
         public int existeBanco (string banco)
         {
             AccesoDatos s = new AccesoDatos();
@@ -228,6 +227,5 @@ namespace SistemaLaObra
                 conexion.Close();
             }
         }
-
     }
 }

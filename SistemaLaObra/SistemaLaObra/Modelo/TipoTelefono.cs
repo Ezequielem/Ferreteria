@@ -17,35 +17,8 @@ namespace SistemaLaObra
         SqlDataReader lector;
         List<TipoTelefono> tiposTelefonos;
 
-        //ATRIBUTOS
-        int _codigoTipoTelefono;
-        string _descripcion;
-        
-        public int CodigoTipoTelefono
-        {
-            get
-            {
-                return _codigoTipoTelefono;
-            }
-
-            set
-            {
-                _codigoTipoTelefono = value;
-            }
-        }
-
-        public string Descripcion
-        {
-            get
-            {
-                return _descripcion;
-            }
-
-            set
-            {
-                _descripcion = value;
-            }
-        }
+        public int CodigoTipoTelefono { get; set; }
+        public string Descripcion { get; set; }
 
         public TipoTelefono()
         {
@@ -82,7 +55,7 @@ namespace SistemaLaObra
             }
         }
 
-        public List<TipoTelefono> mostrarDatosColeccion()
+        public List<TipoTelefono> mostrarDatos()
         {
             tiposTelefonos = new List<TipoTelefono>();
             acceso = new AccesoDatos();
@@ -106,15 +79,14 @@ namespace SistemaLaObra
                 lector.Close();
                 conexion.Close();
             }
-
             return tiposTelefonos;
         }
 
         public int mostrarCodigo(string tipoTel)
 
         {
-            AccesoDatos s = new AccesoDatos();
-            conexion = new SqlConnection(s.CadenaConexion());
+            acceso = new AccesoDatos();
+            conexion = new SqlConnection(acceso.CadenaConexion());
             SqlCommand consulta = new SqlCommand("select codigoTipoTelefono from TiposTelefonos where descripcion='" + tipoTel + "'", conexion);
             try
             {
@@ -123,8 +95,6 @@ namespace SistemaLaObra
                 if (lector.Read())
                 {
                     return int.Parse(lector["codigoTipoTelefono"].ToString());
-
-
                 }
                 else
                 {
@@ -138,8 +108,37 @@ namespace SistemaLaObra
             finally
             {
                 conexion.Close();
+                lector.Close();
             }
         }
 
+        public string mostrarNombre(int codigo)
+        {
+            acceso = new AccesoDatos();
+            conexion = new SqlConnection(acceso.CadenaConexion());
+            SqlCommand consulta = new SqlCommand("select codigoTipoTelefono, descripcion from TiposTelefonos where codigoTipoTelefono='" + codigo + "'", conexion);
+            try
+            {
+                conexion.Open();
+                lector = consulta.ExecuteReader();
+                if (lector.Read())
+                {
+                    return lector["descripcion"].ToString();
+                }
+                else
+                {
+                    return string.Empty;
+                }
+            }
+            catch (Exception)
+            {
+                return string.Empty;
+            }
+            finally
+            {
+                conexion.Close();
+                lector.Close();
+            }
+        }
     }
 }

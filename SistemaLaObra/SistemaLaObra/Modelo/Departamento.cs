@@ -14,50 +14,80 @@ namespace SistemaLaObra
         private AccesoDatos acceso;
         private SqlDataReader lector;
         private SqlConnection conexion;
-        private List<Localidad> listaLocalidad;
 
-        //ATRIBUTOS
-        private int _codigoDepartamento;
-        private string _nombreDepartamento;
-        
-
-        public int CodigoDepartamento
-        {
-            get
-            {
-                return _codigoDepartamento;
-            }
-
-            set
-            {
-                _codigoDepartamento = value;
-            }
-        }
-
-        public string NombreDepartamento
-        {
-            get
-            {
-                return _nombreDepartamento;
-            }
-
-            set
-            {
-                _nombreDepartamento = value;
-            }
-        }
+        public int CodigoDepartamento { get; set; }
+        public string NombreDepartamento { get; set; }
+        public Provincia Provincia { get; set; }
 
         public Departamento()
         {
             CodigoDepartamento = 0;
-            NombreDepartamento = "";                 
+            NombreDepartamento = "";
+            Provincia = new Provincia();
         }
 
         //METODOS
 
+        public void mostrarDatos(int departamento)
+        {
+            acceso = new AccesoDatos();
+            conexion = new SqlConnection(acceso.CadenaConexion());
+            SqlCommand consulta = new SqlCommand("select codigoDepartamento, codigoProvincia, descripcion from Departamentos where codigoDepartamento='"+ departamento +"'", conexion);
+            try
+            {
+                conexion.Open();
+                lector = consulta.ExecuteReader();
+                if (lector.Read())
+                {
+                    CodigoDepartamento = int.Parse(lector["codigoDepartamento"].ToString());
+                    NombreDepartamento = lector["descripcion"].ToString();
+                }
+            }
+            catch (SqlException excepcion)
+            {
+                MessageBox.Show(excepcion.ToString());
+            }
+            finally
+            {
+                lector.Close();
+                conexion.Close();
+            }
+        }
+
+        public List<Departamento> mostrarDatos()
+        {
+            List<Departamento> lista = new List<Departamento>();
+            acceso = new AccesoDatos();
+            conexion = new SqlConnection(acceso.CadenaConexion());
+            SqlCommand consulta = new SqlCommand("select codigoDepartamento, codigoProvincia, descripcion from Departamentos", conexion);
+            try
+            {
+                conexion.Open();
+                lector = consulta.ExecuteReader();
+                while (lector.Read())
+                {
+                    lista.Add(new Departamento(){
+                        CodigoDepartamento = int.Parse(lector["codigoDepartamento"].ToString()),
+                        NombreDepartamento = lector["descripcion"].ToString()
+                    });                    
+                }
+                return lista;
+            }
+            catch (SqlException excepcion)
+            {
+                MessageBox.Show(excepcion.ToString());
+                return lista;
+            }
+            finally
+            {
+                lector.Close();
+                conexion.Close();
+            }
+        }
+
         public List<Localidad> conocerLocalidad(int codigoDepartamento)
         {
-            listaLocalidad = new List<Localidad>();
+            List<Localidad> listaLocalidad = new List<Localidad>();
             acceso = new AccesoDatos();
             conexion = new SqlConnection(acceso.CadenaConexion());
             SqlCommand consulta = new SqlCommand("select codigoLocalidad, descripcion from Localidades where codigoDepartamento='" + codigoDepartamento + "'", conexion);

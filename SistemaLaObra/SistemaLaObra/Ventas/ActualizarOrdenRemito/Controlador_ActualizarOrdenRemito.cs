@@ -319,7 +319,7 @@ namespace SistemaLaObra.Ventas.ActualizarOrdenRemito
         public List<Provincia> mostrarSelecProvincia()
         {
             Provincia = new Provincia();
-            return Provincia.mostrarDatosColeccion();
+            return Provincia.mostrarDatos();
         }
 
         public List<Departamento> mostrarSelecDepartamento(int codigoProvincia)
@@ -334,7 +334,7 @@ namespace SistemaLaObra.Ventas.ActualizarOrdenRemito
 
         public List<TipoTelefono> mostrarSelectTipoTelefono()
         {
-            return TipoTelefono.mostrarDatosColeccion();
+            return TipoTelefono.mostrarDatos();
         }
 
         public bool verificarCambios()

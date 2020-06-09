@@ -251,7 +251,7 @@ namespace SistemaLaObra.Ventas.OrdenDeRemito
         public List<Provincia> mostrarSelecProvincia()
         {
             Provincia = new Provincia();    
-            return Provincia.mostrarDatosColeccion();
+            return Provincia.mostrarDatos();
         }
 
         public void provinciaEnvio(List<Entrega> listaEntregaInstanciada)
@@ -299,7 +299,7 @@ namespace SistemaLaObra.Ventas.OrdenDeRemito
         public List<TipoTelefono> mostrarSelectTipoTelefono()
         {
             TipoTelefono = new TipoTelefono();
-            return TipoTelefono.mostrarDatosColeccion();
+            return TipoTelefono.mostrarDatos();
         }
 
         public void tipoNroTelefonoEnvio(List<Entrega> listaEntregaInstanciada)

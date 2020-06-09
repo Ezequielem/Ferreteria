@@ -94,7 +94,7 @@ namespace SistemaLaObra.Compras.RegistrarProveedor
 
         public void tomarBanco()
         {
-            controladorProveedor.nombreBancoSeleccionado(cb_Banco.Text);
+            controladorProveedor.nombreBancoSeleccionado(int.Parse(cb_Banco.SelectedValue.ToString()));
         }
 
         public void tomarCuentaCorriente()
@@ -104,7 +104,7 @@ namespace SistemaLaObra.Compras.RegistrarProveedor
 
         public void tomarTipoTelefono1()
         {
-            controladorProveedor.tipoTelefono1Ingresado(cb_TipoTelefonoUno.Text);
+            controladorProveedor.tipoTelefono1Ingresado(int.Parse(cb_TipoTelefonoUno.SelectedValue.ToString()));
         }
 
         public void tomarNumeroTelefono1()
@@ -114,7 +114,7 @@ namespace SistemaLaObra.Compras.RegistrarProveedor
 
         public void tomarTipoTelefono2()
         {
-            controladorProveedor.tipoTelefono2Ingresado(cb_TipoTelefonoDos.Text);
+            controladorProveedor.tipoTelefono2Ingresado(int.Parse(cb_TipoTelefonoDos.SelectedValue.ToString()));
         }
 
         public void tomarNumeroTelefono2()
@@ -122,19 +122,9 @@ namespace SistemaLaObra.Compras.RegistrarProveedor
             controladorProveedor.numeroTelefono2Ingresado(txt_NumeroTelefono2.Text);
         }
 
-        public void tomarProvincia()
-        {
-            controladorProveedor.provinciaSeleccionada(cb_Provincia.Text);
-        }
-
-        public void tomarDepartamento()
-        {
-            controladorProveedor.departamentoSeleccionado(cb_departamento.Text);
-        }
-
         public void tomarLocalidad()
         {
-            controladorProveedor.localidadSeleccionada(cb_Localidad.Text);
+            controladorProveedor.localidadSeleccionada(int.Parse(cb_Localidad.SelectedValue.ToString()));
         }
 
         public void tomarBarrio()
@@ -247,8 +237,6 @@ namespace SistemaLaObra.Compras.RegistrarProveedor
             tomarNumeroTelefono2();
             tomarCalle();
             tomarNumeroDomicilio();
-            tomarProvincia();
-            tomarDepartamento();
             tomarLocalidad();
             tomarCodigoPostal();
             tomarBarrio();           

@@ -11,40 +11,12 @@ namespace SistemaLaObra
     public class Provincia
     {
         //INSTANCIAS
-        private List<Provincia> listaProvincia;
         private AccesoDatos acceso;
         private SqlConnection conexion;
         private SqlDataReader lector;
-        private List<Departamento> listaDepartamento;
 
-        //ATRIBUTOS
-        private int _codigoProvincia;
-        private string _nombreProvincia;
-
-        public int CodigoProvincia
-        {
-            get
-            {
-                return _codigoProvincia;
-            }
-
-            set
-            {
-                _codigoProvincia = value;
-            }
-        }
-        public string NombreProvincia
-        {
-            get
-            {
-                return _nombreProvincia;
-            }
-
-            set
-            {
-                _nombreProvincia = value;
-            }
-        }
+        public int CodigoProvincia { get; set; }
+        public string NombreProvincia { get; set; }
 
         public Provincia()
         {
@@ -80,9 +52,9 @@ namespace SistemaLaObra
             }
         }
     
-        public List<Provincia> mostrarDatosColeccion()
+        public List<Provincia> mostrarDatos()
         {
-            listaProvincia = new List<Provincia>();
+            List<Provincia>  listaProvincia = new List<Provincia>();
             acceso = new AccesoDatos();
             conexion = new SqlConnection(acceso.CadenaConexion());
             SqlCommand consulta = new SqlCommand("select codigoProvincia, descripcion from Provincias", conexion);
@@ -110,7 +82,7 @@ namespace SistemaLaObra
 
         public List<Departamento> conocerDepartamento(int codigoProvincia)
         {
-            listaDepartamento = new List<Departamento>();
+            List<Departamento>  listaDepartamento = new List<Departamento>();
             acceso = new AccesoDatos();
             conexion = new SqlConnection(acceso.CadenaConexion());
             SqlCommand consulta = new SqlCommand("select codigoDepartamento, descripcion from Departamentos where codigoProvincia='" + codigoProvincia + "'", conexion);

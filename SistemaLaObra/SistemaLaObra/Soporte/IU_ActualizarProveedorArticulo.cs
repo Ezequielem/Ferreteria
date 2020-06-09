@@ -140,7 +140,7 @@ namespace SistemaLaObra.Soporte
             foreach (var item in ListaProveedoresArticulo)
             {
                 Articulo.mostrarDatos(item.CodigoArticulo);
-                dgv_proveedorArticulo.Rows.Add(Articulo.Descripcion, Proveedor.obtenerDatosProveedor(item.CodigoProveedor).RazonSocial, item.PrecioProveedor, "seleccionar", item.CodigoArticulo, item.CodigoProveedor);
+                dgv_proveedorArticulo.Rows.Add(Articulo.Descripcion, Proveedor.mostrarDatos(item.CodigoProveedor).RazonSocial, item.PrecioProveedor, "seleccionar", item.CodigoArticulo, item.CodigoProveedor);
             }
         }
 
@@ -150,7 +150,7 @@ namespace SistemaLaObra.Soporte
             foreach (var item in lista)
             {
                 Articulo.mostrarDatos(item.CodigoArticulo);
-                dgv_proveedorArticulo.Rows.Add(Articulo.Descripcion, Proveedor.obtenerDatosProveedor(item.CodigoProveedor).RazonSocial, item.PrecioProveedor, "seleccionar", item.CodigoArticulo, item.CodigoProveedor);
+                dgv_proveedorArticulo.Rows.Add(Articulo.Descripcion, Proveedor.mostrarDatos(item.CodigoProveedor).RazonSocial, item.PrecioProveedor, "seleccionar", item.CodigoArticulo, item.CodigoProveedor);
             }
         }
 

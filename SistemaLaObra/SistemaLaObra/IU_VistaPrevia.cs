@@ -262,7 +262,7 @@ namespace SistemaLaObra
             
             //dibujamos los datos del proveedor
             g.DrawString(instanciaProveedor.RazonSocial, font, brush, new Point(100, primerY - 75), formatter);
-            g.DrawString(instanciaProveedor.Calle+""+instanciaProveedor.NumeroCasa+" "+instanciaProveedor.Provincia+" "+instanciaProveedor.Departamento, font, brush, new Point(100, primerY - 50), formatter);
+            g.DrawString(instanciaProveedor.Calle+""+instanciaProveedor.NumeroCasa+" "+instanciaProveedor.Localidad.Departamento.Provincia+" "+instanciaProveedor.Localidad.Departamento, font, brush, new Point(100, primerY - 50), formatter);
 
             //Aca van los items
             Articulo _articulo = new Articulo();

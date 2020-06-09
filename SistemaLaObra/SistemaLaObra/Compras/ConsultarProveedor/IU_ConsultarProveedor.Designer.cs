@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_ConsultarProveedor));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_registrar = new System.Windows.Forms.Button();
-            this.btn_modificar = new System.Windows.Forms.Button();
             this.btn_salir = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btn_registrar = new System.Windows.Forms.Button();
+            this.btn_modificar = new System.Windows.Forms.Button();
             this.gb_articulo = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txt_filtro = new System.Windows.Forms.TextBox();
@@ -76,6 +77,31 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(153, 462);
             this.tableLayoutPanel1.TabIndex = 12;
             // 
+            // btn_salir
+            // 
+            this.btn_salir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_salir.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_salir.Image = global::SistemaLaObra.Properties.Resources.aceptarSeleccionar;
+            this.btn_salir.Location = new System.Drawing.Point(10, 409);
+            this.btn_salir.Name = "btn_salir";
+            this.btn_salir.Size = new System.Drawing.Size(140, 50);
+            this.btn_salir.TabIndex = 7;
+            this.btn_salir.Text = "Aceptar";
+            this.btn_salir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_salir.UseVisualStyleBackColor = false;
+            this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox2.Image = global::SistemaLaObra.Properties.Resources.proveedores_64;
+            this.pictureBox2.Location = new System.Drawing.Point(44, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
+            // 
             // btn_registrar
             // 
             this.btn_registrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -105,31 +131,6 @@
             this.btn_modificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_modificar.UseVisualStyleBackColor = false;
             this.btn_modificar.Click += new System.EventHandler(this.btn_modificar_Click);
-            // 
-            // btn_salir
-            // 
-            this.btn_salir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_salir.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_salir.Image = global::SistemaLaObra.Properties.Resources.aceptarSeleccionar;
-            this.btn_salir.Location = new System.Drawing.Point(10, 409);
-            this.btn_salir.Name = "btn_salir";
-            this.btn_salir.Size = new System.Drawing.Size(140, 50);
-            this.btn_salir.TabIndex = 7;
-            this.btn_salir.Text = "Aceptar";
-            this.btn_salir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_salir.UseVisualStyleBackColor = false;
-            this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.Image = global::SistemaLaObra.Properties.Resources.proveedores_64;
-            this.pictureBox2.Location = new System.Drawing.Point(44, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
             // 
             // gb_articulo
             // 
@@ -172,6 +173,14 @@
             this.dgv_proveedores.AllowUserToDeleteRows = false;
             this.dgv_proveedores.AllowUserToResizeColumns = false;
             this.dgv_proveedores.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_proveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_proveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_proveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -204,7 +213,7 @@
             this.Column2.HeaderText = "CUIT";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            this.Column2.Width = 59;
+            this.Column2.Width = 63;
             // 
             // Column3
             // 
@@ -212,7 +221,7 @@
             this.Column3.HeaderText = "Contacto";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 80;
+            this.Column3.Width = 88;
             // 
             // Column4
             // 
@@ -220,7 +229,7 @@
             this.Column4.HeaderText = "Cargo";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
-            this.Column4.Width = 65;
+            this.Column4.Width = 70;
             // 
             // Column5
             // 
@@ -228,7 +237,7 @@
             this.Column5.HeaderText = "Tipo teléfono";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
-            this.Column5.Width = 95;
+            this.Column5.Width = 106;
             // 
             // Column6
             // 
@@ -236,7 +245,7 @@
             this.Column6.HeaderText = "Número";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
-            this.Column6.Width = 77;
+            this.Column6.Width = 83;
             // 
             // id
             // 
