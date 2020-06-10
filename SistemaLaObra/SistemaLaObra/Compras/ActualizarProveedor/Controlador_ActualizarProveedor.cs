@@ -31,6 +31,7 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
         public void nombreBancoSeleccionado(int banco)
         {
             Proveedor.Banco.mostrarDatos(banco);
+            Proveedor.IdBanco = banco;
         }
 
         public void cuentaCorrienteIngresada(string cc)
@@ -61,6 +62,7 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
         public void localidadSeleccionada(int localidad)
         {
             Proveedor.Localidad.mostrarDatos(localidad);
+            Proveedor.IdLocalidad = localidad;
         }
 
         public void barrioSeleccionado(string barrio)

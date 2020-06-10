@@ -101,7 +101,7 @@ namespace SistemaLaObra
                 adaptador.UpdateCommand.Parameters["@nroTelefono2"].Value = objeto.NumeroDeTelefonoDos;
                 adaptador.UpdateCommand.Parameters["@calle"].Value = objeto.Calle;
                 adaptador.UpdateCommand.Parameters["@numero"].Value = objeto.NumeroCasa;
-                adaptador.UpdateCommand.Parameters["@localidad"].Value = objeto.IdLocalidad;
+                adaptador.UpdateCommand.Parameters["@localidad"].Value = objeto.Localidad.CodigoLocalidad;
                 adaptador.UpdateCommand.Parameters["@codigoPostal"].Value = objeto.CodigoPostal;
                 adaptador.UpdateCommand.Parameters["@nombreBarrio"].Value = objeto.Barrio;
 

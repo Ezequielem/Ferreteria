@@ -88,6 +88,7 @@ namespace SistemaLaObra.Compras.ActualizarProveedor
         {
             controladorProveedor.Proveedor = controladorProveedor.Proveedor.mostrarDatos(id);
             controladorProveedor.Proveedor.Localidad.mostrarDatos(controladorProveedor.Proveedor.IdLocalidad);
+            controladorProveedor.Proveedor.Banco.mostrarDatos(controladorProveedor.Proveedor.IdBanco);
         }
 
         public void tomarNumeroCuit()
