@@ -442,7 +442,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::SistemaLaObra.Properties.Resources.articulo_128;
+            this.pictureBox1.Image = global::SistemaLaObra.Properties.Resources.articuloGris_128;
             this.pictureBox1.Location = new System.Drawing.Point(590, 33);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(128, 128);
