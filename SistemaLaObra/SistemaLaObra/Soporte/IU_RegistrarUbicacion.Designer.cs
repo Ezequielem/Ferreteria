@@ -34,7 +34,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_descripcion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_registrar
@@ -43,7 +45,7 @@
             this.btn_registrar.BackColor = System.Drawing.SystemColors.Control;
             this.btn_registrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_registrar.Image = global::SistemaLaObra.Properties.Resources.registrar;
-            this.btn_registrar.Location = new System.Drawing.Point(242, 169);
+            this.btn_registrar.Location = new System.Drawing.Point(242, 181);
             this.btn_registrar.Name = "btn_registrar";
             this.btn_registrar.Size = new System.Drawing.Size(140, 50);
             this.btn_registrar.TabIndex = 17;
@@ -58,7 +60,7 @@
             this.btn_salir.BackColor = System.Drawing.SystemColors.Control;
             this.btn_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_salir.Image = global::SistemaLaObra.Properties.Resources.cancelar;
-            this.btn_salir.Location = new System.Drawing.Point(12, 169);
+            this.btn_salir.Location = new System.Drawing.Point(12, 181);
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(140, 50);
             this.btn_salir.TabIndex = 18;
@@ -72,9 +74,9 @@
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox1.Controls.Add(this.txt_descripcion);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 82);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(369, 131);
+            this.groupBox1.Size = new System.Drawing.Size(370, 86);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "INGRESE LOS DATOS";
@@ -83,25 +85,35 @@
             // 
             this.txt_descripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_descripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_descripcion.Location = new System.Drawing.Point(24, 64);
+            this.txt_descripcion.Location = new System.Drawing.Point(59, 38);
             this.txt_descripcion.Name = "txt_descripcion";
-            this.txt_descripcion.Size = new System.Drawing.Size(308, 22);
+            this.txt_descripcion.Size = new System.Drawing.Size(270, 22);
             this.txt_descripcion.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 35);
+            this.label1.Location = new System.Drawing.Point(6, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 13);
+            this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Descripción de ubicación:";
+            this.label1.Text = "Nombre:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SistemaLaObra.Properties.Resources.ubicacionGris_64;
+            this.pictureBox1.Location = new System.Drawing.Point(318, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
             // 
             // IU_RegistrarUbicacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 231);
+            this.ClientSize = new System.Drawing.Size(394, 243);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_registrar);
             this.Controls.Add(this.btn_salir);
@@ -113,6 +125,7 @@
             this.Text = "REGISTRAR UBICACION";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -124,5 +137,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txt_descripcion;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

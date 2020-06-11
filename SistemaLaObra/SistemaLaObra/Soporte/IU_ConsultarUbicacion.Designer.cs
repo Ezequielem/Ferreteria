@@ -31,9 +31,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_ConsultarUbicacion));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_registrar = new System.Windows.Forms.Button();
             this.btn_modificar = new System.Windows.Forms.Button();
             this.btn_salir = new System.Windows.Forms.Button();
+            this.btn_registrar = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.gb_articulo = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txt_filtro = new System.Windows.Forms.TextBox();
@@ -42,6 +43,7 @@
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.gb_articulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ubicaciones)).BeginInit();
@@ -53,35 +55,21 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.btn_registrar, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.btn_modificar, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.btn_salir, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.btn_registrar, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox2, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(374, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 91F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.144796F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.95928F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.41176F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.21719F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(153, 312);
             this.tableLayoutPanel1.TabIndex = 14;
-            // 
-            // btn_registrar
-            // 
-            this.btn_registrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_registrar.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_registrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_registrar.Image = global::SistemaLaObra.Properties.Resources.registrar;
-            this.btn_registrar.Location = new System.Drawing.Point(10, 25);
-            this.btn_registrar.Name = "btn_registrar";
-            this.btn_registrar.Size = new System.Drawing.Size(140, 50);
-            this.btn_registrar.TabIndex = 8;
-            this.btn_registrar.Text = "Registrar";
-            this.btn_registrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_registrar.UseVisualStyleBackColor = false;
-            this.btn_registrar.Click += new System.EventHandler(this.btn_registrar_Click);
             // 
             // btn_modificar
             // 
@@ -89,7 +77,7 @@
             this.btn_modificar.BackColor = System.Drawing.SystemColors.Control;
             this.btn_modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_modificar.Image = global::SistemaLaObra.Properties.Resources.actualizar;
-            this.btn_modificar.Location = new System.Drawing.Point(10, 141);
+            this.btn_modificar.Location = new System.Drawing.Point(10, 185);
             this.btn_modificar.Name = "btn_modificar";
             this.btn_modificar.Size = new System.Drawing.Size(140, 50);
             this.btn_modificar.TabIndex = 9;
@@ -104,14 +92,39 @@
             this.btn_salir.BackColor = System.Drawing.SystemColors.Control;
             this.btn_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_salir.Image = global::SistemaLaObra.Properties.Resources.aceptarSeleccionar;
-            this.btn_salir.Location = new System.Drawing.Point(10, 259);
+            this.btn_salir.Location = new System.Drawing.Point(10, 268);
             this.btn_salir.Name = "btn_salir";
-            this.btn_salir.Size = new System.Drawing.Size(140, 50);
+            this.btn_salir.Size = new System.Drawing.Size(140, 41);
             this.btn_salir.TabIndex = 7;
             this.btn_salir.Text = "Aceptar";
             this.btn_salir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_salir.UseVisualStyleBackColor = false;
             this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
+            // 
+            // btn_registrar
+            // 
+            this.btn_registrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_registrar.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_registrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_registrar.Image = global::SistemaLaObra.Properties.Resources.registrar;
+            this.btn_registrar.Location = new System.Drawing.Point(10, 120);
+            this.btn_registrar.Name = "btn_registrar";
+            this.btn_registrar.Size = new System.Drawing.Size(140, 50);
+            this.btn_registrar.TabIndex = 8;
+            this.btn_registrar.Text = "Registrar";
+            this.btn_registrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_registrar.UseVisualStyleBackColor = false;
+            this.btn_registrar.Click += new System.EventHandler(this.btn_registrar_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox2.Image = global::SistemaLaObra.Properties.Resources.ubicacionGris_64;
+            this.pictureBox2.Location = new System.Drawing.Point(44, 13);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
             // 
             // gb_articulo
             // 
@@ -215,6 +228,7 @@
             this.Text = "CONSULTAR UBICACION";
             this.Load += new System.EventHandler(this.IU_ConsultarUbicacion_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.gb_articulo.ResumeLayout(false);
             this.gb_articulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -236,5 +250,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
