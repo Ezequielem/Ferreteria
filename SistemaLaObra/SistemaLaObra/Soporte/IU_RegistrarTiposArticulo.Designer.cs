@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_RegistrarTiposArticulo));
             this.gbx_tipoArticulo = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_subNivel1 = new System.Windows.Forms.Button();
             this.txt_nombreTipo = new System.Windows.Forms.TextBox();
             this.cbx_seleccionarTipo = new System.Windows.Forms.ComboBox();
@@ -58,6 +59,7 @@
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_registrar = new System.Windows.Forms.Button();
             this.gbx_tipoArticulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbx_sub1.SuspendLayout();
             this.gbx_sub2.SuspendLayout();
             this.gbx_sub3.SuspendLayout();
@@ -66,6 +68,7 @@
             // gbx_tipoArticulo
             // 
             this.gbx_tipoArticulo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.gbx_tipoArticulo.Controls.Add(this.pictureBox1);
             this.gbx_tipoArticulo.Controls.Add(this.btn_subNivel1);
             this.gbx_tipoArticulo.Controls.Add(this.txt_nombreTipo);
             this.gbx_tipoArticulo.Controls.Add(this.cbx_seleccionarTipo);
@@ -73,10 +76,19 @@
             this.gbx_tipoArticulo.Controls.Add(this.rbtn_elegirtipo);
             this.gbx_tipoArticulo.Location = new System.Drawing.Point(12, 12);
             this.gbx_tipoArticulo.Name = "gbx_tipoArticulo";
-            this.gbx_tipoArticulo.Size = new System.Drawing.Size(575, 84);
+            this.gbx_tipoArticulo.Size = new System.Drawing.Size(568, 84);
             this.gbx_tipoArticulo.TabIndex = 0;
             this.gbx_tipoArticulo.TabStop = false;
             this.gbx_tipoArticulo.Text = "TIPO DE ARTICULO";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SistemaLaObra.Properties.Resources.tipoArticuloGris_64;
+            this.pictureBox1.Location = new System.Drawing.Point(498, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // btn_subNivel1
             // 
@@ -84,7 +96,7 @@
             this.btn_subNivel1.BackColor = System.Drawing.SystemColors.Control;
             this.btn_subNivel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_subNivel1.Image = global::SistemaLaObra.Properties.Resources.flechaAbajo;
-            this.btn_subNivel1.Location = new System.Drawing.Point(469, 38);
+            this.btn_subNivel1.Location = new System.Drawing.Point(339, 38);
             this.btn_subNivel1.Name = "btn_subNivel1";
             this.btn_subNivel1.Size = new System.Drawing.Size(100, 40);
             this.btn_subNivel1.TabIndex = 4;
@@ -95,6 +107,7 @@
             // 
             // txt_nombreTipo
             // 
+            this.txt_nombreTipo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_nombreTipo.Enabled = false;
             this.txt_nombreTipo.Location = new System.Drawing.Point(96, 49);
             this.txt_nombreTipo.Name = "txt_nombreTipo";
@@ -145,7 +158,7 @@
             this.gbx_sub1.Controls.Add(this.rbtn_elegirSubTipo1);
             this.gbx_sub1.Location = new System.Drawing.Point(12, 102);
             this.gbx_sub1.Name = "gbx_sub1";
-            this.gbx_sub1.Size = new System.Drawing.Size(575, 84);
+            this.gbx_sub1.Size = new System.Drawing.Size(568, 84);
             this.gbx_sub1.TabIndex = 1;
             this.gbx_sub1.TabStop = false;
             this.gbx_sub1.Text = "SUBTIPO DE ARTICULO NIVEL 1";
@@ -156,7 +169,7 @@
             this.btn_nivel.BackColor = System.Drawing.SystemColors.Control;
             this.btn_nivel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_nivel.Image = global::SistemaLaObra.Properties.Resources.flechaArriba;
-            this.btn_nivel.Location = new System.Drawing.Point(346, 38);
+            this.btn_nivel.Location = new System.Drawing.Point(339, 38);
             this.btn_nivel.Name = "btn_nivel";
             this.btn_nivel.Size = new System.Drawing.Size(100, 40);
             this.btn_nivel.TabIndex = 10;
@@ -171,7 +184,7 @@
             this.btn_subNivel2.BackColor = System.Drawing.SystemColors.Control;
             this.btn_subNivel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_subNivel2.Image = global::SistemaLaObra.Properties.Resources.flechaAbajo;
-            this.btn_subNivel2.Location = new System.Drawing.Point(469, 38);
+            this.btn_subNivel2.Location = new System.Drawing.Point(462, 38);
             this.btn_subNivel2.Name = "btn_subNivel2";
             this.btn_subNivel2.Size = new System.Drawing.Size(100, 40);
             this.btn_subNivel2.TabIndex = 9;
@@ -182,6 +195,7 @@
             // 
             // txt_nombreSubTipo1
             // 
+            this.txt_nombreSubTipo1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_nombreSubTipo1.Enabled = false;
             this.txt_nombreSubTipo1.Location = new System.Drawing.Point(96, 49);
             this.txt_nombreSubTipo1.Name = "txt_nombreSubTipo1";
@@ -232,7 +246,7 @@
             this.gbx_sub2.Controls.Add(this.rbtn_elegirSubTipo2);
             this.gbx_sub2.Location = new System.Drawing.Point(12, 192);
             this.gbx_sub2.Name = "gbx_sub2";
-            this.gbx_sub2.Size = new System.Drawing.Size(575, 84);
+            this.gbx_sub2.Size = new System.Drawing.Size(568, 84);
             this.gbx_sub2.TabIndex = 1;
             this.gbx_sub2.TabStop = false;
             this.gbx_sub2.Text = "SUBTIPO DE ARTICULO NIVEL 2";
@@ -243,7 +257,7 @@
             this.btn_nivel1.BackColor = System.Drawing.SystemColors.Control;
             this.btn_nivel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_nivel1.Image = global::SistemaLaObra.Properties.Resources.flechaArriba;
-            this.btn_nivel1.Location = new System.Drawing.Point(346, 37);
+            this.btn_nivel1.Location = new System.Drawing.Point(339, 37);
             this.btn_nivel1.Name = "btn_nivel1";
             this.btn_nivel1.Size = new System.Drawing.Size(100, 40);
             this.btn_nivel1.TabIndex = 16;
@@ -258,7 +272,7 @@
             this.bnt_subNivel3.BackColor = System.Drawing.SystemColors.Control;
             this.bnt_subNivel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnt_subNivel3.Image = global::SistemaLaObra.Properties.Resources.flechaAbajo;
-            this.bnt_subNivel3.Location = new System.Drawing.Point(469, 37);
+            this.bnt_subNivel3.Location = new System.Drawing.Point(462, 37);
             this.bnt_subNivel3.Name = "bnt_subNivel3";
             this.bnt_subNivel3.Size = new System.Drawing.Size(100, 40);
             this.bnt_subNivel3.TabIndex = 15;
@@ -269,6 +283,7 @@
             // 
             // txt_nombreSubTipo2
             // 
+            this.txt_nombreSubTipo2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_nombreSubTipo2.Enabled = false;
             this.txt_nombreSubTipo2.Location = new System.Drawing.Point(96, 48);
             this.txt_nombreSubTipo2.Name = "txt_nombreSubTipo2";
@@ -318,7 +333,7 @@
             this.gbx_sub3.Controls.Add(this.rbtn_elegirSubTipo3);
             this.gbx_sub3.Location = new System.Drawing.Point(12, 282);
             this.gbx_sub3.Name = "gbx_sub3";
-            this.gbx_sub3.Size = new System.Drawing.Size(575, 84);
+            this.gbx_sub3.Size = new System.Drawing.Size(568, 84);
             this.gbx_sub3.TabIndex = 2;
             this.gbx_sub3.TabStop = false;
             this.gbx_sub3.Text = "SUBTIPO DE ARTICULO NIVEL 3";
@@ -329,7 +344,7 @@
             this.btn_nivel2.BackColor = System.Drawing.SystemColors.Control;
             this.btn_nivel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_nivel2.Image = global::SistemaLaObra.Properties.Resources.flechaArriba;
-            this.btn_nivel2.Location = new System.Drawing.Point(346, 36);
+            this.btn_nivel2.Location = new System.Drawing.Point(339, 36);
             this.btn_nivel2.Name = "btn_nivel2";
             this.btn_nivel2.Size = new System.Drawing.Size(100, 40);
             this.btn_nivel2.TabIndex = 16;
@@ -340,6 +355,7 @@
             // 
             // txt_nombreSubTipo3
             // 
+            this.txt_nombreSubTipo3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_nombreSubTipo3.Enabled = false;
             this.txt_nombreSubTipo3.Location = new System.Drawing.Point(96, 47);
             this.txt_nombreSubTipo3.Name = "txt_nombreSubTipo3";
@@ -384,7 +400,7 @@
             this.btn_cancelar.BackColor = System.Drawing.SystemColors.Control;
             this.btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cancelar.Image = global::SistemaLaObra.Properties.Resources.cancelar;
-            this.btn_cancelar.Location = new System.Drawing.Point(12, 382);
+            this.btn_cancelar.Location = new System.Drawing.Point(12, 379);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(140, 50);
             this.btn_cancelar.TabIndex = 3;
@@ -399,7 +415,7 @@
             this.btn_registrar.BackColor = System.Drawing.SystemColors.Control;
             this.btn_registrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_registrar.Image = global::SistemaLaObra.Properties.Resources.registrar;
-            this.btn_registrar.Location = new System.Drawing.Point(448, 382);
+            this.btn_registrar.Location = new System.Drawing.Point(440, 379);
             this.btn_registrar.Name = "btn_registrar";
             this.btn_registrar.Size = new System.Drawing.Size(140, 50);
             this.btn_registrar.TabIndex = 4;
@@ -412,7 +428,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 444);
+            this.ClientSize = new System.Drawing.Size(592, 441);
             this.Controls.Add(this.btn_registrar);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.gbx_sub3);
@@ -428,6 +444,7 @@
             this.Load += new System.EventHandler(this.IU_RegistrarTiposArticulo_Load);
             this.gbx_tipoArticulo.ResumeLayout(false);
             this.gbx_tipoArticulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbx_sub1.ResumeLayout(false);
             this.gbx_sub1.PerformLayout();
             this.gbx_sub2.ResumeLayout(false);
@@ -468,5 +485,6 @@
         private System.Windows.Forms.ComboBox cbx_seleccionaSubTipo3;
         private System.Windows.Forms.RadioButton rbtn_nombreSubTipo3;
         private System.Windows.Forms.RadioButton rbtn_elegirSubTipo3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
