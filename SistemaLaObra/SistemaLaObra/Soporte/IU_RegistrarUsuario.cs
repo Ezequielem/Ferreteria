@@ -286,10 +286,6 @@ namespace SistemaLaObra.Soporte
                             encargado.CodigoUsuario = usuario.CodigoUsuario;
                             encargado.CodigoEncargado = encargado.obtenerUltimoCodigoEncargado() + 1;
                             encargado.crear(encargado);
-
-                            MessageBox.Show("El usuario se a registrado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                            this.Close();
-
                         }
                         else
                         {

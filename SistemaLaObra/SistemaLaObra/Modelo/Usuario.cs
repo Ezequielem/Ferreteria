@@ -11,6 +11,12 @@ namespace SistemaLaObra.InicioSesion
 {
     public class Usuario
     {
+        private AccesoDatos acceso;
+        private SqlConnection conexion;
+        private SqlDataAdapter adaptador;
+        private SqlDataReader lector;
+        private SqlCommand consulta;
+
         public int CodigoUsuario { get; set; }
         public string NombreUsuario { get; set; }
         public string Contraseña { get; set; }
@@ -21,12 +27,6 @@ namespace SistemaLaObra.InicioSesion
             NombreUsuario = "";
             Contraseña = "";
         }
-
-        private AccesoDatos acceso;
-        private SqlConnection conexion;
-        private SqlDataAdapter adaptador;
-        private SqlDataReader lector;
-        private SqlCommand consulta;
 
         List<Usuario> listaUsuario;
 
@@ -117,7 +117,7 @@ namespace SistemaLaObra.InicioSesion
             }
         }
 
-        public List<Usuario> mostrarDatosColeccion()
+        public List<Usuario> mostrarDatos()
         {
             listaUsuario = new List<Usuario>();
 
@@ -294,6 +294,5 @@ namespace SistemaLaObra.InicioSesion
                 conexion.Close();
             }
         }
-
     }
 }

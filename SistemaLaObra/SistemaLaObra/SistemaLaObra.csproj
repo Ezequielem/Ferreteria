@@ -228,7 +228,7 @@
     <Compile Include="InicioSesion\IU_InicioSesion.Designer.cs">
       <DependentUpon>IU_InicioSesion.cs</DependentUpon>
     </Compile>
-    <Compile Include="InicioSesion\Usuario.cs" />
+    <Compile Include="Modelo\Usuario.cs" />
     <Compile Include="Logistica\ActualizarEstadoOrden\Controlador_ActualizarEstadoRemito.cs" />
     <Compile Include="Logistica\ActualizarEstadoOrden\IU_ActualizarEstadoRemito.cs">
       <SubType>Form</SubType>
@@ -962,6 +962,7 @@
     </Content>
     <Content Include="images\icono-ferreteria_32.ico" />
     <Content Include="images\icono-ferreteria_64.ico" />
+    <None Include="Resources\usuariosGris_128.png" />
     <None Include="Resources\articuloGris_64.png" />
     <None Include="Resources\articuloGris_128.png" />
     <None Include="Resources\articulo_64.png" />

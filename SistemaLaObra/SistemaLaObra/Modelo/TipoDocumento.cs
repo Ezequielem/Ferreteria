@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace SistemaLaObra
 {
-    class TipoDocumento
+    public class TipoDocumento
     {
 
         AccesoDatos acceso;

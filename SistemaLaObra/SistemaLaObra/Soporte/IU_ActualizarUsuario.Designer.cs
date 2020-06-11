@@ -66,11 +66,11 @@
             this.txt_legajo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.gb_datosUsuario = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txt_confirmarContraseña = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.txt_nuevaContraseña = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btn_buscarUsuario = new System.Windows.Forms.Button();
             this.cbx_tipoEncargado = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -80,6 +80,7 @@
             this.gb_domicilio.SuspendLayout();
             this.gb_datosPersonales.SuspendLayout();
             this.gb_datosUsuario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gb_domicilio
@@ -119,7 +120,6 @@
             this.cbx_localidad.Name = "cbx_localidad";
             this.cbx_localidad.Size = new System.Drawing.Size(174, 23);
             this.cbx_localidad.TabIndex = 9;
-            this.cbx_localidad.SelectedIndexChanged += new System.EventHandler(this.cbx_localidad_SelectedIndexChanged);
             // 
             // label15
             // 
@@ -129,7 +129,6 @@
             this.label15.Size = new System.Drawing.Size(89, 15);
             this.label15.TabIndex = 15;
             this.label15.Text = "Departamento:";
-            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // cbx_departamento
             // 
@@ -149,7 +148,6 @@
             this.label14.Size = new System.Drawing.Size(64, 15);
             this.label14.TabIndex = 13;
             this.label14.Text = "Localidad:";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // cbx_provincia
             // 
@@ -169,7 +167,6 @@
             this.label13.Size = new System.Drawing.Size(60, 15);
             this.label13.TabIndex = 11;
             this.label13.Text = "Provincia:";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // txt_codigoPostal
             // 
@@ -177,7 +174,6 @@
             this.txt_codigoPostal.Name = "txt_codigoPostal";
             this.txt_codigoPostal.Size = new System.Drawing.Size(100, 21);
             this.txt_codigoPostal.TabIndex = 6;
-            this.txt_codigoPostal.TextChanged += new System.EventHandler(this.txt_codigoPostal_TextChanged);
             this.txt_codigoPostal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_codigoPostal_KeyPress);
             // 
             // label16
@@ -188,7 +184,6 @@
             this.label16.Size = new System.Drawing.Size(85, 15);
             this.label16.TabIndex = 10;
             this.label16.Text = "Codigo postal:";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // txt_barrio
             // 
@@ -196,7 +191,6 @@
             this.txt_barrio.Name = "txt_barrio";
             this.txt_barrio.Size = new System.Drawing.Size(174, 21);
             this.txt_barrio.TabIndex = 5;
-            this.txt_barrio.TextChanged += new System.EventHandler(this.txt_barrio_TextChanged);
             // 
             // label17
             // 
@@ -206,7 +200,6 @@
             this.label17.Size = new System.Drawing.Size(43, 15);
             this.label17.TabIndex = 8;
             this.label17.Text = "Barrio:";
-            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // txt_piso
             // 
@@ -214,7 +207,6 @@
             this.txt_piso.Name = "txt_piso";
             this.txt_piso.Size = new System.Drawing.Size(50, 21);
             this.txt_piso.TabIndex = 4;
-            this.txt_piso.TextChanged += new System.EventHandler(this.txt_piso_TextChanged);
             // 
             // label18
             // 
@@ -224,7 +216,6 @@
             this.label18.Size = new System.Drawing.Size(34, 15);
             this.label18.TabIndex = 6;
             this.label18.Text = "Piso:";
-            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // txt_depto
             // 
@@ -232,7 +223,6 @@
             this.txt_depto.Name = "txt_depto";
             this.txt_depto.Size = new System.Drawing.Size(50, 21);
             this.txt_depto.TabIndex = 3;
-            this.txt_depto.TextChanged += new System.EventHandler(this.txt_depto_TextChanged);
             // 
             // label19
             // 
@@ -242,7 +232,6 @@
             this.label19.Size = new System.Drawing.Size(43, 15);
             this.label19.TabIndex = 4;
             this.label19.Text = "Depto:";
-            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // txt_numero
             // 
@@ -250,7 +239,6 @@
             this.txt_numero.Name = "txt_numero";
             this.txt_numero.Size = new System.Drawing.Size(100, 21);
             this.txt_numero.TabIndex = 2;
-            this.txt_numero.TextChanged += new System.EventHandler(this.txt_numero_TextChanged);
             this.txt_numero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_numero_KeyPress);
             // 
             // label20
@@ -261,7 +249,6 @@
             this.label20.Size = new System.Drawing.Size(55, 15);
             this.label20.TabIndex = 2;
             this.label20.Text = "Numero:";
-            this.label20.Click += new System.EventHandler(this.label20_Click);
             // 
             // txt_calle
             // 
@@ -269,7 +256,6 @@
             this.txt_calle.Name = "txt_calle";
             this.txt_calle.Size = new System.Drawing.Size(177, 21);
             this.txt_calle.TabIndex = 1;
-            this.txt_calle.TextChanged += new System.EventHandler(this.txt_calle_TextChanged);
             // 
             // label21
             // 
@@ -279,7 +265,6 @@
             this.label21.Size = new System.Drawing.Size(38, 15);
             this.label21.TabIndex = 0;
             this.label21.Text = "Calle:";
-            this.label21.Click += new System.EventHandler(this.label21_Click);
             // 
             // gb_datosPersonales
             // 
@@ -307,7 +292,6 @@
             this.gb_datosPersonales.TabIndex = 14;
             this.gb_datosPersonales.TabStop = false;
             this.gb_datosPersonales.Text = "DATOS PERSONALES";
-            this.gb_datosPersonales.Enter += new System.EventHandler(this.gb_datosPersonales_Enter);
             // 
             // txt_fechaNacimiento
             // 
@@ -317,7 +301,6 @@
             this.txt_fechaNacimiento.Size = new System.Drawing.Size(106, 21);
             this.txt_fechaNacimiento.TabIndex = 18;
             this.txt_fechaNacimiento.Value = new System.DateTime(2017, 11, 1, 0, 0, 0, 0);
-            this.txt_fechaNacimiento.ValueChanged += new System.EventHandler(this.txt_fechaNacimiento_ValueChanged);
             // 
             // txt_nroTelefono
             // 
@@ -325,7 +308,6 @@
             this.txt_nroTelefono.Name = "txt_nroTelefono";
             this.txt_nroTelefono.Size = new System.Drawing.Size(116, 21);
             this.txt_nroTelefono.TabIndex = 17;
-            this.txt_nroTelefono.TextChanged += new System.EventHandler(this.txt_nroTelefono_TextChanged);
             this.txt_nroTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nroTelefono_KeyPress);
             // 
             // label12
@@ -336,7 +318,6 @@
             this.label12.Size = new System.Drawing.Size(84, 15);
             this.label12.TabIndex = 16;
             this.label12.Text = "Nro. Telefono:";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // cbx_tipoTelefono
             // 
@@ -346,7 +327,6 @@
             this.cbx_tipoTelefono.Name = "cbx_tipoTelefono";
             this.cbx_tipoTelefono.Size = new System.Drawing.Size(106, 23);
             this.cbx_tipoTelefono.TabIndex = 15;
-            this.cbx_tipoTelefono.SelectedIndexChanged += new System.EventHandler(this.cbx_tipoTelefono_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -356,7 +336,6 @@
             this.label11.Size = new System.Drawing.Size(85, 15);
             this.label11.TabIndex = 14;
             this.label11.Text = "Tipo Telefono:";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label10
             // 
@@ -366,7 +345,6 @@
             this.label10.Size = new System.Drawing.Size(110, 15);
             this.label10.TabIndex = 12;
             this.label10.Text = "Fecha Nacimiento:";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // txt_nroDocumento
             // 
@@ -374,7 +352,6 @@
             this.txt_nroDocumento.Name = "txt_nroDocumento";
             this.txt_nroDocumento.Size = new System.Drawing.Size(116, 21);
             this.txt_nroDocumento.TabIndex = 11;
-            this.txt_nroDocumento.TextChanged += new System.EventHandler(this.txt_nroDocumento_TextChanged);
             this.txt_nroDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nroDocumento_KeyPress);
             // 
             // label9
@@ -385,7 +362,6 @@
             this.label9.Size = new System.Drawing.Size(100, 15);
             this.label9.TabIndex = 10;
             this.label9.Text = "Nro. Documento:";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label8
             // 
@@ -395,7 +371,6 @@
             this.label8.Size = new System.Drawing.Size(101, 15);
             this.label8.TabIndex = 9;
             this.label8.Text = "Tipo Documento:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // cbx_tipoDocumento
             // 
@@ -405,7 +380,6 @@
             this.cbx_tipoDocumento.Name = "cbx_tipoDocumento";
             this.cbx_tipoDocumento.Size = new System.Drawing.Size(106, 23);
             this.cbx_tipoDocumento.TabIndex = 8;
-            this.cbx_tipoDocumento.SelectedIndexChanged += new System.EventHandler(this.cbx_tipoDocumento_SelectedIndexChanged);
             // 
             // txt_apellido
             // 
@@ -413,7 +387,6 @@
             this.txt_apellido.Name = "txt_apellido";
             this.txt_apellido.Size = new System.Drawing.Size(163, 21);
             this.txt_apellido.TabIndex = 6;
-            this.txt_apellido.TextChanged += new System.EventHandler(this.txt_apellido_TextChanged);
             this.txt_apellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_apellido_KeyPress);
             // 
             // label7
@@ -431,7 +404,6 @@
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(160, 21);
             this.txt_nombre.TabIndex = 4;
-            this.txt_nombre.TextChanged += new System.EventHandler(this.txt_nombre_TextChanged);
             this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
             // 
             // label6
@@ -442,7 +414,6 @@
             this.label6.Size = new System.Drawing.Size(55, 15);
             this.label6.TabIndex = 3;
             this.label6.Text = "Nombre:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // txt_legajo
             // 
@@ -451,7 +422,6 @@
             this.txt_legajo.Name = "txt_legajo";
             this.txt_legajo.Size = new System.Drawing.Size(97, 21);
             this.txt_legajo.TabIndex = 2;
-            this.txt_legajo.TextChanged += new System.EventHandler(this.txt_legajo_TextChanged);
             this.txt_legajo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_legajo_KeyPress);
             // 
             // label5
@@ -462,15 +432,14 @@
             this.label5.Size = new System.Drawing.Size(48, 15);
             this.label5.TabIndex = 0;
             this.label5.Text = "Legajo:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // gb_datosUsuario
             // 
+            this.gb_datosUsuario.Controls.Add(this.pictureBox1);
             this.gb_datosUsuario.Controls.Add(this.txt_confirmarContraseña);
             this.gb_datosUsuario.Controls.Add(this.label22);
             this.gb_datosUsuario.Controls.Add(this.txt_nuevaContraseña);
             this.gb_datosUsuario.Controls.Add(this.label3);
-            this.gb_datosUsuario.Controls.Add(this.btn_buscarUsuario);
             this.gb_datosUsuario.Controls.Add(this.cbx_tipoEncargado);
             this.gb_datosUsuario.Controls.Add(this.label4);
             this.gb_datosUsuario.Controls.Add(this.label1);
@@ -482,7 +451,15 @@
             this.gb_datosUsuario.TabIndex = 13;
             this.gb_datosUsuario.TabStop = false;
             this.gb_datosUsuario.Text = "DATOS USUARIO";
-            this.gb_datosUsuario.Enter += new System.EventHandler(this.gb_datosUsuario_Enter);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SistemaLaObra.Properties.Resources.usuariosGris_128;
+            this.pictureBox1.Location = new System.Drawing.Point(425, 20);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(128, 128);
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
             // 
             // txt_confirmarContraseña
             // 
@@ -491,7 +468,6 @@
             this.txt_confirmarContraseña.PasswordChar = '•';
             this.txt_confirmarContraseña.Size = new System.Drawing.Size(169, 21);
             this.txt_confirmarContraseña.TabIndex = 18;
-            this.txt_confirmarContraseña.TextChanged += new System.EventHandler(this.txt_confirmarContraseña_TextChanged);
             // 
             // label22
             // 
@@ -502,7 +478,6 @@
             this.label22.Size = new System.Drawing.Size(112, 15);
             this.label22.TabIndex = 17;
             this.label22.Text = "Repita Contraseña:";
-            this.label22.Click += new System.EventHandler(this.label22_Click);
             // 
             // txt_nuevaContraseña
             // 
@@ -511,7 +486,6 @@
             this.txt_nuevaContraseña.PasswordChar = '•';
             this.txt_nuevaContraseña.Size = new System.Drawing.Size(169, 21);
             this.txt_nuevaContraseña.TabIndex = 16;
-            this.txt_nuevaContraseña.TextChanged += new System.EventHandler(this.txt_nuevaContraseña_TextChanged);
             // 
             // label3
             // 
@@ -522,21 +496,6 @@
             this.label3.Size = new System.Drawing.Size(111, 15);
             this.label3.TabIndex = 15;
             this.label3.Text = "Nueva Contraseña:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // btn_buscarUsuario
-            // 
-            this.btn_buscarUsuario.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_buscarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_buscarUsuario.Image = global::SistemaLaObra.Properties.Resources.buscar;
-            this.btn_buscarUsuario.Location = new System.Drawing.Point(309, 23);
-            this.btn_buscarUsuario.Name = "btn_buscarUsuario";
-            this.btn_buscarUsuario.Size = new System.Drawing.Size(134, 42);
-            this.btn_buscarUsuario.TabIndex = 12;
-            this.btn_buscarUsuario.Text = "Buscar Usuario";
-            this.btn_buscarUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_buscarUsuario.UseVisualStyleBackColor = false;
-            this.btn_buscarUsuario.Click += new System.EventHandler(this.btn_buscarUsuario_Click);
             // 
             // cbx_tipoEncargado
             // 
@@ -547,7 +506,6 @@
             this.cbx_tipoEncargado.Name = "cbx_tipoEncargado";
             this.cbx_tipoEncargado.Size = new System.Drawing.Size(169, 23);
             this.cbx_tipoEncargado.TabIndex = 7;
-            this.cbx_tipoEncargado.SelectedIndexChanged += new System.EventHandler(this.cbx_tipoEncargado_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -558,7 +516,6 @@
             this.label4.Size = new System.Drawing.Size(113, 15);
             this.label4.TabIndex = 6;
             this.label4.Text = "Tipo de encargado:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label1
             // 
@@ -569,15 +526,14 @@
             this.label1.Size = new System.Drawing.Size(99, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre usuario:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txt_nombreUsuario
             // 
             this.txt_nombreUsuario.Location = new System.Drawing.Point(125, 34);
             this.txt_nombreUsuario.Name = "txt_nombreUsuario";
+            this.txt_nombreUsuario.ReadOnly = true;
             this.txt_nombreUsuario.Size = new System.Drawing.Size(169, 21);
             this.txt_nombreUsuario.TabIndex = 1;
-            this.txt_nombreUsuario.TextChanged += new System.EventHandler(this.txt_nombreUsuario_TextChanged);
             // 
             // btn_cancelar
             // 
@@ -587,7 +543,7 @@
             this.btn_cancelar.Image = global::SistemaLaObra.Properties.Resources.cancelar;
             this.btn_cancelar.Location = new System.Drawing.Point(12, 649);
             this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(118, 50);
+            this.btn_cancelar.Size = new System.Drawing.Size(140, 50);
             this.btn_cancelar.TabIndex = 12;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -603,7 +559,7 @@
             this.btn_actualizarDatos.Image = global::SistemaLaObra.Properties.Resources.actualizar;
             this.btn_actualizarDatos.Location = new System.Drawing.Point(434, 649);
             this.btn_actualizarDatos.Name = "btn_actualizarDatos";
-            this.btn_actualizarDatos.Size = new System.Drawing.Size(147, 50);
+            this.btn_actualizarDatos.Size = new System.Drawing.Size(140, 50);
             this.btn_actualizarDatos.TabIndex = 11;
             this.btn_actualizarDatos.Text = "Modificar";
             this.btn_actualizarDatos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -627,12 +583,14 @@
             this.Name = "IU_ActualizarUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MODIFICAR USUARIO";
+            this.Load += new System.EventHandler(this.IU_ActualizarUsuario_Load);
             this.gb_domicilio.ResumeLayout(false);
             this.gb_domicilio.PerformLayout();
             this.gb_datosPersonales.ResumeLayout(false);
             this.gb_datosPersonales.PerformLayout();
             this.gb_datosUsuario.ResumeLayout(false);
             this.gb_datosUsuario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -682,10 +640,10 @@
         private System.Windows.Forms.TextBox txt_nombreUsuario;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_actualizarDatos;
-        private System.Windows.Forms.Button btn_buscarUsuario;
         private System.Windows.Forms.TextBox txt_confirmarContraseña;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox txt_nuevaContraseña;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

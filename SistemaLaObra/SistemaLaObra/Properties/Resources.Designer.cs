@@ -1263,6 +1263,16 @@ namespace SistemaLaObra.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap usuariosGris_128 {
+            get {
+                object obj = ResourceManager.GetObject("usuariosGris_128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap venta_32 {
             get {
                 object obj = ResourceManager.GetObject("venta_32", resourceCulture);

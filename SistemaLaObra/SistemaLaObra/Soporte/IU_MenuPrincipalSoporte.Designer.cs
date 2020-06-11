@@ -29,13 +29,11 @@
         private void InitializeComponent()
         {
             this.btn_consultar = new System.Windows.Forms.Button();
-            this.btn_registrarUsuario = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_registrarTarjeta = new System.Windows.Forms.Button();
-            this.btn_actualizarUsuario = new System.Windows.Forms.Button();
             this.btn_consultarHistorialSesiones = new System.Windows.Forms.Button();
             this.btn_consultarUsuario = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -74,24 +72,6 @@
             this.btn_consultar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_consultar.UseVisualStyleBackColor = false;
             this.btn_consultar.Click += new System.EventHandler(this.btn_consultar_Click);
-            // 
-            // btn_registrarUsuario
-            // 
-            this.btn_registrarUsuario.AutoSize = true;
-            this.btn_registrarUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
-            this.btn_registrarUsuario.FlatAppearance.BorderSize = 3;
-            this.btn_registrarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_registrarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_registrarUsuario.ForeColor = System.Drawing.Color.White;
-            this.btn_registrarUsuario.Image = global::SistemaLaObra.Properties.Resources.usuarioGris_32;
-            this.btn_registrarUsuario.Location = new System.Drawing.Point(7, 20);
-            this.btn_registrarUsuario.Name = "btn_registrarUsuario";
-            this.btn_registrarUsuario.Size = new System.Drawing.Size(145, 55);
-            this.btn_registrarUsuario.TabIndex = 4;
-            this.btn_registrarUsuario.Text = "Registrar\r\nUsuario\r\n";
-            this.btn_registrarUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_registrarUsuario.UseVisualStyleBackColor = false;
-            this.btn_registrarUsuario.Click += new System.EventHandler(this.btn_registrarUsuario_Click);
             // 
             // pictureBox3
             // 
@@ -152,24 +132,6 @@
             this.btn_registrarTarjeta.UseVisualStyleBackColor = false;
             this.btn_registrarTarjeta.Click += new System.EventHandler(this.btn_registrarTarjeta_Click);
             // 
-            // btn_actualizarUsuario
-            // 
-            this.btn_actualizarUsuario.AutoSize = true;
-            this.btn_actualizarUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
-            this.btn_actualizarUsuario.FlatAppearance.BorderSize = 3;
-            this.btn_actualizarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_actualizarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_actualizarUsuario.ForeColor = System.Drawing.Color.White;
-            this.btn_actualizarUsuario.Image = global::SistemaLaObra.Properties.Resources.usuarioGris_32;
-            this.btn_actualizarUsuario.Location = new System.Drawing.Point(165, 20);
-            this.btn_actualizarUsuario.Name = "btn_actualizarUsuario";
-            this.btn_actualizarUsuario.Size = new System.Drawing.Size(145, 55);
-            this.btn_actualizarUsuario.TabIndex = 23;
-            this.btn_actualizarUsuario.Text = "Modificar\r\nUsuario";
-            this.btn_actualizarUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_actualizarUsuario.UseVisualStyleBackColor = false;
-            this.btn_actualizarUsuario.Click += new System.EventHandler(this.btn_actualizarUsuario_Click);
-            // 
             // btn_consultarHistorialSesiones
             // 
             this.btn_consultarHistorialSesiones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
@@ -178,7 +140,7 @@
             this.btn_consultarHistorialSesiones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_consultarHistorialSesiones.ForeColor = System.Drawing.Color.White;
             this.btn_consultarHistorialSesiones.Image = global::SistemaLaObra.Properties.Resources.historialGris_32;
-            this.btn_consultarHistorialSesiones.Location = new System.Drawing.Point(486, 20);
+            this.btn_consultarHistorialSesiones.Location = new System.Drawing.Point(165, 20);
             this.btn_consultarHistorialSesiones.Name = "btn_consultarHistorialSesiones";
             this.btn_consultarHistorialSesiones.Size = new System.Drawing.Size(145, 55);
             this.btn_consultarHistorialSesiones.TabIndex = 24;
@@ -196,7 +158,7 @@
             this.btn_consultarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_consultarUsuario.ForeColor = System.Drawing.Color.White;
             this.btn_consultarUsuario.Image = global::SistemaLaObra.Properties.Resources.usuarioGris_32;
-            this.btn_consultarUsuario.Location = new System.Drawing.Point(325, 20);
+            this.btn_consultarUsuario.Location = new System.Drawing.Point(7, 20);
             this.btn_consultarUsuario.Name = "btn_consultarUsuario";
             this.btn_consultarUsuario.Size = new System.Drawing.Size(145, 55);
             this.btn_consultarUsuario.TabIndex = 25;
@@ -209,10 +171,8 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.btn_registrarUsuario);
             this.groupBox1.Controls.Add(this.btn_consultarHistorialSesiones);
             this.groupBox1.Controls.Add(this.btn_consultarUsuario);
-            this.groupBox1.Controls.Add(this.btn_actualizarUsuario);
             this.groupBox1.Location = new System.Drawing.Point(9, 98);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(872, 90);
@@ -422,13 +382,11 @@
 
         #endregion
         private System.Windows.Forms.Button btn_consultar;
-        private System.Windows.Forms.Button btn_registrarUsuario;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btn_registrarTarjeta;
-        private System.Windows.Forms.Button btn_actualizarUsuario;
         private System.Windows.Forms.Button btn_consultarHistorialSesiones;
         private System.Windows.Forms.Button btn_consultarUsuario;
         private System.Windows.Forms.GroupBox groupBox1;

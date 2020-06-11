@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace SistemaLaObra
 {
-    class ListaTipoEncargado
+    public class ListaTipoEncargado
     {
 
         AccesoDatos acceso;

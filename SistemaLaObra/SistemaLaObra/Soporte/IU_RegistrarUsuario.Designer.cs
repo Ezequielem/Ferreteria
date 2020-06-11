@@ -38,7 +38,6 @@
             this.btn_registrar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cbx_tipoEncargado = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -77,10 +76,11 @@
             this.label20 = new System.Windows.Forms.Label();
             this.txt_calle = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.gb_domicilio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -182,15 +182,6 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DATOS USUARIO";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SistemaLaObra.Properties.Resources.users;
-            this.pictureBox1.Location = new System.Drawing.Point(387, 20);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(137, 123);
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
             // 
             // cbx_tipoEncargado
             // 
@@ -558,6 +549,15 @@
             this.label21.TabIndex = 0;
             this.label21.Text = "Calle:";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SistemaLaObra.Properties.Resources.usuariosGris_128;
+            this.pictureBox1.Location = new System.Drawing.Point(435, 20);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(128, 128);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
             // IU_RegistrarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -578,11 +578,11 @@
             this.Load += new System.EventHandler(this.IU_RegistrarUsuario_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.gb_domicilio.ResumeLayout(false);
             this.gb_domicilio.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
