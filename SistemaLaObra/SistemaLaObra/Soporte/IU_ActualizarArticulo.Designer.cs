@@ -41,6 +41,7 @@
             this.lbl_proveedor = new System.Windows.Forms.Label();
             this.nud_stock = new System.Windows.Forms.NumericUpDown();
             this.gb_actualizacion = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.cbx_categoria3 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -58,12 +59,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cbx_marca = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.nud_stock)).BeginInit();
             this.gb_actualizacion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_stockMinimo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_salir
@@ -107,15 +107,15 @@
             // txt_descripcion
             // 
             this.txt_descripcion.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_descripcion.Location = new System.Drawing.Point(147, 4);
+            this.txt_descripcion.Location = new System.Drawing.Point(144, 4);
             this.txt_descripcion.Name = "txt_descripcion";
-            this.txt_descripcion.Size = new System.Drawing.Size(425, 21);
+            this.txt_descripcion.Size = new System.Drawing.Size(419, 21);
             this.txt_descripcion.TabIndex = 3;
             // 
             // txt_precioUnitario
             // 
             this.txt_precioUnitario.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_precioUnitario.Location = new System.Drawing.Point(147, 62);
+            this.txt_precioUnitario.Location = new System.Drawing.Point(144, 62);
             this.txt_precioUnitario.Name = "txt_precioUnitario";
             this.txt_precioUnitario.Size = new System.Drawing.Size(167, 21);
             this.txt_precioUnitario.TabIndex = 6;
@@ -135,7 +135,7 @@
             // 
             this.txt_precioCoste.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txt_precioCoste.Enabled = false;
-            this.txt_precioCoste.Location = new System.Drawing.Point(147, 120);
+            this.txt_precioCoste.Location = new System.Drawing.Point(144, 120);
             this.txt_precioCoste.Name = "txt_precioCoste";
             this.txt_precioCoste.ReadOnly = true;
             this.txt_precioCoste.Size = new System.Drawing.Size(188, 21);
@@ -175,7 +175,7 @@
             // 
             this.nud_stock.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.nud_stock.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.nud_stock.Location = new System.Drawing.Point(147, 149);
+            this.nud_stock.Location = new System.Drawing.Point(144, 149);
             this.nud_stock.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -198,6 +198,16 @@
             this.gb_actualizacion.TabIndex = 19;
             this.gb_actualizacion.TabStop = false;
             this.gb_actualizacion.Text = "ACTUALIZAR ARTICULO";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SistemaLaObra.Properties.Resources.articulo_128;
+            this.pictureBox1.Location = new System.Drawing.Point(590, 30);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(128, 128);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 38;
+            this.pictureBox1.TabStop = false;
             // 
             // tableLayoutPanel1
             // 
@@ -246,7 +256,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(577, 412);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(566, 412);
             this.tableLayoutPanel1.TabIndex = 37;
             // 
             // cbx_categoria3
@@ -254,7 +264,7 @@
             this.cbx_categoria3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbx_categoria3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_categoria3.FormattingEnabled = true;
-            this.cbx_categoria3.Location = new System.Drawing.Point(147, 383);
+            this.cbx_categoria3.Location = new System.Drawing.Point(144, 384);
             this.cbx_categoria3.Name = "cbx_categoria3";
             this.cbx_categoria3.Size = new System.Drawing.Size(188, 23);
             this.cbx_categoria3.TabIndex = 16;
@@ -274,7 +284,7 @@
             this.cbx_categoria2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbx_categoria2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_categoria2.FormattingEnabled = true;
-            this.cbx_categoria2.Location = new System.Drawing.Point(147, 352);
+            this.cbx_categoria2.Location = new System.Drawing.Point(144, 351);
             this.cbx_categoria2.Name = "cbx_categoria2";
             this.cbx_categoria2.Size = new System.Drawing.Size(188, 23);
             this.cbx_categoria2.TabIndex = 15;
@@ -285,7 +295,7 @@
             this.cbx_categoria1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbx_categoria1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_categoria1.FormattingEnabled = true;
-            this.cbx_categoria1.Location = new System.Drawing.Point(147, 323);
+            this.cbx_categoria1.Location = new System.Drawing.Point(144, 322);
             this.cbx_categoria1.Name = "cbx_categoria1";
             this.cbx_categoria1.Size = new System.Drawing.Size(188, 23);
             this.cbx_categoria1.TabIndex = 14;
@@ -306,7 +316,7 @@
             this.cbx_categoria.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbx_categoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_categoria.FormattingEnabled = true;
-            this.cbx_categoria.Location = new System.Drawing.Point(147, 294);
+            this.cbx_categoria.Location = new System.Drawing.Point(144, 293);
             this.cbx_categoria.Name = "cbx_categoria";
             this.cbx_categoria.Size = new System.Drawing.Size(188, 23);
             this.cbx_categoria.TabIndex = 13;
@@ -316,7 +326,7 @@
             // 
             this.txt_proveedor.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txt_proveedor.Enabled = false;
-            this.txt_proveedor.Location = new System.Drawing.Point(147, 265);
+            this.txt_proveedor.Location = new System.Drawing.Point(144, 265);
             this.txt_proveedor.Name = "txt_proveedor";
             this.txt_proveedor.ReadOnly = true;
             this.txt_proveedor.Size = new System.Drawing.Size(188, 21);
@@ -325,7 +335,7 @@
             // txt_codigoDescripcion
             // 
             this.txt_codigoDescripcion.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_codigoDescripcion.Location = new System.Drawing.Point(147, 33);
+            this.txt_codigoDescripcion.Location = new System.Drawing.Point(144, 33);
             this.txt_codigoDescripcion.Name = "txt_codigoDescripcion";
             this.txt_codigoDescripcion.Size = new System.Drawing.Size(226, 21);
             this.txt_codigoDescripcion.TabIndex = 5;
@@ -335,7 +345,7 @@
             this.cbx_ubicacion.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbx_ubicacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_ubicacion.FormattingEnabled = true;
-            this.cbx_ubicacion.Location = new System.Drawing.Point(147, 236);
+            this.cbx_ubicacion.Location = new System.Drawing.Point(144, 235);
             this.cbx_ubicacion.Name = "cbx_ubicacion";
             this.cbx_ubicacion.Size = new System.Drawing.Size(188, 23);
             this.cbx_ubicacion.TabIndex = 10;
@@ -345,7 +355,7 @@
             this.cbx_unidadDeMedida.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbx_unidadDeMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_unidadDeMedida.FormattingEnabled = true;
-            this.cbx_unidadDeMedida.Location = new System.Drawing.Point(147, 207);
+            this.cbx_unidadDeMedida.Location = new System.Drawing.Point(144, 206);
             this.cbx_unidadDeMedida.Name = "cbx_unidadDeMedida";
             this.cbx_unidadDeMedida.Size = new System.Drawing.Size(188, 23);
             this.cbx_unidadDeMedida.TabIndex = 9;
@@ -364,7 +374,7 @@
             // 
             this.nud_stockMinimo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.nud_stockMinimo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.nud_stockMinimo.Location = new System.Drawing.Point(147, 178);
+            this.nud_stockMinimo.Location = new System.Drawing.Point(144, 178);
             this.nud_stockMinimo.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -409,20 +419,10 @@
             this.cbx_marca.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbx_marca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_marca.FormattingEnabled = true;
-            this.cbx_marca.Location = new System.Drawing.Point(147, 91);
+            this.cbx_marca.Location = new System.Drawing.Point(144, 90);
             this.cbx_marca.Name = "cbx_marca";
             this.cbx_marca.Size = new System.Drawing.Size(268, 23);
             this.cbx_marca.TabIndex = 4;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SistemaLaObra.Properties.Resources.if_General_Office_48_2530806;
-            this.pictureBox1.Location = new System.Drawing.Point(600, 30);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(110, 110);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 38;
-            this.pictureBox1.TabStop = false;
             // 
             // IU_ActualizarArticulo
             // 
@@ -443,10 +443,10 @@
             this.Load += new System.EventHandler(this.IU_ActualizarArticulo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nud_stock)).EndInit();
             this.gb_actualizacion.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_stockMinimo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

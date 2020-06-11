@@ -57,13 +57,13 @@
             this.nud_stockMinimo = new System.Windows.Forms.NumericUpDown();
             this.lbl_8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.nud_stock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_stockMinimo)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_2
@@ -83,7 +83,7 @@
             this.txt_descripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_descripcion.Location = new System.Drawing.Point(132, 4);
             this.txt_descripcion.Name = "txt_descripcion";
-            this.txt_descripcion.Size = new System.Drawing.Size(450, 21);
+            this.txt_descripcion.Size = new System.Drawing.Size(432, 21);
             this.txt_descripcion.TabIndex = 1;
             // 
             // txt_precio
@@ -390,16 +390,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "INGRESE LOS DATOS";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SistemaLaObra.Properties.Resources.if_General_Office_48_2530806;
-            this.pictureBox1.Location = new System.Drawing.Point(619, 33);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 33;
-            this.pictureBox1.TabStop = false;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -447,8 +437,18 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142856F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142856F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.142856F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(590, 424);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(567, 424);
             this.tableLayoutPanel1.TabIndex = 36;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SistemaLaObra.Properties.Resources.articulo_128;
+            this.pictureBox1.Location = new System.Drawing.Point(590, 33);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(128, 128);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 33;
+            this.pictureBox1.TabStop = false;
             // 
             // IU_RegistrarArticulo
             // 
@@ -470,9 +470,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_stock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_stockMinimo)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

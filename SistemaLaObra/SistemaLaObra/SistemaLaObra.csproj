@@ -962,6 +962,8 @@
     </Content>
     <Content Include="images\icono-ferreteria_32.ico" />
     <Content Include="images\icono-ferreteria_64.ico" />
+    <None Include="Resources\articulo_64.png" />
+    <None Include="Resources\articulo_128.png" />
     <None Include="Resources\ClientesMayGris_128.png" />
     <None Include="Resources\ClientesMayGris_32.png" />
     <None Include="Resources\ClientesMayGris_64.png" />

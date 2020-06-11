@@ -83,9 +83,29 @@ namespace SistemaLaObra.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap articulo_128 {
+            get {
+                object obj = ResourceManager.GetObject("articulo_128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap articulo_32 {
             get {
                 object obj = ResourceManager.GetObject("articulo_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap articulo_64 {
+            get {
+                object obj = ResourceManager.GetObject("articulo_64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
