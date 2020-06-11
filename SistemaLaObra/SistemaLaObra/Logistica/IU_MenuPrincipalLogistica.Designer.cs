@@ -53,11 +53,13 @@
             this.btn_emitirOrdenRemito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_emitirOrdenRemito.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_emitirOrdenRemito.ForeColor = System.Drawing.Color.White;
-            this.btn_emitirOrdenRemito.Location = new System.Drawing.Point(7, 20);
+            this.btn_emitirOrdenRemito.Image = global::SistemaLaObra.Properties.Resources.impresionGris_32;
+            this.btn_emitirOrdenRemito.Location = new System.Drawing.Point(14, 19);
             this.btn_emitirOrdenRemito.Name = "btn_emitirOrdenRemito";
-            this.btn_emitirOrdenRemito.Size = new System.Drawing.Size(141, 54);
+            this.btn_emitirOrdenRemito.Size = new System.Drawing.Size(145, 55);
             this.btn_emitirOrdenRemito.TabIndex = 0;
-            this.btn_emitirOrdenRemito.Text = "Emitir Orden de Remito";
+            this.btn_emitirOrdenRemito.Text = "Orden\r\nde Remito";
+            this.btn_emitirOrdenRemito.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_emitirOrdenRemito.UseVisualStyleBackColor = false;
             this.btn_emitirOrdenRemito.Click += new System.EventHandler(this.btn_emitirOrdenRemito_Click);
             // 
@@ -68,11 +70,13 @@
             this.btn_actualizarOrdenRemito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_actualizarOrdenRemito.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_actualizarOrdenRemito.ForeColor = System.Drawing.Color.White;
-            this.btn_actualizarOrdenRemito.Location = new System.Drawing.Point(165, 20);
+            this.btn_actualizarOrdenRemito.Image = global::SistemaLaObra.Properties.Resources.remitoGris_32;
+            this.btn_actualizarOrdenRemito.Location = new System.Drawing.Point(178, 19);
             this.btn_actualizarOrdenRemito.Name = "btn_actualizarOrdenRemito";
-            this.btn_actualizarOrdenRemito.Size = new System.Drawing.Size(141, 54);
+            this.btn_actualizarOrdenRemito.Size = new System.Drawing.Size(145, 55);
             this.btn_actualizarOrdenRemito.TabIndex = 1;
-            this.btn_actualizarOrdenRemito.Text = "Modificar Estado Orden de Remito";
+            this.btn_actualizarOrdenRemito.Text = "Estado Orden\r\nde Remito";
+            this.btn_actualizarOrdenRemito.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_actualizarOrdenRemito.UseVisualStyleBackColor = false;
             this.btn_actualizarOrdenRemito.Click += new System.EventHandler(this.btn_actualizarOrdenRemito_Click);
             // 
@@ -123,11 +127,13 @@
             this.btn_registrarIngresoProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_registrarIngresoProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_registrarIngresoProductos.ForeColor = System.Drawing.Color.White;
-            this.btn_registrarIngresoProductos.Location = new System.Drawing.Point(7, 20);
+            this.btn_registrarIngresoProductos.Image = global::SistemaLaObra.Properties.Resources.IngresoArticuloGris_32;
+            this.btn_registrarIngresoProductos.Location = new System.Drawing.Point(14, 19);
             this.btn_registrarIngresoProductos.Name = "btn_registrarIngresoProductos";
-            this.btn_registrarIngresoProductos.Size = new System.Drawing.Size(141, 54);
+            this.btn_registrarIngresoProductos.Size = new System.Drawing.Size(145, 55);
             this.btn_registrarIngresoProductos.TabIndex = 22;
-            this.btn_registrarIngresoProductos.Text = "Registrar ingreso de productos";
+            this.btn_registrarIngresoProductos.Text = "Ingreso de\r\nArtículos";
+            this.btn_registrarIngresoProductos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_registrarIngresoProductos.UseVisualStyleBackColor = false;
             this.btn_registrarIngresoProductos.Click += new System.EventHandler(this.btn_registrarIngresoProductos_Click);
             // 

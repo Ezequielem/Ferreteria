@@ -65,11 +65,13 @@
             this.btn_consultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_consultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_consultar.ForeColor = System.Drawing.Color.White;
+            this.btn_consultar.Image = global::SistemaLaObra.Properties.Resources.articuloGris_32;
             this.btn_consultar.Location = new System.Drawing.Point(7, 20);
             this.btn_consultar.Name = "btn_consultar";
             this.btn_consultar.Size = new System.Drawing.Size(145, 55);
             this.btn_consultar.TabIndex = 3;
             this.btn_consultar.Text = "Consultar Artículo";
+            this.btn_consultar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_consultar.UseVisualStyleBackColor = false;
             this.btn_consultar.Click += new System.EventHandler(this.btn_consultar_Click);
             // 
@@ -81,11 +83,13 @@
             this.btn_registrarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_registrarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_registrarUsuario.ForeColor = System.Drawing.Color.White;
-            this.btn_registrarUsuario.Location = new System.Drawing.Point(5, 20);
+            this.btn_registrarUsuario.Image = global::SistemaLaObra.Properties.Resources.usuarioGris_32;
+            this.btn_registrarUsuario.Location = new System.Drawing.Point(7, 20);
             this.btn_registrarUsuario.Name = "btn_registrarUsuario";
-            this.btn_registrarUsuario.Size = new System.Drawing.Size(146, 54);
+            this.btn_registrarUsuario.Size = new System.Drawing.Size(145, 55);
             this.btn_registrarUsuario.TabIndex = 4;
-            this.btn_registrarUsuario.Text = "Registrar Usuario";
+            this.btn_registrarUsuario.Text = "Registrar\r\nUsuario\r\n";
+            this.btn_registrarUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_registrarUsuario.UseVisualStyleBackColor = false;
             this.btn_registrarUsuario.Click += new System.EventHandler(this.btn_registrarUsuario_Click);
             // 
@@ -138,11 +142,13 @@
             this.btn_registrarTarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_registrarTarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_registrarTarjeta.ForeColor = System.Drawing.Color.White;
-            this.btn_registrarTarjeta.Location = new System.Drawing.Point(5, 20);
+            this.btn_registrarTarjeta.Image = global::SistemaLaObra.Properties.Resources.creditoGris_32;
+            this.btn_registrarTarjeta.Location = new System.Drawing.Point(7, 19);
             this.btn_registrarTarjeta.Name = "btn_registrarTarjeta";
-            this.btn_registrarTarjeta.Size = new System.Drawing.Size(147, 54);
+            this.btn_registrarTarjeta.Size = new System.Drawing.Size(145, 55);
             this.btn_registrarTarjeta.TabIndex = 22;
-            this.btn_registrarTarjeta.Text = "Registrar Tarjeta";
+            this.btn_registrarTarjeta.Text = "Registrar\r\nTarjeta";
+            this.btn_registrarTarjeta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_registrarTarjeta.UseVisualStyleBackColor = false;
             this.btn_registrarTarjeta.Click += new System.EventHandler(this.btn_registrarTarjeta_Click);
             // 
@@ -154,11 +160,13 @@
             this.btn_actualizarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_actualizarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_actualizarUsuario.ForeColor = System.Drawing.Color.White;
+            this.btn_actualizarUsuario.Image = global::SistemaLaObra.Properties.Resources.usuarioGris_32;
             this.btn_actualizarUsuario.Location = new System.Drawing.Point(165, 20);
             this.btn_actualizarUsuario.Name = "btn_actualizarUsuario";
-            this.btn_actualizarUsuario.Size = new System.Drawing.Size(146, 54);
+            this.btn_actualizarUsuario.Size = new System.Drawing.Size(145, 55);
             this.btn_actualizarUsuario.TabIndex = 23;
-            this.btn_actualizarUsuario.Text = "Modificar Usuario";
+            this.btn_actualizarUsuario.Text = "Modificar\r\nUsuario";
+            this.btn_actualizarUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_actualizarUsuario.UseVisualStyleBackColor = false;
             this.btn_actualizarUsuario.Click += new System.EventHandler(this.btn_actualizarUsuario_Click);
             // 
@@ -169,11 +177,13 @@
             this.btn_consultarHistorialSesiones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_consultarHistorialSesiones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_consultarHistorialSesiones.ForeColor = System.Drawing.Color.White;
-            this.btn_consultarHistorialSesiones.Location = new System.Drawing.Point(485, 20);
+            this.btn_consultarHistorialSesiones.Image = global::SistemaLaObra.Properties.Resources.historialGris_32;
+            this.btn_consultarHistorialSesiones.Location = new System.Drawing.Point(486, 20);
             this.btn_consultarHistorialSesiones.Name = "btn_consultarHistorialSesiones";
-            this.btn_consultarHistorialSesiones.Size = new System.Drawing.Size(146, 54);
+            this.btn_consultarHistorialSesiones.Size = new System.Drawing.Size(145, 55);
             this.btn_consultarHistorialSesiones.TabIndex = 24;
-            this.btn_consultarHistorialSesiones.Text = "Consultar Historial Sesiones";
+            this.btn_consultarHistorialSesiones.Text = "Historial\r\nSesiones";
+            this.btn_consultarHistorialSesiones.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_consultarHistorialSesiones.UseVisualStyleBackColor = false;
             this.btn_consultarHistorialSesiones.Click += new System.EventHandler(this.btn_consultarHistorialSesiones_Click);
             // 
@@ -185,11 +195,13 @@
             this.btn_consultarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_consultarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_consultarUsuario.ForeColor = System.Drawing.Color.White;
+            this.btn_consultarUsuario.Image = global::SistemaLaObra.Properties.Resources.usuarioGris_32;
             this.btn_consultarUsuario.Location = new System.Drawing.Point(325, 20);
             this.btn_consultarUsuario.Name = "btn_consultarUsuario";
-            this.btn_consultarUsuario.Size = new System.Drawing.Size(146, 54);
+            this.btn_consultarUsuario.Size = new System.Drawing.Size(145, 55);
             this.btn_consultarUsuario.TabIndex = 25;
-            this.btn_consultarUsuario.Text = "Consultar Usuario";
+            this.btn_consultarUsuario.Text = "Consultar\r\nUsuario";
+            this.btn_consultarUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_consultarUsuario.UseVisualStyleBackColor = false;
             this.btn_consultarUsuario.Click += new System.EventHandler(this.btn_consultarUsuario_Click);
             // 
@@ -233,11 +245,13 @@
             this.btn_ConsultarUbicacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ConsultarUbicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ConsultarUbicacion.ForeColor = System.Drawing.Color.White;
+            this.btn_ConsultarUbicacion.Image = global::SistemaLaObra.Properties.Resources.ubicacionGris_32;
             this.btn_ConsultarUbicacion.Location = new System.Drawing.Point(325, 20);
             this.btn_ConsultarUbicacion.Name = "btn_ConsultarUbicacion";
             this.btn_ConsultarUbicacion.Size = new System.Drawing.Size(145, 55);
             this.btn_ConsultarUbicacion.TabIndex = 13;
             this.btn_ConsultarUbicacion.Text = "Consultar Ubicación";
+            this.btn_ConsultarUbicacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_ConsultarUbicacion.UseVisualStyleBackColor = false;
             this.btn_ConsultarUbicacion.Click += new System.EventHandler(this.btn_ConsultarUbicacion_Click);
             // 
@@ -248,11 +262,13 @@
             this.btn_ConsultarMarca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ConsultarMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ConsultarMarca.ForeColor = System.Drawing.Color.White;
+            this.btn_ConsultarMarca.Image = global::SistemaLaObra.Properties.Resources.marcaGris_32;
             this.btn_ConsultarMarca.Location = new System.Drawing.Point(165, 20);
             this.btn_ConsultarMarca.Name = "btn_ConsultarMarca";
             this.btn_ConsultarMarca.Size = new System.Drawing.Size(145, 55);
             this.btn_ConsultarMarca.TabIndex = 12;
             this.btn_ConsultarMarca.Text = "Consultar Marca";
+            this.btn_ConsultarMarca.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_ConsultarMarca.UseVisualStyleBackColor = false;
             this.btn_ConsultarMarca.Click += new System.EventHandler(this.btn_ConsultarMarca_Click);
             // 
@@ -263,11 +279,13 @@
             this.btn_actualizarTipoArticulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_actualizarTipoArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_actualizarTipoArticulo.ForeColor = System.Drawing.Color.White;
+            this.btn_actualizarTipoArticulo.Image = global::SistemaLaObra.Properties.Resources.tipoArticuloGris_32;
             this.btn_actualizarTipoArticulo.Location = new System.Drawing.Point(325, 80);
             this.btn_actualizarTipoArticulo.Name = "btn_actualizarTipoArticulo";
             this.btn_actualizarTipoArticulo.Size = new System.Drawing.Size(145, 55);
             this.btn_actualizarTipoArticulo.TabIndex = 11;
             this.btn_actualizarTipoArticulo.Text = "Modificar Tipo Artículo";
+            this.btn_actualizarTipoArticulo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_actualizarTipoArticulo.UseVisualStyleBackColor = false;
             this.btn_actualizarTipoArticulo.Click += new System.EventHandler(this.btn_actualizarTipoArticulo_Click);
             // 
@@ -278,11 +296,13 @@
             this.btn_registrarTipoArticulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_registrarTipoArticulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_registrarTipoArticulo.ForeColor = System.Drawing.Color.White;
+            this.btn_registrarTipoArticulo.Image = global::SistemaLaObra.Properties.Resources.tipoArticuloGris_32;
             this.btn_registrarTipoArticulo.Location = new System.Drawing.Point(165, 81);
             this.btn_registrarTipoArticulo.Name = "btn_registrarTipoArticulo";
             this.btn_registrarTipoArticulo.Size = new System.Drawing.Size(145, 55);
             this.btn_registrarTipoArticulo.TabIndex = 10;
             this.btn_registrarTipoArticulo.Text = "Registrar Tipo Artículo";
+            this.btn_registrarTipoArticulo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_registrarTipoArticulo.UseVisualStyleBackColor = false;
             this.btn_registrarTipoArticulo.Click += new System.EventHandler(this.btn_registrarTipoArticulo_Click);
             // 
@@ -293,11 +313,13 @@
             this.btn_actualizarArticuloProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_actualizarArticuloProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_actualizarArticuloProveedor.ForeColor = System.Drawing.Color.White;
+            this.btn_actualizarArticuloProveedor.Image = global::SistemaLaObra.Properties.Resources.articuloGris_32;
             this.btn_actualizarArticuloProveedor.Location = new System.Drawing.Point(6, 80);
             this.btn_actualizarArticuloProveedor.Name = "btn_actualizarArticuloProveedor";
             this.btn_actualizarArticuloProveedor.Size = new System.Drawing.Size(145, 55);
             this.btn_actualizarArticuloProveedor.TabIndex = 5;
             this.btn_actualizarArticuloProveedor.Text = "Modificar Proveedor Artículo";
+            this.btn_actualizarArticuloProveedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_actualizarArticuloProveedor.UseVisualStyleBackColor = false;
             this.btn_actualizarArticuloProveedor.Click += new System.EventHandler(this.btn_actualizarArticuloProveedor_Click);
             // 
@@ -340,11 +362,13 @@
             this.btn_actualizarTarjeta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_actualizarTarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_actualizarTarjeta.ForeColor = System.Drawing.Color.White;
+            this.btn_actualizarTarjeta.Image = global::SistemaLaObra.Properties.Resources.creditoGris_32;
             this.btn_actualizarTarjeta.Location = new System.Drawing.Point(165, 19);
             this.btn_actualizarTarjeta.Name = "btn_actualizarTarjeta";
-            this.btn_actualizarTarjeta.Size = new System.Drawing.Size(147, 54);
+            this.btn_actualizarTarjeta.Size = new System.Drawing.Size(145, 55);
             this.btn_actualizarTarjeta.TabIndex = 23;
-            this.btn_actualizarTarjeta.Text = "Actualizar Tarjeta";
+            this.btn_actualizarTarjeta.Text = "Actualizar\r\nTarjeta";
+            this.btn_actualizarTarjeta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_actualizarTarjeta.UseVisualStyleBackColor = false;
             this.btn_actualizarTarjeta.Click += new System.EventHandler(this.btn_actualizarTarjeta_Click);
             // 

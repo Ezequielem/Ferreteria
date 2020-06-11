@@ -64,11 +64,13 @@
             this.btn_ventaMinorista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ventaMinorista.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ventaMinorista.ForeColor = System.Drawing.Color.White;
+            this.btn_ventaMinorista.Image = global::SistemaLaObra.Properties.Resources.ventaGris_32;
             this.btn_ventaMinorista.Location = new System.Drawing.Point(7, 20);
             this.btn_ventaMinorista.Name = "btn_ventaMinorista";
-            this.btn_ventaMinorista.Size = new System.Drawing.Size(141, 54);
+            this.btn_ventaMinorista.Size = new System.Drawing.Size(145, 55);
             this.btn_ventaMinorista.TabIndex = 0;
-            this.btn_ventaMinorista.Text = "Registrar Venta";
+            this.btn_ventaMinorista.Text = "Registrar\r\nVenta";
+            this.btn_ventaMinorista.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_ventaMinorista.UseVisualStyleBackColor = false;
             this.btn_ventaMinorista.Click += new System.EventHandler(this.btn_ventaMinorista_Click);
             // 
@@ -79,11 +81,13 @@
             this.btn_registrarPresupuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_registrarPresupuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btn_registrarPresupuesto.ForeColor = System.Drawing.Color.White;
-            this.btn_registrarPresupuesto.Location = new System.Drawing.Point(7, 20);
+            this.btn_registrarPresupuesto.Image = global::SistemaLaObra.Properties.Resources.facturaXGris_32;
+            this.btn_registrarPresupuesto.Location = new System.Drawing.Point(7, 19);
             this.btn_registrarPresupuesto.Name = "btn_registrarPresupuesto";
-            this.btn_registrarPresupuesto.Size = new System.Drawing.Size(141, 54);
+            this.btn_registrarPresupuesto.Size = new System.Drawing.Size(145, 55);
             this.btn_registrarPresupuesto.TabIndex = 4;
             this.btn_registrarPresupuesto.Text = "Registrar Presupuesto";
+            this.btn_registrarPresupuesto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_registrarPresupuesto.UseVisualStyleBackColor = false;
             this.btn_registrarPresupuesto.Click += new System.EventHandler(this.btn_registrarPresupuesto_Click);
             // 
@@ -94,11 +98,13 @@
             this.btn_registrarEnvio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_registrarEnvio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btn_registrarEnvio.ForeColor = System.Drawing.Color.White;
+            this.btn_registrarEnvio.Image = global::SistemaLaObra.Properties.Resources.envioGris_32;
             this.btn_registrarEnvio.Location = new System.Drawing.Point(7, 20);
             this.btn_registrarEnvio.Name = "btn_registrarEnvio";
-            this.btn_registrarEnvio.Size = new System.Drawing.Size(141, 54);
+            this.btn_registrarEnvio.Size = new System.Drawing.Size(145, 55);
             this.btn_registrarEnvio.TabIndex = 5;
             this.btn_registrarEnvio.Text = "Registrar Envío";
+            this.btn_registrarEnvio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_registrarEnvio.UseVisualStyleBackColor = false;
             this.btn_registrarEnvio.Click += new System.EventHandler(this.btn_registrarEnvio_Click);
             // 
@@ -109,11 +115,13 @@
             this.btn_registrarClienteMayorista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_registrarClienteMayorista.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btn_registrarClienteMayorista.ForeColor = System.Drawing.Color.White;
+            this.btn_registrarClienteMayorista.Image = global::SistemaLaObra.Properties.Resources.clienteMayoristaGris_32;
             this.btn_registrarClienteMayorista.Location = new System.Drawing.Point(7, 20);
             this.btn_registrarClienteMayorista.Name = "btn_registrarClienteMayorista";
-            this.btn_registrarClienteMayorista.Size = new System.Drawing.Size(141, 54);
+            this.btn_registrarClienteMayorista.Size = new System.Drawing.Size(145, 55);
             this.btn_registrarClienteMayorista.TabIndex = 6;
-            this.btn_registrarClienteMayorista.Text = "Registrar Cliente Mayorista";
+            this.btn_registrarClienteMayorista.Text = "Cliente\r\nMayorista";
+            this.btn_registrarClienteMayorista.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_registrarClienteMayorista.UseVisualStyleBackColor = false;
             this.btn_registrarClienteMayorista.Click += new System.EventHandler(this.btn_registrarClienteMayorista_Click);
             // 
@@ -124,11 +132,13 @@
             this.btn_actualizarEnvio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_actualizarEnvio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btn_actualizarEnvio.ForeColor = System.Drawing.Color.White;
+            this.btn_actualizarEnvio.Image = global::SistemaLaObra.Properties.Resources.envioGris_32;
             this.btn_actualizarEnvio.Location = new System.Drawing.Point(165, 20);
             this.btn_actualizarEnvio.Name = "btn_actualizarEnvio";
-            this.btn_actualizarEnvio.Size = new System.Drawing.Size(140, 54);
+            this.btn_actualizarEnvio.Size = new System.Drawing.Size(145, 55);
             this.btn_actualizarEnvio.TabIndex = 7;
             this.btn_actualizarEnvio.Text = "Modificar Envío";
+            this.btn_actualizarEnvio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_actualizarEnvio.UseVisualStyleBackColor = false;
             this.btn_actualizarEnvio.Click += new System.EventHandler(this.btn_actualizarEnvio_Click);
             // 
@@ -139,11 +149,13 @@
             this.btn_consultarPrespuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_consultarPrespuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btn_consultarPrespuesto.ForeColor = System.Drawing.Color.White;
-            this.btn_consultarPrespuesto.Location = new System.Drawing.Point(165, 20);
+            this.btn_consultarPrespuesto.Image = global::SistemaLaObra.Properties.Resources.facturaXGris_32;
+            this.btn_consultarPrespuesto.Location = new System.Drawing.Point(165, 19);
             this.btn_consultarPrespuesto.Name = "btn_consultarPrespuesto";
-            this.btn_consultarPrespuesto.Size = new System.Drawing.Size(141, 54);
+            this.btn_consultarPrespuesto.Size = new System.Drawing.Size(145, 55);
             this.btn_consultarPrespuesto.TabIndex = 8;
             this.btn_consultarPrespuesto.Text = "Consultar presupuesto";
+            this.btn_consultarPrespuesto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_consultarPrespuesto.UseVisualStyleBackColor = false;
             this.btn_consultarPrespuesto.Click += new System.EventHandler(this.btn_consultarPrespuesto_Click);
             // 
@@ -154,11 +166,13 @@
             this.btn_registrarNotaCredito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_registrarNotaCredito.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btn_registrarNotaCredito.ForeColor = System.Drawing.Color.White;
+            this.btn_registrarNotaCredito.Image = global::SistemaLaObra.Properties.Resources.facturaNCGris_32;
             this.btn_registrarNotaCredito.Location = new System.Drawing.Point(7, 20);
             this.btn_registrarNotaCredito.Name = "btn_registrarNotaCredito";
-            this.btn_registrarNotaCredito.Size = new System.Drawing.Size(140, 54);
+            this.btn_registrarNotaCredito.Size = new System.Drawing.Size(145, 55);
             this.btn_registrarNotaCredito.TabIndex = 9;
-            this.btn_registrarNotaCredito.Text = "Registrar Nota de Credito";
+            this.btn_registrarNotaCredito.Text = "Nota de \r\nCrédito";
+            this.btn_registrarNotaCredito.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_registrarNotaCredito.UseVisualStyleBackColor = false;
             this.btn_registrarNotaCredito.Click += new System.EventHandler(this.btn_registrarNotaCredito_Click);
             // 
@@ -209,11 +223,13 @@
             this.btn_consultarVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_consultarVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_consultarVentas.ForeColor = System.Drawing.Color.White;
+            this.btn_consultarVentas.Image = global::SistemaLaObra.Properties.Resources.ventaGris_32;
             this.btn_consultarVentas.Location = new System.Drawing.Point(165, 20);
             this.btn_consultarVentas.Name = "btn_consultarVentas";
-            this.btn_consultarVentas.Size = new System.Drawing.Size(141, 54);
+            this.btn_consultarVentas.Size = new System.Drawing.Size(145, 55);
             this.btn_consultarVentas.TabIndex = 16;
             this.btn_consultarVentas.Text = "Consultar Venta";
+            this.btn_consultarVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_consultarVentas.UseVisualStyleBackColor = false;
             this.btn_consultarVentas.Click += new System.EventHandler(this.btn_consultarVentas_Click);
             // 

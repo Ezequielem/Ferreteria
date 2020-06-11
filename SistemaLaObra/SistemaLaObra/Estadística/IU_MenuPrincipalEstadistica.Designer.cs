@@ -115,11 +115,13 @@
             this.btn_anualVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_anualVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_anualVentas.ForeColor = System.Drawing.Color.White;
-            this.btn_anualVentas.Location = new System.Drawing.Point(215, 19);
+            this.btn_anualVentas.Image = global::SistemaLaObra.Properties.Resources.estadisticaGris_32;
+            this.btn_anualVentas.Location = new System.Drawing.Point(166, 19);
             this.btn_anualVentas.Name = "btn_anualVentas";
-            this.btn_anualVentas.Size = new System.Drawing.Size(209, 55);
+            this.btn_anualVentas.Size = new System.Drawing.Size(145, 55);
             this.btn_anualVentas.TabIndex = 29;
-            this.btn_anualVentas.Text = "Anual Ventas";
+            this.btn_anualVentas.Text = "Ventas\r\nAnuales";
+            this.btn_anualVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_anualVentas.UseVisualStyleBackColor = false;
             this.btn_anualVentas.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -131,11 +133,13 @@
             this.btnReporteMensualVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReporteMensualVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporteMensualVentas.ForeColor = System.Drawing.Color.White;
+            this.btnReporteMensualVentas.Image = global::SistemaLaObra.Properties.Resources.estadisticaGris_32;
             this.btnReporteMensualVentas.Location = new System.Drawing.Point(6, 19);
             this.btnReporteMensualVentas.Name = "btnReporteMensualVentas";
-            this.btnReporteMensualVentas.Size = new System.Drawing.Size(203, 55);
+            this.btnReporteMensualVentas.Size = new System.Drawing.Size(145, 55);
             this.btnReporteMensualVentas.TabIndex = 23;
-            this.btnReporteMensualVentas.Text = "Mensual Ventas";
+            this.btnReporteMensualVentas.Text = "Ventas\r\nMensuales";
+            this.btnReporteMensualVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnReporteMensualVentas.UseVisualStyleBackColor = false;
             this.btnReporteMensualVentas.Click += new System.EventHandler(this.btnReporteMensualVentas_Click);
             // 
@@ -160,11 +164,13 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(215, 19);
+            this.button4.Image = global::SistemaLaObra.Properties.Resources.estadisticaGris_32;
+            this.button4.Location = new System.Drawing.Point(166, 19);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(209, 55);
+            this.button4.Size = new System.Drawing.Size(145, 55);
             this.button4.TabIndex = 27;
-            this.button4.Text = "TOP 5 Cliente x Periodo";
+            this.button4.Text = "Clientes\r\nPeriodo\r\n";
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -176,11 +182,13 @@
             this.btn_InformeMensualCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_InformeMensualCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_InformeMensualCliente.ForeColor = System.Drawing.Color.White;
+            this.btn_InformeMensualCliente.Image = global::SistemaLaObra.Properties.Resources.estadisticaGris_32;
             this.btn_InformeMensualCliente.Location = new System.Drawing.Point(6, 19);
             this.btn_InformeMensualCliente.Name = "btn_InformeMensualCliente";
-            this.btn_InformeMensualCliente.Size = new System.Drawing.Size(203, 55);
+            this.btn_InformeMensualCliente.Size = new System.Drawing.Size(145, 55);
             this.btn_InformeMensualCliente.TabIndex = 25;
-            this.btn_InformeMensualCliente.Text = "TOP 5 Mensual Clientes";
+            this.btn_InformeMensualCliente.Text = "TOP 5\r\nClientes";
+            this.btn_InformeMensualCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_InformeMensualCliente.UseVisualStyleBackColor = false;
             this.btn_InformeMensualCliente.Click += new System.EventHandler(this.btn_InformeMensualCliente_Click);
             // 
@@ -205,11 +213,13 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(215, 20);
+            this.button5.Image = global::SistemaLaObra.Properties.Resources.estadisticaGris_32;
+            this.button5.Location = new System.Drawing.Point(166, 20);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(208, 56);
+            this.button5.Size = new System.Drawing.Size(145, 55);
             this.button5.TabIndex = 32;
-            this.button5.Text = "TOP 5 Encargados x Periodo";
+            this.button5.Text = "Encargados\r\nPeriodo";
+            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -221,11 +231,13 @@
             this.btn_ReporteMensualEncargados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ReporteMensualEncargados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ReporteMensualEncargados.ForeColor = System.Drawing.Color.White;
-            this.btn_ReporteMensualEncargados.Location = new System.Drawing.Point(7, 20);
+            this.btn_ReporteMensualEncargados.Image = global::SistemaLaObra.Properties.Resources.estadisticaGris_32;
+            this.btn_ReporteMensualEncargados.Location = new System.Drawing.Point(6, 20);
             this.btn_ReporteMensualEncargados.Name = "btn_ReporteMensualEncargados";
-            this.btn_ReporteMensualEncargados.Size = new System.Drawing.Size(202, 56);
+            this.btn_ReporteMensualEncargados.Size = new System.Drawing.Size(145, 55);
             this.btn_ReporteMensualEncargados.TabIndex = 24;
-            this.btn_ReporteMensualEncargados.Text = "TOP 5 Mensual Encargados";
+            this.btn_ReporteMensualEncargados.Text = "TOP 5\r\nEncargados";
+            this.btn_ReporteMensualEncargados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_ReporteMensualEncargados.UseVisualStyleBackColor = false;
             this.btn_ReporteMensualEncargados.Click += new System.EventHandler(this.btn_ReporteMensualEncargados_Click);
             // 
@@ -249,11 +261,13 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(9, 21);
+            this.button3.Image = global::SistemaLaObra.Properties.Resources.estadisticaGris_32;
+            this.button3.Location = new System.Drawing.Point(6, 19);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(202, 52);
+            this.button3.Size = new System.Drawing.Size(145, 55);
             this.button3.TabIndex = 26;
-            this.button3.Text = "TOP 5  Articulos x Periodo";
+            this.button3.Text = "Articulos\r\nPeriodo";
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 

@@ -56,11 +56,13 @@
             this.btn_registrarPedidoCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_registrarPedidoCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_registrarPedidoCompra.ForeColor = System.Drawing.Color.White;
-            this.btn_registrarPedidoCompra.Location = new System.Drawing.Point(7, 20);
+            this.btn_registrarPedidoCompra.Image = global::SistemaLaObra.Properties.Resources.compraGris_32;
+            this.btn_registrarPedidoCompra.Location = new System.Drawing.Point(7, 19);
             this.btn_registrarPedidoCompra.Name = "btn_registrarPedidoCompra";
-            this.btn_registrarPedidoCompra.Size = new System.Drawing.Size(150, 54);
+            this.btn_registrarPedidoCompra.Size = new System.Drawing.Size(145, 55);
             this.btn_registrarPedidoCompra.TabIndex = 4;
-            this.btn_registrarPedidoCompra.Text = "Registrar Pedido Compra";
+            this.btn_registrarPedidoCompra.Text = "Pedido\r\nCompra";
+            this.btn_registrarPedidoCompra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_registrarPedidoCompra.UseVisualStyleBackColor = false;
             this.btn_registrarPedidoCompra.Click += new System.EventHandler(this.btn_registrarPedidoCompra_Click);
             // 
@@ -72,9 +74,9 @@
             this.btn_consultarProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btn_consultarProveedor.ForeColor = System.Drawing.Color.White;
             this.btn_consultarProveedor.Image = global::SistemaLaObra.Properties.Resources.proveedores_32;
-            this.btn_consultarProveedor.Location = new System.Drawing.Point(7, 20);
+            this.btn_consultarProveedor.Location = new System.Drawing.Point(7, 19);
             this.btn_consultarProveedor.Name = "btn_consultarProveedor";
-            this.btn_consultarProveedor.Size = new System.Drawing.Size(150, 54);
+            this.btn_consultarProveedor.Size = new System.Drawing.Size(145, 55);
             this.btn_consultarProveedor.TabIndex = 18;
             this.btn_consultarProveedor.Text = "Consultar Proveedor";
             this.btn_consultarProveedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -128,11 +130,13 @@
             this.btn_articulosBajoStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_articulosBajoStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btn_articulosBajoStock.ForeColor = System.Drawing.Color.White;
-            this.btn_articulosBajoStock.Location = new System.Drawing.Point(7, 20);
+            this.btn_articulosBajoStock.Image = global::SistemaLaObra.Properties.Resources.listadoGris_32;
+            this.btn_articulosBajoStock.Location = new System.Drawing.Point(7, 19);
             this.btn_articulosBajoStock.Name = "btn_articulosBajoStock";
-            this.btn_articulosBajoStock.Size = new System.Drawing.Size(150, 54);
+            this.btn_articulosBajoStock.Size = new System.Drawing.Size(145, 55);
             this.btn_articulosBajoStock.TabIndex = 19;
-            this.btn_articulosBajoStock.Text = "Listado Articulos bajo stock";
+            this.btn_articulosBajoStock.Text = "Articulos\r\nBajo Stock";
+            this.btn_articulosBajoStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_articulosBajoStock.UseVisualStyleBackColor = false;
             this.btn_articulosBajoStock.Click += new System.EventHandler(this.btn_articulosBajoStock_Click);
             // 
@@ -143,11 +147,13 @@
             this.btn_emitirListadoCompraProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_emitirListadoCompraProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btn_emitirListadoCompraProveedor.ForeColor = System.Drawing.Color.White;
-            this.btn_emitirListadoCompraProveedor.Location = new System.Drawing.Point(165, 20);
+            this.btn_emitirListadoCompraProveedor.Image = global::SistemaLaObra.Properties.Resources.impresionGris_32;
+            this.btn_emitirListadoCompraProveedor.Location = new System.Drawing.Point(172, 19);
             this.btn_emitirListadoCompraProveedor.Name = "btn_emitirListadoCompraProveedor";
-            this.btn_emitirListadoCompraProveedor.Size = new System.Drawing.Size(150, 54);
+            this.btn_emitirListadoCompraProveedor.Size = new System.Drawing.Size(145, 55);
             this.btn_emitirListadoCompraProveedor.TabIndex = 21;
-            this.btn_emitirListadoCompraProveedor.Text = "Emitir Listado Por Proveedor";
+            this.btn_emitirListadoCompraProveedor.Text = "Listado\r\nProveedor";
+            this.btn_emitirListadoCompraProveedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_emitirListadoCompraProveedor.UseVisualStyleBackColor = false;
             this.btn_emitirListadoCompraProveedor.Click += new System.EventHandler(this.btn_emitirListadoCompraProveedor_Click);
             // 

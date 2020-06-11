@@ -289,4 +289,196 @@
   <data name="proveedores_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\proveedores_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="articuloGris_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\articuloGris_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="articulo_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\articulo_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="compraGris_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\compraGris_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="estadisticaGris_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\estadisticaGris_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="soporteGris_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\soporteGris_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="usuarioGris_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usuarioGris_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ventaGris_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ventaGris_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="estadisticasGris_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\estadisticasGris_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="estadisticas_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\estadisticas_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="usuarioGris_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usuarioGris_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="usuario_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usuario_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="creditoGris_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\creditoGris_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="creditoGris_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\creditoGris_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="credito_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\credito_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="credito_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\credito_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="historialGris_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\historialGris_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="historialGris_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\historialGris_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ubicacionGris_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ubicacionGris_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ubicacionGris_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ubicacionGris_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ubicacion_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ubicacion_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ubicacion_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ubicacion_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GEM_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GEM_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GEM_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GEM_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GEM_per_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GEM_per_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GEM_per_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GEM_per_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marcaGris_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marcaGris_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marcaGris_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marcaGris_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tipoArticuloGris_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tipoArticuloGris_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tipoArticuloGris_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tipoArticuloGris_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tipoArticulo_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tipoArticulo_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tipoArticulo_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tipoArticulo_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="facturaAGris_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\facturaAGris_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="facturaAGris_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\facturaAGris_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="facturaBGris_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\facturaBGris_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="facturaBGris_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\facturaBGris_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="facturaCGris_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\facturaCGris_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="facturaCGris_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\facturaCGris_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="facturaXGris_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\facturaXGris_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="facturaXGris_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\facturaXGris_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="remitoGris_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\remitoGris_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="remitoGris_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\remitoGris_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="impresionGris_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\impresionGris_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="impresionGris_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\impresionGris_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="impresionGris_128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\impresionGris_128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="listadoGris_128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\listadoGris_128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="listadoGris_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\listadoGris_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="listadoGris_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\listadoGris_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="envioGris_128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\envioGris_128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="envioGris_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\envioGris_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="envioGris_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\envioGris_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="facturaNCGris_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\facturaNCGris_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="facturaNCGris_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\facturaNCGris_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IngresoArticuloGris_128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IngresoArticuloGris_128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IngresoArticuloGris_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IngresoArticuloGris_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IngresoArticuloGris_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IngresoArticuloGris_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IngresoArticulo_128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IngresoArticulo_128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IngresoArticulo_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IngresoArticulo_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="IngresoArticulo_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IngresoArticulo_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="clienteMayoristaGris_128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clienteMayoristaGris_128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="clienteMayoristaGris_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clienteMayoristaGris_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="clienteMayoristaGris_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\clienteMayoristaGris_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClientesMayGris_128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ClientesMayGris_128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClientesMayGris_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ClientesMayGris_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClientesMayGris_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ClientesMayGris_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
