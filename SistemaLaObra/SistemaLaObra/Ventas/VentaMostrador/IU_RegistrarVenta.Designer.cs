@@ -135,7 +135,7 @@
             this.dgv_productos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.NullValue = "0";
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -443,6 +443,7 @@
             // 
             this.btn_detalleTarjeta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_detalleTarjeta.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_detalleTarjeta.Enabled = false;
             this.btn_detalleTarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_detalleTarjeta.Image = global::SistemaLaObra.Properties.Resources.detalle;
             this.btn_detalleTarjeta.Location = new System.Drawing.Point(6, 129);

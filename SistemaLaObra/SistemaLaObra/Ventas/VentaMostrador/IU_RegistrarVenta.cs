@@ -51,6 +51,16 @@ namespace SistemaLaObra
             btn_envioDomicilio.Enabled = false;
             ch_cargoEnvio.Enabled = false;
             ch_notaCredito.Enabled = false;
+            DataGridViewCellStyle fuente = new DataGridViewCellStyle();
+            fuente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            fuente.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            fuente.BackColor = System.Drawing.SystemColors.Control;
+            fuente.ForeColor = System.Drawing.SystemColors.WindowText;
+            fuente.NullValue = "0";
+            fuente.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            fuente.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            fuente.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dgv_productos.ColumnHeadersDefaultCellStyle = fuente;
         }
 
         //BOTONES//
