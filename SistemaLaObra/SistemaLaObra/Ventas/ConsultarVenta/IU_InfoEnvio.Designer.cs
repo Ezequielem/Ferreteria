@@ -43,12 +43,15 @@
             // 
             // btn_aceptar
             // 
+            this.btn_aceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_aceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_aceptar.Location = new System.Drawing.Point(516, 360);
+            this.btn_aceptar.Image = global::SistemaLaObra.Properties.Resources.aceptarSeleccionar;
+            this.btn_aceptar.Location = new System.Drawing.Point(477, 365);
             this.btn_aceptar.Name = "btn_aceptar";
-            this.btn_aceptar.Size = new System.Drawing.Size(101, 36);
+            this.btn_aceptar.Size = new System.Drawing.Size(140, 45);
             this.btn_aceptar.TabIndex = 2;
             this.btn_aceptar.Text = "ACEPTAR";
+            this.btn_aceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_aceptar.UseVisualStyleBackColor = true;
             this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
             // 
@@ -57,7 +60,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(629, 408);
+            this.ClientSize = new System.Drawing.Size(629, 422);
             this.Controls.Add(this.btn_aceptar);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;

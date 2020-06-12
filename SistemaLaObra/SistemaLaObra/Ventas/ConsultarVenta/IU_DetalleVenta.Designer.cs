@@ -52,16 +52,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.gb_detalleVenta = new System.Windows.Forms.GroupBox();
             this.dgv_productos = new System.Windows.Forms.DataGridView();
-            this.btn_aceptar = new System.Windows.Forms.Button();
-            this.btn_consultarDatosCliente = new System.Windows.Forms.Button();
-            this.btn_detalleEnvio = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_aceptar = new System.Windows.Forms.Button();
+            this.btn_consultarDatosCliente = new System.Windows.Forms.Button();
+            this.btn_detalleEnvio = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.gb_venta.SuspendLayout();
             this.gb_detalleVenta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_productos)).BeginInit();
@@ -313,15 +313,50 @@
             this.dgv_productos.Size = new System.Drawing.Size(681, 181);
             this.dgv_productos.TabIndex = 20;
             // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.HeaderText = "Cód. de artículo";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.HeaderText = "Descipcion";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.HeaderText = "Precio unitario";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.HeaderText = "Cantidad solicitada";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.HeaderText = "Subtotal";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
             // btn_aceptar
             // 
             this.btn_aceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_aceptar.BackColor = System.Drawing.SystemColors.Control;
             this.btn_aceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_aceptar.Image = global::SistemaLaObra.Properties.Resources.aceptarSeleccionar;
-            this.btn_aceptar.Location = new System.Drawing.Point(555, 436);
+            this.btn_aceptar.Location = new System.Drawing.Point(565, 436);
             this.btn_aceptar.Name = "btn_aceptar";
-            this.btn_aceptar.Size = new System.Drawing.Size(150, 50);
+            this.btn_aceptar.Size = new System.Drawing.Size(140, 50);
             this.btn_aceptar.TabIndex = 13;
             this.btn_aceptar.Text = "Aceptar";
             this.btn_aceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -380,41 +415,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.69006F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(176, 171);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "Cód. de artículo";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "Descipcion";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.HeaderText = "Precio unitario";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column4.HeaderText = "Cantidad solicitada";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.HeaderText = "Subtotal";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
             // 
             // IU_DetalleVenta
             // 
