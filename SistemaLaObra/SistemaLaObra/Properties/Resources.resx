@@ -496,4 +496,25 @@
   <data name="usuariosGris_128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\usuariosGris_128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ventasGris_128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ventasGris_128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ventasGris_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ventasGris_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="envio_128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\envio_128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="envio_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\envio_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="envio_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\envio_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dinero_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dinero_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cuentaCorrienteGris_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cuentaCorrienteGris_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

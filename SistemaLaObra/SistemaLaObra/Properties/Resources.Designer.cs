@@ -343,9 +343,59 @@ namespace SistemaLaObra.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cuentaCorrienteGris_32 {
+            get {
+                object obj = ResourceManager.GetObject("cuentaCorrienteGris_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap detalle {
             get {
                 object obj = ResourceManager.GetObject("detalle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dinero_32 {
+            get {
+                object obj = ResourceManager.GetObject("dinero_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap envio_128 {
+            get {
+                object obj = ResourceManager.GetObject("envio_128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap envio_32 {
+            get {
+                object obj = ResourceManager.GetObject("envio_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap envio_64 {
+            get {
+                object obj = ResourceManager.GetObject("envio_64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1306,6 +1356,26 @@ namespace SistemaLaObra.Properties {
         internal static System.Drawing.Bitmap ventaGris_32 {
             get {
                 object obj = ResourceManager.GetObject("ventaGris_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ventasGris_128 {
+            get {
+                object obj = ResourceManager.GetObject("ventasGris_128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ventasGris_64 {
+            get {
+                object obj = ResourceManager.GetObject("ventasGris_64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

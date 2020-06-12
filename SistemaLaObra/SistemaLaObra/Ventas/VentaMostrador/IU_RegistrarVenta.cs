@@ -13,6 +13,7 @@ using SistemaLaObra.Ventas.CobroConTarjeta;
 using SistemaLaObra.Ventas.OrdenDeRemito;
 using SistemaLaObra.Ventas.RegistrarClienteMayorista;
 using SistemaLaObra.Ventas.VentaMostrador;
+using Geocoding.Microsoft.Json;
 
 namespace SistemaLaObra
 {
@@ -45,6 +46,7 @@ namespace SistemaLaObra
         {
             mostrarOpcionPago();
             cbx_formaPago.SelectedIndex = 0;
+            gbx_envio.Enabled = false;
             btn_detallesEnvioDomicilio.Enabled = false;
             btn_envioDomicilio.Enabled = false;
             ch_cargoEnvio.Enabled = false;
@@ -68,6 +70,7 @@ namespace SistemaLaObra
             mostrarOpcionEnvioDomicilio();
             if (controlador.venta.ImporteTotal == 0.00f)
             {
+                pbx_FormaDePago.Visible = false;
                 cbx_formaPago.Enabled = false;
             }
         }
@@ -115,28 +118,56 @@ namespace SistemaLaObra
         }
 
         private void cbx_formaPago_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbx_formaPago.SelectedIndex == 2)
+        {            
+            if (cbx_formaPago.SelectedIndex == 0)
             {
+                pbx_FormaDePago.Image = Properties.Resources.dinero_32;
+                gbx_Tarjeta.Enabled = false;
+                btn_cobroTarjeta.Enabled = false;
+                btn_cargar.Enabled = true;
+                btn_quitarArticulo.Enabled = true;
+                gbx_envio.Enabled = true;
+                btn_envioDomicilio.Enabled = true;
+            }
+            else if (cbx_formaPago.SelectedIndex == 1)
+            {
+                pbx_FormaDePago.Image = Properties.Resources.dinero_32;
+                gbx_Tarjeta.Enabled = false;
+                btn_cobroTarjeta.Enabled = false;
+                btn_cargar.Enabled = true;
+                btn_quitarArticulo.Enabled = true;
+                gbx_envio.Enabled = true;
+                btn_envioDomicilio.Enabled = true;
+            }
+            else if (cbx_formaPago.SelectedIndex == 2)
+            {
+                pbx_FormaDePago.Image = Properties.Resources.credito_32;
+                gbx_Tarjeta.Enabled = true;
                 btn_cobroTarjeta.Enabled = true;
                 btn_cargar.Enabled = false;
                 btn_quitarArticulo.Enabled = false;
+                gbx_envio.Enabled = false;
                 btn_envioDomicilio.Enabled = false;
                 ch_cargoEnvio.Enabled = false;
                 ch_notaCredito.Enabled = false;
             }
-            else if (cbx_formaPago.SelectedIndex== 4)
+            else if (cbx_formaPago.SelectedIndex == 3)
             {
-                btn_envioDomicilio.Enabled = false;
-                ch_cargoEnvio.Enabled = false;
-                tomarOpcionActualizarNotaCredito();
-            }
-            else
-            {
+                pbx_FormaDePago.Image = Properties.Resources.cuentaCorrienteGris_32;
+                gbx_Tarjeta.Enabled = false;
                 btn_cobroTarjeta.Enabled = false;
                 btn_cargar.Enabled = true;
                 btn_quitarArticulo.Enabled = true;
+                gbx_envio.Enabled = true;
                 btn_envioDomicilio.Enabled = true;
+            }
+            else if (cbx_formaPago.SelectedIndex== 4)
+            {
+                pbx_FormaDePago.Image = Properties.Resources.facturaNCGris_32;
+                gbx_envio.Enabled = false;
+                btn_envioDomicilio.Enabled = false;
+                ch_cargoEnvio.Enabled = false;
+                tomarOpcionActualizarNotaCredito();
             }
         }
 
@@ -157,8 +188,16 @@ namespace SistemaLaObra
 
         public void mostrarOpcionEnvioDomicilio()
         {
-            if (dgv_productos.Rows.Count>0) btn_envioDomicilio.Enabled = true;
-            else btn_envioDomicilio.Enabled = false;
+            if (dgv_productos.Rows.Count>0)
+            {
+                gbx_envio.Enabled = true;
+                btn_envioDomicilio.Enabled = true;
+            }
+            else
+            {
+                gbx_envio.Enabled = false;
+                btn_envioDomicilio.Enabled = false;
+            }   
         }
 
         public void tomarOpcionCobroConTarjeta()
@@ -225,6 +264,7 @@ namespace SistemaLaObra
         {
             if (lbl_importeTotal.Text != "$ 0.00")
             {
+                pbx_FormaDePago.Visible = true;
                 cbx_formaPago.Enabled = true;
                 cbx_formaPago.ValueMember = "CodigoFormaPago";
                 cbx_formaPago.DisplayMember = "Descripcion";
@@ -232,6 +272,7 @@ namespace SistemaLaObra
             }
             else
             {
+                pbx_FormaDePago.Visible = false;
                 cbx_formaPago.Enabled = false;
             }
         }
@@ -256,7 +297,8 @@ namespace SistemaLaObra
         //VENTA MAYORISTA//
         private void rb_clienteMayorista_CheckedChanged(object sender, EventArgs e)
         {
-            lbl_cliente.Text = "Venta Mayorista";
+            this.Text = "REGISTRAR VENTA MAYORISTA";
+
             gb_cliente.Enabled = true;
             txt_razonSocial.Enabled = true;
             btn_buscarDatos.Enabled = true;
@@ -300,7 +342,7 @@ namespace SistemaLaObra
 
         private void rb_clienteMinorista_CheckedChanged(object sender, EventArgs e)
         {
-            lbl_cliente.Text = "Venta Minorista";
+            this.Text = "REGISTRAR VENTA MINORISTA";
             gb_productos.Enabled = true;
             gb_cliente.Enabled = false;
             txt_razonSocial.Text = "";
@@ -312,6 +354,5 @@ namespace SistemaLaObra
             interfaz.opcionDetalle(int.Parse(dgv_productos.CurrentRow.Cells[0].Value.ToString()));
             interfaz.ShowDialog();
         }
-        //////////////////
     }
 }

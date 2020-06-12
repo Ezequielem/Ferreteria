@@ -250,45 +250,48 @@ namespace SistemaLaObra
 
         public void quitarArticulo()
         {
-            int bandera = 0;
-            try
+            if (InterfazVenta.dgv_productos.Rows.Count != 0)
             {
-                int index = InterfazVenta.dgv_productos.CurrentRow.Index;
-
-                //Para devolver el stock y restablecer label de importeTotal.
-                int codigoArticulo = int.Parse(InterfazVenta.dgv_productos.CurrentRow.Cells[0].Value.ToString());
-                int cantidad = int.Parse(InterfazVenta.dgv_productos.CurrentRow.Cells[4].Value.ToString());
-                float subtotal = float.Parse(InterfazVenta.dgv_productos.CurrentRow.Cells[5].Value.ToString());
-                //
-
-                //Eze agrego lo siguiente
-                venta.ImporteTotal -= subtotal;
-                InterfazVenta.lbl_importeTotal.Text = venta.ImporteTotal.ToString("$ 0.00");
-                InterfazVenta.lbl_saldoAPagar.Text = venta.ImporteTotal.ToString("$ 0.00");
-                //Agregado por eze para mostrar subtotal
-                InterfazVenta.lbl_subTotal.Text = venta.ImporteTotal.ToString("$ 0.00");
-
-                InterfazVenta.dgv_productos.Rows.RemoveAt(index);
-                listaDetalle.RemoveAt(index);
-
-                //Si llego a este punto es que efectivamente pudo quitar la fila
-                bandera = 1;
-                if (bandera != 0)
+                int bandera = 0;
+                try
                 {
-                    articulo.aumentarStock(cantidad, codigoArticulo);
-                }
+                    int index = InterfazVenta.dgv_productos.CurrentRow.Index;
 
-                //validamos si siguen quedando articulos para habilitar seleccion de clientes
-                if (listaDetalle.Count == 0)
-                {
-                    InterfazVenta.rb_clienteMayorista.Enabled = true;
-                    InterfazVenta.rb_clienteMinorista.Enabled = true;
+                    //Para devolver el stock y restablecer label de importeTotal.
+                    int codigoArticulo = int.Parse(InterfazVenta.dgv_productos.CurrentRow.Cells[0].Value.ToString());
+                    int cantidad = int.Parse(InterfazVenta.dgv_productos.CurrentRow.Cells[4].Value.ToString());
+                    float subtotal = float.Parse(InterfazVenta.dgv_productos.CurrentRow.Cells[5].Value.ToString());
+                    //
+
+                    //Eze agrego lo siguiente
+                    venta.ImporteTotal -= subtotal;
+                    InterfazVenta.lbl_importeTotal.Text = venta.ImporteTotal.ToString("$ 0.00");
+                    InterfazVenta.lbl_saldoAPagar.Text = venta.ImporteTotal.ToString("$ 0.00");
+                    //Agregado por eze para mostrar subtotal
+                    InterfazVenta.lbl_subTotal.Text = venta.ImporteTotal.ToString("$ 0.00");
+
+                    InterfazVenta.dgv_productos.Rows.RemoveAt(index);
+                    listaDetalle.RemoveAt(index);
+
+                    //Si llego a este punto es que efectivamente pudo quitar la fila
+                    bandera = 1;
+                    if (bandera != 0)
+                    {
+                        articulo.aumentarStock(cantidad, codigoArticulo);
+                    }
+
+                    //validamos si siguen quedando articulos para habilitar seleccion de clientes
+                    if (listaDetalle.Count == 0)
+                    {
+                        InterfazVenta.rb_clienteMayorista.Enabled = true;
+                        InterfazVenta.rb_clienteMinorista.Enabled = true;
+                    }
                 }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("No tiene articulos que seleccionar","Advertencia",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
+                catch (Exception)
+                {
+                    MessageBox.Show("No tiene articulos que seleccionar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }            
         }
 
         public void descartarArticulos()

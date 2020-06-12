@@ -962,6 +962,13 @@
     </Content>
     <Content Include="images\icono-ferreteria_32.ico" />
     <Content Include="images\icono-ferreteria_64.ico" />
+    <None Include="Resources\cuentaCorrienteGris_32.png" />
+    <None Include="Resources\dinero_32.png" />
+    <None Include="Resources\envio_32.png" />
+    <None Include="Resources\envio_64.png" />
+    <None Include="Resources\envio_128.png" />
+    <None Include="Resources\ventasGris_64.png" />
+    <None Include="Resources\ventasGris_128.png" />
     <None Include="Resources\usuariosGris_128.png" />
     <None Include="Resources\articuloGris_64.png" />
     <None Include="Resources\articuloGris_128.png" />

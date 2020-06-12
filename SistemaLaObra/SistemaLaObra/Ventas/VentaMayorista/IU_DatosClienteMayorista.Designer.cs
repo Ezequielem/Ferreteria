@@ -90,90 +90,100 @@
             // lbl_provincia
             // 
             this.lbl_provincia.AutoSize = true;
+            this.lbl_provincia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_provincia.Location = new System.Drawing.Point(140, 327);
             this.lbl_provincia.Name = "lbl_provincia";
-            this.lbl_provincia.Size = new System.Drawing.Size(11, 15);
+            this.lbl_provincia.Size = new System.Drawing.Size(12, 15);
             this.lbl_provincia.TabIndex = 19;
             this.lbl_provincia.Text = "-";
             // 
             // lbl_departamento
             // 
             this.lbl_departamento.AutoSize = true;
+            this.lbl_departamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_departamento.Location = new System.Drawing.Point(140, 293);
             this.lbl_departamento.Name = "lbl_departamento";
-            this.lbl_departamento.Size = new System.Drawing.Size(11, 15);
+            this.lbl_departamento.Size = new System.Drawing.Size(12, 15);
             this.lbl_departamento.TabIndex = 18;
             this.lbl_departamento.Text = "-";
             // 
             // lbl_localidad
             // 
             this.lbl_localidad.AutoSize = true;
+            this.lbl_localidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_localidad.Location = new System.Drawing.Point(140, 261);
             this.lbl_localidad.Name = "lbl_localidad";
-            this.lbl_localidad.Size = new System.Drawing.Size(11, 15);
+            this.lbl_localidad.Size = new System.Drawing.Size(12, 15);
             this.lbl_localidad.TabIndex = 17;
             this.lbl_localidad.Text = "-";
             // 
             // lbl_barrio
             // 
             this.lbl_barrio.AutoSize = true;
+            this.lbl_barrio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_barrio.Location = new System.Drawing.Point(140, 231);
             this.lbl_barrio.Name = "lbl_barrio";
-            this.lbl_barrio.Size = new System.Drawing.Size(11, 15);
+            this.lbl_barrio.Size = new System.Drawing.Size(12, 15);
             this.lbl_barrio.TabIndex = 16;
             this.lbl_barrio.Text = "-";
             // 
             // lbl_domicilio
             // 
             this.lbl_domicilio.AutoSize = true;
+            this.lbl_domicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_domicilio.Location = new System.Drawing.Point(140, 198);
             this.lbl_domicilio.Name = "lbl_domicilio";
-            this.lbl_domicilio.Size = new System.Drawing.Size(11, 15);
+            this.lbl_domicilio.Size = new System.Drawing.Size(12, 15);
             this.lbl_domicilio.TabIndex = 15;
             this.lbl_domicilio.Text = "-";
             // 
             // lbl_telefono
             // 
             this.lbl_telefono.AutoSize = true;
+            this.lbl_telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_telefono.Location = new System.Drawing.Point(140, 164);
             this.lbl_telefono.Name = "lbl_telefono";
-            this.lbl_telefono.Size = new System.Drawing.Size(11, 15);
+            this.lbl_telefono.Size = new System.Drawing.Size(12, 15);
             this.lbl_telefono.TabIndex = 14;
             this.lbl_telefono.Text = "-";
             // 
             // lbl_nroCtaCte
             // 
             this.lbl_nroCtaCte.AutoSize = true;
+            this.lbl_nroCtaCte.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nroCtaCte.Location = new System.Drawing.Point(140, 133);
             this.lbl_nroCtaCte.Name = "lbl_nroCtaCte";
-            this.lbl_nroCtaCte.Size = new System.Drawing.Size(11, 15);
+            this.lbl_nroCtaCte.Size = new System.Drawing.Size(12, 15);
             this.lbl_nroCtaCte.TabIndex = 13;
             this.lbl_nroCtaCte.Text = "-";
             // 
             // lbl_nombreBanco
             // 
             this.lbl_nombreBanco.AutoSize = true;
+            this.lbl_nombreBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nombreBanco.Location = new System.Drawing.Point(140, 102);
             this.lbl_nombreBanco.Name = "lbl_nombreBanco";
-            this.lbl_nombreBanco.Size = new System.Drawing.Size(11, 15);
+            this.lbl_nombreBanco.Size = new System.Drawing.Size(12, 15);
             this.lbl_nombreBanco.TabIndex = 12;
             this.lbl_nombreBanco.Text = "-";
             // 
             // lbl_cuit
             // 
             this.lbl_cuit.AutoSize = true;
+            this.lbl_cuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_cuit.Location = new System.Drawing.Point(140, 72);
             this.lbl_cuit.Name = "lbl_cuit";
-            this.lbl_cuit.Size = new System.Drawing.Size(11, 15);
+            this.lbl_cuit.Size = new System.Drawing.Size(12, 15);
             this.lbl_cuit.TabIndex = 11;
             this.lbl_cuit.Text = "-";
             // 
             // lbl_razonSocial
             // 
             this.lbl_razonSocial.AutoSize = true;
+            this.lbl_razonSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_razonSocial.Location = new System.Drawing.Point(140, 39);
             this.lbl_razonSocial.Name = "lbl_razonSocial";
-            this.lbl_razonSocial.Size = new System.Drawing.Size(11, 15);
+            this.lbl_razonSocial.Size = new System.Drawing.Size(12, 15);
             this.lbl_razonSocial.TabIndex = 10;
             this.lbl_razonSocial.Text = "-";
             // 

@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_RegistrarVenta));
             this.label4 = new System.Windows.Forms.Label();
             this.lbl_importeTotal = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.cbx_formaPago = new System.Windows.Forms.ComboBox();
             this.dgv_productos = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,13 +47,13 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_quitarArticulo = new System.Windows.Forms.Button();
             this.btn_cargar = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.gbx_envio = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_detallesEnvioDomicilio = new System.Windows.Forms.Button();
             this.lbl_cantidadEnvios = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.btn_envioDomicilio = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.gbx_Tarjeta = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbl_cantidadTarjeta = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -67,7 +66,7 @@
             this.ch_cargoEnvio = new System.Windows.Forms.CheckBox();
             this.lbl_saldoAPagar = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pbx_FormaDePago = new System.Windows.Forms.PictureBox();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_registrarVenta = new System.Windows.Forms.Button();
             this.ch_notaCredito = new System.Windows.Forms.CheckBox();
@@ -78,17 +77,18 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txt_razonSocial = new System.Windows.Forms.TextBox();
             this.btn_buscarDatos = new System.Windows.Forms.Button();
-            this.lbl_cliente = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_productos)).BeginInit();
             this.gb_productos.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.gbx_envio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox4.SuspendLayout();
+            this.gbx_Tarjeta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_FormaDePago)).BeginInit();
             this.gb_tipoCliente.SuspendLayout();
             this.gb_cliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -111,29 +111,19 @@
             this.lbl_importeTotal.TabIndex = 10;
             this.lbl_importeTotal.Text = "$ 0.00";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(853, 348);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 15);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Forma de pago:";
-            // 
             // cbx_formaPago
             // 
             this.cbx_formaPago.BackColor = System.Drawing.SystemColors.Window;
             this.cbx_formaPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_formaPago.Enabled = false;
             this.cbx_formaPago.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cbx_formaPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbx_formaPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbx_formaPago.Items.AddRange(new object[] {
             "EFECTIVO"});
-            this.cbx_formaPago.Location = new System.Drawing.Point(953, 345);
+            this.cbx_formaPago.Location = new System.Drawing.Point(550, 621);
             this.cbx_formaPago.Name = "cbx_formaPago";
             this.cbx_formaPago.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbx_formaPago.Size = new System.Drawing.Size(132, 23);
+            this.cbx_formaPago.Size = new System.Drawing.Size(297, 32);
             this.cbx_formaPago.TabIndex = 11;
             this.cbx_formaPago.SelectedIndexChanged += new System.EventHandler(this.cbx_formaPago_SelectedIndexChanged);
             // 
@@ -143,15 +133,15 @@
             this.dgv_productos.AllowUserToDeleteRows = false;
             this.dgv_productos.AllowUserToResizeRows = false;
             this.dgv_productos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.NullValue = "0";
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_productos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.NullValue = "0";
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_productos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_productos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -165,8 +155,8 @@
             this.dgv_productos.Name = "dgv_productos";
             this.dgv_productos.ReadOnly = true;
             this.dgv_productos.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgv_productos.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgv_productos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_productos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_productos.Size = new System.Drawing.Size(823, 369);
             this.dgv_productos.TabIndex = 19;
@@ -216,10 +206,11 @@
             // 
             // lbl_cargoEnvio
             // 
+            this.lbl_cargoEnvio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_cargoEnvio.AutoSize = true;
             this.lbl_cargoEnvio.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.lbl_cargoEnvio.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_cargoEnvio.Location = new System.Drawing.Point(186, 30);
+            this.lbl_cargoEnvio.Location = new System.Drawing.Point(8, 66);
             this.lbl_cargoEnvio.Name = "lbl_cargoEnvio";
             this.lbl_cargoEnvio.Size = new System.Drawing.Size(78, 26);
             this.lbl_cargoEnvio.TabIndex = 18;
@@ -227,9 +218,10 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(15, 29);
+            this.label6.Location = new System.Drawing.Point(4, 27);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(171, 26);
             this.label6.TabIndex = 17;
@@ -295,39 +287,41 @@
             this.btn_cargar.UseVisualStyleBackColor = false;
             this.btn_cargar.Click += new System.EventHandler(this.btn_cargar_Click);
             // 
-            // groupBox3
+            // gbx_envio
             // 
-            this.groupBox3.Controls.Add(this.pictureBox1);
-            this.groupBox3.Controls.Add(this.btn_detallesEnvioDomicilio);
-            this.groupBox3.Controls.Add(this.lbl_cantidadEnvios);
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.lbl_cargoEnvio);
-            this.groupBox3.Controls.Add(this.btn_envioDomicilio);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.groupBox3.Location = new System.Drawing.Point(856, 77);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(309, 252);
-            this.groupBox3.TabIndex = 22;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "DETALLES DE ENVIO DE PRODUCTOS";
+            this.gbx_envio.Controls.Add(this.pictureBox1);
+            this.gbx_envio.Controls.Add(this.btn_detallesEnvioDomicilio);
+            this.gbx_envio.Controls.Add(this.lbl_cantidadEnvios);
+            this.gbx_envio.Controls.Add(this.label11);
+            this.gbx_envio.Controls.Add(this.label6);
+            this.gbx_envio.Controls.Add(this.lbl_cargoEnvio);
+            this.gbx_envio.Controls.Add(this.btn_envioDomicilio);
+            this.gbx_envio.Enabled = false;
+            this.gbx_envio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.gbx_envio.Location = new System.Drawing.Point(856, 145);
+            this.gbx_envio.Name = "gbx_envio";
+            this.gbx_envio.Size = new System.Drawing.Size(309, 189);
+            this.gbx_envio.TabIndex = 22;
+            this.gbx_envio.TabStop = false;
+            this.gbx_envio.Text = "ENVÍO DE PRODUCTOS";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(22, 88);
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::SistemaLaObra.Properties.Resources.envioGris_64;
+            this.pictureBox1.Location = new System.Drawing.Point(238, 36);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(280, 100);
+            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
             this.pictureBox1.TabIndex = 23;
             this.pictureBox1.TabStop = false;
             // 
             // btn_detallesEnvioDomicilio
             // 
+            this.btn_detallesEnvioDomicilio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_detallesEnvioDomicilio.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_detallesEnvioDomicilio.Enabled = false;
             this.btn_detallesEnvioDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_detallesEnvioDomicilio.Image = global::SistemaLaObra.Properties.Resources.detalle;
-            this.btn_detallesEnvioDomicilio.Location = new System.Drawing.Point(13, 194);
+            this.btn_detallesEnvioDomicilio.Location = new System.Drawing.Point(6, 143);
             this.btn_detallesEnvioDomicilio.Name = "btn_detallesEnvioDomicilio";
             this.btn_detallesEnvioDomicilio.Size = new System.Drawing.Size(120, 40);
             this.btn_detallesEnvioDomicilio.TabIndex = 10;
@@ -338,9 +332,10 @@
             // 
             // lbl_cantidadEnvios
             // 
+            this.lbl_cantidadEnvios.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_cantidadEnvios.AutoSize = true;
             this.lbl_cantidadEnvios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.lbl_cantidadEnvios.Location = new System.Drawing.Point(139, 65);
+            this.lbl_cantidadEnvios.Location = new System.Drawing.Point(126, 100);
             this.lbl_cantidadEnvios.Name = "lbl_cantidadEnvios";
             this.lbl_cantidadEnvios.Size = new System.Drawing.Size(15, 15);
             this.lbl_cantidadEnvios.TabIndex = 20;
@@ -348,8 +343,9 @@
             // 
             // label11
             // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(19, 65);
+            this.label11.Location = new System.Drawing.Point(6, 100);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(114, 15);
             this.label11.TabIndex = 19;
@@ -357,51 +353,54 @@
             // 
             // btn_envioDomicilio
             // 
+            this.btn_envioDomicilio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_envioDomicilio.BackColor = System.Drawing.SystemColors.Control;
             this.btn_envioDomicilio.Enabled = false;
             this.btn_envioDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_envioDomicilio.Image = global::SistemaLaObra.Properties.Resources.envioPaquete;
-            this.btn_envioDomicilio.Location = new System.Drawing.Point(149, 194);
+            this.btn_envioDomicilio.Image = global::SistemaLaObra.Properties.Resources.envio_32;
+            this.btn_envioDomicilio.Location = new System.Drawing.Point(183, 143);
             this.btn_envioDomicilio.Name = "btn_envioDomicilio";
-            this.btn_envioDomicilio.Size = new System.Drawing.Size(153, 40);
+            this.btn_envioDomicilio.Size = new System.Drawing.Size(120, 40);
             this.btn_envioDomicilio.TabIndex = 9;
-            this.btn_envioDomicilio.Text = "Enviar a domicilio";
+            this.btn_envioDomicilio.Text = "Envío a \r\ndomicilio";
             this.btn_envioDomicilio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_envioDomicilio.UseVisualStyleBackColor = false;
             this.btn_envioDomicilio.Click += new System.EventHandler(this.btn_envioDomicilio_Click);
             // 
-            // groupBox4
+            // gbx_Tarjeta
             // 
-            this.groupBox4.Controls.Add(this.pictureBox2);
-            this.groupBox4.Controls.Add(this.lbl_cantidadTarjeta);
-            this.groupBox4.Controls.Add(this.label8);
-            this.groupBox4.Controls.Add(this.lbl_cargoTarjeta);
-            this.groupBox4.Controls.Add(this.label1);
-            this.groupBox4.Controls.Add(this.btn_detalleTarjeta);
-            this.groupBox4.Controls.Add(this.btn_cobroTarjeta);
-            this.groupBox4.Enabled = false;
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.groupBox4.Location = new System.Drawing.Point(856, 381);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(309, 229);
-            this.groupBox4.TabIndex = 23;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "DETALLES COBRO CON TARJETAS";
+            this.gbx_Tarjeta.Controls.Add(this.pictureBox2);
+            this.gbx_Tarjeta.Controls.Add(this.lbl_cantidadTarjeta);
+            this.gbx_Tarjeta.Controls.Add(this.label8);
+            this.gbx_Tarjeta.Controls.Add(this.lbl_cargoTarjeta);
+            this.gbx_Tarjeta.Controls.Add(this.label1);
+            this.gbx_Tarjeta.Controls.Add(this.btn_detalleTarjeta);
+            this.gbx_Tarjeta.Controls.Add(this.btn_cobroTarjeta);
+            this.gbx_Tarjeta.Enabled = false;
+            this.gbx_Tarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.gbx_Tarjeta.Location = new System.Drawing.Point(856, 355);
+            this.gbx_Tarjeta.Name = "gbx_Tarjeta";
+            this.gbx_Tarjeta.Size = new System.Drawing.Size(309, 175);
+            this.gbx_Tarjeta.TabIndex = 23;
+            this.gbx_Tarjeta.TabStop = false;
+            this.gbx_Tarjeta.Text = "COBRO CON TARJETAS";
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(72, 90);
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Image = global::SistemaLaObra.Properties.Resources.creditoGris_64;
+            this.pictureBox2.Location = new System.Drawing.Point(238, 36);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(157, 77);
+            this.pictureBox2.Size = new System.Drawing.Size(64, 64);
             this.pictureBox2.TabIndex = 24;
             this.pictureBox2.TabStop = false;
             // 
             // lbl_cantidadTarjeta
             // 
+            this.lbl_cantidadTarjeta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_cantidadTarjeta.AutoSize = true;
             this.lbl_cantidadTarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.lbl_cantidadTarjeta.Location = new System.Drawing.Point(139, 65);
+            this.lbl_cantidadTarjeta.Location = new System.Drawing.Point(136, 85);
             this.lbl_cantidadTarjeta.Name = "lbl_cantidadTarjeta";
             this.lbl_cantidadTarjeta.Size = new System.Drawing.Size(15, 15);
             this.lbl_cantidadTarjeta.TabIndex = 24;
@@ -409,8 +408,9 @@
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(13, 65);
+            this.label8.Location = new System.Drawing.Point(10, 85);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(123, 15);
             this.label8.TabIndex = 24;
@@ -418,10 +418,11 @@
             // 
             // lbl_cargoTarjeta
             // 
+            this.lbl_cargoTarjeta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_cargoTarjeta.AutoSize = true;
             this.lbl_cargoTarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.lbl_cargoTarjeta.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_cargoTarjeta.Location = new System.Drawing.Point(186, 31);
+            this.lbl_cargoTarjeta.Location = new System.Drawing.Point(8, 56);
             this.lbl_cargoTarjeta.Name = "lbl_cargoTarjeta";
             this.lbl_cargoTarjeta.Size = new System.Drawing.Size(78, 26);
             this.lbl_cargoTarjeta.TabIndex = 24;
@@ -429,9 +430,10 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 31);
+            this.label1.Location = new System.Drawing.Point(6, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(179, 26);
             this.label1.TabIndex = 24;
@@ -439,11 +441,11 @@
             // 
             // btn_detalleTarjeta
             // 
+            this.btn_detalleTarjeta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_detalleTarjeta.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_detalleTarjeta.Enabled = false;
             this.btn_detalleTarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_detalleTarjeta.Image = global::SistemaLaObra.Properties.Resources.detalle;
-            this.btn_detalleTarjeta.Location = new System.Drawing.Point(13, 177);
+            this.btn_detalleTarjeta.Location = new System.Drawing.Point(6, 129);
             this.btn_detalleTarjeta.Name = "btn_detalleTarjeta";
             this.btn_detalleTarjeta.Size = new System.Drawing.Size(120, 40);
             this.btn_detalleTarjeta.TabIndex = 13;
@@ -454,15 +456,16 @@
             // 
             // btn_cobroTarjeta
             // 
+            this.btn_cobroTarjeta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_cobroTarjeta.BackColor = System.Drawing.SystemColors.Control;
             this.btn_cobroTarjeta.Enabled = false;
             this.btn_cobroTarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cobroTarjeta.Image = global::SistemaLaObra.Properties.Resources.tarjeta;
-            this.btn_cobroTarjeta.Location = new System.Drawing.Point(154, 177);
+            this.btn_cobroTarjeta.Image = global::SistemaLaObra.Properties.Resources.credito_32;
+            this.btn_cobroTarjeta.Location = new System.Drawing.Point(182, 129);
             this.btn_cobroTarjeta.Name = "btn_cobroTarjeta";
-            this.btn_cobroTarjeta.Size = new System.Drawing.Size(148, 40);
+            this.btn_cobroTarjeta.Size = new System.Drawing.Size(120, 40);
             this.btn_cobroTarjeta.TabIndex = 12;
-            this.btn_cobroTarjeta.Text = "Cobro con tarjeta";
+            this.btn_cobroTarjeta.Text = "Cobro con\r\ntarjeta";
             this.btn_cobroTarjeta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_cobroTarjeta.UseVisualStyleBackColor = false;
             this.btn_cobroTarjeta.Click += new System.EventHandler(this.btn_cobroTarjeta_Click);
@@ -519,14 +522,15 @@
             this.label10.TabIndex = 29;
             this.label10.Text = "SALDO A PAGAR";
             // 
-            // pictureBox3
+            // pbx_FormaDePago
             // 
-            this.pictureBox3.Image = global::SistemaLaObra.Properties.Resources.formaPago2;
-            this.pictureBox3.Location = new System.Drawing.Point(1096, 334);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox3.TabIndex = 31;
-            this.pictureBox3.TabStop = false;
+            this.pbx_FormaDePago.Image = global::SistemaLaObra.Properties.Resources.facturaBGris_32;
+            this.pbx_FormaDePago.Location = new System.Drawing.Point(512, 621);
+            this.pbx_FormaDePago.Name = "pbx_FormaDePago";
+            this.pbx_FormaDePago.Size = new System.Drawing.Size(32, 32);
+            this.pbx_FormaDePago.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbx_FormaDePago.TabIndex = 31;
+            this.pbx_FormaDePago.TabStop = false;
             // 
             // btn_cancelar
             // 
@@ -659,15 +663,14 @@
             this.btn_buscarDatos.UseVisualStyleBackColor = false;
             this.btn_buscarDatos.Click += new System.EventHandler(this.btn_buscarDatos_Click);
             // 
-            // lbl_cliente
+            // pictureBox4
             // 
-            this.lbl_cliente.AutoSize = true;
-            this.lbl_cliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.lbl_cliente.Location = new System.Drawing.Point(904, 25);
-            this.lbl_cliente.Name = "lbl_cliente";
-            this.lbl_cliente.Size = new System.Drawing.Size(202, 31);
-            this.lbl_cliente.TabIndex = 10;
-            this.lbl_cliente.Text = "Venta Minorista";
+            this.pictureBox4.Image = global::SistemaLaObra.Properties.Resources.ventasGris_128;
+            this.pictureBox4.Location = new System.Drawing.Point(1037, 11);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(128, 128);
+            this.pictureBox4.TabIndex = 43;
+            this.pictureBox4.TabStop = false;
             // 
             // IU_RegistrarVenta
             // 
@@ -676,11 +679,11 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1175, 683);
-            this.Controls.Add(this.lbl_cliente);
+            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.gb_cliente);
             this.Controls.Add(this.gb_tipoCliente);
             this.Controls.Add(this.ch_notaCredito);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pbx_FormaDePago);
             this.Controls.Add(this.lbl_saldoAPagar);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.ch_cargoEnvio);
@@ -688,11 +691,10 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.lbl_importeTotal);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.gbx_Tarjeta);
             this.Controls.Add(this.btn_cancelar);
-            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.gbx_envio);
             this.Controls.Add(this.cbx_formaPago);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.gb_productos);
             this.Controls.Add(this.btn_registrarVenta);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -700,23 +702,24 @@
             this.MaximizeBox = false;
             this.Name = "IU_RegistrarVenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "REGISTRAR VENTA";
+            this.Text = "REGISTRAR VENTA MINORISTA";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.IU_RegistrarVenta_FormClosed);
             this.Load += new System.EventHandler(this.IU_RegistrarVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_productos)).EndInit();
             this.gb_productos.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.gbx_envio.ResumeLayout(false);
+            this.gbx_envio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.gbx_Tarjeta.ResumeLayout(false);
+            this.gbx_Tarjeta.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx_FormaDePago)).EndInit();
             this.gb_tipoCliente.ResumeLayout(false);
             this.gb_tipoCliente.PerformLayout();
             this.gb_cliente.ResumeLayout(false);
             this.gb_cliente.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -725,12 +728,11 @@
         #endregion
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.Label lbl_importeTotal;
         public System.Windows.Forms.DataGridView dgv_productos;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox gbx_envio;
+        private System.Windows.Forms.GroupBox gbx_Tarjeta;
         private System.Windows.Forms.Label label11;
         public System.Windows.Forms.Label lbl_cargoEnvio;
         public System.Windows.Forms.Label lbl_cantidadEnvios;
@@ -758,7 +760,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pbx_FormaDePago;
         public System.Windows.Forms.CheckBox ch_notaCredito;
         private System.Windows.Forms.GroupBox gb_cliente;
         private System.Windows.Forms.Label label7;
@@ -766,11 +768,11 @@
         public System.Windows.Forms.Button btn_buscarDatos;
         public System.Windows.Forms.RadioButton rb_clienteMinorista;
         public System.Windows.Forms.GroupBox gb_productos;
-        private System.Windows.Forms.Label lbl_cliente;
         public System.Windows.Forms.RadioButton rb_clienteMayorista;
         public System.Windows.Forms.GroupBox gb_tipoCliente;
         public System.Windows.Forms.Button btn_registrarVenta;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }
 
