@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using SistemaLaObra.Modelo;
 
 namespace SistemaLaObra.Ventas
 {
@@ -25,6 +26,9 @@ namespace SistemaLaObra.Ventas
         public float ImporteTotal { get; set; }
         public int CodigoClienteMayorista { get; set; }
         public int CodigoEncargado { get; set; }
+        public bool Facturacion { get; set; }
+        public int CodigoFactura { get; set; }
+        public Factura Factura { get; set; }
         public List<DetalleVP> DetalleVP { get; set; }
 
 
@@ -35,29 +39,45 @@ namespace SistemaLaObra.Ventas
             ImporteTotal = 0;
             CodigoEncargado = 0;
             CodigoClienteMayorista = 0;
+            Facturacion = false;
+            CodigoFactura = 0;
+            Factura = new Factura();
             DetalleVP = new List<DetalleVP>();
         }
         
         public void crearVentaMinorista(Venta venta)
         {
             acceso = new AccesoDatos();
-            conexion = new SqlConnection(acceso.CadenaConexion());
-            consulta = new SqlCommand("INSERT INTO Ventas(codigoVenta,fechaHoraVenta,importeTotal,codigoEncargado) VALUES(@codigoVenta,@fechaHoraVenta,@importeTotal,@codigoEncargado)", conexion);
-            adaptador = new SqlDataAdapter();
-            adaptador.InsertCommand = consulta;
-
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoVenta", SqlDbType.Int));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@fechaHoraVenta", SqlDbType.DateTime));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@importeTotal", SqlDbType.Float));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoEncargado", SqlDbType.Int));
-
-            adaptador.InsertCommand.Parameters["@codigoVenta"].Value = venta.CodigoVenta;
-            adaptador.InsertCommand.Parameters["@fechaHoraVenta"].Value = venta.FechaHora;
-            adaptador.InsertCommand.Parameters["@importeTotal"].Value = venta.ImporteTotal;
-            adaptador.InsertCommand.Parameters["@codigoEncargado"].Value = venta.CodigoEncargado;
-
+            conexion = new SqlConnection(acceso.CadenaConexion());                     
             try
             {
+                if (venta.Facturacion)
+                {
+                    consulta = new SqlCommand("INSERT INTO Ventas(codigoVenta,fechaHoraVenta,importeTotal,codigoEncargado, facturacion, codigoFactura) VALUES(@codigoVenta,@fechaHoraVenta,@importeTotal,@codigoEncargado, @facturacion, @codigoFactura)", conexion);
+                }
+                else
+                {
+                    consulta = new SqlCommand("INSERT INTO Ventas(codigoVenta,fechaHoraVenta,importeTotal,codigoEncargado, facturacion) VALUES(@codigoVenta,@fechaHoraVenta,@importeTotal,@codigoEncargado, @facturacion)", conexion);
+                }                
+                adaptador = new SqlDataAdapter();
+                adaptador.InsertCommand = consulta;
+
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoVenta", SqlDbType.Int));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@fechaHoraVenta", SqlDbType.DateTime));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@importeTotal", SqlDbType.Float));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoEncargado", SqlDbType.Int));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@facturacion", SqlDbType.Bit));
+                if (venta.Facturacion)
+                {
+                    adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoFactura", SqlDbType.Int));
+                    adaptador.InsertCommand.Parameters["@codigoFactura"].Value = venta.CodigoFactura;
+                }
+                adaptador.InsertCommand.Parameters["@codigoVenta"].Value = venta.CodigoVenta;
+                adaptador.InsertCommand.Parameters["@fechaHoraVenta"].Value = venta.FechaHora;
+                adaptador.InsertCommand.Parameters["@importeTotal"].Value = venta.ImporteTotal;
+                adaptador.InsertCommand.Parameters["@codigoEncargado"].Value = venta.CodigoEncargado;
+                adaptador.InsertCommand.Parameters["@facturacion"].Value = venta.Facturacion;
+
                 conexion.Open();
                 adaptador.InsertCommand.ExecuteNonQuery();
             }
@@ -74,25 +94,38 @@ namespace SistemaLaObra.Ventas
         public void crearVentaMayorista(Venta venta)
         {
             acceso = new AccesoDatos();
-            conexion = new SqlConnection(acceso.CadenaConexion());
-            consulta = new SqlCommand("INSERT INTO Ventas(codigoVenta,fechaHoraVenta,importeTotal,codigoClienteMayorista,codigoEncargado) VALUES(@codigoVenta,@fechaHoraVenta,@importeTotal,@codigoClienteMayorista,@codigoEncargado)", conexion);
-            adaptador = new SqlDataAdapter();
-            adaptador.InsertCommand = consulta;
-
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoVenta", SqlDbType.Int));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@fechaHoraVenta", SqlDbType.DateTime));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@importeTotal", SqlDbType.Float));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoClienteMayorista", SqlDbType.Int));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoEncargado", SqlDbType.Int));
-
-            adaptador.InsertCommand.Parameters["@codigoVenta"].Value = venta.CodigoVenta;
-            adaptador.InsertCommand.Parameters["@fechaHoraVenta"].Value = venta.FechaHora;
-            adaptador.InsertCommand.Parameters["@importeTotal"].Value = venta.ImporteTotal;
-            adaptador.InsertCommand.Parameters["@codigoClienteMayorista"].Value = venta.CodigoClienteMayorista;
-            adaptador.InsertCommand.Parameters["@codigoEncargado"].Value = venta.CodigoEncargado;
-
+            conexion = new SqlConnection(acceso.CadenaConexion());            
             try
             {
+                if (venta.Facturacion)
+                {
+                    consulta = new SqlCommand("INSERT INTO Ventas(codigoVenta,fechaHoraVenta,importeTotal,codigoClienteMayorista,codigoEncargado, facturacion, codigoFactura) VALUES(@codigoVenta,@fechaHoraVenta,@importeTotal,@codigoClienteMayorista,@codigoEncargado, @facturacion, @codigoFactura)", conexion);
+                }
+                else
+                {
+                    consulta = new SqlCommand("INSERT INTO Ventas(codigoVenta,fechaHoraVenta,importeTotal,codigoClienteMayorista,codigoEncargado, facturacion) VALUES(@codigoVenta,@fechaHoraVenta,@importeTotal,@codigoClienteMayorista,@codigoEncargado, @facturacion)", conexion);
+                }                
+                adaptador = new SqlDataAdapter();
+                adaptador.InsertCommand = consulta;
+
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoVenta", SqlDbType.Int));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@fechaHoraVenta", SqlDbType.DateTime));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@importeTotal", SqlDbType.Float));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoClienteMayorista", SqlDbType.Int));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoEncargado", SqlDbType.Int));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@facturacion", SqlDbType.Bit));
+                if (venta.Facturacion)
+                {
+                    adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoFactura", SqlDbType.Int));
+                    adaptador.InsertCommand.Parameters["@codigoFactura"].Value = venta.Facturacion;
+                }
+                adaptador.InsertCommand.Parameters["@codigoVenta"].Value = venta.CodigoVenta;
+                adaptador.InsertCommand.Parameters["@fechaHoraVenta"].Value = venta.FechaHora;
+                adaptador.InsertCommand.Parameters["@importeTotal"].Value = venta.ImporteTotal;
+                adaptador.InsertCommand.Parameters["@codigoClienteMayorista"].Value = venta.CodigoClienteMayorista;
+                adaptador.InsertCommand.Parameters["@codigoEncargado"].Value = venta.CodigoEncargado;
+                adaptador.InsertCommand.Parameters["@facturacion"].Value = venta.Facturacion;
+
                 conexion.Open();
                 adaptador.InsertCommand.ExecuteNonQuery();
             }

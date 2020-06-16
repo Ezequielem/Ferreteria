@@ -195,6 +195,7 @@
     <Compile Include="Estadística\IU_MenuPrincipalEstadistica.Designer.cs">
       <DependentUpon>IU_MenuPrincipalEstadistica.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\Factura.cs" />
     <Compile Include="Modelo\ListaFormaPagos.cs" />
     <Compile Include="Modelo\ListaTarjetas.cs" />
     <Compile Include="Logistica\RegistrarIngresoDeProducto\Controlador_RegistrarIngresoDeProducto.cs" />

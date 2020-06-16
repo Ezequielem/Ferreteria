@@ -275,7 +275,7 @@
             this.btn_estadistica.Name = "btn_estadistica";
             this.btn_estadistica.Size = new System.Drawing.Size(150, 50);
             this.btn_estadistica.TabIndex = 19;
-            this.btn_estadistica.Text = "Estadistica";
+            this.btn_estadistica.Text = "Estadística";
             this.btn_estadistica.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_estadistica.UseVisualStyleBackColor = false;
             this.btn_estadistica.Visible = false;
