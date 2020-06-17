@@ -167,10 +167,8 @@ C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra
 C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\SistemaLaObra.exe
 C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\SistemaLaObra.pdb
 C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\es-AR\SistemaLaObra.resources.dll
-C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\Geocoding.dll
 C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\GMap.NET.Core.dll
 C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\GMap.NET.WindowsForms.dll
-C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\GoogleMapsGeocoding.dll
 C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\Microsoft.ReportViewer.Common.dll
 C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
 C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\Microsoft.ReportViewer.Design.dll
@@ -327,3 +325,12 @@ C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra
 C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Ventas.VentaMostrador.IU_DetalleArticulo.resources
 C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Ventas.VentaMostrador.IU_CargaArticulo.resources
 C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Compras.ConsultarProveedor.IU_ConsultarProveedor.resources
+C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\EntityFramework.dll
+C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\System.Data.SQLite.dll
+C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\EntityFramework.xml
+C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\System.Data.SQLite.xml
+C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\System.Data.SQLite.dll.config

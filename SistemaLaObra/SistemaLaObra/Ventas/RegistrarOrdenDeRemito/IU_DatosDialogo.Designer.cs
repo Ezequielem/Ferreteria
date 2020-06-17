@@ -36,7 +36,6 @@
             this.lbl_dist = new System.Windows.Forms.Label();
             this.rbtn_mapa = new System.Windows.Forms.RadioButton();
             this.rbtn_manual = new System.Windows.Forms.RadioButton();
-            this.gMapControl2 = new GMap.NET.WindowsForms.GMapControl();
             this.btn_VerMapa = new System.Windows.Forms.Button();
             this.lbl_Distancia = new System.Windows.Forms.Label();
             this.cbx_localidad = new System.Windows.Forms.ComboBox();
@@ -63,6 +62,7 @@
             this.lbl_3 = new System.Windows.Forms.Label();
             this.btn_cargarDatos = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
+            this.mapa = new GMap.NET.WindowsForms.GMapControl();
             this.gbx_datos.SuspendLayout();
             this.gbx_distancia.SuspendLayout();
             this.SuspendLayout();
@@ -102,12 +102,12 @@
             // 
             // gbx_distancia
             // 
+            this.gbx_distancia.Controls.Add(this.mapa);
             this.gbx_distancia.Controls.Add(this.label1);
             this.gbx_distancia.Controls.Add(this.txt_distancia);
             this.gbx_distancia.Controls.Add(this.lbl_dist);
             this.gbx_distancia.Controls.Add(this.rbtn_mapa);
             this.gbx_distancia.Controls.Add(this.rbtn_manual);
-            this.gbx_distancia.Controls.Add(this.gMapControl2);
             this.gbx_distancia.Controls.Add(this.btn_VerMapa);
             this.gbx_distancia.Controls.Add(this.lbl_Distancia);
             this.gbx_distancia.Location = new System.Drawing.Point(14, 91);
@@ -167,32 +167,6 @@
             this.rbtn_manual.Text = "Ingreso manual";
             this.rbtn_manual.UseVisualStyleBackColor = true;
             this.rbtn_manual.CheckedChanged += new System.EventHandler(this.rbtn_manual_CheckedChanged);
-            // 
-            // gMapControl2
-            // 
-            this.gMapControl2.Bearing = 0F;
-            this.gMapControl2.CanDragMap = true;
-            this.gMapControl2.EmptyTileColor = System.Drawing.Color.Navy;
-            this.gMapControl2.GrayScaleMode = false;
-            this.gMapControl2.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
-            this.gMapControl2.LevelsKeepInMemmory = 5;
-            this.gMapControl2.Location = new System.Drawing.Point(6, 73);
-            this.gMapControl2.MarkersEnabled = true;
-            this.gMapControl2.MaxZoom = 18;
-            this.gMapControl2.MinZoom = 2;
-            this.gMapControl2.MouseWheelZoomEnabled = true;
-            this.gMapControl2.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
-            this.gMapControl2.Name = "gMapControl2";
-            this.gMapControl2.NegativeMode = false;
-            this.gMapControl2.PolygonsEnabled = true;
-            this.gMapControl2.RetryLoadTile = 0;
-            this.gMapControl2.RoutesEnabled = true;
-            this.gMapControl2.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
-            this.gMapControl2.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
-            this.gMapControl2.ShowTileGridLines = false;
-            this.gMapControl2.Size = new System.Drawing.Size(383, 256);
-            this.gMapControl2.TabIndex = 23;
-            this.gMapControl2.Zoom = 13D;
             // 
             // btn_VerMapa
             // 
@@ -451,6 +425,32 @@
             this.btn_cancelar.UseVisualStyleBackColor = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
+            // mapa
+            // 
+            this.mapa.Bearing = 0F;
+            this.mapa.CanDragMap = true;
+            this.mapa.EmptyTileColor = System.Drawing.Color.Navy;
+            this.mapa.GrayScaleMode = false;
+            this.mapa.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            this.mapa.LevelsKeepInMemory = 5;
+            this.mapa.Location = new System.Drawing.Point(6, 68);
+            this.mapa.MarkersEnabled = true;
+            this.mapa.MaxZoom = 2;
+            this.mapa.MinZoom = 2;
+            this.mapa.MouseWheelZoomEnabled = true;
+            this.mapa.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            this.mapa.Name = "mapa";
+            this.mapa.NegativeMode = false;
+            this.mapa.PolygonsEnabled = true;
+            this.mapa.RetryLoadTile = 0;
+            this.mapa.RoutesEnabled = true;
+            this.mapa.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            this.mapa.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
+            this.mapa.ShowTileGridLines = false;
+            this.mapa.Size = new System.Drawing.Size(383, 264);
+            this.mapa.TabIndex = 34;
+            this.mapa.Zoom = 0D;
+            // 
             // IU_DatosDialogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -484,7 +484,6 @@
         private System.Windows.Forms.ComboBox cbx_departamento;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private GMap.NET.WindowsForms.GMapControl gMapControl2;
         private System.Windows.Forms.TextBox txt_numeroTelefono;
         private System.Windows.Forms.Label lbl_13;
         private System.Windows.Forms.ComboBox cbx_tipoTelefono;
@@ -512,5 +511,6 @@
         private System.Windows.Forms.RadioButton rbtn_mapa;
         private System.Windows.Forms.RadioButton rbtn_manual;
         private System.Windows.Forms.Label label1;
+        private GMap.NET.WindowsForms.GMapControl mapa;
     }
 }

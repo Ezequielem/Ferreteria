@@ -294,7 +294,6 @@ namespace SistemaLaObra.Ventas.OrdenDeRemito
             listaDeMapas[viaje].EmptyTileColor = Color.Navy;
             listaDeMapas[viaje].GrayScaleMode = false;
             listaDeMapas[viaje].HelperLineOption = HelperLineOptions.DontShow;
-            listaDeMapas[viaje].LevelsKeepInMemmory = 5;
             listaDeMapas[viaje].Location = new Point(335, 37);
             listaDeMapas[viaje].MarkersEnabled = true;
             listaDeMapas[viaje].MaxZoom = 18;

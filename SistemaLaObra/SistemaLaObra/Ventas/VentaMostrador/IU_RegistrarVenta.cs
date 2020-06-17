@@ -13,7 +13,6 @@ using SistemaLaObra.Ventas.CobroConTarjeta;
 using SistemaLaObra.Ventas.OrdenDeRemito;
 using SistemaLaObra.Ventas.RegistrarClienteMayorista;
 using SistemaLaObra.Ventas.VentaMostrador;
-using Geocoding.Microsoft.Json;
 
 namespace SistemaLaObra
 {

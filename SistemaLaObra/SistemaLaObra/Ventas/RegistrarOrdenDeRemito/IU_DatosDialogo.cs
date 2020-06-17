@@ -6,11 +6,11 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using GMap.NET;
 using GMap.NET.MapProviders;
 using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
-using System.Windows.Forms;
 using SistemaLaObra.Ventas.OrdenDeRemito;
 
 namespace SistemaLaObra.Ventas.RegistrarOrdenDeRemito
@@ -25,7 +25,7 @@ namespace SistemaLaObra.Ventas.RegistrarOrdenDeRemito
         private List<Entrega> listaEntrega;
         private GDirections direccion;
         private GeoCoderStatusCode status;
-        GMapOverlay marcadores;
+        //GMapOverlay marcadores;
 
         //VARIABLE GLOBAL
         string distancia="";
@@ -37,52 +37,7 @@ namespace SistemaLaObra.Ventas.RegistrarOrdenDeRemito
             controladorOR = controlador;
             listaEntrega = controlador.EntregaColeccion;
             validacion = new Validaciones();
-            marcadores = new GMapOverlay("capaMarcador");
-        }
-
-        private void IU_DatosDialogo_Load(object sender, EventArgs e)
-        {
-            gMapControl2.MapProvider = GoogleMapProvider.Instance;
-            GMaps.Instance.Mode = AccessMode.ServerOnly;
-            gMapControl2.SetPositionByKeywords("Cordoba, Argentina");
-            gMapControl2.ShowCenter = false;
-            gMapControl2.DragButton = MouseButtons.Left;
-            gMapControl2.CanDragMap = true;
-            gMapControl2.AutoScroll = true;
-            cargarProvincias();
-            cargarTipoDeTelefonos();
-            estadoInicialDistancia();
-            if (controladorOR.Venta.CodigoClienteMayorista != 0)
-            {
-                controladorOR.ClienteMayorista = controladorOR.Venta.conocerClienteMayorista(controladorOR.Venta.CodigoClienteMayorista);
-
-                txt_nombreCliente.Text = controladorOR.ClienteMayorista.RazonSocial;
-                txt_codigoPostal.Text = controladorOR.ClienteMayorista.CodigoPostal.ToString();
-                txt_calle.Text = controladorOR.ClienteMayorista.Calle;
-                txt_numero.Text = controladorOR.ClienteMayorista.Numero.ToString();
-                txt_barrio.Text = controladorOR.ClienteMayorista.NombreBarrio;
-                cbx_provincia.SelectedValue = controladorOR.ClienteMayorista.CodigoProvincia;
-                cbx_departamento.SelectedValue = controladorOR.ClienteMayorista.CodigoDepartamento;
-                cbx_localidad.SelectedValue = controladorOR.ClienteMayorista.CodigoLocalidad;
-                cbx_tipoTelefono.SelectedValue = controladorOR.ClienteMayorista.CodigoTipoTelefono;
-                txt_numeroTelefono.Text = controladorOR.ClienteMayorista.NumeroTelefono.ToString();
-            }
-            if (controladorOR.ControladorRV.venta.CodigoClienteMayorista != 0)
-            {
-                controladorOR.ClienteMayorista = controladorOR.Venta.conocerClienteMayorista(controladorOR.ControladorRV.venta.CodigoClienteMayorista);               
-
-                txt_nombreCliente.Text = controladorOR.ClienteMayorista.RazonSocial;
-                txt_codigoPostal.Text = controladorOR.ClienteMayorista.CodigoPostal.ToString();
-                txt_calle.Text = controladorOR.ClienteMayorista.Calle;
-                txt_numero.Text = controladorOR.ClienteMayorista.Numero.ToString();
-                txt_barrio.Text = controladorOR.ClienteMayorista.NombreBarrio;
-                cbx_provincia.SelectedValue = controladorOR.ClienteMayorista.CodigoProvincia;
-                cbx_departamento.SelectedValue = controladorOR.ClienteMayorista.CodigoDepartamento;
-                cbx_localidad.SelectedValue = controladorOR.ClienteMayorista.CodigoLocalidad;
-                cbx_tipoTelefono.SelectedValue = controladorOR.ClienteMayorista.CodigoTipoTelefono;
-                txt_numeroTelefono.Text = controladorOR.ClienteMayorista.NumeroTelefono.ToString();
-            }
-        }
+        }        
 
         //BOTONES
 
@@ -313,9 +268,11 @@ namespace SistemaLaObra.Ventas.RegistrarOrdenDeRemito
         private void cargarMarcadorDestino()
         {            
             //OBTENGO DIRECCION    
-            string hasta = txt_calle.Text + ", " + txt_numero.Text + ", " + cbx_provincia.Text + ", argentina";
+            string hasta = txt_calle.Text + " " + txt_numero.Text + " " + cbx_provincia.Text + ", argentina";
             //DEVUELVO COORDENADAS
+            
             var puntoFin = GMapProviders.GoogleMap.GetPoint(hasta, out status);
+            var ver = GMapProviders.GoogleMap.GetPoint(hasta, out status);
             if (puntoFin == null)
             {
                 MessageBox.Show(this, "No ingreso una dirección válida por favor reingrese la dirección", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -325,17 +282,17 @@ namespace SistemaLaObra.Ventas.RegistrarOrdenDeRemito
                 try
                 {
                     //CALCULO RUTA
-                    gMapControl2.Refresh();
-                    PointLatLng laObra = new PointLatLng(-31.4671849, -64.2239958);
-                    var RutasDireccion = GMapProviders.GoogleMap.GetDirections(out direccion, laObra, puntoFin.Value, false, false, false, false, false);
+                    //gMapControl2.Refresh();
+                    PointLatLng coordenadas = new PointLatLng(-31.3247304, -64.2477592);
+                    var RutasDireccion = GMapProviders.GoogleMap.GetDirections(out direccion, coordenadas, puntoFin.Value, false, false, false, false, false);
                     GMapRoute rutaObtenida = new GMapRoute(direccion.Route, "Ruta");
                     //CALUCLO DE  DISTANCIA
                     distancia = rutaObtenida.Distance.ToString("0.00");
                     lbl_Distancia.Text = distancia + " Km";
                     //LIMPIO CAPA DE MARCADORES                             
-                    marcadores.Clear();
+                    //marcadores.Clear();//////////////////
                     //MARCADOR DE INICIO    
-                    GMarkerGoogle puntoInicioViaje = new GMarkerGoogle(laObra, GMarkerGoogleType.blue);
+                    GMarkerGoogle puntoInicioViaje = new GMarkerGoogle(coordenadas, GMarkerGoogleType.blue);
                     puntoInicioViaje.ToolTipMode = MarkerTooltipMode.Always;
                     puntoInicioViaje.ToolTipText = string.Format("Ferretería \n LA OBRA \n de Mario Labarre");
                     //MARCADOR DE FIN
@@ -343,11 +300,12 @@ namespace SistemaLaObra.Ventas.RegistrarOrdenDeRemito
                     puntoFinViaje.ToolTipMode = MarkerTooltipMode.Always;
                     puntoFinViaje.ToolTipText = string.Format(txt_nombreCliente.Text);
                     //AGREGO MARCADORES A LA CAPA
-                    marcadores.Markers.Add(puntoInicioViaje);
-                    marcadores.Markers.Add(puntoFinViaje);
-                    //AGREGO CAPA AL CONTROL GMAP                
-                    gMapControl2.Overlays.Add(marcadores);
-                    gMapControl2.ZoomAndCenterMarkers("capaMarcador");
+                    //marcadores.Markers.Add(puntoInicioViaje);//////////////////
+                    //marcadores.Markers.Add(puntoFinViaje);////////////////////
+                    //AGREGO CAPA AL CONTROL GMAP
+
+                    //gMapControl2.Overlays.Add(marcadores);
+                    //gMapControl2.ZoomAndCenterMarkers("capaMarcador");
                 }
                 catch (Exception)
                 {
@@ -361,15 +319,76 @@ namespace SistemaLaObra.Ventas.RegistrarOrdenDeRemito
             rbtn_manual.Checked = true;
             lbl_dist.Enabled = true;
             txt_distancia.Enabled = true;
-            gMapControl2.Enabled = false;
             btn_VerMapa.Enabled = false;
             lbl_Distancia.Enabled = false;
             cbx_provincia.SelectedIndex = 18;
             cbx_departamento.SelectedIndex = 10;
-            cbx_localidad.SelectedIndex = 3;
+            cbx_localidad.SelectedIndex = 3;            
+        }
+
+        private void cargarMapaInicial()
+        {
+            mapa.MapProvider = GoogleMapProvider.Instance;
+            GMaps.Instance.Mode = AccessMode.ServerOnly;
+            PointLatLng coordenada = new PointLatLng(-31.3247304, -64.2477592);
+            mapa.Position = coordenada;
+            mapa.MinZoom = 0;
+            mapa.MaxZoom = 24;
+            mapa.Zoom = 16;
+            mapa.ShowCenter = false;
+            mapa.DragButton = MouseButtons.Left;
+            mapa.CanDragMap = true;
+            mapa.AutoScroll = true;
+
+            GMapOverlay marcadores = new GMapOverlay("capaMarcador");
+            GMarkerGoogle marca = new GMarkerGoogle(coordenada, GMarkerGoogleType.red_dot);
+            marca.ToolTipMode = MarkerTooltipMode.Always;
+            marca.ToolTipText = "FERRETERIA";
+
+            marcadores.Markers.Add(marca);
+
+            mapa.Overlays.Add(marcadores);
         }
 
         //EVENTOS
+
+        private void IU_DatosDialogo_Load(object sender, EventArgs e)
+        {
+            cargarMapaInicial();
+            cargarProvincias();
+            cargarTipoDeTelefonos();
+            estadoInicialDistancia();
+            if (controladorOR.Venta.CodigoClienteMayorista != 0)
+            {
+                controladorOR.ClienteMayorista = controladorOR.Venta.conocerClienteMayorista(controladorOR.Venta.CodigoClienteMayorista);
+
+                txt_nombreCliente.Text = controladorOR.ClienteMayorista.RazonSocial;
+                txt_codigoPostal.Text = controladorOR.ClienteMayorista.CodigoPostal.ToString();
+                txt_calle.Text = controladorOR.ClienteMayorista.Calle;
+                txt_numero.Text = controladorOR.ClienteMayorista.Numero.ToString();
+                txt_barrio.Text = controladorOR.ClienteMayorista.NombreBarrio;
+                cbx_provincia.SelectedValue = controladorOR.ClienteMayorista.CodigoProvincia;
+                cbx_departamento.SelectedValue = controladorOR.ClienteMayorista.CodigoDepartamento;
+                cbx_localidad.SelectedValue = controladorOR.ClienteMayorista.CodigoLocalidad;
+                cbx_tipoTelefono.SelectedValue = controladorOR.ClienteMayorista.CodigoTipoTelefono;
+                txt_numeroTelefono.Text = controladorOR.ClienteMayorista.NumeroTelefono.ToString();
+            }
+            if (controladorOR.ControladorRV.venta.CodigoClienteMayorista != 0)
+            {
+                controladorOR.ClienteMayorista = controladorOR.Venta.conocerClienteMayorista(controladorOR.ControladorRV.venta.CodigoClienteMayorista);
+
+                txt_nombreCliente.Text = controladorOR.ClienteMayorista.RazonSocial;
+                txt_codigoPostal.Text = controladorOR.ClienteMayorista.CodigoPostal.ToString();
+                txt_calle.Text = controladorOR.ClienteMayorista.Calle;
+                txt_numero.Text = controladorOR.ClienteMayorista.Numero.ToString();
+                txt_barrio.Text = controladorOR.ClienteMayorista.NombreBarrio;
+                cbx_provincia.SelectedValue = controladorOR.ClienteMayorista.CodigoProvincia;
+                cbx_departamento.SelectedValue = controladorOR.ClienteMayorista.CodigoDepartamento;
+                cbx_localidad.SelectedValue = controladorOR.ClienteMayorista.CodigoLocalidad;
+                cbx_tipoTelefono.SelectedValue = controladorOR.ClienteMayorista.CodigoTipoTelefono;
+                txt_numeroTelefono.Text = controladorOR.ClienteMayorista.NumeroTelefono.ToString();
+            }
+        }
 
         private void txt_numero_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -407,7 +426,7 @@ namespace SistemaLaObra.Ventas.RegistrarOrdenDeRemito
             {
                 lbl_dist.Enabled = true;
                 txt_distancia.Enabled = true;
-                gMapControl2.Enabled = false;
+                //gMapControl2.Enabled = false;
                 btn_VerMapa.Enabled = false;
                 lbl_Distancia.Enabled = false;
             }
@@ -415,7 +434,7 @@ namespace SistemaLaObra.Ventas.RegistrarOrdenDeRemito
             {
                 lbl_dist.Enabled = false;
                 txt_distancia.Enabled = false;
-                gMapControl2.Enabled = true;
+                //gMapControl2.Enabled = true;
                 btn_VerMapa.Enabled = true;
                 lbl_Distancia.Enabled = true;
             }

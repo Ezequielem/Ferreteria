@@ -93,8 +93,9 @@ namespace SistemaLaObra.Ventas.VentaMostrador
         //EVENTOS
 
         private void IU_CargaArticulo_Load(object sender, EventArgs e)
-        {
+        {            
             cargarDataGrid();
+            txt_cantidad.Focus();
         }
 
         private void txt_cantidad_KeyPress(object sender, KeyPressEventArgs e)

@@ -305,7 +305,6 @@
             this.gMapControl2.EmptyTileColor = System.Drawing.Color.Navy;
             this.gMapControl2.GrayScaleMode = false;
             this.gMapControl2.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
-            this.gMapControl2.LevelsKeepInMemmory = 5;
             this.gMapControl2.Location = new System.Drawing.Point(6, 73);
             this.gMapControl2.MarkersEnabled = true;
             this.gMapControl2.MaxZoom = 18;
