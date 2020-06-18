@@ -20,24 +20,12 @@ namespace SistemaLaObra.Ventas.OrdenDeRemito
         private DetalleLogistica detalleLogistica;
         private Validaciones validacion;
         private List<Button> btn_viaje;
-        private IU_MenuPrincipal _interfazContenedora;
         public List<Label> lbl_viaje;
 
         //VARIABLE GLOBAL EN LA INTERFAZ
         private int _cantidadDeEnvios;
 
-        public IU_MenuPrincipal InterfazContenedora
-        {
-            get
-            {
-                return _interfazContenedora;
-            }
-
-            set
-            {
-                _interfazContenedora = value;
-            }
-        }
+        public IU_MenuPrincipal InterfazContenedora { get; set; }
 
 
 
@@ -53,13 +41,6 @@ namespace SistemaLaObra.Ventas.OrdenDeRemito
             btn_viaje = new List<Button>();
             lbl_viaje = new List<Label>();
             InterfazContenedora = new IU_MenuPrincipal();
-        }
-
-        private void IU_RegistrarOrden_Load(object sender, EventArgs e)
-        {            
-            btn_siguiente.Enabled = false;          
-            gbx_datos.Enabled = false;
-                     
         }
 
         //BOTONES
@@ -155,13 +136,11 @@ namespace SistemaLaObra.Ventas.OrdenDeRemito
         
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
-            this.Owner.Show();
             this.Close();
         }
 
         private void btn_siguiente_Click(object sender, EventArgs e)
         {
-            this.Hide();
             controladorOR.interfazCargarFechaHora();
         }
 
@@ -218,10 +197,6 @@ namespace SistemaLaObra.Ventas.OrdenDeRemito
         {
             _cantidadDeEnvios = int.Parse(txt_cantidadEnvios.Text);
         }
-
-
-
-        //METODOS PRIVADOS
 
         private void crearBotonesDinamicos(int cantidadEnvios)
         {
@@ -295,6 +270,13 @@ namespace SistemaLaObra.Ventas.OrdenDeRemito
         }
 
         //EVENTOS
+
+        private void IU_RegistrarOrden_Load(object sender, EventArgs e)
+        {
+            btn_siguiente.Enabled = false;
+            gbx_datos.Enabled = false;
+
+        }
 
         private void txt_codigoVenta_KeyPress(object sender, KeyPressEventArgs e)
         {

@@ -68,7 +68,9 @@ namespace SistemaLaObra.Ventas.RegistrarOrdenDeRemito
                 MessageBox.Show(this, "Debe ingresar el barrio", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (validacion.campoVacio(txt_numeroTelefono.Text))
+            {
                 MessageBox.Show(this, "Debe ingresar un número de teléfono", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }                
             else if (validacion.campoVacio(txt_distancia.Text)&&validacion.campoVacio(lbl_Distancia.Text))
             {
                 MessageBox.Show(this, "Debe ingresar la distancia de envío manualmente o a través del mapa", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -166,7 +168,9 @@ namespace SistemaLaObra.Ventas.RegistrarOrdenDeRemito
                 MessageBox.Show(this, "Debe ingresar un número de teléfono", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else 
             {
+                Cursor.Current = Cursors.WaitCursor;
                 cargarMarcadorDestino();
+                Cursor.Current = Cursors.Default;
             }            
         }
 

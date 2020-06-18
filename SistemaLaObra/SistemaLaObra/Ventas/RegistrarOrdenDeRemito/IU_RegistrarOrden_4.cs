@@ -31,36 +31,11 @@ namespace SistemaLaObra.Ventas.OrdenDeRemito
         List<Label> listaLblDistancia;
         List<TextBox> listaTxtManual;
         public List<GMapControl> listaDeMapas;
-        private IU_RegistrarVenta _interfazVenta;
-        private IU_MenuPrincipal _interfazContenedora;
 
         //ATRIBUTOS
 
-        public IU_RegistrarVenta InterfazVenta
-        {
-            get
-            {
-                return _interfazVenta;
-            }
-
-            set
-            {
-                _interfazVenta = value;
-            }
-        }
-
-        public IU_MenuPrincipal InterfazContenedora
-        {
-            get
-            {
-                return _interfazContenedora;
-            }
-
-            set
-            {
-                _interfazContenedora = value;
-            }
-        }
+        public IU_RegistrarVenta InterfazVenta { get; set; }
+        public IU_MenuPrincipal InterfazContenedora { get; set; }
 
         public IU_RegistrarOrden_4(Controlador_RegistrarOrden controlador)
         {
@@ -77,15 +52,6 @@ namespace SistemaLaObra.Ventas.OrdenDeRemito
             listaRbtnOpcion4 = new List<RadioButton>();
             listaDeMapas = new List<GMapControl>();
             InterfazVenta = new IU_RegistrarVenta();
-        }
-
-        private void IU_RegistrarOrden_4_Load(object sender, EventArgs e)
-        {
-            cargarTabControl();
-            for (int i = 0; i < _listaEntrega.Count; i++)
-            {
-                mostrarRutaRecomendada(i);
-            }            
         }
 
         //BOTONES
@@ -106,8 +72,7 @@ namespace SistemaLaObra.Ventas.OrdenDeRemito
                 else
                 {
                     tomarPrecioPorDistancia(i);
-                    contador++;
-                    
+                    contador++;                    
                 }
             }
             if (contador==_listaEntrega.Count)
@@ -122,14 +87,15 @@ namespace SistemaLaObra.Ventas.OrdenDeRemito
 
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
-            controladorOR.iu_registrarOrden1.Owner.Show();
+            controladorOR.cerrarInterfazCargarPrecioYRuta();
+            controladorOR.cerrarInterfazCargarArticulosPorViaje();
+            controladorOR.cerrarInterfazCargarFechaHora();
+            controladorOR.iu_registrarOrden1.Close();
         }
 
         private void btn_volver_Click(object sender, EventArgs e)
         {
-            this.Close();
-            controladorOR.iu_registrarOrden3.Show();
+            controladorOR.cerrarInterfazCargarPrecioYRuta();
         }
 
         //METODOS
@@ -158,15 +124,19 @@ namespace SistemaLaObra.Ventas.OrdenDeRemito
                 {
                     //Hilo proveniente de venta mayorista
                     controladorOR.ControladorRVM.tomarRegistroOrdenRemito(controladorOR.EntregaColeccion, controladorOR.DetalleLogistica);
-                    Close();
-                    controladorOR.iu_registrarOrden1.Owner.Show();//Regresa a la interfaz de venta
+                    controladorOR.cerrarInterfazCargarPrecioYRuta();
+                    controladorOR.cerrarInterfazCargarArticulosPorViaje();
+                    controladorOR.cerrarInterfazCargarFechaHora();
+                    controladorOR.iu_registrarOrden1.Close();//Regresa a la interfaz de venta
                 }
                 else
                 {
                     //Hilo proveniente de venta minorista
                     controladorOR.ControladorRV.tomarRegistroOrdenRemito(controladorOR.EntregaColeccion, controladorOR.DetalleLogistica);
-                    Close();
-                    controladorOR.iu_registrarOrden1.Owner.Show();//Regresa a la interfaz de venta
+                    controladorOR.cerrarInterfazCargarPrecioYRuta();
+                    controladorOR.cerrarInterfazCargarArticulosPorViaje();
+                    controladorOR.cerrarInterfazCargarFechaHora();
+                    controladorOR.iu_registrarOrden1.Close();//Regresa a la interfaz de venta
                 }                
             }
             else //Hilo desde Menu de Ventas
@@ -183,7 +153,10 @@ namespace SistemaLaObra.Ventas.OrdenDeRemito
                     //LA SIGUIENTE LINEA DE CODIGO HACE EL REGISTRO DE LA ORDEN DE REMITO
                     controladorOR.generarOrdenPorViaje(controladorOR.buscarUltimoNroEntrega());
                     MessageBox.Show(this, "La Entrega se registro correctamente", "ORDEN DE REMITO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    this.Close();
+                    controladorOR.cerrarInterfazCargarPrecioYRuta();
+                    controladorOR.cerrarInterfazCargarArticulosPorViaje();
+                    controladorOR.cerrarInterfazCargarFechaHora();
+                    controladorOR.iu_registrarOrden1.Close();
                 }
                 else
                 {
@@ -573,6 +546,18 @@ namespace SistemaLaObra.Ventas.OrdenDeRemito
         private void txt_precioManual_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.soloDecimales(e);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            Cursor.Current = Cursors.WaitCursor;
+            cargarTabControl();
+            for (int i = 0; i < _listaEntrega.Count; i++)
+            {
+                mostrarRutaRecomendada(i);
+            }
+            Cursor.Current = Cursors.Default;
         }
     }
 }

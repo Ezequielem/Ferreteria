@@ -42,20 +42,18 @@ namespace SistemaLaObra.Ventas.OrdenDeRemito
         private void btn_siguiente_Click(object sender, EventArgs e)
         {
             cargarPropiedadesEntregaAColeccion();                    
-            this.Hide();
             controladorOR.interfazCargarArticulosPorViaje();
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
-            controladorOR.iu_registrarOrden1.Owner.Show();
+            controladorOR.cerrarInterfazCargarFechaHora();
+            controladorOR.iu_registrarOrden1.Close();
         }
 
         private void btn_volver_Click(object sender, EventArgs e)
-        {            
-            this.Close();
-            controladorOR.iu_registrarOrden1.Show();
+        {
+            controladorOR.cerrarInterfazCargarFechaHora();
         }
 
         //METODOS

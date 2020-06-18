@@ -250,24 +250,36 @@ namespace SistemaLaObra.Ventas.OrdenDeRemito
 
         public void interfazCargarFechaHora()
         {
-            iu_registrarOrden2=new IU_RegistrarOrden_2(this);
-            //creo lo soluciono al tema del dialogo mandandole como referencia la interfaz anterior                                   
-            iu_registrarOrden2.ShowDialog(iu_registrarOrden1);
+            iu_registrarOrden2 = new IU_RegistrarOrden_2(this);            
+            iu_registrarOrden2.ShowDialog();
+        }
+
+        public void cerrarInterfazCargarFechaHora()
+        {
+            iu_registrarOrden2.Close();
         }
 
         public void interfazCargarArticulosPorViaje()
         {
-            iu_registrarOrden3=new IU_RegistrarOrden_3(this);
-            //creo lo soluciono al tema del dialogo mandandole como referencia la interfaz anterior 
-            iu_registrarOrden3.ShowDialog(iu_registrarOrden2);
+            iu_registrarOrden3=new IU_RegistrarOrden_3(this); 
+            iu_registrarOrden3.ShowDialog();
+        }
+
+        public void cerrarInterfazCargarArticulosPorViaje()
+        {
+            iu_registrarOrden3.Close();
         }
 
         public void interfazCargarPrecioYRuta()
         {
             iu_registrarOrden4=new IU_RegistrarOrden_4(this);
-            //creo lo soluciono al tema del dialogo mandandole como referencia la interfaz anterior 
-            iu_registrarOrden4.InterfazContenedora = InterfazContenedora;
-            iu_registrarOrden4.ShowDialog(iu_registrarOrden3);
+            //iu_registrarOrden4.InterfazContenedora = InterfazContenedora;
+            iu_registrarOrden4.ShowDialog();
+        }
+
+        public void cerrarInterfazCargarPrecioYRuta()
+        {
+            iu_registrarOrden4.Close();
         }
 
         public void interfazCargarDireccion(string nombreBoton)

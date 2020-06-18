@@ -127,7 +127,7 @@
             this.btn_siguiente.Size = new System.Drawing.Size(140, 50);
             this.btn_siguiente.TabIndex = 17;
             this.btn_siguiente.Text = "Siguiente";
-            this.btn_siguiente.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btn_siguiente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_siguiente.UseVisualStyleBackColor = false;
             this.btn_siguiente.Click += new System.EventHandler(this.btn_siguiente_Click);
             // 

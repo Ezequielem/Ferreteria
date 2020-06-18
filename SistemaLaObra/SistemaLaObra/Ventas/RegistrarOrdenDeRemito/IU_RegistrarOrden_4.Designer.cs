@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_RegistrarOrden_4));
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_volver = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.btn_registrar = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btn_cancelar
@@ -87,6 +89,12 @@
             this.btn_registrar.UseVisualStyleBackColor = false;
             this.btn_registrar.Click += new System.EventHandler(this.btn_registrar_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // IU_RegistrarOrden_4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -103,7 +111,6 @@
             this.Name = "IU_RegistrarOrden_4";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "REGISTRAR ENVIO";
-            this.Load += new System.EventHandler(this.IU_RegistrarOrden_4_Load);
             this.ResumeLayout(false);
 
         }
@@ -114,5 +121,6 @@
         private System.Windows.Forms.Button btn_volver;
         private System.Windows.Forms.Button btn_registrar;
         private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

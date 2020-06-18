@@ -43,20 +43,19 @@ namespace SistemaLaObra.Ventas.OrdenDeRemito
         private void btn_siguiente_Click(object sender, EventArgs e)
         {
             //Acordate de validar aca para que ningun viaje se valla sin articulos
-            this.Hide();
             controladorOR.interfazCargarPrecioYRuta();
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
-            controladorOR.iu_registrarOrden1.Owner.Show();
+            controladorOR.cerrarInterfazCargarArticulosPorViaje();
+            controladorOR.cerrarInterfazCargarFechaHora();
+            controladorOR.iu_registrarOrden1.Close();
         }
 
         private void btn_volver_Click(object sender, EventArgs e)
-        {            
-            this.Close();
-            controladorOR.iu_registrarOrden2.Show();
+        {
+            controladorOR.cerrarInterfazCargarArticulosPorViaje();
         }
 
         //METODOS
