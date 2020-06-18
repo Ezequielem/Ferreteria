@@ -28,23 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_ConsultarUsuario));
             this.gb_datosUsuario = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_nombreUsuario = new System.Windows.Forms.TextBox();
             this.dgv_usuarios = new System.Windows.Forms.DataGridView();
-            this.btn_aceptar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_modificar = new System.Windows.Forms.Button();
-            this.btn_registrar = new System.Windows.Forms.Button();
             this.col_nombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_nombreEncargado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_apellidoEncargado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_tipoEncargado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_aceptar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btn_modificar = new System.Windows.Forms.Button();
+            this.btn_registrar = new System.Windows.Forms.Button();
             this.gb_datosUsuario.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_usuarios)).BeginInit();
@@ -105,14 +104,6 @@
             this.dgv_usuarios.AllowUserToAddRows = false;
             this.dgv_usuarios.AllowUserToDeleteRows = false;
             this.dgv_usuarios.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_usuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_usuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_nombreUsuario,
@@ -129,6 +120,41 @@
             this.dgv_usuarios.Size = new System.Drawing.Size(700, 320);
             this.dgv_usuarios.TabIndex = 16;
             this.dgv_usuarios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_usuarios_CellDoubleClick);
+            // 
+            // col_nombreUsuario
+            // 
+            this.col_nombreUsuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_nombreUsuario.HeaderText = "Nombre Usuario";
+            this.col_nombreUsuario.Name = "col_nombreUsuario";
+            this.col_nombreUsuario.ReadOnly = true;
+            // 
+            // col_nombreEncargado
+            // 
+            this.col_nombreEncargado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_nombreEncargado.HeaderText = "Nombre Encargado";
+            this.col_nombreEncargado.Name = "col_nombreEncargado";
+            this.col_nombreEncargado.ReadOnly = true;
+            // 
+            // col_apellidoEncargado
+            // 
+            this.col_apellidoEncargado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_apellidoEncargado.HeaderText = "Apellido Encargado";
+            this.col_apellidoEncargado.Name = "col_apellidoEncargado";
+            this.col_apellidoEncargado.ReadOnly = true;
+            // 
+            // col_tipoEncargado
+            // 
+            this.col_tipoEncargado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_tipoEncargado.HeaderText = "Tipo Encargado";
+            this.col_tipoEncargado.Name = "col_tipoEncargado";
+            this.col_tipoEncargado.ReadOnly = true;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Column4";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
             // 
             // btn_aceptar
             // 
@@ -204,41 +230,6 @@
             this.btn_registrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_registrar.UseVisualStyleBackColor = false;
             this.btn_registrar.Click += new System.EventHandler(this.btn_registrar_Click);
-            // 
-            // col_nombreUsuario
-            // 
-            this.col_nombreUsuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_nombreUsuario.HeaderText = "Nombre Usuario";
-            this.col_nombreUsuario.Name = "col_nombreUsuario";
-            this.col_nombreUsuario.ReadOnly = true;
-            // 
-            // col_nombreEncargado
-            // 
-            this.col_nombreEncargado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_nombreEncargado.HeaderText = "Nombre Encargado";
-            this.col_nombreEncargado.Name = "col_nombreEncargado";
-            this.col_nombreEncargado.ReadOnly = true;
-            // 
-            // col_apellidoEncargado
-            // 
-            this.col_apellidoEncargado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_apellidoEncargado.HeaderText = "Apellido Encargado";
-            this.col_apellidoEncargado.Name = "col_apellidoEncargado";
-            this.col_apellidoEncargado.ReadOnly = true;
-            // 
-            // col_tipoEncargado
-            // 
-            this.col_tipoEncargado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_tipoEncargado.HeaderText = "Tipo Encargado";
-            this.col_tipoEncargado.Name = "col_tipoEncargado";
-            this.col_tipoEncargado.ReadOnly = true;
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Column4";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
             // 
             // IU_ConsultarUsuario
             // 

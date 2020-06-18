@@ -201,6 +201,9 @@
     <Compile Include="Estadística\IU_MenuPrincipalEstadistica.Designer.cs">
       <DependentUpon>IU_MenuPrincipalEstadistica.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\CondicionIva.cs" />
+    <Compile Include="Modelo\CuentaNavegacion.cs" />
+    <Compile Include="Modelo\DetalleFactura.cs" />
     <Compile Include="Modelo\Factura.cs" />
     <Compile Include="Modelo\ListaFormaPagos.cs" />
     <Compile Include="Modelo\ListaTarjetas.cs" />
@@ -224,6 +227,7 @@
       <DependentUpon>IU_RegistroIngresoProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Marca.cs" />
+    <Compile Include="Modelo\MiEmpresa.cs" />
     <Compile Include="Modelo\Recepcion.cs" />
     <Compile Include="Modelo\FormaPago.cs" />
     <Compile Include="Modelo\HistorialSesion.cs" />
@@ -235,6 +239,7 @@
     <Compile Include="InicioSesion\IU_InicioSesion.Designer.cs">
       <DependentUpon>IU_InicioSesion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\TipoFactura.cs" />
     <Compile Include="Modelo\Usuario.cs" />
     <Compile Include="Logistica\ActualizarEstadoOrden\Controlador_ActualizarEstadoRemito.cs" />
     <Compile Include="Logistica\ActualizarEstadoOrden\IU_ActualizarEstadoRemito.cs">
@@ -296,6 +301,12 @@
     </Compile>
     <Compile Include="Soporte\IU_ActualizarUsuario.Designer.cs">
       <DependentUpon>IU_ActualizarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Soporte\IU_ConsultarEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Soporte\IU_ConsultarEmpresa.Designer.cs">
+      <DependentUpon>IU_ConsultarEmpresa.cs</DependentUpon>
     </Compile>
     <Compile Include="Soporte\IU_ConsultarHistorialSesiones.cs">
       <SubType>Form</SubType>
@@ -755,6 +766,9 @@
     <EmbeddedResource Include="Soporte\IU_ConsultarArticulo.resx">
       <DependentUpon>IU_ConsultarArticulo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Soporte\IU_ConsultarEmpresa.resx">
+      <DependentUpon>IU_ConsultarEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Soporte\IU_ConsultarHistorialSesiones.resx">
       <DependentUpon>IU_ConsultarHistorialSesiones.cs</DependentUpon>
     </EmbeddedResource>
@@ -969,6 +983,9 @@
     </Content>
     <Content Include="images\icono-ferreteria_32.ico" />
     <Content Include="images\icono-ferreteria_64.ico" />
+    <None Include="Resources\empresaGris_128.png" />
+    <None Include="Resources\empresaGris_32.png" />
+    <None Include="Resources\empresaGris_64.png" />
     <None Include="Resources\cuentaCorrienteGris_32.png" />
     <None Include="Resources\dinero_32.png" />
     <None Include="Resources\envio_32.png" />

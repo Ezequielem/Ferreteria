@@ -334,3 +334,4 @@ C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra
 C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\System.Data.SQLite.xml
 C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_ConsultarEmpresa.resources

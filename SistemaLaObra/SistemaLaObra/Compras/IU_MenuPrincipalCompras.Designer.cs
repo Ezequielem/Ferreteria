@@ -205,7 +205,7 @@
             this.groupBox3.Size = new System.Drawing.Size(773, 90);
             this.groupBox3.TabIndex = 39;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "ARTICULO";
+            this.groupBox3.Text = "ARTICULOS";
             // 
             // IU_MenuPrincipalCompras
             // 

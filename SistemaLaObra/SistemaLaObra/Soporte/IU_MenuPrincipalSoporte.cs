@@ -152,5 +152,10 @@ namespace SistemaLaObra
             InterfazConsultarUbicacion = new IU_ConsultarUbicacion();
             InterfazConsultarUbicacion.ShowDialog();
         }
+
+        private void btn_consultarEmpresa_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

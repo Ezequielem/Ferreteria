@@ -47,6 +47,8 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btn_actualizarTarjeta = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btn_consultarEmpresa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -54,6 +56,7 @@
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_consultar
@@ -173,12 +176,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.btn_consultarHistorialSesiones);
             this.groupBox1.Controls.Add(this.btn_consultarUsuario);
-            this.groupBox1.Location = new System.Drawing.Point(9, 98);
+            this.groupBox1.Location = new System.Drawing.Point(9, 194);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(872, 90);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "USUARIO";
+            this.groupBox1.Text = "USUARIOS";
             // 
             // groupBox2
             // 
@@ -191,12 +194,12 @@
             this.groupBox2.Controls.Add(this.btn_actualizarArticuloProveedor);
             this.groupBox2.Controls.Add(this.btn_articuloProveedor);
             this.groupBox2.Controls.Add(this.btn_consultar);
-            this.groupBox2.Location = new System.Drawing.Point(9, 194);
+            this.groupBox2.Location = new System.Drawing.Point(9, 290);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(872, 151);
             this.groupBox2.TabIndex = 27;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "ARTICULO";
+            this.groupBox2.Text = "ARTICULOS";
             // 
             // btn_ConsultarUbicacion
             // 
@@ -306,12 +309,12 @@
             this.groupBox3.Controls.Add(this.btn_actualizarTarjeta);
             this.groupBox3.Controls.Add(this.btn_registrarTarjeta);
             this.groupBox3.Enabled = false;
-            this.groupBox3.Location = new System.Drawing.Point(9, 351);
+            this.groupBox3.Location = new System.Drawing.Point(9, 447);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(872, 90);
             this.groupBox3.TabIndex = 28;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "TARJETA";
+            this.groupBox3.Text = "TARJETAS";
             // 
             // btn_actualizarTarjeta
             // 
@@ -345,6 +348,36 @@
             this.label1.TabIndex = 35;
             this.label1.Text = "SOPORTE";
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Controls.Add(this.btn_consultarEmpresa);
+            this.groupBox4.Location = new System.Drawing.Point(9, 98);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(872, 90);
+            this.groupBox4.TabIndex = 36;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "EMPRESAS";
+            // 
+            // btn_consultarEmpresa
+            // 
+            this.btn_consultarEmpresa.AutoSize = true;
+            this.btn_consultarEmpresa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(150)))), ((int)(((byte)(155)))));
+            this.btn_consultarEmpresa.FlatAppearance.BorderSize = 3;
+            this.btn_consultarEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_consultarEmpresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_consultarEmpresa.ForeColor = System.Drawing.Color.White;
+            this.btn_consultarEmpresa.Image = global::SistemaLaObra.Properties.Resources.empresaGris_32;
+            this.btn_consultarEmpresa.Location = new System.Drawing.Point(7, 20);
+            this.btn_consultarEmpresa.Name = "btn_consultarEmpresa";
+            this.btn_consultarEmpresa.Size = new System.Drawing.Size(145, 55);
+            this.btn_consultarEmpresa.TabIndex = 25;
+            this.btn_consultarEmpresa.Text = "Consultar\r\nEmpresa";
+            this.btn_consultarEmpresa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_consultarEmpresa.UseVisualStyleBackColor = false;
+            this.btn_consultarEmpresa.Click += new System.EventHandler(this.btn_consultarEmpresa_Click);
+            // 
             // IU_MenuPrincipalSoporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -352,6 +385,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(890, 621);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -375,6 +409,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -400,5 +436,7 @@
         private System.Windows.Forms.Button btn_ConsultarMarca;
         private System.Windows.Forms.Button btn_ConsultarUbicacion;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btn_consultarEmpresa;
     }
 }

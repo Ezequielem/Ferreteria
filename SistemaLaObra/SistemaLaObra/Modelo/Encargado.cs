@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaLaObra.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -36,12 +37,14 @@ namespace SistemaLaObra
         public int CodigoDepartamento { get; set; }
         public int CodigoLocalidad { get; set; }
         public int CodigoUsuario { get; set; }
+        public int CodigoMiEmpresa { get; set; }
+        public MiEmpresa MiEmpresa { get; set; }
 
         public void crear(Encargado encargado)
         {
             acceso = new AccesoDatos();
             conexion = new SqlConnection(acceso.CadenaConexion());
-            consulta = new SqlCommand("INSERT INTO Encargados(codigoEncargado,legajo,nombre,apellido,codigoTipoDocumento,nroDocumento,fechaNacimiento,codigoTipoTelefono,nroTelefono,calle,numero,depto,piso,codigoPostal,nombreBarrio,codigoProvincia,codigoDepartamento,codigoLocalidad,codigoUsuario) VALUES(@codigoEncargado,@legajo,@nombre,@apellido,@codigoTipoDocumento,@nroDocumento,@fechaNacimiento,@codigoTipoTelefono,@nroTelefono,@calle,@numero,@depto,@piso,@codigoPostal,@nombreBarrio,@codigoProvincia,@codigoDepartamento,@codigoLocalidad,@codigoUsuario)", conexion);
+            consulta = new SqlCommand("INSERT INTO Encargados(codigoEncargado,legajo,nombre,apellido,codigoTipoDocumento,nroDocumento,fechaNacimiento,codigoTipoTelefono,nroTelefono,calle,numero,depto,piso,codigoPostal,nombreBarrio,codigoProvincia,codigoDepartamento,codigoLocalidad,codigoUsuario, codigoMiEmpresa) VALUES(@codigoEncargado,@legajo,@nombre,@apellido,@codigoTipoDocumento,@nroDocumento,@fechaNacimiento,@codigoTipoTelefono,@nroTelefono,@calle,@numero,@depto,@piso,@codigoPostal,@nombreBarrio,@codigoProvincia,@codigoDepartamento,@codigoLocalidad,@codigoUsuario, @codigoMiEmpresa)", conexion);
             adaptador = new SqlDataAdapter();
             adaptador.InsertCommand = consulta;
 
@@ -64,6 +67,7 @@ namespace SistemaLaObra
             adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoDepartamento", SqlDbType.Int));
             adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoLocalidad", SqlDbType.Int));
             adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoUsuario", SqlDbType.Int));
+            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoMiEmpresa", SqlDbType.Int));
 
             adaptador.InsertCommand.Parameters["@codigoEncargado"].Value = encargado.CodigoEncargado;
             adaptador.InsertCommand.Parameters["@legajo"].Value = encargado.Legajo;
@@ -92,6 +96,7 @@ namespace SistemaLaObra
             adaptador.InsertCommand.Parameters["@codigoDepartamento"].Value = encargado.CodigoDepartamento;
             adaptador.InsertCommand.Parameters["@codigoLocalidad"].Value = encargado.CodigoLocalidad;
             adaptador.InsertCommand.Parameters["@codigoUsuario"].Value = encargado.CodigoUsuario;
+            adaptador.InsertCommand.Parameters["@codigoMiEmpresa"].Value = encargado.CodigoMiEmpresa;
 
             try
             {
@@ -127,7 +132,8 @@ namespace SistemaLaObra
                                                               nombreBarrio = @nombreBarrio,
                                                               codigoProvincia = @codigoProvincia,
                                                               codigoDepartamento = @codigoDepartamento,
-                                                              codigoLocalidad = @codigoLocalidad
+                                                              codigoLocalidad = @codigoLocalidad,
+                                                              codigoMiEmpresa = @codigoMiEmpresa
                                                               WHERE codigoEncargado = @codigoEncargado", conexion);
             adaptador = new SqlDataAdapter();
             adaptador.UpdateCommand = consulta;
@@ -149,6 +155,7 @@ namespace SistemaLaObra
             adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@codigoProvincia", SqlDbType.Int));
             adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@codigoDepartamento", SqlDbType.Int));
             adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@codigoLocalidad", SqlDbType.Int));
+            adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@codigoMiEmpresa", SqlDbType.Int));
 
             adaptador.UpdateCommand.Parameters["@codigoEncargado"].Value = encargado.CodigoEncargado;
             adaptador.UpdateCommand.Parameters["@nombre"].Value = encargado.Nombre;
@@ -175,6 +182,7 @@ namespace SistemaLaObra
             adaptador.UpdateCommand.Parameters["@codigoProvincia"].Value = encargado.CodigoProvincia;
             adaptador.UpdateCommand.Parameters["@codigoDepartamento"].Value = encargado.CodigoDepartamento;
             adaptador.UpdateCommand.Parameters["@codigoLocalidad"].Value = encargado.CodigoLocalidad;
+            adaptador.UpdateCommand.Parameters["@codigoMiEmpresa"].Value = encargado.CodigoMiEmpresa;
 
             try
             {
@@ -227,6 +235,7 @@ namespace SistemaLaObra
                     CodigoDepartamento = int.Parse(lector["codigoDepartamento"].ToString());
                     CodigoLocalidad = int.Parse(lector["codigoLocalidad"].ToString());
                     CodigoUsuario = int.Parse(lector["codigoUsuario"].ToString());
+                    CodigoMiEmpresa = int.Parse(lector["codigoMiEmpresa"].ToString());
                 }
             }
             catch (Exception error)
@@ -276,6 +285,7 @@ namespace SistemaLaObra
                     this.CodigoDepartamento = int.Parse(lector["codigoDepartamento"].ToString());
                     this.CodigoLocalidad = int.Parse(lector["codigoLocalidad"].ToString());
                     this.CodigoUsuario = int.Parse(lector["codigoUsuario"].ToString());
+                    this.CodigoMiEmpresa = int.Parse(lector["codigoMiEmpresa"].ToString());
                 }
                 return this;
             }
