@@ -23,204 +23,20 @@ namespace SistemaLaObra.Ventas.OrdenDeRemito
         public IU_DatosDialogo iu_datosDialogo;
         public IU_RegistrarVenta iu_registrarVenta;
 
-        private IU_MenuPrincipal _interfazContenedora;
-
-        //INSTANCIAS
-        private Venta _venta;
-        private Provincia _provincia;
-        private Departamento _departamento;       
-        private Localidad _localidad;
-        private TipoTelefono _tipoTelefono;
-        private Entrega _entrega;
-        private List<DetalleLogistica> _detalleLogistica;
-        private List<DetalleVP> _detalleVP;
-        private List<Entrega> _entregaColeccion;
-        private int _indiceEntrega;
-        private Controlador_Venta _controladorRV;
-        private Controlador_VentaMayorista _controladorRVM;
-        private ClienteMayorista _clienteMayorista;
-
-
-        public Venta Venta
-        {
-            get
-            {
-                return _venta;
-            }
-
-            set
-            {
-                _venta = value;
-            }
-        }
-
-        public Provincia Provincia
-        {
-            get
-            {
-                return _provincia;
-            }
-
-            set
-            {
-                _provincia = value;
-            }
-        }
-
-        public Departamento Departamento
-        {
-            get
-            {
-                return _departamento;
-            }
-
-            set
-            {
-                _departamento = value;
-            }
-        }
-
-        public Localidad Localidad
-        {
-            get
-            {
-                return _localidad;
-            }
-
-            set
-            {
-                _localidad = value;
-            }
-        }
-
-        public Entrega Entrega
-        {
-            get
-            {
-                return _entrega;
-            }
-
-            set
-            {
-                _entrega = value;
-            }
-        }
-
-        public List<DetalleVP> DetalleVP
-        {
-            get
-            {
-                return _detalleVP;
-            }
-
-            set
-            {
-                _detalleVP = value;
-            }
-        }
-
-        public List<DetalleLogistica> DetalleLogistica
-        {
-            get
-            {
-                return _detalleLogistica;
-            }
-
-            set
-            {
-                _detalleLogistica = value;
-            }
-        }
-
-        public List<Entrega> EntregaColeccion
-        {
-            get
-            {
-                return _entregaColeccion;
-            }
-
-            set
-            {
-                _entregaColeccion = value;
-            }
-        }
-
-        public TipoTelefono TipoTelefono
-        {
-            get
-            {
-                return _tipoTelefono;
-            }
-            set
-            {
-                _tipoTelefono = value;
-            }
-        }
-
-        public int IndiceEntrega
-        {
-            get
-            {
-                return _indiceEntrega;
-            }
-
-            set
-            {
-                _indiceEntrega = value;
-            }
-        }
-
-        public Controlador_Venta ControladorRV
-        {
-            get
-            {
-                return _controladorRV;
-            }
-
-            set
-            {
-                _controladorRV = value;
-            }
-        }
-
-        public Controlador_VentaMayorista ControladorRVM
-        {
-            get
-            {
-                return _controladorRVM;
-            }
-
-            set
-            {
-                _controladorRVM = value;
-            }
-        }
-
-        public ClienteMayorista ClienteMayorista
-        {
-            get
-            {
-                return _clienteMayorista;
-            }
-
-            set
-            {
-                _clienteMayorista = value;
-            }
-        }
-
-        public IU_MenuPrincipal InterfazContenedora
-        {
-            get
-            {
-                return _interfazContenedora;
-            }
-
-            set
-            {
-                _interfazContenedora = value;
-            }
-        }
+        public Venta Venta { get; set; }
+        public Provincia Provincia { get; set; }
+        public Departamento Departamento { get; set; }
+        public Localidad Localidad { get; set; }
+        public Entrega Entrega { get; set; }
+        public List<DetalleVP> DetalleVP { get; set; }
+        public List<DetalleLogistica> DetalleLogistica { get; set; }
+        public List<Entrega> EntregaColeccion { get; set; }
+        public TipoTelefono TipoTelefono { get; set; }
+        public int IndiceEntrega { get; set; }
+        public Controlador_Venta ControladorRV { get; set; }
+        public Controlador_VentaMayorista ControladorRVM { get; set; }
+        public ClienteMayorista ClienteMayorista { get; set; }
+        public IU_MenuPrincipal InterfazContenedora { get; set; }
 
         public Controlador_RegistrarOrden(IU_RegistrarOrden interfazCargarDatos)
         {
@@ -503,24 +319,24 @@ namespace SistemaLaObra.Ventas.OrdenDeRemito
             }
         }
 
-        public void registrarEntregas(int codigoVenta)
-        {
-            Entrega entrega = new Entrega();
-            DetalleLogistica detalleLogistica = new DetalleLogistica();
-            foreach (var item in EntregaColeccion)
-            {
-                item.CodigoEntrega = entrega.mostrarUltimoNroEntrega() + 1;
-                entrega.crear(item.CodigoEntrega, codigoVenta, item.FechaEntrega, item.HoraEntregaDesde,
-                    item.HoraEntregaHasta, item.NombreCliente, item.NombreProvincia, item.NombreDepartamento,
-                    item.NombreLocalidad, item.NombreCalle, item.NumeroCalle.ToString(), item.CodigoPostal,
-                    item.NombreBarrio, item.NombreTipoTelefono, item.NumeroTelefono, item.Descripcion,
-                    item.PrecioEntrega, item.DistanciaEntrega, item.CodigoEstadoEntrega, item.CodigoEncargado);
+        //public void registrarEntregas(int codigoVenta)
+        //{
+        //    Entrega entrega = new Entrega();
+        //    DetalleLogistica detalleLogistica = new DetalleLogistica();
+        //    foreach (var item in EntregaColeccion)
+        //    {
+        //        item.CodigoEntrega = entrega.mostrarUltimoNroEntrega() + 1;
+        //        entrega.crear(item.CodigoEntrega, codigoVenta, item.FechaEntrega, item.HoraEntregaDesde,
+        //            item.HoraEntregaHasta, item.NombreCliente, item.NombreProvincia, item.NombreDepartamento,
+        //            item.NombreLocalidad, item.NombreCalle, item.NumeroCalle.ToString(), item.CodigoPostal,
+        //            item.NombreBarrio, item.NombreTipoTelefono, item.NumeroTelefono, item.Descripcion,
+        //            item.PrecioEntrega, item.DistanciaEntrega, item.CodigoEstadoEntrega, item.CodigoEncargado);
 
-                foreach (var itemLogistica in DetalleLogistica)
-                {
-                    detalleLogistica.crearDetalleLogisticaEntrega(itemLogistica.CodigoArticulo, itemLogistica.Cantidad, item.CodigoEntrega);
-                }
-            }
-        }
+        //        foreach (var itemLogistica in DetalleLogistica)
+        //        {
+        //            detalleLogistica.crearDetalleLogisticaEntrega(itemLogistica.CodigoArticulo, itemLogistica.Cantidad, item.CodigoEntrega);
+        //        }
+        //    }
+        //}
     }
 }

@@ -17,15 +17,18 @@ namespace SistemaLaObra.Ventas.RegistrarOrdenDeRemito
 {
     public partial class IU_DatosDialogo : Form
     {
-        //REFERENCIA
-        private Controlador_RegistrarOrden controladorOR;
-
         //INSTANCIAS
+        private Controlador_RegistrarOrden controladorOR;
         private Validaciones validacion;
         private List<Entrega> listaEntrega;
-        private GDirections direccion;
-        private GeoCoderStatusCode status;
-        //GMapOverlay marcadores;
+
+        //MAPA
+        public GMapOverlay Capa { get; set; }
+        public GMarkerGoogle MarcaFerreteria { get; set; }
+        public GMarkerGoogle MarcaDestino { get; set; }
+        public PointLatLng CoordenadaFerreteria { get; set; }
+        public PointLatLng CoordenadaDestino { get; set; }
+        public GMapRoute Ruta { get; set; }
 
         //VARIABLE GLOBAL
         string distancia="";
@@ -266,51 +269,63 @@ namespace SistemaLaObra.Ventas.RegistrarOrdenDeRemito
         }
 
         private void cargarMarcadorDestino()
-        {            
-            //OBTENGO DIRECCION    
-            string hasta = txt_calle.Text + " " + txt_numero.Text + " " + cbx_provincia.Text + ", argentina";
-            //DEVUELVO COORDENADAS
-            
-            var puntoFin = GMapProviders.GoogleMap.GetPoint(hasta, out status);
-            var ver = GMapProviders.GoogleMap.GetPoint(hasta, out status);
-            if (puntoFin == null)
+        {                           
+            string hasta = txt_calle.Text + ", " + txt_numero.Text + ", " + cbx_provincia.Text + ", argentina";            
+            var puntoFin = GMapProviders.GoogleMap.GetPoint(hasta, out GeoCoderStatusCode status);
+            if (status == GeoCoderStatusCode.OK)
             {
-                MessageBox.Show(this, "No ingreso una dirección válida por favor reingrese la dirección", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                mapa.Refresh();
+                double lat = double.Parse(puntoFin?.Lat.ToString());
+                double lnn = double.Parse(puntoFin?.Lng.ToString());
+                CoordenadaDestino = new PointLatLng(lat, lnn);
+                var route = GoogleMapProvider.Instance.GetRoute(CoordenadaFerreteria, CoordenadaDestino, false, false, 14);                
+                if (route.Status == RouteStatusCode.OK)
+                {
+                    Ruta = new GMapRoute(route.Points, "Mi Ruta");
+                    distancia = Ruta.Distance.ToString("0.00");
+                    lbl_Distancia.Text = Ruta.Distance.ToString("0.00") + " Km";
+                    MarcaDestino = new GMarkerGoogle(CoordenadaDestino, GMarkerGoogleType.red_dot);
+                    MarcaDestino.ToolTipMode = MarkerTooltipMode.Always;
+                    MarcaDestino.ToolTipText = string.Format(txt_nombreCliente.Text);
+                    Capa.Clear();
+                    Capa.Markers.Add(MarcaFerreteria);
+                    Capa.Markers.Add(MarcaDestino);
+                    mapa.Overlays.Clear();
+                    mapa.Overlays.Add(Capa);
+                    mapa.ZoomAndCenterMarkers("capaMarcador");
+                }
+                else if (route.Status == RouteStatusCode.REQUEST_DENIED)
+                {
+                    MessageBox.Show(this, "Habilite Directions API en Google Cloud Platform", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (route.Status == RouteStatusCode.PERMISSION_DENIED)
+                {
+                    MessageBox.Show(this, "No tiene permiso para realizar la consulta", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (route.Status == RouteStatusCode.OVER_QUERY_LIMIT)
+                {
+                    MessageBox.Show(this, "Ha alcanzado el limite de consultas mensual", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show(this, "Ha habido un error", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else if (status == GeoCoderStatusCode.ZERO_RESULTS)
+            {
+                MessageBox.Show(this, "Ha ingresado una dirección inválida", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (status == GeoCoderStatusCode.REQUEST_DENIED)
+            {
+                MessageBox.Show(this, "Habilite Geocoding API en Google Cloud Platform", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (status == GeoCoderStatusCode.OVER_QUERY_LIMIT)
+            {
+                MessageBox.Show(this, "Ha alcanzado el limite de consultas mensual", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                try
-                {
-                    //CALCULO RUTA
-                    //gMapControl2.Refresh();
-                    PointLatLng coordenadas = new PointLatLng(-31.3247304, -64.2477592);
-                    var RutasDireccion = GMapProviders.GoogleMap.GetDirections(out direccion, coordenadas, puntoFin.Value, false, false, false, false, false);
-                    GMapRoute rutaObtenida = new GMapRoute(direccion.Route, "Ruta");
-                    //CALUCLO DE  DISTANCIA
-                    distancia = rutaObtenida.Distance.ToString("0.00");
-                    lbl_Distancia.Text = distancia + " Km";
-                    //LIMPIO CAPA DE MARCADORES                             
-                    //marcadores.Clear();//////////////////
-                    //MARCADOR DE INICIO    
-                    GMarkerGoogle puntoInicioViaje = new GMarkerGoogle(coordenadas, GMarkerGoogleType.blue);
-                    puntoInicioViaje.ToolTipMode = MarkerTooltipMode.Always;
-                    puntoInicioViaje.ToolTipText = string.Format("Ferretería \n LA OBRA \n de Mario Labarre");
-                    //MARCADOR DE FIN
-                    GMarkerGoogle puntoFinViaje = new GMarkerGoogle(puntoFin.Value, GMarkerGoogleType.red);
-                    puntoFinViaje.ToolTipMode = MarkerTooltipMode.Always;
-                    puntoFinViaje.ToolTipText = string.Format(txt_nombreCliente.Text);
-                    //AGREGO MARCADORES A LA CAPA
-                    //marcadores.Markers.Add(puntoInicioViaje);//////////////////
-                    //marcadores.Markers.Add(puntoFinViaje);////////////////////
-                    //AGREGO CAPA AL CONTROL GMAP
-
-                    //gMapControl2.Overlays.Add(marcadores);
-                    //gMapControl2.ZoomAndCenterMarkers("capaMarcador");
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show(this, "No ingreso una dirección válida por favor reingrese la dirección", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }                
+                MessageBox.Show(this, "Ha habido un error", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -327,33 +342,33 @@ namespace SistemaLaObra.Ventas.RegistrarOrdenDeRemito
         }
 
         private void cargarMapaInicial()
-        {
-            mapa.MapProvider = GoogleMapProvider.Instance;
+        {            
+            GoogleMapProvider.Instance.ApiKey = @"AIzaSyDVX6uMd3YxiS2FmXK8LCOgLIdh90xmet4";
             GMaps.Instance.Mode = AccessMode.ServerOnly;
-            PointLatLng coordenada = new PointLatLng(-31.3247304, -64.2477592);
-            mapa.Position = coordenada;
+            CoordenadaFerreteria = new PointLatLng(-31.3247304, -64.2477592);
+            mapa.Position = CoordenadaFerreteria;
+            mapa.DragButton = MouseButtons.Left;
+            mapa.MapProvider = GoogleMapProvider.Instance;
+            mapa.ShowCenter = false;
             mapa.MinZoom = 0;
             mapa.MaxZoom = 24;
             mapa.Zoom = 16;
-            mapa.ShowCenter = false;
-            mapa.DragButton = MouseButtons.Left;
             mapa.CanDragMap = true;
             mapa.AutoScroll = true;
 
-            GMapOverlay marcadores = new GMapOverlay("capaMarcador");
-            GMarkerGoogle marca = new GMarkerGoogle(coordenada, GMarkerGoogleType.red_dot);
-            marca.ToolTipMode = MarkerTooltipMode.Always;
-            marca.ToolTipText = "FERRETERIA";
-
-            marcadores.Markers.Add(marca);
-
-            mapa.Overlays.Add(marcadores);
+            Capa = new GMapOverlay("capaMarcador");
+            MarcaFerreteria = new GMarkerGoogle(CoordenadaFerreteria, GMarkerGoogleType.blue_dot);
+            MarcaFerreteria.ToolTipMode = MarkerTooltipMode.Always;
+            MarcaFerreteria.ToolTipText = "FERRETERIA";
+            Capa.Markers.Add(MarcaFerreteria);
+            mapa.Overlays.Add(Capa);            
         }
 
         //EVENTOS
 
         private void IU_DatosDialogo_Load(object sender, EventArgs e)
         {
+            lbl_Distancia.Text = string.Empty;
             cargarMapaInicial();
             cargarProvincias();
             cargarTipoDeTelefonos();
