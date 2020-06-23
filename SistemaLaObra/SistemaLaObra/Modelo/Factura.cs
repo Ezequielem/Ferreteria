@@ -31,7 +31,6 @@ namespace SistemaLaObra.Modelo
         public MiEmpresa MiEmpresa { get; set; }
         public TipoFactura TipoFactura { get; set; }
         public Proveedor Proveedor { get; set; }
-        public Venta Venta { get; set; }
 
         public Factura()
         {
@@ -50,7 +49,6 @@ namespace SistemaLaObra.Modelo
             MiEmpresa = new MiEmpresa();
             TipoFactura = new TipoFactura();
             Proveedor = new Proveedor();
-            Venta = new Venta();
         }
 
         public void crear(Factura factura)

@@ -12,6 +12,7 @@ using SistemaLaObra.Compras;
 using SistemaLaObra.InicioSesion;
 using SistemaLaObra.CerrarSesion;
 using SistemaLaObra.Estadística;
+using System.IO;
 
 namespace SistemaLaObra
 {
@@ -20,6 +21,7 @@ namespace SistemaLaObra
         IU_InicioSesion interfazInicioSesion;
         IU_CerrarSesion interfazCerrarSesion;
         HistorialSesion historialSesion;
+        public AccesoDatos AccesoADatos { get; set; }
 
         public int CodigoHistorial { get; set; }
 
@@ -123,5 +125,24 @@ namespace SistemaLaObra
             historialSesion.actualizarHistorial(CodigoHistorial, DateTime.Now);
         }
 
+        private void generarScriptToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFile = new SaveFileDialog();
+            string nombre = "Backup_" + System.DateTime.Now.Day.ToString() + "-" + System.DateTime.Now.Month.ToString() 
+                + "-" + System.DateTime.Now.Year.ToString() + "_" + System.DateTime.Now.TimeOfDay.Hours.ToString() 
+                + "y" + System.DateTime.Now.TimeOfDay.Minutes.ToString();
+            saveFile.FileName = nombre;
+            saveFile.DefaultExt = "sql";
+            saveFile.Filter ="Archivos sql (*.sql)|*.sql";
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                Stream s = saveFile.OpenFile();
+                StreamWriter sw = new StreamWriter(s);                
+                AccesoADatos = new AccesoDatos();                                
+                sw.Close();
+                s.Close();
+                File.WriteAllText(saveFile.FileName, AccesoADatos.generarScript());                
+            }
+        }
     }
 }

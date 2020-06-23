@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Configuration;
 using SistemaLaObra.Properties;
+using Microsoft.SqlServer.Management.Smo;
+using Microsoft.SqlServer.Management.Common;
 
 namespace SistemaLaObra
 {
-    class AccesoDatos
+    public class AccesoDatos
     {
         //string conexion; 
 
@@ -31,7 +33,23 @@ namespace SistemaLaObra
 
             //return conexion;
 
-            return Settings.Default.LaObraConnectionString;
+            return SistemaLaObra.Properties.Settings.Default.LaObraConnectionString;
+        }
+
+        public string generarScript()
+        {
+            var server = new Server(new ServerConnection { ConnectionString = this.CadenaConexion() });
+            server.ConnectionContext.Connect();
+            var database = server.Databases["LaObra"];
+            var sb = new StringBuilder();
+            foreach (Table table in database.Tables)
+            {
+                var scripter = new Scripter(server) { Options = { ScriptData = true } };
+                var script = scripter.EnumScript(new SqlSmoObject[] { table });
+                foreach (var line in script)
+                    sb.AppendLine(line);
+            }
+            return sb.ToString();
         }
     }
 }
