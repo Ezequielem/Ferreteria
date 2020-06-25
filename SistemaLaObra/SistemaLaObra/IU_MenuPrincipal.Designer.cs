@@ -32,6 +32,8 @@
             this.ms_menuOpciones = new System.Windows.Forms.MenuStrip();
             this.ms_btnInicioSesion = new System.Windows.Forms.ToolStripMenuItem();
             this.ms_btnCerrarSesion = new System.Windows.Forms.ToolStripMenuItem();
+            this.baseDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generarScriptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbl_tipoEncargado = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,8 +49,6 @@
             this.btn_compras = new System.Windows.Forms.Button();
             this.btn_logistica = new System.Windows.Forms.Button();
             this.pnl_subMenu = new System.Windows.Forms.Panel();
-            this.baseDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.generarScriptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ms_menuOpciones.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnl_opciones.SuspendLayout();
@@ -86,6 +86,22 @@
             this.ms_btnCerrarSesion.Text = "Cerrar sesión";
             this.ms_btnCerrarSesion.Visible = false;
             this.ms_btnCerrarSesion.Click += new System.EventHandler(this.ms_btnCerrarSesion_Click);
+            // 
+            // baseDeDatosToolStripMenuItem
+            // 
+            this.baseDeDatosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.generarScriptToolStripMenuItem});
+            this.baseDeDatosToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.baseDeDatosToolStripMenuItem.Name = "baseDeDatosToolStripMenuItem";
+            this.baseDeDatosToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
+            this.baseDeDatosToolStripMenuItem.Text = "Base de Datos";
+            // 
+            // generarScriptToolStripMenuItem
+            // 
+            this.generarScriptToolStripMenuItem.Name = "generarScriptToolStripMenuItem";
+            this.generarScriptToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.generarScriptToolStripMenuItem.Text = "Generar Script";
+            this.generarScriptToolStripMenuItem.Click += new System.EventHandler(this.generarScriptToolStripMenuItem_Click);
             // 
             // panel2
             // 
@@ -226,12 +242,12 @@
             this.btn_soporte.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_soporte.FlatAppearance.BorderSize = 2;
             this.btn_soporte.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_soporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_soporte.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.btn_soporte.ForeColor = System.Drawing.Color.White;
             this.btn_soporte.Image = global::SistemaLaObra.Properties.Resources.soporte1_32;
-            this.btn_soporte.Location = new System.Drawing.Point(6, 314);
+            this.btn_soporte.Location = new System.Drawing.Point(10, 314);
             this.btn_soporte.Name = "btn_soporte";
-            this.btn_soporte.Size = new System.Drawing.Size(170, 50);
+            this.btn_soporte.Size = new System.Drawing.Size(162, 50);
             this.btn_soporte.TabIndex = 16;
             this.btn_soporte.Text = "SOPORTE";
             this.btn_soporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -249,12 +265,12 @@
             this.btn_ventas.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_ventas.FlatAppearance.BorderSize = 2;
             this.btn_ventas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_ventas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ventas.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ventas.ForeColor = System.Drawing.Color.White;
             this.btn_ventas.Image = global::SistemaLaObra.Properties.Resources.venta2_32;
-            this.btn_ventas.Location = new System.Drawing.Point(6, 30);
+            this.btn_ventas.Location = new System.Drawing.Point(10, 30);
             this.btn_ventas.Name = "btn_ventas";
-            this.btn_ventas.Size = new System.Drawing.Size(170, 50);
+            this.btn_ventas.Size = new System.Drawing.Size(162, 50);
             this.btn_ventas.TabIndex = 15;
             this.btn_ventas.Text = "VENTAS";
             this.btn_ventas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -271,12 +287,12 @@
             this.btn_estadistica.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_estadistica.FlatAppearance.BorderSize = 2;
             this.btn_estadistica.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_estadistica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_estadistica.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.btn_estadistica.ForeColor = System.Drawing.Color.White;
             this.btn_estadistica.Image = global::SistemaLaObra.Properties.Resources.estadisticas_32;
-            this.btn_estadistica.Location = new System.Drawing.Point(6, 243);
+            this.btn_estadistica.Location = new System.Drawing.Point(10, 243);
             this.btn_estadistica.Name = "btn_estadistica";
-            this.btn_estadistica.Size = new System.Drawing.Size(170, 50);
+            this.btn_estadistica.Size = new System.Drawing.Size(162, 50);
             this.btn_estadistica.TabIndex = 19;
             this.btn_estadistica.Text = "ESTADÍSTICA";
             this.btn_estadistica.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -293,12 +309,12 @@
             this.btn_compras.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_compras.FlatAppearance.BorderSize = 2;
             this.btn_compras.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_compras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_compras.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_compras.ForeColor = System.Drawing.Color.White;
             this.btn_compras.Image = global::SistemaLaObra.Properties.Resources.compra3_32;
-            this.btn_compras.Location = new System.Drawing.Point(6, 101);
+            this.btn_compras.Location = new System.Drawing.Point(10, 101);
             this.btn_compras.Name = "btn_compras";
-            this.btn_compras.Size = new System.Drawing.Size(170, 50);
+            this.btn_compras.Size = new System.Drawing.Size(162, 50);
             this.btn_compras.TabIndex = 18;
             this.btn_compras.Text = "COMPRAS";
             this.btn_compras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -315,12 +331,12 @@
             this.btn_logistica.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_logistica.FlatAppearance.BorderSize = 2;
             this.btn_logistica.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_logistica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_logistica.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.btn_logistica.ForeColor = System.Drawing.Color.White;
             this.btn_logistica.Image = global::SistemaLaObra.Properties.Resources.logistica3_32;
-            this.btn_logistica.Location = new System.Drawing.Point(6, 172);
+            this.btn_logistica.Location = new System.Drawing.Point(10, 172);
             this.btn_logistica.Name = "btn_logistica";
-            this.btn_logistica.Size = new System.Drawing.Size(170, 50);
+            this.btn_logistica.Size = new System.Drawing.Size(162, 50);
             this.btn_logistica.TabIndex = 17;
             this.btn_logistica.Text = "LOGÍSTICA";
             this.btn_logistica.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -340,22 +356,6 @@
             this.pnl_subMenu.Size = new System.Drawing.Size(808, 678);
             this.pnl_subMenu.TabIndex = 21;
             this.pnl_subMenu.Visible = false;
-            // 
-            // baseDeDatosToolStripMenuItem
-            // 
-            this.baseDeDatosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.generarScriptToolStripMenuItem});
-            this.baseDeDatosToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.baseDeDatosToolStripMenuItem.Name = "baseDeDatosToolStripMenuItem";
-            this.baseDeDatosToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
-            this.baseDeDatosToolStripMenuItem.Text = "Base de Datos";
-            // 
-            // generarScriptToolStripMenuItem
-            // 
-            this.generarScriptToolStripMenuItem.Name = "generarScriptToolStripMenuItem";
-            this.generarScriptToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.generarScriptToolStripMenuItem.Text = "Generar Script";
-            this.generarScriptToolStripMenuItem.Click += new System.EventHandler(this.generarScriptToolStripMenuItem_Click);
             // 
             // IU_MenuPrincipal
             // 
