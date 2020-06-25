@@ -131,8 +131,8 @@ namespace SistemaLaObra
         private void generarScriptToolStripMenuItem_Click(object sender, EventArgs e)
         {            
             string nombre = "Backup_" + System.DateTime.Now.Day.ToString() + "-" + System.DateTime.Now.Month.ToString()
-                + "-" + System.DateTime.Now.Year.ToString() + "_" + System.DateTime.Now.TimeOfDay.Hours.ToString()
-                + "y" + System.DateTime.Now.TimeOfDay.Minutes.ToString();
+                + "-" + System.DateTime.Now.Year.ToString() + "_" + System.DateTime.Now.TimeOfDay.Hours.ToString("00")
+                + " " + System.DateTime.Now.TimeOfDay.Minutes.ToString("00");
             saveFile.FileName = nombre;
             saveFile.DefaultExt = "sql";
             saveFile.Filter = "Archivos sql (*.sql)|*.sql";
@@ -152,6 +152,7 @@ namespace SistemaLaObra
             s.Close();
             AccesoADatos = new AccesoDatos();
             File.WriteAllText(saveFile.FileName, AccesoADatos.generarScript());
+            MessageBox.Show(new Form() { TopMost = true }, "BACKUP realizado con exito", "Exito", MessageBoxButtons.OK);
         }
     }
 }

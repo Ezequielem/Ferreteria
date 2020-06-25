@@ -99,8 +99,8 @@
             // generarScriptToolStripMenuItem
             // 
             this.generarScriptToolStripMenuItem.Name = "generarScriptToolStripMenuItem";
-            this.generarScriptToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.generarScriptToolStripMenuItem.Text = "Generar Script";
+            this.generarScriptToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.generarScriptToolStripMenuItem.Text = "Generar Script backup";
             this.generarScriptToolStripMenuItem.Click += new System.EventHandler(this.generarScriptToolStripMenuItem_Click);
             // 
             // panel2
