@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_ConsultarEmpresa));
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_modificar = new System.Windows.Forms.Button();
@@ -44,6 +45,7 @@
             this.col_cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_fechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gb_datosUsuario.SuspendLayout();
@@ -84,6 +86,7 @@
             this.btn_modificar.Text = "Modificar";
             this.btn_modificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_modificar.UseVisualStyleBackColor = false;
+            this.btn_modificar.Click += new System.EventHandler(this.btn_modificar_Click);
             // 
             // btn_registrar
             // 
@@ -98,6 +101,7 @@
             this.btn_registrar.Text = "Registrar";
             this.btn_registrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_registrar.UseVisualStyleBackColor = false;
+            this.btn_registrar.Click += new System.EventHandler(this.btn_registrar_Click);
             // 
             // pictureBox1
             // 
@@ -122,6 +126,7 @@
             this.btn_aceptar.Text = "Aceptar";
             this.btn_aceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_aceptar.UseVisualStyleBackColor = false;
+            this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
             // 
             // gb_datosUsuario
             // 
@@ -167,6 +172,7 @@
             this.txt_nombreEmpresa.Name = "txt_nombreEmpresa";
             this.txt_nombreEmpresa.Size = new System.Drawing.Size(574, 21);
             this.txt_nombreEmpresa.TabIndex = 1;
+            this.txt_nombreEmpresa.TextChanged += new System.EventHandler(this.txt_nombreEmpresa_TextChanged);
             // 
             // dgv_empresas
             // 
@@ -224,6 +230,12 @@
             this.Id.ReadOnly = true;
             this.Id.Visible = false;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // IU_ConsultarEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -264,5 +276,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_cuit;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_fechaInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.Timer timer1;
     }
 }

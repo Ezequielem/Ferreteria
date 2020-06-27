@@ -427,6 +427,18 @@
     <Compile Include="Soporte\IU_DatosUsuario.Designer.cs">
       <DependentUpon>IU_DatosUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Soporte\IU_ModificarEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Soporte\IU_ModificarEmpresa.Designer.cs">
+      <DependentUpon>IU_ModificarEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Soporte\IU_RegistrarEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Soporte\IU_RegistrarEmpresa.Designer.cs">
+      <DependentUpon>IU_RegistrarEmpresa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Soporte\IU_RegistrarMarca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -876,8 +888,14 @@
     <EmbeddedResource Include="Soporte\IU_MenuPrincipalSoporte.resx">
       <DependentUpon>IU_MenuPrincipalSoporte.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Soporte\IU_ModificarEmpresa.resx">
+      <DependentUpon>IU_ModificarEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Soporte\IU_RegistrarArticulo.resx">
       <DependentUpon>IU_RegistrarArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Soporte\IU_RegistrarEmpresa.resx">
+      <DependentUpon>IU_RegistrarEmpresa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Soporte\IU_RegistrarMarca.resx">
       <DependentUpon>IU_RegistrarMarca.cs</DependentUpon>

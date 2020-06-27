@@ -33,6 +33,7 @@ namespace SistemaLaObra
         public IU_ActualizarProveedorArticulo InterfazActualizarProveedorArticulo { get; set; }
         public IU_ConsultarMarca InterfazConsultarMarca { get; set; }
         public IU_ConsultarUbicacion InterfazConsultarUbicacion { get; set; }
+        public IU_ConsultarEmpresa InterfazConsultarEmpresa { get; set; }
 
         public IU_MenuPrincipalSoporte()
         {
@@ -155,7 +156,8 @@ namespace SistemaLaObra
 
         private void btn_consultarEmpresa_Click(object sender, EventArgs e)
         {
-
+            InterfazConsultarEmpresa = new IU_ConsultarEmpresa();
+            InterfazConsultarEmpresa.ShowDialog();
         }
     }
 }

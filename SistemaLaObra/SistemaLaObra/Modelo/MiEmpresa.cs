@@ -74,13 +74,99 @@ namespace SistemaLaObra.Modelo
 
         public void mostrarDatos(int codigo)
         {
-
+            AccesoDatos s = new AccesoDatos();
+            conexion = new SqlConnection(s.CadenaConexion());
+            consulta = new SqlCommand(@"select codigoMiEmpresa, nombreFantasia, razonSocial, cuit, ingresosBrutos, fechaInicio, nroTelefono,
+                                        email, paginaWeb, calle, numero, codigoPostal, nombreBarrio, facturacion, navegacion, codigoLocalidad,
+                                        codigoTipoTelefono, codigoCondicionIVA from MiEmpresas where codigoMiEmpresa='"+ codigo +"'", conexion);
+            try
+            {
+                conexion.Open();
+                lector = consulta.ExecuteReader();
+                if (lector.Read())
+                {
+                    CodigoMiEmpresa = int.Parse(lector["codigoMiEmpresa"].ToString());
+                    NombreFantasia = lector["nombreFantasia"].ToString();
+                    RazonSocial = lector["razonSocial"].ToString();
+                    Cuit = lector["cuit"].ToString();
+                    IngresosBrutos = lector["ingresosBrutos"].ToString();
+                    FechaInicio = DateTime.Parse(lector["fechaInicio"].ToString());
+                    NumeroTelefono = lector["nroTelefono"].ToString();
+                    Email = lector["email"].ToString();
+                    PaginaWeb = lector["paginaWeb"].ToString();
+                    Calle = lector["calle"].ToString();
+                    Numero = lector["numero"].ToString();
+                    CodigoPostal = lector["codigoPostal"].ToString();
+                    Barrio = lector["nombreBarrio"].ToString();
+                    Facturacion = bool.Parse(lector["facturacion"].ToString());
+                    Navegacion = bool.Parse(lector["navegacion"].ToString());
+                    CodigoLocalidad = int.Parse(lector["codigoLocalidad"].ToString());
+                    CodigoTipoTelefono = int.Parse(lector["codigoTipoTelefono"].ToString());
+                    CodigoCondicionIva = int.Parse(lector["codigoCondicionIVA"].ToString());
+                    Localidad.mostrarDatos(CodigoLocalidad);
+                    TipoTelefono.mostrarDatos(CodigoTipoTelefono);
+                    CondicionIva.mostrarDatos(CodigoCondicionIva);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                conexion.Close();
+                lector.Close();
+            }
         }
 
         public List<MiEmpresa> mostrarDatos()
         {
             List<MiEmpresa> lista = new List<MiEmpresa>();
-            return lista;
+            AccesoDatos s = new AccesoDatos();
+            conexion = new SqlConnection(s.CadenaConexion());
+            consulta = new SqlCommand(@"select codigoMiEmpresa, nombreFantasia, razonSocial, cuit, ingresosBrutos, fechaInicio, nroTelefono,
+                                        email, paginaWeb, calle, numero, codigoPostal, nombreBarrio, facturacion, navegacion, codigoLocalidad,
+                                        codigoTipoTelefono, codigoCondicionIVA from MiEmpresas", conexion);
+            try
+            {
+                conexion.Open();
+                lector = consulta.ExecuteReader();
+                while (lector.Read())
+                {                    
+                    lista.Add(new MiEmpresa() {
+                        CodigoMiEmpresa = int.Parse(lector["codigoMiEmpresa"].ToString()),
+                        NombreFantasia = lector["nombreFantasia"].ToString(),
+                        RazonSocial = lector["razonSocial"].ToString(),
+                        Cuit = lector["cuit"].ToString(),
+                        IngresosBrutos = lector["ingresosBrutos"].ToString(),
+                        FechaInicio = DateTime.Parse(lector["fechaInicio"].ToString()),
+                        NumeroTelefono = lector["nroTelefono"].ToString(),
+                        Email = lector["email"].ToString(),
+                        PaginaWeb = lector["paginaWeb"].ToString(),
+                        Calle = lector["calle"].ToString(),
+                        Numero = lector["numero"].ToString(),
+                        CodigoPostal = lector["codigoPostal"].ToString(),
+                        Barrio = lector["nombreBarrio"].ToString(),
+                        Facturacion = bool.Parse(lector["facturacion"].ToString()),
+                        Navegacion = bool.Parse(lector["navegacion"].ToString()),
+                        CodigoLocalidad = int.Parse(lector["codigoLocalidad"].ToString()),
+                        CodigoTipoTelefono = int.Parse(lector["codigoTipoTelefono"].ToString()),
+                        CodigoCondicionIva = int.Parse(lector["codigoCondicionIVA"].ToString()),                        
+                });
+                    
+                }
+                return lista;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                return lista;                
+            }
+            finally
+            {
+                conexion.Close();
+                lector.Close();
+            }
         }
 
         public bool existe(int codigo)
