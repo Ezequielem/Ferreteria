@@ -19,34 +19,8 @@ namespace SistemaLaObra
         SqlConnection conexion;
 
         //INSTANCIAS
-        private int _codigoMarca;
-        private string _descripcion;
-
-        public int CodigoMarca
-        {
-            get
-            {
-                return _codigoMarca;
-            }
-
-            set
-            {
-                _codigoMarca = value;
-            }
-        }
-
-        public string Descripcion
-        {
-            get
-            {
-                return _descripcion;
-            }
-
-            set
-            {
-                _descripcion = value;
-            }
-        }
+        public int CodigoMarca { get; set; }
+        public string Descripcion { get; set; }       
 
         public Marca()
         {

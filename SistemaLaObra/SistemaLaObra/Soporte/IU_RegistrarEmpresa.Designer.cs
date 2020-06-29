@@ -31,13 +31,25 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_RegistrarEmpresa));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_aceptar = new System.Windows.Forms.Button();
-            this.btn_cancelar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.chx_navegacion = new System.Windows.Forms.CheckBox();
+            this.cbx_condicionIva = new System.Windows.Forms.ComboBox();
+            this.cbx_localidad = new System.Windows.Forms.ComboBox();
+            this.cbx_departamento = new System.Windows.Forms.ComboBox();
+            this.cbx_provincia = new System.Windows.Forms.ComboBox();
+            this.txt_barrio = new System.Windows.Forms.TextBox();
+            this.txt_cp = new System.Windows.Forms.TextBox();
+            this.txt_numero = new System.Windows.Forms.TextBox();
+            this.txt_calle = new System.Windows.Forms.TextBox();
+            this.txt_paginaWeb = new System.Windows.Forms.TextBox();
+            this.txt_email = new System.Windows.Forms.TextBox();
+            this.txt_numeroTelefono = new System.Windows.Forms.TextBox();
+            this.txt_ingresosBrutos = new System.Windows.Forms.TextBox();
+            this.txt_cuit = new System.Windows.Forms.TextBox();
+            this.txt_razonSocial = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -54,24 +66,12 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.txt_nombreFantasia = new System.Windows.Forms.TextBox();
-            this.txt_razonSocial = new System.Windows.Forms.TextBox();
-            this.txt_cuit = new System.Windows.Forms.TextBox();
-            this.txt_ingresosBrutos = new System.Windows.Forms.TextBox();
             this.dtp_fechaInicio = new System.Windows.Forms.DateTimePicker();
             this.cbx_tipoTelefono = new System.Windows.Forms.ComboBox();
-            this.txt_numeroTelefono = new System.Windows.Forms.TextBox();
-            this.txt_email = new System.Windows.Forms.TextBox();
-            this.txt_paginaWeb = new System.Windows.Forms.TextBox();
-            this.txt_calle = new System.Windows.Forms.TextBox();
-            this.txt_numero = new System.Windows.Forms.TextBox();
-            this.txt_cp = new System.Windows.Forms.TextBox();
-            this.txt_barrio = new System.Windows.Forms.TextBox();
-            this.cbx_provincia = new System.Windows.Forms.ComboBox();
-            this.cbx_departamento = new System.Windows.Forms.ComboBox();
-            this.cbx_localidad = new System.Windows.Forms.ComboBox();
-            this.cbx_condicionIva = new System.Windows.Forms.ComboBox();
             this.chx_facturacion = new System.Windows.Forms.CheckBox();
-            this.chx_navegacion = new System.Windows.Forms.CheckBox();
+            this.btn_aceptar = new System.Windows.Forms.Button();
+            this.btn_cancelar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -148,45 +148,172 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(469, 556);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // btn_aceptar
+            // chx_navegacion
             // 
-            this.btn_aceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_aceptar.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_aceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_aceptar.Image = global::SistemaLaObra.Properties.Resources.aceptarSeleccionar;
-            this.btn_aceptar.Location = new System.Drawing.Point(514, 599);
-            this.btn_aceptar.Name = "btn_aceptar";
-            this.btn_aceptar.Size = new System.Drawing.Size(128, 50);
-            this.btn_aceptar.TabIndex = 56;
-            this.btn_aceptar.Text = "Aceptar";
-            this.btn_aceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_aceptar.UseVisualStyleBackColor = false;
-            this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
+            this.chx_navegacion.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.chx_navegacion.AutoSize = true;
+            this.chx_navegacion.Location = new System.Drawing.Point(113, 532);
+            this.chx_navegacion.Name = "chx_navegacion";
+            this.chx_navegacion.Size = new System.Drawing.Size(15, 14);
+            this.chx_navegacion.TabIndex = 55;
+            this.chx_navegacion.UseVisualStyleBackColor = true;
             // 
-            // btn_cancelar
+            // cbx_condicionIva
             // 
-            this.btn_cancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_cancelar.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancelar.Image = global::SistemaLaObra.Properties.Resources.cancelar;
-            this.btn_cancelar.Location = new System.Drawing.Point(12, 599);
-            this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(128, 50);
-            this.btn_cancelar.TabIndex = 57;
-            this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_cancelar.UseVisualStyleBackColor = false;
-            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
+            this.cbx_condicionIva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_condicionIva.FormattingEnabled = true;
+            this.cbx_condicionIva.Location = new System.Drawing.Point(113, 469);
+            this.cbx_condicionIva.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.cbx_condicionIva.Name = "cbx_condicionIva";
+            this.cbx_condicionIva.Size = new System.Drawing.Size(353, 21);
+            this.cbx_condicionIva.TabIndex = 53;
             // 
-            // pictureBox1
+            // cbx_localidad
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::SistemaLaObra.Properties.Resources.empresaGris_128;
-            this.pictureBox1.Location = new System.Drawing.Point(514, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(128, 128);
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
+            this.cbx_localidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_localidad.FormattingEnabled = true;
+            this.cbx_localidad.Location = new System.Drawing.Point(113, 440);
+            this.cbx_localidad.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.cbx_localidad.Name = "cbx_localidad";
+            this.cbx_localidad.Size = new System.Drawing.Size(353, 21);
+            this.cbx_localidad.TabIndex = 52;
+            // 
+            // cbx_departamento
+            // 
+            this.cbx_departamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_departamento.FormattingEnabled = true;
+            this.cbx_departamento.Location = new System.Drawing.Point(113, 411);
+            this.cbx_departamento.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.cbx_departamento.Name = "cbx_departamento";
+            this.cbx_departamento.Size = new System.Drawing.Size(353, 21);
+            this.cbx_departamento.TabIndex = 51;
+            this.cbx_departamento.SelectedIndexChanged += new System.EventHandler(this.cbx_departamento_SelectedIndexChanged);
+            // 
+            // cbx_provincia
+            // 
+            this.cbx_provincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_provincia.FormattingEnabled = true;
+            this.cbx_provincia.Location = new System.Drawing.Point(113, 382);
+            this.cbx_provincia.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
+            this.cbx_provincia.Name = "cbx_provincia";
+            this.cbx_provincia.Size = new System.Drawing.Size(353, 21);
+            this.cbx_provincia.TabIndex = 50;
+            this.cbx_provincia.SelectedIndexChanged += new System.EventHandler(this.cbx_provincia_SelectedIndexChanged);
+            // 
+            // txt_barrio
+            // 
+            this.txt_barrio.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_barrio.Location = new System.Drawing.Point(113, 352);
+            this.txt_barrio.MaxLength = 50;
+            this.txt_barrio.Name = "txt_barrio";
+            this.txt_barrio.Size = new System.Drawing.Size(353, 20);
+            this.txt_barrio.TabIndex = 49;
+            // 
+            // txt_cp
+            // 
+            this.txt_cp.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_cp.Location = new System.Drawing.Point(113, 323);
+            this.txt_cp.MaxLength = 10;
+            this.txt_cp.Name = "txt_cp";
+            this.txt_cp.Size = new System.Drawing.Size(202, 20);
+            this.txt_cp.TabIndex = 48;
+            // 
+            // txt_numero
+            // 
+            this.txt_numero.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_numero.Location = new System.Drawing.Point(113, 294);
+            this.txt_numero.MaxLength = 10;
+            this.txt_numero.Name = "txt_numero";
+            this.txt_numero.Size = new System.Drawing.Size(202, 20);
+            this.txt_numero.TabIndex = 47;
+            // 
+            // txt_calle
+            // 
+            this.txt_calle.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_calle.Location = new System.Drawing.Point(113, 265);
+            this.txt_calle.MaxLength = 50;
+            this.txt_calle.Name = "txt_calle";
+            this.txt_calle.Size = new System.Drawing.Size(353, 20);
+            this.txt_calle.TabIndex = 46;
+            // 
+            // txt_paginaWeb
+            // 
+            this.txt_paginaWeb.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_paginaWeb.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.txt_paginaWeb.Location = new System.Drawing.Point(113, 236);
+            this.txt_paginaWeb.MaxLength = 50;
+            this.txt_paginaWeb.Name = "txt_paginaWeb";
+            this.txt_paginaWeb.Size = new System.Drawing.Size(353, 20);
+            this.txt_paginaWeb.TabIndex = 45;
+            // 
+            // txt_email
+            // 
+            this.txt_email.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_email.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.txt_email.Location = new System.Drawing.Point(113, 207);
+            this.txt_email.MaxLength = 50;
+            this.txt_email.Name = "txt_email";
+            this.txt_email.Size = new System.Drawing.Size(353, 20);
+            this.txt_email.TabIndex = 44;
+            // 
+            // txt_numeroTelefono
+            // 
+            this.txt_numeroTelefono.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_numeroTelefono.Location = new System.Drawing.Point(113, 178);
+            this.txt_numeroTelefono.MaxLength = 20;
+            this.txt_numeroTelefono.Name = "txt_numeroTelefono";
+            this.txt_numeroTelefono.Size = new System.Drawing.Size(202, 20);
+            this.txt_numeroTelefono.TabIndex = 43;
+            // 
+            // txt_ingresosBrutos
+            // 
+            this.txt_ingresosBrutos.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_ingresosBrutos.Location = new System.Drawing.Point(113, 91);
+            this.txt_ingresosBrutos.MaxLength = 20;
+            this.txt_ingresosBrutos.Name = "txt_ingresosBrutos";
+            this.txt_ingresosBrutos.Size = new System.Drawing.Size(202, 20);
+            this.txt_ingresosBrutos.TabIndex = 40;
+            this.txt_ingresosBrutos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ingresosBrutos_KeyPress);
+            // 
+            // txt_cuit
+            // 
+            this.txt_cuit.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_cuit.Location = new System.Drawing.Point(113, 62);
+            this.txt_cuit.MaxLength = 20;
+            this.txt_cuit.Name = "txt_cuit";
+            this.txt_cuit.Size = new System.Drawing.Size(202, 20);
+            this.txt_cuit.TabIndex = 39;
+            this.txt_cuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuit_KeyPress);
+            // 
+            // txt_razonSocial
+            // 
+            this.txt_razonSocial.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_razonSocial.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_razonSocial.Location = new System.Drawing.Point(113, 33);
+            this.txt_razonSocial.MaxLength = 100;
+            this.txt_razonSocial.Name = "txt_razonSocial";
+            this.txt_razonSocial.Size = new System.Drawing.Size(353, 20);
+            this.txt_razonSocial.TabIndex = 38;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 95);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(30, 13);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "IIBB:";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 66);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "CUIT:";
             // 
             // label1
             // 
@@ -207,26 +334,6 @@
             this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Razón social:";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 66);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "CUIT:";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 95);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 13);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "IIBB:";
             // 
             // label5
             // 
@@ -381,34 +488,12 @@
             // txt_nombreFantasia
             // 
             this.txt_nombreFantasia.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_nombreFantasia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_nombreFantasia.Location = new System.Drawing.Point(113, 4);
+            this.txt_nombreFantasia.MaxLength = 100;
             this.txt_nombreFantasia.Name = "txt_nombreFantasia";
             this.txt_nombreFantasia.Size = new System.Drawing.Size(353, 20);
             this.txt_nombreFantasia.TabIndex = 37;
-            // 
-            // txt_razonSocial
-            // 
-            this.txt_razonSocial.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_razonSocial.Location = new System.Drawing.Point(113, 33);
-            this.txt_razonSocial.Name = "txt_razonSocial";
-            this.txt_razonSocial.Size = new System.Drawing.Size(353, 20);
-            this.txt_razonSocial.TabIndex = 38;
-            // 
-            // txt_cuit
-            // 
-            this.txt_cuit.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_cuit.Location = new System.Drawing.Point(113, 62);
-            this.txt_cuit.Name = "txt_cuit";
-            this.txt_cuit.Size = new System.Drawing.Size(202, 20);
-            this.txt_cuit.TabIndex = 39;
-            // 
-            // txt_ingresosBrutos
-            // 
-            this.txt_ingresosBrutos.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_ingresosBrutos.Location = new System.Drawing.Point(113, 91);
-            this.txt_ingresosBrutos.Name = "txt_ingresosBrutos";
-            this.txt_ingresosBrutos.Size = new System.Drawing.Size(202, 20);
-            this.txt_ingresosBrutos.TabIndex = 40;
             // 
             // dtp_fechaInicio
             // 
@@ -429,104 +514,6 @@
             this.cbx_tipoTelefono.Size = new System.Drawing.Size(202, 21);
             this.cbx_tipoTelefono.TabIndex = 42;
             // 
-            // txt_numeroTelefono
-            // 
-            this.txt_numeroTelefono.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_numeroTelefono.Location = new System.Drawing.Point(113, 178);
-            this.txt_numeroTelefono.Name = "txt_numeroTelefono";
-            this.txt_numeroTelefono.Size = new System.Drawing.Size(202, 20);
-            this.txt_numeroTelefono.TabIndex = 43;
-            // 
-            // txt_email
-            // 
-            this.txt_email.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_email.Location = new System.Drawing.Point(113, 207);
-            this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(353, 20);
-            this.txt_email.TabIndex = 44;
-            // 
-            // txt_paginaWeb
-            // 
-            this.txt_paginaWeb.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_paginaWeb.Location = new System.Drawing.Point(113, 236);
-            this.txt_paginaWeb.Name = "txt_paginaWeb";
-            this.txt_paginaWeb.Size = new System.Drawing.Size(353, 20);
-            this.txt_paginaWeb.TabIndex = 45;
-            // 
-            // txt_calle
-            // 
-            this.txt_calle.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_calle.Location = new System.Drawing.Point(113, 265);
-            this.txt_calle.Name = "txt_calle";
-            this.txt_calle.Size = new System.Drawing.Size(353, 20);
-            this.txt_calle.TabIndex = 46;
-            // 
-            // txt_numero
-            // 
-            this.txt_numero.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_numero.Location = new System.Drawing.Point(113, 294);
-            this.txt_numero.Name = "txt_numero";
-            this.txt_numero.Size = new System.Drawing.Size(202, 20);
-            this.txt_numero.TabIndex = 47;
-            // 
-            // txt_cp
-            // 
-            this.txt_cp.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_cp.Location = new System.Drawing.Point(113, 323);
-            this.txt_cp.Name = "txt_cp";
-            this.txt_cp.Size = new System.Drawing.Size(202, 20);
-            this.txt_cp.TabIndex = 48;
-            // 
-            // txt_barrio
-            // 
-            this.txt_barrio.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_barrio.Location = new System.Drawing.Point(113, 352);
-            this.txt_barrio.Name = "txt_barrio";
-            this.txt_barrio.Size = new System.Drawing.Size(353, 20);
-            this.txt_barrio.TabIndex = 49;
-            // 
-            // cbx_provincia
-            // 
-            this.cbx_provincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbx_provincia.FormattingEnabled = true;
-            this.cbx_provincia.Location = new System.Drawing.Point(113, 382);
-            this.cbx_provincia.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.cbx_provincia.Name = "cbx_provincia";
-            this.cbx_provincia.Size = new System.Drawing.Size(353, 21);
-            this.cbx_provincia.TabIndex = 50;
-            this.cbx_provincia.SelectedIndexChanged += new System.EventHandler(this.cbx_provincia_SelectedIndexChanged);
-            // 
-            // cbx_departamento
-            // 
-            this.cbx_departamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbx_departamento.FormattingEnabled = true;
-            this.cbx_departamento.Location = new System.Drawing.Point(113, 411);
-            this.cbx_departamento.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.cbx_departamento.Name = "cbx_departamento";
-            this.cbx_departamento.Size = new System.Drawing.Size(353, 21);
-            this.cbx_departamento.TabIndex = 51;
-            this.cbx_departamento.SelectedIndexChanged += new System.EventHandler(this.cbx_departamento_SelectedIndexChanged);
-            // 
-            // cbx_localidad
-            // 
-            this.cbx_localidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbx_localidad.FormattingEnabled = true;
-            this.cbx_localidad.Location = new System.Drawing.Point(113, 440);
-            this.cbx_localidad.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.cbx_localidad.Name = "cbx_localidad";
-            this.cbx_localidad.Size = new System.Drawing.Size(353, 21);
-            this.cbx_localidad.TabIndex = 52;
-            // 
-            // cbx_condicionIva
-            // 
-            this.cbx_condicionIva.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbx_condicionIva.FormattingEnabled = true;
-            this.cbx_condicionIva.Location = new System.Drawing.Point(113, 469);
-            this.cbx_condicionIva.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
-            this.cbx_condicionIva.Name = "cbx_condicionIva";
-            this.cbx_condicionIva.Size = new System.Drawing.Size(353, 21);
-            this.cbx_condicionIva.TabIndex = 53;
-            // 
             // chx_facturacion
             // 
             this.chx_facturacion.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -537,15 +524,45 @@
             this.chx_facturacion.TabIndex = 54;
             this.chx_facturacion.UseVisualStyleBackColor = true;
             // 
-            // chx_navegacion
+            // btn_aceptar
             // 
-            this.chx_navegacion.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.chx_navegacion.AutoSize = true;
-            this.chx_navegacion.Location = new System.Drawing.Point(113, 532);
-            this.chx_navegacion.Name = "chx_navegacion";
-            this.chx_navegacion.Size = new System.Drawing.Size(15, 14);
-            this.chx_navegacion.TabIndex = 55;
-            this.chx_navegacion.UseVisualStyleBackColor = true;
+            this.btn_aceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_aceptar.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_aceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_aceptar.Image = global::SistemaLaObra.Properties.Resources.aceptarSeleccionar;
+            this.btn_aceptar.Location = new System.Drawing.Point(514, 599);
+            this.btn_aceptar.Name = "btn_aceptar";
+            this.btn_aceptar.Size = new System.Drawing.Size(128, 50);
+            this.btn_aceptar.TabIndex = 56;
+            this.btn_aceptar.Text = "Aceptar";
+            this.btn_aceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_aceptar.UseVisualStyleBackColor = false;
+            this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
+            // 
+            // btn_cancelar
+            // 
+            this.btn_cancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_cancelar.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancelar.Image = global::SistemaLaObra.Properties.Resources.cancelar;
+            this.btn_cancelar.Location = new System.Drawing.Point(12, 599);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(128, 50);
+            this.btn_cancelar.TabIndex = 57;
+            this.btn_cancelar.Text = "Cancelar";
+            this.btn_cancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::SistemaLaObra.Properties.Resources.empresaGris_128;
+            this.pictureBox1.Location = new System.Drawing.Point(514, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(128, 128);
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
             // 
             // timer1
             // 

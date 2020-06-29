@@ -427,6 +427,12 @@
     <Compile Include="Soporte\IU_DatosUsuario.Designer.cs">
       <DependentUpon>IU_DatosUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Soporte\IU_DetalleMiEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Soporte\IU_DetalleMiEmpresa.Designer.cs">
+      <DependentUpon>IU_DetalleMiEmpresa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Soporte\IU_ModificarEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>

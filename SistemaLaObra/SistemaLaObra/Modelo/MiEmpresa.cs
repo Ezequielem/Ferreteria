@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -64,12 +65,127 @@ namespace SistemaLaObra.Modelo
 
         public void crear(MiEmpresa miEmpresa)
         {
+            AccesoDatos s = new AccesoDatos();
+            conexion = new SqlConnection(s.CadenaConexion());
+            consulta = new SqlCommand(@"insert into MiEmpresas (nombreFantasia, razonSocial, cuit, ingresosBrutos, fechaInicio,
+                                        nroTelefono, email, paginaWeb, calle, numero, codigoPostal, nombreBarrio, facturacion,
+                                        navegacion, codigoLocalidad, codigoTipoTelefono, codigoCondicionIVA) values (@nombreFantasia,
+                                        @razonSocial, @cuit, @ingresosBrutos, @fechaInicio, @nroTelefono, @email, @paginaWeb, @calle,
+                                        @numero, @codigoPostal, @nombreBarrio, @facturacion, @navegacion, @codigoLocalidad, @codigoTipoTelefono, @codigoCondicionIVA)", conexion);
+            try
+            {
+                adaptador = new SqlDataAdapter();
+                adaptador.InsertCommand = consulta;
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nombreFantasia", SqlDbType.VarChar));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@razonSocial", SqlDbType.VarChar));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@cuit", SqlDbType.VarChar));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@ingresosBrutos", SqlDbType.VarChar));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@fechaInicio", SqlDbType.DateTime));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nroTelefono", SqlDbType.VarChar));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@email", SqlDbType.VarChar));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@paginaWeb", SqlDbType.VarChar));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@calle", SqlDbType.VarChar));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@numero", SqlDbType.VarChar));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoPostal", SqlDbType.VarChar));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nombreBarrio", SqlDbType.VarChar));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@facturacion", SqlDbType.Bit));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@navegacion", SqlDbType.Bit));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoLocalidad", SqlDbType.Int));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoTipoTelefono", SqlDbType.Int));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoCondicionIVA", SqlDbType.Int));
 
+                adaptador.InsertCommand.Parameters["@nombreFantasia"].Value = miEmpresa.NombreFantasia;
+                adaptador.InsertCommand.Parameters["@razonSocial"].Value = miEmpresa.RazonSocial;
+                adaptador.InsertCommand.Parameters["@cuit"].Value = miEmpresa.Cuit;
+                adaptador.InsertCommand.Parameters["@ingresosBrutos"].Value = miEmpresa.IngresosBrutos;
+                adaptador.InsertCommand.Parameters["@fechaInicio"].Value = miEmpresa.FechaInicio;
+                adaptador.InsertCommand.Parameters["@nroTelefono"].Value = miEmpresa.NumeroTelefono;
+                adaptador.InsertCommand.Parameters["@email"].Value = miEmpresa.Email;
+                adaptador.InsertCommand.Parameters["@paginaWeb"].Value = miEmpresa.PaginaWeb;
+                adaptador.InsertCommand.Parameters["@calle"].Value = miEmpresa.Calle;
+                adaptador.InsertCommand.Parameters["@numero"].Value = miEmpresa.Numero;
+                adaptador.InsertCommand.Parameters["@codigoPostal"].Value = miEmpresa.CodigoPostal;
+                adaptador.InsertCommand.Parameters["@nombreBarrio"].Value = miEmpresa.Barrio;
+                adaptador.InsertCommand.Parameters["@facturacion"].Value = miEmpresa.Facturacion;
+                adaptador.InsertCommand.Parameters["@navegacion"].Value = miEmpresa.Navegacion;
+                adaptador.InsertCommand.Parameters["@codigoLocalidad"].Value = miEmpresa.Localidad.CodigoLocalidad;
+                adaptador.InsertCommand.Parameters["@codigoTipoTelefono"].Value = miEmpresa.TipoTelefono.CodigoTipoTelefono;
+                adaptador.InsertCommand.Parameters["@codigoCondicionIVA"].Value = miEmpresa.CondicionIva.CodigoCondicionIva;
+
+                conexion.Open();
+                adaptador.InsertCommand.ExecuteNonQuery();                
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                conexion.Close();
+            }
         }
 
         public void modificar(MiEmpresa miEmpresa)
         {
+            AccesoDatos s = new AccesoDatos();
+            conexion = new SqlConnection(s.CadenaConexion());
+            consulta = new SqlCommand(@"update MiEmpresas set nombreFantasia=@nombreFantasia, razonSocial=@razonSocial, cuit=@cuit, ingresosBrutos=@ingresosBrutos,
+                                        fechaInicio=@fechaInicio, nroTelefono=@nroTelefono, email=@email, paginaWeb=@paginaWeb, calle=@calle, numero=@numero, codigoPostal=@codigoPostal,
+                                        nombreBarrio=@nombreBarrio, facturacion=@facturacion, navegacion=@navegacion, codigoLocalidad=@codigoLocalidad,
+                                        codigoTipoTelefono=@codigoTipoTelefono, codigoCondicionIVA=@codigoCondicionIVA where codigoMiEmpresa=@codigoMiEmpresa", conexion);
+            try
+            {
+                adaptador = new SqlDataAdapter();
+                adaptador.UpdateCommand = consulta;
+                adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@codigoMiEmpresa", SqlDbType.Int));
+                adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@nombreFantasia", SqlDbType.VarChar));
+                adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@razonSocial", SqlDbType.VarChar));
+                adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@cuit", SqlDbType.VarChar));
+                adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@ingresosBrutos", SqlDbType.VarChar));
+                adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@fechaInicio", SqlDbType.DateTime));
+                adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@nroTelefono", SqlDbType.VarChar));
+                adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@email", SqlDbType.VarChar));
+                adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@paginaWeb", SqlDbType.VarChar));
+                adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@calle", SqlDbType.VarChar));
+                adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@numero", SqlDbType.VarChar));
+                adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@codigoPostal", SqlDbType.VarChar));
+                adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@nombreBarrio", SqlDbType.VarChar));
+                adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@facturacion", SqlDbType.Bit));
+                adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@navegacion", SqlDbType.Bit));
+                adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@codigoLocalidad", SqlDbType.Int));
+                adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@codigoTipoTelefono", SqlDbType.Int));
+                adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@codigoCondicionIVA", SqlDbType.Int));
 
+                adaptador.UpdateCommand.Parameters["@codigoMiEmpresa"].Value = miEmpresa.CodigoMiEmpresa;
+                adaptador.UpdateCommand.Parameters["@nombreFantasia"].Value = miEmpresa.NombreFantasia;
+                adaptador.UpdateCommand.Parameters["@razonSocial"].Value = miEmpresa.RazonSocial;
+                adaptador.UpdateCommand.Parameters["@cuit"].Value = miEmpresa.Cuit;
+                adaptador.UpdateCommand.Parameters["@ingresosBrutos"].Value = miEmpresa.IngresosBrutos;
+                adaptador.UpdateCommand.Parameters["@fechaInicio"].Value = miEmpresa.FechaInicio;
+                adaptador.UpdateCommand.Parameters["@nroTelefono"].Value = miEmpresa.NumeroTelefono;
+                adaptador.UpdateCommand.Parameters["@email"].Value = miEmpresa.Email;
+                adaptador.UpdateCommand.Parameters["@paginaWeb"].Value = miEmpresa.PaginaWeb;
+                adaptador.UpdateCommand.Parameters["@calle"].Value = miEmpresa.Calle;
+                adaptador.UpdateCommand.Parameters["@numero"].Value = miEmpresa.Numero;
+                adaptador.UpdateCommand.Parameters["@codigoPostal"].Value = miEmpresa.CodigoPostal;
+                adaptador.UpdateCommand.Parameters["@nombreBarrio"].Value = miEmpresa.Barrio;
+                adaptador.UpdateCommand.Parameters["@facturacion"].Value = miEmpresa.Facturacion;
+                adaptador.UpdateCommand.Parameters["@navegacion"].Value = miEmpresa.Navegacion;
+                adaptador.UpdateCommand.Parameters["@codigoLocalidad"].Value = miEmpresa.Localidad.CodigoLocalidad;
+                adaptador.UpdateCommand.Parameters["@codigoTipoTelefono"].Value = miEmpresa.TipoTelefono.CodigoTipoTelefono;
+                adaptador.UpdateCommand.Parameters["@codigoCondicionIVA"].Value = miEmpresa.CondicionIva.CodigoCondicionIva;
+
+                conexion.Open();
+                adaptador.UpdateCommand.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                conexion.Close();
+            }
         }
 
         public void mostrarDatos(int codigo)
@@ -174,6 +290,36 @@ namespace SistemaLaObra.Modelo
             AccesoDatos s = new AccesoDatos();
             conexion = new SqlConnection(s.CadenaConexion());
             consulta = new SqlCommand("select * from MiEmpresas where codigoMiEmpresa='"+ codigo +"'", conexion);
+            try
+            {
+                conexion.Open();
+                lector = consulta.ExecuteReader();
+                if (lector.Read())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                return false;
+            }
+            finally
+            {
+                conexion.Close();
+                lector.Close();
+            }
+        }
+
+        public bool existeCUIT(string codigo)
+        {
+            AccesoDatos s = new AccesoDatos();
+            conexion = new SqlConnection(s.CadenaConexion());
+            consulta = new SqlCommand("select * from MiEmpresas where cuit='" + codigo + "'", conexion);
             try
             {
                 conexion.Open();

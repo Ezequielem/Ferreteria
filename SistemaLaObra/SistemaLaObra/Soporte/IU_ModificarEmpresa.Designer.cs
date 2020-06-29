@@ -244,6 +244,7 @@
             // 
             this.txt_barrio.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txt_barrio.Location = new System.Drawing.Point(113, 352);
+            this.txt_barrio.MaxLength = 50;
             this.txt_barrio.Name = "txt_barrio";
             this.txt_barrio.Size = new System.Drawing.Size(353, 20);
             this.txt_barrio.TabIndex = 49;
@@ -252,6 +253,7 @@
             // 
             this.txt_cp.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txt_cp.Location = new System.Drawing.Point(113, 323);
+            this.txt_cp.MaxLength = 10;
             this.txt_cp.Name = "txt_cp";
             this.txt_cp.Size = new System.Drawing.Size(202, 20);
             this.txt_cp.TabIndex = 48;
@@ -260,6 +262,7 @@
             // 
             this.txt_numero.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txt_numero.Location = new System.Drawing.Point(113, 294);
+            this.txt_numero.MaxLength = 10;
             this.txt_numero.Name = "txt_numero";
             this.txt_numero.Size = new System.Drawing.Size(202, 20);
             this.txt_numero.TabIndex = 47;
@@ -268,6 +271,7 @@
             // 
             this.txt_calle.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txt_calle.Location = new System.Drawing.Point(113, 265);
+            this.txt_calle.MaxLength = 50;
             this.txt_calle.Name = "txt_calle";
             this.txt_calle.Size = new System.Drawing.Size(353, 20);
             this.txt_calle.TabIndex = 46;
@@ -275,7 +279,9 @@
             // txt_paginaWeb
             // 
             this.txt_paginaWeb.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_paginaWeb.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.txt_paginaWeb.Location = new System.Drawing.Point(113, 236);
+            this.txt_paginaWeb.MaxLength = 50;
             this.txt_paginaWeb.Name = "txt_paginaWeb";
             this.txt_paginaWeb.Size = new System.Drawing.Size(353, 20);
             this.txt_paginaWeb.TabIndex = 45;
@@ -283,7 +289,9 @@
             // txt_email
             // 
             this.txt_email.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_email.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.txt_email.Location = new System.Drawing.Point(113, 207);
+            this.txt_email.MaxLength = 50;
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(353, 20);
             this.txt_email.TabIndex = 44;
@@ -292,6 +300,7 @@
             // 
             this.txt_numeroTelefono.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txt_numeroTelefono.Location = new System.Drawing.Point(113, 178);
+            this.txt_numeroTelefono.MaxLength = 20;
             this.txt_numeroTelefono.Name = "txt_numeroTelefono";
             this.txt_numeroTelefono.Size = new System.Drawing.Size(202, 20);
             this.txt_numeroTelefono.TabIndex = 43;
@@ -300,22 +309,28 @@
             // 
             this.txt_ingresosBrutos.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txt_ingresosBrutos.Location = new System.Drawing.Point(113, 91);
+            this.txt_ingresosBrutos.MaxLength = 20;
             this.txt_ingresosBrutos.Name = "txt_ingresosBrutos";
             this.txt_ingresosBrutos.Size = new System.Drawing.Size(202, 20);
             this.txt_ingresosBrutos.TabIndex = 40;
+            this.txt_ingresosBrutos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ingresosBrutos_KeyPress);
             // 
             // txt_cuit
             // 
             this.txt_cuit.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txt_cuit.Location = new System.Drawing.Point(113, 62);
+            this.txt_cuit.MaxLength = 20;
             this.txt_cuit.Name = "txt_cuit";
             this.txt_cuit.Size = new System.Drawing.Size(202, 20);
             this.txt_cuit.TabIndex = 39;
+            this.txt_cuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuit_KeyPress);
             // 
             // txt_razonSocial
             // 
             this.txt_razonSocial.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_razonSocial.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_razonSocial.Location = new System.Drawing.Point(113, 33);
+            this.txt_razonSocial.MaxLength = 100;
             this.txt_razonSocial.Name = "txt_razonSocial";
             this.txt_razonSocial.Size = new System.Drawing.Size(353, 20);
             this.txt_razonSocial.TabIndex = 38;
@@ -513,7 +528,9 @@
             // txt_nombreFantasia
             // 
             this.txt_nombreFantasia.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_nombreFantasia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_nombreFantasia.Location = new System.Drawing.Point(113, 4);
+            this.txt_nombreFantasia.MaxLength = 100;
             this.txt_nombreFantasia.Name = "txt_nombreFantasia";
             this.txt_nombreFantasia.Size = new System.Drawing.Size(353, 20);
             this.txt_nombreFantasia.TabIndex = 37;

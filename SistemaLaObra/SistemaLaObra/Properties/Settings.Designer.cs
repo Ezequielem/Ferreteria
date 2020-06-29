@@ -26,8 +26,8 @@ namespace SistemaLaObra.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-BDPG71E\\SQLEXPRESS;Initial Catalog=LaObra;Integrated Security" +
-            "=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=PC-EZEQUIEL\\SQLEXPRESS;Initial Catalog=LaObra;Integrated Security=Tru" +
+            "e")]
         public string LaObraConnectionString {
             get {
                 return ((string)(this["LaObraConnectionString"]));

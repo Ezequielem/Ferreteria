@@ -24,6 +24,7 @@ namespace SistemaLaObra.Soporte
         public List<Localidad> ListaLocalidades { get; set; }
         public List<TipoTelefono> ListaTipoTelefono { get; set; }
         public List<CondicionIva> ListaCondicionIva { get; set; }
+        Validaciones validacion;
 
 
         public IU_RegistrarEmpresa()
@@ -40,13 +41,71 @@ namespace SistemaLaObra.Soporte
             ListaLocalidades = new List<Localidad>();
             ListaTipoTelefono = new List<TipoTelefono>();
             ListaCondicionIva = new List<CondicionIva>();
+            validacion = new Validaciones();
         }
 
         //BOTONES
 
         private void btn_aceptar_Click(object sender, EventArgs e)
         {
-
+            if (validacion.campoVacio(txt_nombreFantasia.Text.Trim()))
+            {
+                MessageBox.Show("Debe ingresar un nombre de Fantasía", "Advertencia!!!");
+            }
+            else if (validacion.campoVacio(txt_razonSocial.Text.Trim()))
+            {
+                MessageBox.Show("Debe ingresar una razon Social", "Advertencia!!!");
+            }
+            else if (validacion.campoVacio(txt_cuit.Text.Trim()))
+            {
+                MessageBox.Show("Debe ingresar un CUIT", "Advertencia!!!");
+            }
+            else if (MiEmpresa.existeCUIT(txt_cuit.Text))
+            {
+                MessageBox.Show("El número de CUIT ingresado ya existe", "Advertencia!!!");
+            }
+            else if (validacion.campoVacio(txt_numeroTelefono.Text.Trim()))
+            {
+                MessageBox.Show("Debe ingresar un número de teléfono", "Advertencia!!!");
+            }
+            else if (validacion.campoVacio(txt_calle.Text.Trim()))
+            {
+                MessageBox.Show("Debe ingresar la calle", "Advertencia!!!");
+            }
+            else if (validacion.campoVacio(txt_numero.Text.Trim()))
+            {
+                MessageBox.Show("Debe ingresar el número de calle", "Advertencia!!!");
+            }
+            else if (validacion.campoVacio(txt_cp.Text.Trim()))
+            {
+                MessageBox.Show("Debe ingresar código postal", "Advertencia!!!");
+            }
+            else if (validacion.campoVacio(txt_barrio.Text.Trim()))
+            {
+                MessageBox.Show("Debe ingresar el barrio", "Advertencia!!!");
+            }
+            else
+            {
+                tomarNombreFantasia();
+                tomarRazonSocial();
+                tomarCuit();
+                tomarIIBB();
+                tomarFechaInicio();
+                tomarNumeroTel();
+                tomarEmail();
+                tomarPaginaWeb();
+                tomarCalle();
+                tomarNumero();
+                tomarCodigoPostal();
+                tomarNombreBarrio();
+                tomarFacturacion();
+                tomarNavegacion();
+                tomarLocalidad();
+                tomarTipoTelefono();
+                tomarCondicionIva();
+                registrar();
+                this.Close();
+            }
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
@@ -55,6 +114,94 @@ namespace SistemaLaObra.Soporte
         }
 
         //METODOS
+
+        public void tomarNombreFantasia()
+        {
+            MiEmpresa.NombreFantasia = txt_nombreFantasia.Text;
+        }
+
+        public void tomarRazonSocial()
+        {
+            MiEmpresa.RazonSocial = txt_razonSocial.Text;
+        }
+
+        public void tomarCuit()
+        {
+            MiEmpresa.Cuit = txt_cuit.Text;
+        }
+
+        public void tomarIIBB()
+        {
+            MiEmpresa.IngresosBrutos = txt_ingresosBrutos.Text;
+        }
+
+        public void tomarFechaInicio()
+        {
+            MiEmpresa.FechaInicio = dtp_fechaInicio.Value;
+        }
+
+        public void tomarNumeroTel()
+        {
+            MiEmpresa.NumeroTelefono = txt_numeroTelefono.Text;
+        }
+
+        public void tomarEmail()
+        {
+            MiEmpresa.Email = txt_email.Text;
+        }
+
+        public void tomarPaginaWeb()
+        {
+            MiEmpresa.PaginaWeb = txt_paginaWeb.Text;
+        }
+
+        public void tomarCalle()
+        {
+            MiEmpresa.Calle = txt_calle.Text;
+        }
+
+        public void tomarNumero()
+        {
+            MiEmpresa.Numero = txt_numero.Text;
+        }
+
+        public void tomarCodigoPostal()
+        {
+            MiEmpresa.CodigoPostal = txt_cp.Text;
+        }
+
+        public void tomarNombreBarrio()
+        {
+            MiEmpresa.Barrio = txt_barrio.Text;
+        }
+
+        public void tomarFacturacion()
+        {
+            MiEmpresa.Facturacion = chx_facturacion.Checked;
+        }
+
+        public void tomarNavegacion()
+        {
+            MiEmpresa.Navegacion = chx_navegacion.Checked;
+        }
+
+        public void tomarLocalidad()
+        {
+            MiEmpresa.CodigoLocalidad = int.Parse(cbx_localidad.SelectedValue.ToString());
+            MiEmpresa.Localidad.mostrarDatos(MiEmpresa.CodigoLocalidad);
+        }
+
+        public void tomarTipoTelefono()
+        {
+            MiEmpresa.CodigoTipoTelefono = int.Parse(cbx_tipoTelefono.SelectedValue.ToString());
+            MiEmpresa.TipoTelefono.mostrarDatos(MiEmpresa.CodigoTipoTelefono);
+        }
+
+        public void tomarCondicionIva()
+        {
+            MiEmpresa.CodigoCondicionIva = int.Parse(cbx_condicionIva.SelectedValue.ToString());
+            MiEmpresa.CondicionIva.mostrarDatos(MiEmpresa.CodigoCondicionIva);
+        }
 
         private void cargarProvincias()
         {
@@ -99,6 +246,11 @@ namespace SistemaLaObra.Soporte
             cbx_condicionIva.DataSource = ListaCondicionIva;
         }
 
+        private void registrar()
+        {
+            MiEmpresa.crear(MiEmpresa);
+        }
+
         //EVENTOS
 
 
@@ -120,6 +272,16 @@ namespace SistemaLaObra.Soporte
         private void cbx_provincia_SelectedIndexChanged(object sender, EventArgs e)
         {
             cargarDepartamentos(int.Parse(cbx_provincia.SelectedValue.ToString()));
+        }
+
+        private void txt_cuit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validacion.soloNumeros(e);
+        }
+
+        private void txt_ingresosBrutos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validacion.soloNumeros(e);
         }
     }
 }
