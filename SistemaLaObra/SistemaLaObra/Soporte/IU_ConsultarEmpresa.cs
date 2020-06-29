@@ -49,6 +49,17 @@ namespace SistemaLaObra.Soporte
             }            
         }
 
+        private void btn_eliminar_Click(object sender, EventArgs e)
+        {
+            if (dgv_empresas.Rows.Count != 0)
+            {
+                IU_EliminarMiEmpresa interfaz = new IU_EliminarMiEmpresa();
+                interfaz.opcionEliminar(ListaMiEmpresa.Where(x => x.CodigoMiEmpresa== int.Parse(dgv_empresas.CurrentRow.Cells[4].Value.ToString())).FirstOrDefault());
+                interfaz.ShowDialog();
+                cargarDataGrid();
+            }
+        }
+
         //METODOS
 
         private void cargarDataGrid()
@@ -111,6 +122,13 @@ namespace SistemaLaObra.Soporte
                 ListaMiEmpresa = ListaMiEmpresa.Where(x => x.NombreFantasia.Contains(txt_nombreEmpresa.Text)).ToList();
                 cargarDataGrid(ListaMiEmpresa);
             }
+        }
+
+        private void dgv_empresas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            IU_DetalleMiEmpresa interfaz = new IU_DetalleMiEmpresa();
+            interfaz.opcionDetalle(ListaMiEmpresa.Where(x => x.CodigoMiEmpresa == int.Parse(dgv_empresas.CurrentRow.Cells[4].Value.ToString())).FirstOrDefault());
+            interfaz.ShowDialog();            
         }
     }
 }

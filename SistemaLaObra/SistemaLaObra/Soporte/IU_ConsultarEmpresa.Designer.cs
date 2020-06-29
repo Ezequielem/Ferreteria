@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_ConsultarEmpresa));
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_modificar = new System.Windows.Forms.Button();
             this.btn_registrar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -57,21 +58,38 @@
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.btn_eliminar, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.btn_modificar, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.btn_registrar, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.pictureBox1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btn_aceptar, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.btn_aceptar, 0, 6);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(732, 12);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 6;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.40816F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.908163F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.09184F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.21428F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel2.RowCount = 7;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(135, 392);
             this.tableLayoutPanel2.TabIndex = 20;
+            // 
+            // btn_eliminar
+            // 
+            this.btn_eliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_eliminar.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_eliminar.Image = global::SistemaLaObra.Properties.Resources.eliminar_32;
+            this.btn_eliminar.Location = new System.Drawing.Point(4, 217);
+            this.btn_eliminar.Name = "btn_eliminar";
+            this.btn_eliminar.Size = new System.Drawing.Size(128, 50);
+            this.btn_eliminar.TabIndex = 18;
+            this.btn_eliminar.Text = "Eliminar";
+            this.btn_eliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_eliminar.UseVisualStyleBackColor = false;
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
             // btn_modificar
             // 
@@ -79,7 +97,7 @@
             this.btn_modificar.BackColor = System.Drawing.SystemColors.Control;
             this.btn_modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_modificar.Image = global::SistemaLaObra.Properties.Resources.actualizar;
-            this.btn_modificar.Location = new System.Drawing.Point(4, 216);
+            this.btn_modificar.Location = new System.Drawing.Point(4, 157);
             this.btn_modificar.Name = "btn_modificar";
             this.btn_modificar.Size = new System.Drawing.Size(128, 50);
             this.btn_modificar.TabIndex = 19;
@@ -94,7 +112,7 @@
             this.btn_registrar.BackColor = System.Drawing.SystemColors.Control;
             this.btn_registrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_registrar.Image = global::SistemaLaObra.Properties.Resources.registrar;
-            this.btn_registrar.Location = new System.Drawing.Point(4, 125);
+            this.btn_registrar.Location = new System.Drawing.Point(4, 97);
             this.btn_registrar.Name = "btn_registrar";
             this.btn_registrar.Size = new System.Drawing.Size(128, 50);
             this.btn_registrar.TabIndex = 20;
@@ -107,7 +125,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureBox1.Image = global::SistemaLaObra.Properties.Resources.empresaGris_64;
-            this.pictureBox1.Location = new System.Drawing.Point(68, 8);
+            this.pictureBox1.Location = new System.Drawing.Point(68, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(64, 64);
             this.pictureBox1.TabIndex = 2;
@@ -194,6 +212,7 @@
             this.dgv_empresas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_empresas.Size = new System.Drawing.Size(700, 320);
             this.dgv_empresas.TabIndex = 16;
+            this.dgv_empresas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_empresas_CellDoubleClick);
             // 
             // col_nombreFantasia
             // 
@@ -277,5 +296,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_fechaInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btn_eliminar;
     }
 }

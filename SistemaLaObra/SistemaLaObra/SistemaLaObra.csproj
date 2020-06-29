@@ -433,6 +433,12 @@
     <Compile Include="Soporte\IU_DetalleMiEmpresa.Designer.cs">
       <DependentUpon>IU_DetalleMiEmpresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Soporte\IU_EliminarMiEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Soporte\IU_EliminarMiEmpresa.Designer.cs">
+      <DependentUpon>IU_EliminarMiEmpresa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Soporte\IU_ModificarEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -891,6 +897,12 @@
     <EmbeddedResource Include="Soporte\IU_DatosUsuario.resx">
       <DependentUpon>IU_DatosUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Soporte\IU_DetalleMiEmpresa.resx">
+      <DependentUpon>IU_DetalleMiEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Soporte\IU_EliminarMiEmpresa.resx">
+      <DependentUpon>IU_EliminarMiEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Soporte\IU_MenuPrincipalSoporte.resx">
       <DependentUpon>IU_MenuPrincipalSoporte.cs</DependentUpon>
     </EmbeddedResource>
@@ -1096,6 +1108,9 @@
     </Content>
     <Content Include="images\icono-ferreteria_32.ico" />
     <Content Include="images\icono-ferreteria_64.ico" />
+    <None Include="Resources\eliminar_128.png" />
+    <None Include="Resources\eliminar_32.png" />
+    <None Include="Resources\eliminar_64.png" />
     <None Include="Resources\empresaGris_128.png" />
     <None Include="Resources\empresaGris_32.png" />
     <None Include="Resources\empresaGris_64.png" />

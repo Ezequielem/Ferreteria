@@ -188,6 +188,30 @@ namespace SistemaLaObra.Modelo
             }
         }
 
+        public void eliminar(MiEmpresa miEmpresa)
+        {
+            AccesoDatos s = new AccesoDatos();
+            conexion = new SqlConnection(s.CadenaConexion());
+            consulta = new SqlCommand("delete from MiEmpresas where codigoMiEmpresa=@codigoMiEmpresa", conexion);
+            try
+            {
+                adaptador = new SqlDataAdapter();
+                adaptador.DeleteCommand = consulta;
+                adaptador.DeleteCommand.Parameters.Add(new SqlParameter("@codigoMiEmpresa", SqlDbType.Int));
+                adaptador.DeleteCommand.Parameters["@codigoMiEmpresa"].Value = miEmpresa.CodigoMiEmpresa;
+                conexion.Open();
+                adaptador.DeleteCommand.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+
         public void mostrarDatos(int codigo)
         {
             AccesoDatos s = new AccesoDatos();
@@ -336,6 +360,36 @@ namespace SistemaLaObra.Modelo
             catch (Exception e)
             {
                 MessageBox.Show(e.ToString());
+                return false;
+            }
+            finally
+            {
+                conexion.Close();
+                lector.Close();
+            }
+        }
+        
+        public bool existenUsuarios(int codigo)
+        {
+            AccesoDatos s = new AccesoDatos();
+            conexion = new SqlConnection(s.CadenaConexion());
+            consulta = new SqlCommand("select * from Encargados where codigoMiEmpresa='"+ codigo +"'", conexion);
+            try
+            {
+                conexion.Open();
+                lector = consulta.ExecuteReader();
+                if (lector.Read())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
                 return false;
             }
             finally
