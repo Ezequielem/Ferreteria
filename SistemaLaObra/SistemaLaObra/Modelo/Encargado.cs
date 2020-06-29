@@ -40,6 +40,11 @@ namespace SistemaLaObra
         public int CodigoMiEmpresa { get; set; }
         public MiEmpresa MiEmpresa { get; set; }
 
+        public Encargado()
+        {
+            MiEmpresa = new MiEmpresa();
+        }
+
         public void crear(Encargado encargado)
         {
             acceso = new AccesoDatos();

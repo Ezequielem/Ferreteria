@@ -355,136 +355,136 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\IU_ActualizarMarca.cs">
+    <Compile Include="Soporte\Marca\IU_ActualizarMarca.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\IU_ActualizarMarca.Designer.cs">
+    <Compile Include="Soporte\Marca\IU_ActualizarMarca.Designer.cs">
       <DependentUpon>IU_ActualizarMarca.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\IU_ActualizarProveedorArticulo.cs">
+    <Compile Include="Soporte\Articulo\IU_ActualizarProveedorArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\IU_ActualizarProveedorArticulo.Designer.cs">
+    <Compile Include="Soporte\Articulo\IU_ActualizarProveedorArticulo.Designer.cs">
       <DependentUpon>IU_ActualizarProveedorArticulo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\IU_ActualizarTarjeta.cs">
+    <Compile Include="Soporte\Tarjeta\IU_ActualizarTarjeta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\IU_ActualizarTarjeta.Designer.cs">
+    <Compile Include="Soporte\Tarjeta\IU_ActualizarTarjeta.Designer.cs">
       <DependentUpon>IU_ActualizarTarjeta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\IU_ActualizarTiposArticulo.cs">
+    <Compile Include="Soporte\Articulo\IU_ActualizarTiposArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\IU_ActualizarTiposArticulo.Designer.cs">
+    <Compile Include="Soporte\Articulo\IU_ActualizarTiposArticulo.Designer.cs">
       <DependentUpon>IU_ActualizarTiposArticulo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\IU_ActualizarUbicacion.cs">
+    <Compile Include="Soporte\Ubicacion\IU_ActualizarUbicacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\IU_ActualizarUbicacion.Designer.cs">
+    <Compile Include="Soporte\Ubicacion\IU_ActualizarUbicacion.Designer.cs">
       <DependentUpon>IU_ActualizarUbicacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\IU_ActualizarUsuario.cs">
+    <Compile Include="Soporte\Usuario\IU_ActualizarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\IU_ActualizarUsuario.Designer.cs">
+    <Compile Include="Soporte\Usuario\IU_ActualizarUsuario.Designer.cs">
       <DependentUpon>IU_ActualizarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\IU_ConsultarEmpresa.cs">
+    <Compile Include="Soporte\Empresa\IU_ConsultarEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\IU_ConsultarEmpresa.Designer.cs">
+    <Compile Include="Soporte\Empresa\IU_ConsultarEmpresa.Designer.cs">
       <DependentUpon>IU_ConsultarEmpresa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\IU_ConsultarHistorialSesiones.cs">
+    <Compile Include="Soporte\Usuario\IU_ConsultarHistorialSesiones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\IU_ConsultarHistorialSesiones.Designer.cs">
+    <Compile Include="Soporte\Usuario\IU_ConsultarHistorialSesiones.Designer.cs">
       <DependentUpon>IU_ConsultarHistorialSesiones.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\IU_ConsultarMarca.cs">
+    <Compile Include="Soporte\Marca\IU_ConsultarMarca.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\IU_ConsultarMarca.Designer.cs">
+    <Compile Include="Soporte\Marca\IU_ConsultarMarca.Designer.cs">
       <DependentUpon>IU_ConsultarMarca.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\IU_ConsultarUbicacion.cs">
+    <Compile Include="Soporte\Ubicacion\IU_ConsultarUbicacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\IU_ConsultarUbicacion.Designer.cs">
+    <Compile Include="Soporte\Ubicacion\IU_ConsultarUbicacion.Designer.cs">
       <DependentUpon>IU_ConsultarUbicacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\IU_ConsultarUsuario.cs">
+    <Compile Include="Soporte\Usuario\IU_ConsultarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\IU_ConsultarUsuario.Designer.cs">
+    <Compile Include="Soporte\Usuario\IU_ConsultarUsuario.Designer.cs">
       <DependentUpon>IU_ConsultarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\IU_DatosUsuario.cs">
+    <Compile Include="Soporte\Usuario\IU_DatosUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\IU_DatosUsuario.Designer.cs">
+    <Compile Include="Soporte\Usuario\IU_DatosUsuario.Designer.cs">
       <DependentUpon>IU_DatosUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\IU_DetalleMiEmpresa.cs">
+    <Compile Include="Soporte\Empresa\IU_DetalleMiEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\IU_DetalleMiEmpresa.Designer.cs">
+    <Compile Include="Soporte\Empresa\IU_DetalleMiEmpresa.Designer.cs">
       <DependentUpon>IU_DetalleMiEmpresa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\IU_EliminarMiEmpresa.cs">
+    <Compile Include="Soporte\Empresa\IU_EliminarMiEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\IU_EliminarMiEmpresa.Designer.cs">
+    <Compile Include="Soporte\Empresa\IU_EliminarMiEmpresa.Designer.cs">
       <DependentUpon>IU_EliminarMiEmpresa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\IU_ModificarEmpresa.cs">
+    <Compile Include="Soporte\Empresa\IU_ModificarEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\IU_ModificarEmpresa.Designer.cs">
+    <Compile Include="Soporte\Empresa\IU_ModificarEmpresa.Designer.cs">
       <DependentUpon>IU_ModificarEmpresa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\IU_RegistrarEmpresa.cs">
+    <Compile Include="Soporte\Empresa\IU_RegistrarEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\IU_RegistrarEmpresa.Designer.cs">
+    <Compile Include="Soporte\Empresa\IU_RegistrarEmpresa.Designer.cs">
       <DependentUpon>IU_RegistrarEmpresa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\IU_RegistrarMarca.cs">
+    <Compile Include="Soporte\Marca\IU_RegistrarMarca.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\IU_RegistrarMarca.Designer.cs">
+    <Compile Include="Soporte\Marca\IU_RegistrarMarca.Designer.cs">
       <DependentUpon>IU_RegistrarMarca.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\IU_RegistrarProveedorArticulo.cs">
+    <Compile Include="Soporte\Articulo\IU_RegistrarProveedorArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\IU_RegistrarProveedorArticulo.Designer.cs">
+    <Compile Include="Soporte\Articulo\IU_RegistrarProveedorArticulo.Designer.cs">
       <DependentUpon>IU_RegistrarProveedorArticulo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\IU_RegistrarTarjeta.cs">
+    <Compile Include="Soporte\Tarjeta\IU_RegistrarTarjeta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\IU_RegistrarTarjeta.Designer.cs">
+    <Compile Include="Soporte\Tarjeta\IU_RegistrarTarjeta.Designer.cs">
       <DependentUpon>IU_RegistrarTarjeta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\IU_RegistrarTiposArticulo.cs">
+    <Compile Include="Soporte\Articulo\IU_RegistrarTiposArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\IU_RegistrarTiposArticulo.Designer.cs">
+    <Compile Include="Soporte\Articulo\IU_RegistrarTiposArticulo.Designer.cs">
       <DependentUpon>IU_RegistrarTiposArticulo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\IU_RegistrarUbicacion.cs">
+    <Compile Include="Soporte\Ubicacion\IU_RegistrarUbicacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\IU_RegistrarUbicacion.Designer.cs">
+    <Compile Include="Soporte\Ubicacion\IU_RegistrarUbicacion.Designer.cs">
       <DependentUpon>IU_RegistrarUbicacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\IU_RegistrarUsuario.cs">
+    <Compile Include="Soporte\Usuario\IU_RegistrarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\IU_RegistrarUsuario.Designer.cs">
+    <Compile Include="Soporte\Usuario\IU_RegistrarUsuario.Designer.cs">
       <DependentUpon>IU_RegistrarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Soporte\Reportes\DataSetPrincipal.cs">
@@ -584,10 +584,10 @@
     <Compile Include="Modelo\EstadoEntrega.cs" />
     <Compile Include="Modelo\Localidad.cs" />
     <Compile Include="Modelo\Provincia.cs" />
-    <Compile Include="Soporte\IU_ConsultarArticulo.cs">
+    <Compile Include="Soporte\Articulo\IU_ConsultarArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\IU_ConsultarArticulo.Designer.cs">
+    <Compile Include="Soporte\Articulo\IU_ConsultarArticulo.Designer.cs">
       <DependentUpon>IU_ConsultarArticulo.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\MenuOpciones.cs" />
@@ -599,10 +599,10 @@
     </Compile>
     <Compile Include="Modelo\Preferencias.cs" />
     <Compile Include="Modelo\Proveedor.cs" />
-    <Compile Include="Soporte\IU_ActualizarArticulo.cs">
+    <Compile Include="Soporte\Articulo\IU_ActualizarArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\IU_ActualizarArticulo.Designer.cs">
+    <Compile Include="Soporte\Articulo\IU_ActualizarArticulo.Designer.cs">
       <DependentUpon>IU_ActualizarArticulo.cs</DependentUpon>
     </Compile>
     <Compile Include="Soporte\IU_MenuPrincipalSoporte.cs">
@@ -611,10 +611,10 @@
     <Compile Include="Soporte\IU_MenuPrincipalSoporte.Designer.cs">
       <DependentUpon>IU_MenuPrincipalSoporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\IU_RegistrarArticulo.cs">
+    <Compile Include="Soporte\Articulo\IU_RegistrarArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\IU_RegistrarArticulo.Designer.cs">
+    <Compile Include="Soporte\Articulo\IU_RegistrarArticulo.Designer.cs">
       <DependentUpon>IU_RegistrarArticulo.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\TipoTelefono.cs" />
@@ -855,82 +855,82 @@
     <EmbeddedResource Include="Logistica\RegistrarIngresoDeProducto\IU_RegistroIngresoProducto.resx">
       <DependentUpon>IU_RegistroIngresoProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\IU_ActualizarArticulo.resx">
+    <EmbeddedResource Include="Soporte\Articulo\IU_ActualizarArticulo.resx">
       <DependentUpon>IU_ActualizarArticulo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\IU_ActualizarMarca.resx">
+    <EmbeddedResource Include="Soporte\Marca\IU_ActualizarMarca.resx">
       <DependentUpon>IU_ActualizarMarca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\IU_ActualizarProveedorArticulo.resx">
+    <EmbeddedResource Include="Soporte\Articulo\IU_ActualizarProveedorArticulo.resx">
       <DependentUpon>IU_ActualizarProveedorArticulo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\IU_ActualizarTarjeta.resx">
+    <EmbeddedResource Include="Soporte\Tarjeta\IU_ActualizarTarjeta.resx">
       <DependentUpon>IU_ActualizarTarjeta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\IU_ActualizarTiposArticulo.resx">
+    <EmbeddedResource Include="Soporte\Articulo\IU_ActualizarTiposArticulo.resx">
       <DependentUpon>IU_ActualizarTiposArticulo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\IU_ActualizarUbicacion.resx">
+    <EmbeddedResource Include="Soporte\Ubicacion\IU_ActualizarUbicacion.resx">
       <DependentUpon>IU_ActualizarUbicacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\IU_ActualizarUsuario.resx">
+    <EmbeddedResource Include="Soporte\Usuario\IU_ActualizarUsuario.resx">
       <DependentUpon>IU_ActualizarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\IU_ConsultarArticulo.resx">
+    <EmbeddedResource Include="Soporte\Articulo\IU_ConsultarArticulo.resx">
       <DependentUpon>IU_ConsultarArticulo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\IU_ConsultarEmpresa.resx">
+    <EmbeddedResource Include="Soporte\Empresa\IU_ConsultarEmpresa.resx">
       <DependentUpon>IU_ConsultarEmpresa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\IU_ConsultarHistorialSesiones.resx">
+    <EmbeddedResource Include="Soporte\Usuario\IU_ConsultarHistorialSesiones.resx">
       <DependentUpon>IU_ConsultarHistorialSesiones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\IU_ConsultarMarca.resx">
+    <EmbeddedResource Include="Soporte\Marca\IU_ConsultarMarca.resx">
       <DependentUpon>IU_ConsultarMarca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\IU_ConsultarUbicacion.resx">
+    <EmbeddedResource Include="Soporte\Ubicacion\IU_ConsultarUbicacion.resx">
       <DependentUpon>IU_ConsultarUbicacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\IU_ConsultarUsuario.resx">
+    <EmbeddedResource Include="Soporte\Usuario\IU_ConsultarUsuario.resx">
       <DependentUpon>IU_ConsultarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\IU_DatosUsuario.resx">
+    <EmbeddedResource Include="Soporte\Usuario\IU_DatosUsuario.resx">
       <DependentUpon>IU_DatosUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\IU_DetalleMiEmpresa.resx">
+    <EmbeddedResource Include="Soporte\Empresa\IU_DetalleMiEmpresa.resx">
       <DependentUpon>IU_DetalleMiEmpresa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\IU_EliminarMiEmpresa.resx">
+    <EmbeddedResource Include="Soporte\Empresa\IU_EliminarMiEmpresa.resx">
       <DependentUpon>IU_EliminarMiEmpresa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Soporte\IU_MenuPrincipalSoporte.resx">
       <DependentUpon>IU_MenuPrincipalSoporte.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\IU_ModificarEmpresa.resx">
+    <EmbeddedResource Include="Soporte\Empresa\IU_ModificarEmpresa.resx">
       <DependentUpon>IU_ModificarEmpresa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\IU_RegistrarArticulo.resx">
+    <EmbeddedResource Include="Soporte\Articulo\IU_RegistrarArticulo.resx">
       <DependentUpon>IU_RegistrarArticulo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\IU_RegistrarEmpresa.resx">
+    <EmbeddedResource Include="Soporte\Empresa\IU_RegistrarEmpresa.resx">
       <DependentUpon>IU_RegistrarEmpresa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\IU_RegistrarMarca.resx">
+    <EmbeddedResource Include="Soporte\Marca\IU_RegistrarMarca.resx">
       <DependentUpon>IU_RegistrarMarca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\IU_RegistrarProveedorArticulo.resx">
+    <EmbeddedResource Include="Soporte\Articulo\IU_RegistrarProveedorArticulo.resx">
       <DependentUpon>IU_RegistrarProveedorArticulo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\IU_RegistrarTarjeta.resx">
+    <EmbeddedResource Include="Soporte\Tarjeta\IU_RegistrarTarjeta.resx">
       <DependentUpon>IU_RegistrarTarjeta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\IU_RegistrarTiposArticulo.resx">
+    <EmbeddedResource Include="Soporte\Articulo\IU_RegistrarTiposArticulo.resx">
       <DependentUpon>IU_RegistrarTiposArticulo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\IU_RegistrarUbicacion.resx">
+    <EmbeddedResource Include="Soporte\Ubicacion\IU_RegistrarUbicacion.resx">
       <DependentUpon>IU_RegistrarUbicacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\IU_RegistrarUsuario.resx">
+    <EmbeddedResource Include="Soporte\Usuario\IU_RegistrarUsuario.resx">
       <DependentUpon>IU_RegistrarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Soporte\Reportes\InformeAnualVentas\IU_ReporteAnualVentas.resx">
@@ -1274,6 +1274,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

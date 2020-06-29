@@ -38,6 +38,7 @@
             this.btn_registrar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cbx_tipoEncargado = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -76,11 +77,12 @@
             this.label20 = new System.Windows.Forms.Label();
             this.txt_calle = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.cbx_empresa = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.gb_domicilio.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -182,6 +184,15 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DATOS USUARIO";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SistemaLaObra.Properties.Resources.usuariosGris_128;
+            this.pictureBox1.Location = new System.Drawing.Point(435, 20);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(128, 128);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
             // 
             // cbx_tipoEncargado
             // 
@@ -369,6 +380,8 @@
             // 
             // gb_domicilio
             // 
+            this.gb_domicilio.Controls.Add(this.cbx_empresa);
+            this.gb_domicilio.Controls.Add(this.label22);
             this.gb_domicilio.Controls.Add(this.cbx_localidad);
             this.gb_domicilio.Controls.Add(this.label15);
             this.gb_domicilio.Controls.Add(this.cbx_departamento);
@@ -549,14 +562,23 @@
             this.label21.TabIndex = 0;
             this.label21.Text = "Calle:";
             // 
-            // pictureBox1
+            // label22
             // 
-            this.pictureBox1.Image = global::SistemaLaObra.Properties.Resources.usuariosGris_128;
-            this.pictureBox1.Location = new System.Drawing.Point(435, 20);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(128, 128);
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(270, 139);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(60, 15);
+            this.label22.TabIndex = 16;
+            this.label22.Text = "Empresa:";
+            // 
+            // cbx_empresa
+            // 
+            this.cbx_empresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_empresa.FormattingEnabled = true;
+            this.cbx_empresa.Location = new System.Drawing.Point(378, 136);
+            this.cbx_empresa.Name = "cbx_empresa";
+            this.cbx_empresa.Size = new System.Drawing.Size(174, 23);
+            this.cbx_empresa.TabIndex = 17;
             // 
             // IU_RegistrarUsuario
             // 
@@ -578,11 +600,11 @@
             this.Load += new System.EventHandler(this.IU_RegistrarUsuario_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.gb_domicilio.ResumeLayout(false);
             this.gb_domicilio.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -637,5 +659,7 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.DateTimePicker txt_fechaNacimiento;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox cbx_empresa;
+        private System.Windows.Forms.Label label22;
     }
 }

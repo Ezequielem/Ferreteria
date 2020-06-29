@@ -657,3 +657,7 @@ C:\Users\EZEQUIEL\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra
 C:\Users\EZEQUIEL\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_RegistrarEmpresa.resources
 C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_DetalleMiEmpresa.resources
 C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_EliminarMiEmpresa.resources
+C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_DetalleMiEmpresa.resources
+C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_EliminarMiEmpresa.resources
+C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_ModificarEmpresa.resources
+C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_RegistrarEmpresa.resources

@@ -124,6 +124,8 @@ namespace SistemaLaObra.Soporte
             interfazDatosUsuario.lbl_departamento.Text = departamento.mostrarNombre(Encargado.CodigoDepartamento);
             Localidad localidad = new Localidad();
             interfazDatosUsuario.lbl_localidad.Text = localidad.mostrarNombre(Encargado.CodigoLocalidad);
+            Encargado.MiEmpresa.mostrarDatos(Encargado.CodigoMiEmpresa);
+            interfazDatosUsuario.lbl_empresa.Text = Encargado.MiEmpresa.NombreFantasia;
             interfazDatosUsuario.ShowDialog();
         }
 
