@@ -81,10 +81,10 @@ namespace SistemaLaObra.Soporte
             txt_barrio.Text = Encargado.NombreBarrio;
             txt_codigoPostal.Text = Encargado.CodigoPostal.ToString();
             cargarProvincias();
-            Provincia.mostrarDatos(Encargado.CodigoProvincia);
+            //Provincia.mostrarDatos(Encargado.CodigoProvincia);
             cbx_provincia.Text = Provincia.NombreProvincia;
             cargarDepartamentos();
-            cbx_departamento.Text = Departamento.mostrarNombre(Encargado.CodigoDepartamento);
+            //cbx_departamento.Text = Departamento.mostrarNombre(Encargado.CodigoDepartamento);
             cargarLocalidades();
             cbx_localidad.Text = Localidad.mostrarNombre(Encargado.CodigoLocalidad);
         }
@@ -270,7 +270,7 @@ namespace SistemaLaObra.Soporte
         {
             if (int.Parse(txt_numero.Text) != 0)
             {
-                Encargado.Numero = int.Parse(txt_numero.Text);
+                //Encargado.Numero = int.Parse(txt_numero.Text);
             }
         }
 
@@ -293,18 +293,18 @@ namespace SistemaLaObra.Soporte
         {
             if (int.Parse(txt_codigoPostal.Text) != 0)
             {
-                Encargado.CodigoPostal = int.Parse(txt_codigoPostal.Text);
+                //Encargado.CodigoPostal = int.Parse(txt_codigoPostal.Text);
             }
         }
 
         private void tomarSeleccionProvincia()
         {
-            Encargado.CodigoProvincia = int.Parse(cbx_provincia.SelectedValue.ToString());
+            //Encargado.CodigoProvincia = int.Parse(cbx_provincia.SelectedValue.ToString());
         }
 
         private void tomarSeleccionDepartamento()
         {
-            Encargado.CodigoDepartamento = int.Parse(cbx_departamento.SelectedValue.ToString());
+            //Encargado.CodigoDepartamento = int.Parse(cbx_departamento.SelectedValue.ToString());
         }
 
         private void tomarSeleccionLocalidad()

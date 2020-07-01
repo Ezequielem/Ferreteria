@@ -93,23 +93,21 @@ namespace SistemaLaObra.Soporte
         {
             Usuario.mostrarDatos(int.Parse(dgv_usuarios.CurrentRow.Cells[4].Value.ToString()));
             Encargado.mostrarDatos(Encargado.obtenerCodigoEncargado(Usuario.CodigoUsuario));
+            Encargado.Localidad.mostrarDatos(Encargado.CodigoLocalidad);
+            Encargado.MiEmpresa.mostrarDatos(Encargado.CodigoMiEmpresa);
+            Encargado.TipoDocumento.mostrarDatos(Encargado.CodigoTipoDocumento);
+            Encargado.TipoTelefono.mostrarDatos(Encargado.CodigoTipoTelefono);
             TipoEncargado.mostrarDatos(ListaTipoEncargado.obtenerCodigoTipoEncargado(Usuario.CodigoUsuario));
-
             interfazDatosUsuario = new IU_DatosUsuario();
-
             interfazDatosUsuario.lbl_nombreUsuario.Text = Usuario.NombreUsuario;
             interfazDatosUsuario.lbl_tipoEncargado.Text = TipoEncargado.Descripcion;
             interfazDatosUsuario.lbl_legajo.Text = Encargado.Legajo.ToString();
             interfazDatosUsuario.lbl_nombreEncargado.Text = Encargado.Nombre;
             interfazDatosUsuario.lbl_apellidoEncargado.Text = Encargado.Apellido;
-            TipoDocumento tipoDocumento = new TipoDocumento();
-            tipoDocumento.mostrarDatos(Encargado.CodigoTipoDocumento);
-            interfazDatosUsuario.lbl_tipoDocumento.Text = tipoDocumento.Descripcion;
+            interfazDatosUsuario.lbl_tipoDocumento.Text = Encargado.TipoDocumento.Descripcion;
             interfazDatosUsuario.lbl_nroDocumento.Text = Encargado.NroDocumento;
             interfazDatosUsuario.lbl_fechaNacimiento.Text = Encargado.FechaNacimiento.ToString("dd/MM/yyyy");
-            TipoTelefono tipoTelefono = new TipoTelefono();
-            tipoTelefono.mostrarDatos(Encargado.CodigoTipoTelefono);
-            interfazDatosUsuario.lbl_tipoTelefono.Text = tipoTelefono.Descripcion;
+            interfazDatosUsuario.lbl_tipoTelefono.Text = Encargado.TipoTelefono.Descripcion;
             interfazDatosUsuario.lbl_nroTelefono.Text = Encargado.NroTelefono;
             interfazDatosUsuario.lbl_calle.Text = Encargado.Calle;
             interfazDatosUsuario.lbl_numero.Text = Encargado.Numero.ToString();
@@ -117,14 +115,9 @@ namespace SistemaLaObra.Soporte
             interfazDatosUsuario.lbl_piso.Text = Encargado.Piso;
             interfazDatosUsuario.lbl_barrio.Text = Encargado.NombreBarrio;
             interfazDatosUsuario.lbl_codigoPostal.Text = Encargado.CodigoPostal.ToString();
-            Provincia provincia = new Provincia();
-            provincia.mostrarDatos(Encargado.CodigoProvincia);
-            interfazDatosUsuario.lbl_provincia.Text = provincia.NombreProvincia;
-            Departamento departamento = new Departamento();
-            interfazDatosUsuario.lbl_departamento.Text = departamento.mostrarNombre(Encargado.CodigoDepartamento);
-            Localidad localidad = new Localidad();
-            interfazDatosUsuario.lbl_localidad.Text = localidad.mostrarNombre(Encargado.CodigoLocalidad);
-            Encargado.MiEmpresa.mostrarDatos(Encargado.CodigoMiEmpresa);
+            interfazDatosUsuario.lbl_provincia.Text = Encargado.Localidad.Departamento.Provincia.NombreProvincia;
+            interfazDatosUsuario.lbl_departamento.Text = Encargado.Localidad.Departamento.NombreDepartamento;
+            interfazDatosUsuario.lbl_localidad.Text = Encargado.Localidad.NombreLocalidad;            
             interfazDatosUsuario.lbl_empresa.Text = Encargado.MiEmpresa.NombreFantasia;
             interfazDatosUsuario.ShowDialog();
         }

@@ -232,14 +232,12 @@ namespace SistemaLaObra
                     encargado.CodigoTipoTelefono = int.Parse(lector["codigoTipoTelefono"].ToString());
                     encargado.CodigoTipoTelefono = int.Parse(lector["nroTelefono"].ToString());
                     encargado.Calle = lector["calle"].ToString();
-                    encargado.Numero = int.Parse(lector["numero"].ToString());
+                    encargado.Numero = lector["numero"].ToString();
                     encargado.Depto = lector["depto"].ToString();
                     encargado.Piso = lector["piso"].ToString();
-                    encargado.CodigoPostal = int.Parse(lector["codigoPostal"].ToString());
+                    encargado.CodigoPostal = lector["codigoPostal"].ToString();
                     encargado.NombreBarrio = lector["nombreBarrio"].ToString();
                     encargado.CodigoUsuario = int.Parse(lector["codigoUsuario"].ToString());
-                    encargado.CodigoProvincia = int.Parse(lector["codigoProvincia"].ToString());
-                    encargado.CodigoDepartamento = int.Parse(lector["codigoDepartamento"].ToString());
                     encargado.CodigoLocalidad = int.Parse(lector["codigoLocalidad"].ToString());
 
                 }

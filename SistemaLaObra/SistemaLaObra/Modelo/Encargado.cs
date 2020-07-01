@@ -28,28 +28,38 @@ namespace SistemaLaObra
         public int CodigoTipoTelefono { get; set; }
         public String NroTelefono { get; set; }
         public String Calle { get; set; }
-        public int Numero { get; set; }
+        public String Numero { get; set; }
         public String Depto { get; set; }
         public String Piso { get; set; }
         public String NombreBarrio { get; set; }
-        public int CodigoPostal { get; set; }
-        public int CodigoProvincia { get; set; }
-        public int CodigoDepartamento { get; set; }
+        public String CodigoPostal { get; set; }
         public int CodigoLocalidad { get; set; }
         public int CodigoUsuario { get; set; }
         public int CodigoMiEmpresa { get; set; }
         public MiEmpresa MiEmpresa { get; set; }
+        public TipoDocumento TipoDocumento { get; set; }
+        public TipoTelefono TipoTelefono { get; set; }
+        public Localidad Localidad { get; set; }
 
         public Encargado()
         {
             MiEmpresa = new MiEmpresa();
+            TipoDocumento = new TipoDocumento();
+            TipoTelefono = new TipoTelefono();
+            Localidad = new Localidad();
         }
 
         public void crear(Encargado encargado)
         {
             acceso = new AccesoDatos();
             conexion = new SqlConnection(acceso.CadenaConexion());
-            consulta = new SqlCommand("INSERT INTO Encargados(codigoEncargado,legajo,nombre,apellido,codigoTipoDocumento,nroDocumento,fechaNacimiento,codigoTipoTelefono,nroTelefono,calle,numero,depto,piso,codigoPostal,nombreBarrio,codigoProvincia,codigoDepartamento,codigoLocalidad,codigoUsuario, codigoMiEmpresa) VALUES(@codigoEncargado,@legajo,@nombre,@apellido,@codigoTipoDocumento,@nroDocumento,@fechaNacimiento,@codigoTipoTelefono,@nroTelefono,@calle,@numero,@depto,@piso,@codigoPostal,@nombreBarrio,@codigoProvincia,@codigoDepartamento,@codigoLocalidad,@codigoUsuario, @codigoMiEmpresa)", conexion);
+            consulta = new SqlCommand(@"INSERT INTO Encargados(codigoEncargado,legajo,nombre,apellido,codigoTipoDocumento,
+                                        nroDocumento,fechaNacimiento,codigoTipoTelefono,nroTelefono,calle,numero,depto,piso,
+                                        codigoPostal,nombreBarrio,codigoLocalidad,
+                                        codigoUsuario, codigoMiEmpresa) VALUES(@codigoEncargado,@legajo,@nombre,@apellido,
+                                        @codigoTipoDocumento,@nroDocumento,@fechaNacimiento,@codigoTipoTelefono,@nroTelefono,
+                                        @calle,@numero,@depto,@piso,@codigoPostal,@nombreBarrio,
+                                        @codigoLocalidad,@codigoUsuario, @codigoMiEmpresa)", conexion);
             adaptador = new SqlDataAdapter();
             adaptador.InsertCommand = consulta;
 
@@ -63,13 +73,11 @@ namespace SistemaLaObra
             adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoTipoTelefono", SqlDbType.Int));
             adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nroTelefono", SqlDbType.VarChar));
             adaptador.InsertCommand.Parameters.Add(new SqlParameter("@calle", SqlDbType.VarChar));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@numero", SqlDbType.Int));
+            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@numero", SqlDbType.VarChar));
             adaptador.InsertCommand.Parameters.Add(new SqlParameter("@depto", SqlDbType.VarChar));
             adaptador.InsertCommand.Parameters.Add(new SqlParameter("@piso", SqlDbType.VarChar));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoPostal", SqlDbType.Int));
+            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoPostal", SqlDbType.VarChar));
             adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nombreBarrio", SqlDbType.VarChar));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoProvincia", SqlDbType.Int));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoDepartamento", SqlDbType.Int));
             adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoLocalidad", SqlDbType.Int));
             adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoUsuario", SqlDbType.Int));
             adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoMiEmpresa", SqlDbType.Int));
@@ -86,19 +94,10 @@ namespace SistemaLaObra
             adaptador.InsertCommand.Parameters["@nroTelefono"].Value = encargado.NroTelefono;
             adaptador.InsertCommand.Parameters["@calle"].Value = encargado.Calle;
             adaptador.InsertCommand.Parameters["@numero"].Value = encargado.Numero;
-
-            if (encargado.Depto == "") adaptador.InsertCommand.Parameters["@depto"].Value = DBNull.Value;
-            else adaptador.InsertCommand.Parameters["@depto"].Value = encargado.Depto;
-
-            if (encargado.Piso == "") adaptador.InsertCommand.Parameters["@piso"].Value = DBNull.Value;
-            else adaptador.InsertCommand.Parameters["@piso"].Value = encargado.Piso;
-
-            if (encargado.CodigoPostal == 0) adaptador.InsertCommand.Parameters["@codigoPostal"].Value = DBNull.Value;
-            else adaptador.InsertCommand.Parameters["@codigoPostal"].Value = encargado.CodigoPostal;
-
+            adaptador.InsertCommand.Parameters["@depto"].Value = encargado.Depto;
+            adaptador.InsertCommand.Parameters["@piso"].Value = encargado.Piso;
+            adaptador.InsertCommand.Parameters["@codigoPostal"].Value = encargado.CodigoPostal;
             adaptador.InsertCommand.Parameters["@nombreBarrio"].Value = encargado.NombreBarrio;
-            adaptador.InsertCommand.Parameters["@codigoProvincia"].Value = encargado.CodigoProvincia;
-            adaptador.InsertCommand.Parameters["@codigoDepartamento"].Value = encargado.CodigoDepartamento;
             adaptador.InsertCommand.Parameters["@codigoLocalidad"].Value = encargado.CodigoLocalidad;
             adaptador.InsertCommand.Parameters["@codigoUsuario"].Value = encargado.CodigoUsuario;
             adaptador.InsertCommand.Parameters["@codigoMiEmpresa"].Value = encargado.CodigoMiEmpresa;
@@ -135,8 +134,6 @@ namespace SistemaLaObra
                                                               piso = @piso,
                                                               codigoPostal = @codigoPostal,
                                                               nombreBarrio = @nombreBarrio,
-                                                              codigoProvincia = @codigoProvincia,
-                                                              codigoDepartamento = @codigoDepartamento,
                                                               codigoLocalidad = @codigoLocalidad,
                                                               codigoMiEmpresa = @codigoMiEmpresa
                                                               WHERE codigoEncargado = @codigoEncargado", conexion);
@@ -152,13 +149,11 @@ namespace SistemaLaObra
             adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@codigoTipoTelefono", SqlDbType.Int));
             adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@nroTelefono", SqlDbType.VarChar));
             adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@calle", SqlDbType.VarChar));
-            adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@numero", SqlDbType.Int));
+            adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@numero", SqlDbType.VarChar));
             adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@depto", SqlDbType.VarChar));
             adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@piso", SqlDbType.VarChar));
-            adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@codigoPostal", SqlDbType.Int));
+            adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@codigoPostal", SqlDbType.VarChar));
             adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@nombreBarrio", SqlDbType.VarChar));
-            adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@codigoProvincia", SqlDbType.Int));
-            adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@codigoDepartamento", SqlDbType.Int));
             adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@codigoLocalidad", SqlDbType.Int));
             adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@codigoMiEmpresa", SqlDbType.Int));
 
@@ -173,19 +168,10 @@ namespace SistemaLaObra
             adaptador.UpdateCommand.Parameters["@nroTelefono"].Value = encargado.NroTelefono;
             adaptador.UpdateCommand.Parameters["@calle"].Value = encargado.Calle;
             adaptador.UpdateCommand.Parameters["@numero"].Value = encargado.Numero;
-
-            if (encargado.Depto == "") adaptador.UpdateCommand.Parameters["@depto"].Value = DBNull.Value;
-            else adaptador.UpdateCommand.Parameters["@depto"].Value = encargado.Depto;
-
-            if (encargado.Piso == "") adaptador.UpdateCommand.Parameters["@piso"].Value = DBNull.Value;
-            else adaptador.UpdateCommand.Parameters["@piso"].Value = encargado.Piso;
-
-            if (encargado.CodigoPostal == 0) adaptador.UpdateCommand.Parameters["@codigoPostal"].Value = DBNull.Value;
-            else adaptador.UpdateCommand.Parameters["@codigoPostal"].Value = encargado.CodigoPostal;
-
+            adaptador.UpdateCommand.Parameters["@depto"].Value = encargado.Depto;
+            adaptador.UpdateCommand.Parameters["@piso"].Value = encargado.Piso;
+            adaptador.UpdateCommand.Parameters["@codigoPostal"].Value = encargado.CodigoPostal;
             adaptador.UpdateCommand.Parameters["@nombreBarrio"].Value = encargado.NombreBarrio;
-            adaptador.UpdateCommand.Parameters["@codigoProvincia"].Value = encargado.CodigoProvincia;
-            adaptador.UpdateCommand.Parameters["@codigoDepartamento"].Value = encargado.CodigoDepartamento;
             adaptador.UpdateCommand.Parameters["@codigoLocalidad"].Value = encargado.CodigoLocalidad;
             adaptador.UpdateCommand.Parameters["@codigoMiEmpresa"].Value = encargado.CodigoMiEmpresa;
 
@@ -226,18 +212,11 @@ namespace SistemaLaObra
                     CodigoTipoTelefono = int.Parse(lector["codigoTipoTelefono"].ToString());
                     NroTelefono = lector["nroTelefono"].ToString();
                     Calle = lector["calle"].ToString();
-                    Numero = int.Parse(lector["numero"].ToString());
+                    Numero =lector["numero"].ToString();
                     Depto = lector["depto"].ToString();
                     Piso = lector["piso"].ToString();
-
-                    int numero3;
-                    bool resultado3 = int.TryParse(lector["codigoPostal"].ToString(), out numero3);
-                    if (resultado3) CodigoPostal = numero3;
-                    else CodigoPostal = 0;
-
+                    CodigoPostal = lector["codigoPostal"].ToString();
                     NombreBarrio = lector["nombreBarrio"].ToString();
-                    CodigoProvincia = int.Parse(lector["codigoProvincia"].ToString());
-                    CodigoDepartamento = int.Parse(lector["codigoDepartamento"].ToString());
                     CodigoLocalidad = int.Parse(lector["codigoLocalidad"].ToString());
                     CodigoUsuario = int.Parse(lector["codigoUsuario"].ToString());
                     CodigoMiEmpresa = int.Parse(lector["codigoMiEmpresa"].ToString());
@@ -276,18 +255,11 @@ namespace SistemaLaObra
                     this.CodigoTipoTelefono = int.Parse(lector["codigoTipoTelefono"].ToString());
                     this.NroTelefono = lector["nroTelefono"].ToString();
                     this.Calle = lector["calle"].ToString();
-                    this.Numero = int.Parse(lector["numero"].ToString());
+                    this.Numero = lector["numero"].ToString();
                     this.Depto = lector["depto"].ToString();
                     this.Piso = lector["piso"].ToString();
-
-                    int numero3;
-                    bool resultado3 = int.TryParse(lector["codigoPostal"].ToString(), out numero3);
-                    if (resultado3) CodigoPostal = numero3;
-                    else CodigoPostal = 0;
-
+                    this.CodigoPostal = lector["codigoPostal"].ToString();
                     this.NombreBarrio = lector["nombreBarrio"].ToString();
-                    this.CodigoProvincia = int.Parse(lector["codigoProvincia"].ToString());
-                    this.CodigoDepartamento = int.Parse(lector["codigoDepartamento"].ToString());
                     this.CodigoLocalidad = int.Parse(lector["codigoLocalidad"].ToString());
                     this.CodigoUsuario = int.Parse(lector["codigoUsuario"].ToString());
                     this.CodigoMiEmpresa = int.Parse(lector["codigoMiEmpresa"].ToString());
