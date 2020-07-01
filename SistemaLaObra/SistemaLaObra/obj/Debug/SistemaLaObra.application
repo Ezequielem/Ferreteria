@@ -7,14 +7,14 @@
     <framework targetVersion="4.5.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="SistemaLaObra.exe.manifest" size="99090">
+    <dependentAssembly dependencyType="install" codebase="SistemaLaObra.exe.manifest" size="82016">
       <assemblyIdentity name="SistemaLaObra.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+wWWXPtrgggR6VFaDrToIQI8mx3QzqY5y2fj1dKbgOM=</dsig:DigestValue>
+        <dsig:DigestValue>R3+UsvdoiBF9mZ2NNxZ3yDtb+eh0RP8abBBPmR1D+7k=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

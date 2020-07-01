@@ -191,7 +191,7 @@ namespace SistemaLaObra.Soporte
         {
             if (txt_nuevaContraseña.Text != "")
             {
-                if (txt_nuevaContraseña.Text.Equals(txt_confirmarContraseña.Text))
+                if (txt_nuevaContraseña.Text.Equals(txt_nuevaContraseña.Text))
                 {
                     Usuario.Contraseña = txt_nuevaContraseña.Text;
                     return true;
