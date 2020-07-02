@@ -110,7 +110,7 @@ namespace SistemaLaObra.Soporte
             interfazDatosUsuario.txt_tipoTelefono.Text = Encargado.TipoTelefono.Descripcion;
             interfazDatosUsuario.txt_nroTelefono.Text = Encargado.NroTelefono;
             interfazDatosUsuario.txt_calle.Text = Encargado.Calle;
-            interfazDatosUsuario.txt_nroTelefono.Text = Encargado.Numero.ToString();
+            interfazDatosUsuario.txt_numero.Text = Encargado.Numero.ToString();
             interfazDatosUsuario.txt_depto.Text = Encargado.Depto;
             interfazDatosUsuario.txt_piso.Text = Encargado.Piso;
             interfazDatosUsuario.txt_barrio.Text = Encargado.NombreBarrio;

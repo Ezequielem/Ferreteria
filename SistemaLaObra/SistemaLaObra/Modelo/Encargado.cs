@@ -1,4 +1,5 @@
-﻿using SistemaLaObra.Modelo;
+﻿using SistemaLaObra.InicioSesion;
+using SistemaLaObra.Modelo;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -40,6 +41,7 @@ namespace SistemaLaObra
         public TipoDocumento TipoDocumento { get; set; }
         public TipoTelefono TipoTelefono { get; set; }
         public Localidad Localidad { get; set; }
+        public Usuario Usuario { get; set; }
 
         public Encargado()
         {
@@ -47,63 +49,61 @@ namespace SistemaLaObra
             TipoDocumento = new TipoDocumento();
             TipoTelefono = new TipoTelefono();
             Localidad = new Localidad();
+            Usuario = new Usuario();
         }
 
         public void crear(Encargado encargado)
         {
             acceso = new AccesoDatos();
             conexion = new SqlConnection(acceso.CadenaConexion());
-            consulta = new SqlCommand(@"INSERT INTO Encargados(codigoEncargado,legajo,nombre,apellido,codigoTipoDocumento,
+            consulta = new SqlCommand(@"INSERT INTO Encargados(legajo,nombre,apellido,codigoTipoDocumento,
                                         nroDocumento,fechaNacimiento,codigoTipoTelefono,nroTelefono,calle,numero,depto,piso,
                                         codigoPostal,nombreBarrio,codigoLocalidad,
-                                        codigoUsuario, codigoMiEmpresa) VALUES(@codigoEncargado,@legajo,@nombre,@apellido,
+                                        codigoUsuario, codigoMiEmpresa) VALUES(@legajo,@nombre,@apellido,
                                         @codigoTipoDocumento,@nroDocumento,@fechaNacimiento,@codigoTipoTelefono,@nroTelefono,
                                         @calle,@numero,@depto,@piso,@codigoPostal,@nombreBarrio,
                                         @codigoLocalidad,@codigoUsuario, @codigoMiEmpresa)", conexion);
-            adaptador = new SqlDataAdapter();
-            adaptador.InsertCommand = consulta;
-
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoEncargado", SqlDbType.Int));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@legajo", SqlDbType.Int));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nombre", SqlDbType.VarChar));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@apellido", SqlDbType.VarChar));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoTipoDocumento", SqlDbType.Int));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nroDocumento", SqlDbType.VarChar));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@fechaNacimiento", SqlDbType.Date));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoTipoTelefono", SqlDbType.Int));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nroTelefono", SqlDbType.VarChar));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@calle", SqlDbType.VarChar));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@numero", SqlDbType.VarChar));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@depto", SqlDbType.VarChar));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@piso", SqlDbType.VarChar));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoPostal", SqlDbType.VarChar));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nombreBarrio", SqlDbType.VarChar));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoLocalidad", SqlDbType.Int));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoUsuario", SqlDbType.Int));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoMiEmpresa", SqlDbType.Int));
-
-            adaptador.InsertCommand.Parameters["@codigoEncargado"].Value = encargado.CodigoEncargado;
-            adaptador.InsertCommand.Parameters["@legajo"].Value = encargado.Legajo;
-            adaptador.InsertCommand.Parameters["@nombre"].Value = encargado.Nombre;
-            adaptador.InsertCommand.Parameters["@apellido"].Value = encargado.Apellido;
-            adaptador.InsertCommand.Parameters["@nombre"].Value = encargado.Nombre;
-            adaptador.InsertCommand.Parameters["@codigoTipoDocumento"].Value = encargado.CodigoTipoDocumento;
-            adaptador.InsertCommand.Parameters["@nroDocumento"].Value = encargado.NroDocumento;
-            adaptador.InsertCommand.Parameters["@fechaNacimiento"].Value = encargado.FechaNacimiento;
-            adaptador.InsertCommand.Parameters["@codigoTipoTelefono"].Value = encargado.CodigoTipoTelefono;
-            adaptador.InsertCommand.Parameters["@nroTelefono"].Value = encargado.NroTelefono;
-            adaptador.InsertCommand.Parameters["@calle"].Value = encargado.Calle;
-            adaptador.InsertCommand.Parameters["@numero"].Value = encargado.Numero;
-            adaptador.InsertCommand.Parameters["@depto"].Value = encargado.Depto;
-            adaptador.InsertCommand.Parameters["@piso"].Value = encargado.Piso;
-            adaptador.InsertCommand.Parameters["@codigoPostal"].Value = encargado.CodigoPostal;
-            adaptador.InsertCommand.Parameters["@nombreBarrio"].Value = encargado.NombreBarrio;
-            adaptador.InsertCommand.Parameters["@codigoLocalidad"].Value = encargado.CodigoLocalidad;
-            adaptador.InsertCommand.Parameters["@codigoUsuario"].Value = encargado.CodigoUsuario;
-            adaptador.InsertCommand.Parameters["@codigoMiEmpresa"].Value = encargado.CodigoMiEmpresa;
-
             try
             {
+                adaptador = new SqlDataAdapter();
+                adaptador.InsertCommand = consulta;
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@legajo", SqlDbType.Int));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nombre", SqlDbType.VarChar));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@apellido", SqlDbType.VarChar));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoTipoDocumento", SqlDbType.Int));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nroDocumento", SqlDbType.VarChar));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@fechaNacimiento", SqlDbType.Date));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoTipoTelefono", SqlDbType.Int));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nroTelefono", SqlDbType.VarChar));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@calle", SqlDbType.VarChar));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@numero", SqlDbType.VarChar));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@depto", SqlDbType.VarChar));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@piso", SqlDbType.VarChar));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoPostal", SqlDbType.VarChar));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nombreBarrio", SqlDbType.VarChar));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoLocalidad", SqlDbType.Int));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoUsuario", SqlDbType.Int));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoMiEmpresa", SqlDbType.Int));
+
+                adaptador.InsertCommand.Parameters["@legajo"].Value = encargado.Legajo;
+                adaptador.InsertCommand.Parameters["@nombre"].Value = encargado.Nombre;
+                adaptador.InsertCommand.Parameters["@apellido"].Value = encargado.Apellido;
+                adaptador.InsertCommand.Parameters["@nombre"].Value = encargado.Nombre;
+                adaptador.InsertCommand.Parameters["@codigoTipoDocumento"].Value = encargado.TipoDocumento.CodigoTipoDocumento;
+                adaptador.InsertCommand.Parameters["@nroDocumento"].Value = encargado.NroDocumento;
+                adaptador.InsertCommand.Parameters["@fechaNacimiento"].Value = encargado.FechaNacimiento;
+                adaptador.InsertCommand.Parameters["@codigoTipoTelefono"].Value = encargado.TipoTelefono.CodigoTipoTelefono;
+                adaptador.InsertCommand.Parameters["@nroTelefono"].Value = encargado.NroTelefono;
+                adaptador.InsertCommand.Parameters["@calle"].Value = encargado.Calle;
+                adaptador.InsertCommand.Parameters["@numero"].Value = encargado.Numero;
+                adaptador.InsertCommand.Parameters["@depto"].Value = encargado.Depto;
+                adaptador.InsertCommand.Parameters["@piso"].Value = encargado.Piso;
+                adaptador.InsertCommand.Parameters["@codigoPostal"].Value = encargado.CodigoPostal;
+                adaptador.InsertCommand.Parameters["@nombreBarrio"].Value = encargado.NombreBarrio;
+                adaptador.InsertCommand.Parameters["@codigoLocalidad"].Value = encargado.Localidad.CodigoLocalidad;
+                adaptador.InsertCommand.Parameters["@codigoUsuario"].Value = encargado.Usuario.CodigoUsuario;
+                adaptador.InsertCommand.Parameters["@codigoMiEmpresa"].Value = encargado.MiEmpresa.CodigoMiEmpresa;
+            
                 conexion.Open();
                 adaptador.InsertCommand.ExecuteNonQuery();
             }
@@ -303,34 +303,6 @@ namespace SistemaLaObra
                 conexion.Close();
             }
             return codigoEncargado;
-        }
-
-        public int obtenerUltimoCodigoEncargado()
-        {
-            int codigoEncargado = 0;
-            acceso = new AccesoDatos();
-            conexion = new SqlConnection(acceso.CadenaConexion());
-            consulta = new SqlCommand("select max(codigoEncargado) as codigoEncargado from Encargados", conexion);
-            try
-            {
-                conexion.Open();
-                lector = consulta.ExecuteReader();
-                if (lector.Read())
-                {
-                    codigoEncargado = int.Parse(lector["codigoEncargado"].ToString());
-                }
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show(error.Message);
-            }
-            finally
-            {
-                lector.Close();
-                conexion.Close();
-            }
-            return codigoEncargado;
-        }
-
+        }        
     }
 }

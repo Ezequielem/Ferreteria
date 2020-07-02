@@ -307,7 +307,7 @@
             this.txt_fechaNacimiento.Location = new System.Drawing.Point(388, 5);
             this.txt_fechaNacimiento.Name = "txt_fechaNacimiento";
             this.txt_fechaNacimiento.Size = new System.Drawing.Size(106, 21);
-            this.txt_fechaNacimiento.TabIndex = 18;
+            this.txt_fechaNacimiento.TabIndex = 4;
             this.txt_fechaNacimiento.Value = new System.DateTime(2017, 11, 1, 0, 0, 0, 0);
             // 
             // txt_nroTelefono
@@ -317,7 +317,7 @@
             this.txt_nroTelefono.MaxLength = 50;
             this.txt_nroTelefono.Name = "txt_nroTelefono";
             this.txt_nroTelefono.Size = new System.Drawing.Size(157, 21);
-            this.txt_nroTelefono.TabIndex = 17;
+            this.txt_nroTelefono.TabIndex = 18;
             this.txt_nroTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nroTelefono_KeyPress);
             // 
             // label5
@@ -378,7 +378,7 @@
             this.cbx_tipoTelefono.Location = new System.Drawing.Point(110, 101);
             this.cbx_tipoTelefono.Name = "cbx_tipoTelefono";
             this.cbx_tipoTelefono.Size = new System.Drawing.Size(110, 23);
-            this.cbx_tipoTelefono.TabIndex = 15;
+            this.cbx_tipoTelefono.TabIndex = 17;
             // 
             // txt_nombre
             // 
@@ -387,7 +387,7 @@
             this.txt_nombre.MaxLength = 50;
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(156, 21);
-            this.txt_nombre.TabIndex = 4;
+            this.txt_nombre.TabIndex = 6;
             this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
             // 
             // label7
@@ -417,7 +417,7 @@
             this.txt_apellido.MaxLength = 50;
             this.txt_apellido.Name = "txt_apellido";
             this.txt_apellido.Size = new System.Drawing.Size(157, 21);
-            this.txt_apellido.TabIndex = 6;
+            this.txt_apellido.TabIndex = 8;
             this.txt_apellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_apellido_KeyPress);
             // 
             // label8
@@ -437,7 +437,7 @@
             this.txt_nroDocumento.MaxLength = 50;
             this.txt_nroDocumento.Name = "txt_nroDocumento";
             this.txt_nroDocumento.Size = new System.Drawing.Size(157, 21);
-            this.txt_nroDocumento.TabIndex = 11;
+            this.txt_nroDocumento.TabIndex = 15;
             this.txt_nroDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nroDocumento_KeyPress);
             // 
             // cbx_tipoDocumento
@@ -448,7 +448,7 @@
             this.cbx_tipoDocumento.Location = new System.Drawing.Point(110, 69);
             this.cbx_tipoDocumento.Name = "cbx_tipoDocumento";
             this.cbx_tipoDocumento.Size = new System.Drawing.Size(110, 23);
-            this.cbx_tipoDocumento.TabIndex = 8;
+            this.cbx_tipoDocumento.TabIndex = 11;
             // 
             // label9
             // 
@@ -546,7 +546,6 @@
             this.txt_numero.Name = "txt_numero";
             this.txt_numero.Size = new System.Drawing.Size(70, 21);
             this.txt_numero.TabIndex = 2;
-            this.txt_numero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_numero_KeyPress);
             // 
             // label16
             // 
@@ -565,8 +564,7 @@
             this.txt_codigoPostal.MaxLength = 50;
             this.txt_codigoPostal.Name = "txt_codigoPostal";
             this.txt_codigoPostal.Size = new System.Drawing.Size(70, 21);
-            this.txt_codigoPostal.TabIndex = 6;
-            this.txt_codigoPostal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_codigoPostal_KeyPress);
+            this.txt_codigoPostal.TabIndex = 8;
             // 
             // label18
             // 
@@ -585,7 +583,7 @@
             this.txt_piso.MaxLength = 50;
             this.txt_piso.Name = "txt_piso";
             this.txt_piso.Size = new System.Drawing.Size(70, 21);
-            this.txt_piso.TabIndex = 4;
+            this.txt_piso.TabIndex = 6;
             // 
             // txt_depto
             // 
@@ -594,7 +592,7 @@
             this.txt_depto.MaxLength = 50;
             this.txt_depto.Name = "txt_depto";
             this.txt_depto.Size = new System.Drawing.Size(70, 21);
-            this.txt_depto.TabIndex = 3;
+            this.txt_depto.TabIndex = 4;
             // 
             // label19
             // 
@@ -623,7 +621,7 @@
             this.txt_barrio.MaxLength = 50;
             this.txt_barrio.Name = "txt_barrio";
             this.txt_barrio.Size = new System.Drawing.Size(260, 21);
-            this.txt_barrio.TabIndex = 5;
+            this.txt_barrio.TabIndex = 3;
             // 
             // label13
             // 
@@ -643,7 +641,7 @@
             this.cbx_provincia.Location = new System.Drawing.Point(98, 62);
             this.cbx_provincia.Name = "cbx_provincia";
             this.cbx_provincia.Size = new System.Drawing.Size(260, 23);
-            this.cbx_provincia.TabIndex = 7;
+            this.cbx_provincia.TabIndex = 5;
             this.cbx_provincia.SelectedIndexChanged += new System.EventHandler(this.cbx_provincia_SelectedIndexChanged);
             // 
             // label15
@@ -664,7 +662,7 @@
             this.cbx_departamento.Location = new System.Drawing.Point(98, 91);
             this.cbx_departamento.Name = "cbx_departamento";
             this.cbx_departamento.Size = new System.Drawing.Size(260, 23);
-            this.cbx_departamento.TabIndex = 8;
+            this.cbx_departamento.TabIndex = 7;
             this.cbx_departamento.SelectedIndexChanged += new System.EventHandler(this.cbx_departamento_SelectedIndexChanged);
             // 
             // label14

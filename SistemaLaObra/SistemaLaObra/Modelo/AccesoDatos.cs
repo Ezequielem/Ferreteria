@@ -33,7 +33,7 @@ namespace SistemaLaObra
 
             //return conexion;
 
-            return SistemaLaObra.Properties.Settings.Default.notebookConexion;
+            return SistemaLaObra.Properties.Settings.Default.LaObraConnectionString;
         }
 
         public string generarScript()

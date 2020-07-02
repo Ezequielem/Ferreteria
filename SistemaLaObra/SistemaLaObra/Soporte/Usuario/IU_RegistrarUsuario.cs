@@ -13,7 +13,6 @@ namespace SistemaLaObra.Soporte
 {
     public partial class IU_RegistrarUsuario : Form
     {
-        public Usuario Usuario { get; set; }
         public Encargado Encargado { get; set; }
         public TipoEncargado TipoEncargado { get; set; }
         public Provincia Provincia { get; set; }
@@ -26,7 +25,6 @@ namespace SistemaLaObra.Soporte
         public IU_RegistrarUsuario()
         {
             InitializeComponent();
-            Usuario = new Usuario();
             Encargado = new Encargado();
             TipoEncargado = new TipoEncargado();
             TipoTelefono = new TipoTelefono();
@@ -45,7 +43,6 @@ namespace SistemaLaObra.Soporte
                 if (tomarContraseña())
                 {
                     //USUARIO//
-                    Usuario.CodigoUsuario = Usuario.obtenerUltimoCodigoUsuario() + 1;
                     tomarSeleccionTipoEncargado();
 
                     if (txt_legajo.Text != "" && txt_nombre.Text != "" && txt_apellido.Text != "" && txt_nroDocumento.Text != "" && txt_nroTelefono.Text != "")
@@ -69,16 +66,13 @@ namespace SistemaLaObra.Soporte
                             tomarPiso();
                             tomarBarrio();
                             tomarCodigoPostal();
-                            tomarSeleccionProvincia();
-                            tomarSeleccionDepartamento();
                             tomarSeleccionLocalidad();
-
-                            Usuario.crear(Usuario);
-                            Usuario.crearEnListaTipoEncargado(Usuario.obtenerCodigoUsuario(Usuario.NombreUsuario), codigoTipoEncargado);
-
-                            Usuario.CodigoUsuario = Usuario.CodigoUsuario;
-                            Encargado.CodigoEncargado = Encargado.obtenerUltimoCodigoEncargado() + 1;
+                            tomarEmpresa();
+                            Encargado.Usuario.crear(Encargado.Usuario);
+                            Encargado.Usuario.mostrarDatos(Encargado.Usuario.NombreUsuario);
                             Encargado.crear(Encargado);
+                            Encargado.Usuario.crearEnListaTipoEncargado(Encargado.Usuario.CodigoUsuario, codigoTipoEncargado);
+                            this.Close();
                         }
                         else
                         {
@@ -89,9 +83,8 @@ namespace SistemaLaObra.Soporte
                     {
                         MessageBox.Show("Falta ingresar uno o varios datos personales", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
-
                 }
-            }
+            }            
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
@@ -103,33 +96,33 @@ namespace SistemaLaObra.Soporte
 
         private bool tomarUsuario()
         {
-            if (txt_nombreUsuario.Text != "")
+            if (txt_nombreUsuario.Text != string.Empty)
             {
-                if (!Usuario.confirmarUsuario(txt_nombreUsuario.Text))
+                if (!Encargado.Usuario.confirmarUsuario(txt_nombreUsuario.Text))
                 {
-                    Usuario.NombreUsuario = txt_nombreUsuario.Text;
+                    Encargado.Usuario.NombreUsuario = txt_nombreUsuario.Text;
                     return true;
                 }
                 else
                 {
-                    MessageBox.Show("El usuario ya existe","Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("El usuario ya existe","Advertencia!!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return false;
                 }
             }
             else
             {
-                MessageBox.Show("No ingreso nombre de usuario", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No ingreso nombre de usuario", "Advertencia!!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
         }
 
         private bool tomarContraseña()
         {
-            if (txt_contraseña.Text != "")
+            if (txt_contraseña.Text != string.Empty)
             {
                 if (txt_contraseña.Text.Equals(txt_confirmarContraseña.Text))
                 {
-                    Usuario.Contraseña = txt_contraseña.Text;
+                    Encargado.Usuario.Contraseña = txt_contraseña.Text;
                     return true;
                 }
                 else
@@ -155,6 +148,7 @@ namespace SistemaLaObra.Soporte
         private void tomarSeleccionTipoEncargado()
         {
             codigoTipoEncargado = (int.Parse(cbx_tipoEncargado.SelectedValue.ToString()));
+
         }
 
         private void tomarLegajo()
@@ -190,7 +184,8 @@ namespace SistemaLaObra.Soporte
 
         private void tomarSeleccionTipoDocumento()
         {
-            Encargado.CodigoTipoDocumento = int.Parse(cbx_tipoTelefono.SelectedValue.ToString());
+            Encargado.CodigoTipoDocumento = int.Parse(cbx_tipoDocumento.SelectedValue.ToString());
+            Encargado.TipoDocumento.mostrarDatos(Encargado.CodigoTipoDocumento);
         }
 
         private void tomarNroDocumento()
@@ -216,6 +211,7 @@ namespace SistemaLaObra.Soporte
         private void tomarSeleccionTipoTelefono()
         {
             Encargado.CodigoTipoTelefono = int.Parse(cbx_tipoTelefono.SelectedValue.ToString());
+            Encargado.TipoTelefono.mostrarDatos(Encargado.CodigoTipoTelefono);
         }
 
         private void tomarNroTelefono()
@@ -233,10 +229,7 @@ namespace SistemaLaObra.Soporte
 
         private void tomarNumero()
         {
-            if (int.Parse(txt_numero.Text) != 0)
-            {
-                //Encargado.Numero = int.Parse(txt_numero.Text);
-            }
+            Encargado.Numero = txt_numero.Text;
         }
 
         private void tomarDepto()
@@ -256,10 +249,7 @@ namespace SistemaLaObra.Soporte
 
         private void tomarCodigoPostal()
         {
-            if (int.Parse(txt_codigoPostal.Text) != 0)
-            {
-                //Encargado.CodigoPostal = int.Parse(txt_codigoPostal.Text);
-            }
+            Encargado.CodigoPostal = txt_codigoPostal.Text;
         }
 
         private void inicializarListaCombos()
@@ -276,22 +266,12 @@ namespace SistemaLaObra.Soporte
             cbx_provincia.DataSource = Provincia.mostrarDatos();
         }
 
-        private void tomarSeleccionProvincia()
-        {
-            //Encargado.CodigoProvincia = int.Parse(cbx_provincia.SelectedValue.ToString());
-        }
-
         private void cargarDepartamentos()
         {
             int codigoProvincia = int.Parse(cbx_provincia.SelectedValue.ToString());
             cbx_departamento.ValueMember = "CodigoDepartamento";
             cbx_departamento.DisplayMember = "NombreDepartamento";
             cbx_departamento.DataSource = Provincia.conocerDepartamento(codigoProvincia);
-        }
-
-        private void tomarSeleccionDepartamento()
-        {
-            //Encargado.CodigoDepartamento = int.Parse(cbx_departamento.SelectedValue.ToString());
         }
 
         private void cargarLocalidades()
@@ -305,7 +285,14 @@ namespace SistemaLaObra.Soporte
         private void tomarSeleccionLocalidad()
         {
             Encargado.CodigoLocalidad = int.Parse(cbx_localidad.SelectedValue.ToString());
-        }    
+            Encargado.Localidad.mostrarDatos(Encargado.CodigoLocalidad);
+        }  
+        
+        private void tomarEmpresa()
+        {
+            Encargado.CodigoMiEmpresa = int.Parse(cbx_empresa.SelectedValue.ToString());
+            Encargado.MiEmpresa.mostrarDatos(Encargado.CodigoMiEmpresa);
+        }
         
         private void cargarEmpresas()
         {
@@ -347,16 +334,6 @@ namespace SistemaLaObra.Soporte
         }
 
         private void txt_nroTelefono_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validaciones.soloNumeros(e);
-        }
-
-        private void txt_numero_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validaciones.soloNumeros(e);
-        }
-
-        private void txt_codigoPostal_KeyPress(object sender, KeyPressEventArgs e)
         {
             validaciones.soloNumeros(e);
         }
