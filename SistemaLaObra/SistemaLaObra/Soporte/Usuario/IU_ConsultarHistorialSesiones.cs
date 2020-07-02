@@ -1,4 +1,5 @@
 ﻿using SistemaLaObra.InicioSesion;
+using SistemaLaObra.Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,46 +15,59 @@ namespace SistemaLaObra.Soporte
     public partial class IU_ConsultarHistorialSesiones : Form
     {
 
-        Usuario usuario;
-        Encargado encargado;
-        TipoEncargado tipoEncargado;
-        ListaTipoEncargado listaTipoEncargado;
-        HistorialSesion historialSesion;
-
-        int codigoUsuario;
-        List<HistorialSesion> listaHistorialSesion;
+        public Usuario Usuario { get; set; }
+        public Encargado Encargado { get; set; }
+        public TipoDeAcceso TipoDeAcceso { get; set; }
+        public TipoDeAcceso_X_Usuario TipoDeAcceso_X_Usuario { get; set; }
+        public HistorialSesion HistorialSesion { get; set; }
 
         public IU_ConsultarHistorialSesiones()
         {
             InitializeComponent();
-            usuario = new Usuario();
-            encargado = new Encargado();
-            tipoEncargado = new TipoEncargado();
-            listaTipoEncargado = new ListaTipoEncargado();
-            historialSesion = new HistorialSesion();
+            Usuario = new Usuario();
+            Encargado = new Encargado();
+            TipoDeAcceso = new TipoDeAcceso();
+            TipoDeAcceso_X_Usuario = new TipoDeAcceso_X_Usuario();
+            HistorialSesion = new HistorialSesion();
         }
 
         private void btn_buscarHistorial_Click(object sender, EventArgs e)
         {
-            if (txt_nombreUsuario.Text != "")
+            if (txt_nombreUsuario.Text != string.Empty)
             {
                 dgv_historial.Rows.Clear();
-                codigoUsuario = usuario.obtenerCodigoUsuario(txt_nombreUsuario.Text);
-                if (codigoUsuario != 0)
+                Usuario.mostrarDatos(txt_nombreUsuario.Text);                
+                if (Usuario.CodigoUsuario != 0)
                 {
-                    tipoEncargado.mostrarDatos(listaTipoEncargado.obtenerCodigoTipoEncargado(codigoUsuario));
-                    encargado.mostrarDatos(encargado.obtenerCodigoEncargado(codigoUsuario));
-                    listaHistorialSesion = historialSesion.mostrarDatosColeccion(codigoUsuario);
-
-                    foreach (var item in listaHistorialSesion)
+                    string acceso=string.Empty;
+                    foreach (var item in TipoDeAcceso_X_Usuario.mostrarDatos(Usuario))
                     {
+                        TipoDeAcceso.mostrarDatos(item.CodigoTipoAcceso);
+                        acceso += TipoDeAcceso.Descripcion + " ";
+                    }
+                    Encargado.mostrarDatos(Encargado.obtenerCodigoEncargado(Usuario.CodigoUsuario));
+                    List<HistorialSesion> lista = HistorialSesion.mostrarDatos(Usuario.CodigoUsuario);
+                    foreach (var item in lista)
+                    {
+
                         if (item.FechaHoraCierre.ToString("dd/MM/yyyy") != "01/01/0001")
                         {
-                            dgv_historial.Rows.Add(item.FechaHoraInicio.ToString("dd/MM/yyyy HH:mm"), item.FechaHoraCierre.ToString("dd/MM/yyyy HH:mm"), encargado.Nombre, encargado.Apellido, tipoEncargado.Descripcion);
+                            dgv_historial.Rows.Add(
+                                item.FechaHoraInicio.ToString("dd/MM/yyyy HH:mm"), 
+                                item.FechaHoraCierre.ToString("dd/MM/yyyy HH:mm"), 
+                                Encargado.Nombre, Encargado.Apellido, 
+                                acceso
+                                );
                         }
                         else
                         {
-                            dgv_historial.Rows.Add(item.FechaHoraInicio.ToString("dd/MM/yyyy HH:mm"), "No cerro sesion" , encargado.Nombre, encargado.Apellido, tipoEncargado.Descripcion);
+                            dgv_historial.Rows.Add(
+                                item.FechaHoraInicio.ToString("dd/MM/yyyy HH:mm"), 
+                                "No cerro sesion" , 
+                                Encargado.Nombre, 
+                                Encargado.Apellido, 
+                                acceso
+                                );
                         }
                     }
                 }

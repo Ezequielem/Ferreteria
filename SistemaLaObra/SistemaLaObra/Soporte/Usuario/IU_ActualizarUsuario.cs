@@ -1,4 +1,5 @@
 ﻿using SistemaLaObra.InicioSesion;
+using SistemaLaObra.Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,11 +14,9 @@ namespace SistemaLaObra.Soporte
 {
     public partial class IU_ActualizarUsuario : Form
     {
-
-        public Usuario Usuario { get; set; }
         public Encargado Encargado { get; set; }
-        public TipoEncargado TipoEncargado { get; set; }
-        public ListaTipoEncargado ListaTipoEncargado { get; set; }
+        public TipoDeAcceso TipoDeAcceso { get; set; }
+        public TipoDeAcceso_X_Usuario TipoDeAcceso_X_Usuario { get; set; }
         public TipoTelefono TipoTelefono { get; set; }
         public TipoDocumento TipoDocumento { get; set; }
         public Provincia Provincia { get; set; }
@@ -29,10 +28,9 @@ namespace SistemaLaObra.Soporte
         public IU_ActualizarUsuario()
         {
             InitializeComponent();
-            Usuario = new Usuario();
             Encargado = new Encargado();
-            TipoEncargado = new TipoEncargado();
-            ListaTipoEncargado = new ListaTipoEncargado();
+            TipoDeAcceso = new TipoDeAcceso();
+            TipoDeAcceso_X_Usuario = new TipoDeAcceso_X_Usuario();
             TipoTelefono = new TipoTelefono();
             TipoDocumento = new TipoDocumento();
             Provincia = new Provincia();
@@ -41,107 +39,7 @@ namespace SistemaLaObra.Soporte
             validaciones = new Validaciones();
         }
 
-        public void opcionActualizarUsuario(int id)
-        {
-            Usuario.mostrarDatos(id);
-            Encargado.mostrarDatos(Encargado.obtenerCodigoEncargado(Usuario.CodigoUsuario));
-            btn_actualizarDatos.Enabled = true;
-        }
-
-        private void mostrarDatosUsuario()
-        {
-            //DATOS USUARIO//
-            txt_nombreUsuario.Text = Usuario.NombreUsuario;
-            cbx_tipoEncargado.Enabled = true;
-            cargarTiposEncargados();
-            TipoEncargado.mostrarDatos(ListaTipoEncargado.obtenerCodigoTipoEncargado(Usuario.CodigoUsuario));
-            cbx_tipoEncargado.Text = TipoEncargado.Descripcion;
-
-            //DATOS ENCARGADO//
-            gb_datosPersonales.Enabled = true;
-            txt_legajo.Text = Encargado.Legajo.ToString();
-            txt_nombre.Text = Encargado.Nombre;
-            txt_apellido.Text = Encargado.Apellido;
-            cargarTipoDocumento();
-            TipoDocumento.mostrarDatos(Encargado.CodigoTipoDocumento);
-            cbx_tipoDocumento.Text = TipoDocumento.Descripcion;
-            txt_nroDocumento.Text = Encargado.NroDocumento;
-            txt_fechaNacimiento.Value = Convert.ToDateTime(Encargado.FechaNacimiento);
-            cargarTipoTelefono();
-            TipoTelefono.mostrarDatos(Encargado.CodigoTipoTelefono);
-            cbx_tipoTelefono.Text = TipoTelefono.Descripcion;
-            txt_nroTelefono.Text = Encargado.NroTelefono;
-
-            //DATOS DOMICILIARIOS
-            gb_domicilio.Enabled = true;
-            txt_calle.Text = Encargado.Calle;
-            txt_numero.Text = Encargado.Numero.ToString();
-            txt_depto.Text = Encargado.Depto;
-            txt_piso.Text = Encargado.Piso;
-            txt_barrio.Text = Encargado.NombreBarrio;
-            txt_codigoPostal.Text = Encargado.CodigoPostal.ToString();
-            cargarProvincias();
-            //Provincia.mostrarDatos(Encargado.CodigoProvincia);
-            cbx_provincia.Text = Provincia.NombreProvincia;
-            cargarDepartamentos();
-            //cbx_departamento.Text = Departamento.mostrarNombre(Encargado.CodigoDepartamento);
-            cargarLocalidades();
-            cbx_localidad.Text = Localidad.mostrarNombre(Encargado.CodigoLocalidad);
-        }
-
-        private void cargarTiposEncargados()
-        {
-            cbx_tipoEncargado.ValueMember = "CodigoTipoEncargado";
-            cbx_tipoEncargado.DisplayMember = "Descripcion";
-            cbx_tipoEncargado.DataSource = TipoEncargado.mostrarDatosColeccion();
-        }
-
-        private void cargarTipoDocumento()
-        {
-            cbx_tipoDocumento.ValueMember = "CodigoTipoDocumento";
-            cbx_tipoDocumento.DisplayMember = "Descripcion";
-            cbx_tipoDocumento.DataSource = TipoDocumento.mostrarDatosColeccion();
-        }
-
-        private void cargarTipoTelefono()
-        {
-            cbx_tipoTelefono.ValueMember = "CodigoTipoTelefono";
-            cbx_tipoTelefono.DisplayMember = "Descripcion";
-            cbx_tipoTelefono.DataSource = TipoTelefono.mostrarDatos();
-        }
-
-        private void cargarProvincias()
-        {
-            cbx_provincia.ValueMember = "CodigoProvincia";
-            cbx_provincia.DisplayMember = "NombreProvincia";
-            cbx_provincia.DataSource = Provincia.mostrarDatos();
-        }
-
-        private void cargarDepartamentos()
-        {
-            int codigoProvincia = int.Parse(cbx_provincia.SelectedValue.ToString());
-            cbx_departamento.ValueMember = "CodigoDepartamento";
-            cbx_departamento.DisplayMember = "NombreDepartamento";
-            cbx_departamento.DataSource = Provincia.conocerDepartamento(codigoProvincia);
-        }
-
-        private void cargarLocalidades()
-        {
-            int codigoDepartamento = int.Parse(cbx_departamento.SelectedValue.ToString());
-            cbx_localidad.ValueMember = "CodigoLocalidad";
-            cbx_localidad.DisplayMember = "NombreLocalidad";
-            cbx_localidad.DataSource = Departamento.conocerLocalidad(codigoDepartamento);
-        }
-
-        private void cbx_provincia_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cargarDepartamentos();
-        }
-
-        private void cbx_departamento_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cargarLocalidades();
-        }
+        //BOTONES
 
         private void btn_actualizarDatos_Click(object sender, EventArgs e)
         {
@@ -166,12 +64,10 @@ namespace SistemaLaObra.Soporte
                         tomarPiso();
                         tomarBarrio();
                         tomarCodigoPostal();
-                        tomarSeleccionProvincia();
-                        tomarSeleccionDepartamento();
                         tomarSeleccionLocalidad();
-
-                        Usuario.actualizarContraseña(Usuario.CodigoUsuario, Usuario.Contraseña);
-                        ListaTipoEncargado.actualizarTipoEncargado(codigoTipoEncargado, Usuario.CodigoUsuario);
+                        tomarEmpresa();
+                        //Usuario.actualizarContraseña(Usuario.CodigoUsuario, Usuario.Contraseña);
+                        //ListaTipoEncargado.actualizar(codigoTipoEncargado, Usuario.CodigoUsuario);
                         Encargado.actualizar(Encargado);
                         this.Close();
                     }
@@ -187,13 +83,95 @@ namespace SistemaLaObra.Soporte
             }
         }
 
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        //METODOS
+
+        public void opcionActualizarUsuario(int id)
+        {
+            Encargado.Usuario.mostrarDatos(id);
+            Encargado.mostrarDatos(Encargado.obtenerCodigoEncargado(Encargado.Usuario.CodigoUsuario));
+            btn_actualizarDatos.Enabled = true;
+        }
+
+        private void mostrarDatosUsuario()
+        {
+            cargarProvincias();
+            cargarDepartamentos();
+            cargarLocalidades();
+            cargarTiposAccesos();
+            cargarTipoDocumento();
+            cargarTipoTelefono();
+            txt_nombreUsuario.Text = Encargado.Usuario.NombreUsuario;
+
+            //TipoEncargado.mostrarDatos();
+            //cbx_tipoEncargado.Text = TipoEncargado.Descripcion;
+
+            //DATOS ENCARGADO//
+            gb_datosPersonales.Enabled = true;
+            txt_legajo.Text = Encargado.Legajo.ToString();
+            txt_nombre.Text = Encargado.Nombre;
+            txt_apellido.Text = Encargado.Apellido;
+            TipoDocumento.mostrarDatos(Encargado.CodigoTipoDocumento);
+            cbx_tipoDocumento.Text = TipoDocumento.Descripcion;
+            txt_nroDocumento.Text = Encargado.NroDocumento;
+            txt_fechaNacimiento.Value = Convert.ToDateTime(Encargado.FechaNacimiento);
+            TipoTelefono.mostrarDatos(Encargado.CodigoTipoTelefono);
+            cbx_tipoTelefono.Text = TipoTelefono.Descripcion;
+            txt_nroTelefono.Text = Encargado.NroTelefono;
+
+            //DATOS DOMICILIARIOS
+            gb_domicilio.Enabled = true;
+            txt_calle.Text = Encargado.Calle;
+            txt_numero.Text = Encargado.Numero.ToString();
+            txt_depto.Text = Encargado.Depto;
+            txt_piso.Text = Encargado.Piso;
+            txt_barrio.Text = Encargado.NombreBarrio;
+            txt_codigoPostal.Text = Encargado.CodigoPostal.ToString();
+            //Provincia.mostrarDatos(Encargado.CodigoProvincia);
+            cbx_provincia.Text = Provincia.NombreProvincia;
+            //cbx_departamento.Text = Departamento.mostrarNombre(Encargado.CodigoDepartamento);
+            cbx_localidad.Text = Localidad.mostrarNombre(Encargado.CodigoLocalidad);
+        }
+
+        private void cargarTiposAccesos()
+        {
+            cbx_tipoEncargado.ValueMember = "CodigoTipoEncargado";
+            cbx_tipoEncargado.DisplayMember = "Descripcion";
+            cbx_tipoEncargado.DataSource = TipoDeAcceso.mostrarDatos();
+        }
+
+        private void cargarTipoDocumento()
+        {
+            cbx_tipoDocumento.ValueMember = "CodigoTipoDocumento";
+            cbx_tipoDocumento.DisplayMember = "Descripcion";
+            cbx_tipoDocumento.DataSource = TipoDocumento.mostrarDatosColeccion();
+        }
+
+        private void cargarTipoTelefono()
+        {
+            cbx_tipoTelefono.ValueMember = "CodigoTipoTelefono";
+            cbx_tipoTelefono.DisplayMember = "Descripcion";
+            cbx_tipoTelefono.DataSource = TipoTelefono.mostrarDatos();
+        }
+
+        private void cargarProvincias()
+        {
+            cbx_provincia.ValueMember = "CodigoProvincia";
+            cbx_provincia.DisplayMember = "NombreProvincia";
+            cbx_provincia.DataSource = Provincia.mostrarDatos();
+        }               
+
         private bool tomarContraseña()
         {
             if (txt_nuevaContraseña.Text != "")
             {
                 if (txt_nuevaContraseña.Text.Equals(txt_nuevaContraseña.Text))
                 {
-                    Usuario.Contraseña = txt_nuevaContraseña.Text;
+                    Encargado.Usuario.Contraseña = txt_nuevaContraseña.Text;
                     return true;
                 }
                 else
@@ -297,25 +275,34 @@ namespace SistemaLaObra.Soporte
             }
         }
 
-        private void tomarSeleccionProvincia()
-        {
-            //Encargado.CodigoProvincia = int.Parse(cbx_provincia.SelectedValue.ToString());
-        }
-
-        private void tomarSeleccionDepartamento()
-        {
-            //Encargado.CodigoDepartamento = int.Parse(cbx_departamento.SelectedValue.ToString());
-        }
-
         private void tomarSeleccionLocalidad()
         {
             Encargado.CodigoLocalidad = int.Parse(cbx_localidad.SelectedValue.ToString());
         }
 
-        private void btn_cancelar_Click(object sender, EventArgs e)
+        public void tomarEmpresa()
         {
-            this.Close();
+            Encargado.CodigoMiEmpresa = int.Parse(cbx_empresa.SelectedValue.ToString());
+            Encargado.MiEmpresa.mostrarDatos(Encargado.CodigoMiEmpresa);
         }
+
+        private void cargarDepartamentos()
+        {
+            int codigoProvincia = int.Parse(cbx_provincia.SelectedValue.ToString());
+            cbx_departamento.ValueMember = "CodigoDepartamento";
+            cbx_departamento.DisplayMember = "NombreDepartamento";
+            cbx_departamento.DataSource = Provincia.conocerDepartamento(codigoProvincia);
+        }
+
+        private void cargarLocalidades()
+        {
+            int codigoDepartamento = int.Parse(cbx_departamento.SelectedValue.ToString());
+            cbx_localidad.ValueMember = "CodigoLocalidad";
+            cbx_localidad.DisplayMember = "NombreLocalidad";
+            cbx_localidad.DataSource = Departamento.conocerLocalidad(codigoDepartamento);
+        }
+
+        //EVENTOS
 
         private void txt_legajo_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -352,8 +339,19 @@ namespace SistemaLaObra.Soporte
             validaciones.soloLetras(e);
         }
 
-        private void IU_ActualizarUsuario_Load(object sender, EventArgs e)
+        private void cbx_provincia_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cargarDepartamentos();
+        }
+
+        private void cbx_departamento_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            cargarLocalidades();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Stop();
             mostrarDatosUsuario();
         }
     }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_ActualizarUsuario));
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_actualizarDatos = new System.Windows.Forms.Button();
@@ -84,6 +85,7 @@
             this.txt_contraseña = new System.Windows.Forms.TextBox();
             this.txt_nuevaContraseña = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.gb_domicilio.SuspendLayout();
@@ -350,10 +352,11 @@
             this.cbx_provincia.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbx_provincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_provincia.FormattingEnabled = true;
-            this.cbx_provincia.Location = new System.Drawing.Point(98, 62);
+            this.cbx_provincia.Location = new System.Drawing.Point(98, 61);
             this.cbx_provincia.Name = "cbx_provincia";
             this.cbx_provincia.Size = new System.Drawing.Size(260, 23);
             this.cbx_provincia.TabIndex = 7;
+            this.cbx_provincia.SelectedIndexChanged += new System.EventHandler(this.cbx_provincia_SelectedIndexChanged);
             // 
             // label15
             // 
@@ -370,10 +373,11 @@
             this.cbx_departamento.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbx_departamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_departamento.FormattingEnabled = true;
-            this.cbx_departamento.Location = new System.Drawing.Point(98, 91);
+            this.cbx_departamento.Location = new System.Drawing.Point(98, 90);
             this.cbx_departamento.Name = "cbx_departamento";
             this.cbx_departamento.Size = new System.Drawing.Size(260, 23);
             this.cbx_departamento.TabIndex = 8;
+            this.cbx_departamento.SelectedIndexChanged += new System.EventHandler(this.cbx_departamento_SelectedIndexChanged_1);
             // 
             // label14
             // 
@@ -390,7 +394,7 @@
             this.cbx_localidad.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbx_localidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_localidad.FormattingEnabled = true;
-            this.cbx_localidad.Location = new System.Drawing.Point(98, 120);
+            this.cbx_localidad.Location = new System.Drawing.Point(98, 119);
             this.cbx_localidad.Name = "cbx_localidad";
             this.cbx_localidad.Size = new System.Drawing.Size(260, 23);
             this.cbx_localidad.TabIndex = 9;
@@ -514,7 +518,7 @@
             this.cbx_tipoTelefono.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbx_tipoTelefono.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_tipoTelefono.FormattingEnabled = true;
-            this.cbx_tipoTelefono.Location = new System.Drawing.Point(110, 101);
+            this.cbx_tipoTelefono.Location = new System.Drawing.Point(110, 100);
             this.cbx_tipoTelefono.Name = "cbx_tipoTelefono";
             this.cbx_tipoTelefono.Size = new System.Drawing.Size(110, 23);
             this.cbx_tipoTelefono.TabIndex = 15;
@@ -581,7 +585,7 @@
             this.cbx_tipoDocumento.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbx_tipoDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_tipoDocumento.FormattingEnabled = true;
-            this.cbx_tipoDocumento.Location = new System.Drawing.Point(110, 69);
+            this.cbx_tipoDocumento.Location = new System.Drawing.Point(110, 68);
             this.cbx_tipoDocumento.Name = "cbx_tipoDocumento";
             this.cbx_tipoDocumento.Size = new System.Drawing.Size(110, 23);
             this.cbx_tipoDocumento.TabIndex = 8;
@@ -649,7 +653,7 @@
             this.cbx_tipoEncargado.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbx_tipoEncargado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_tipoEncargado.FormattingEnabled = true;
-            this.cbx_tipoEncargado.Location = new System.Drawing.Point(138, 95);
+            this.cbx_tipoEncargado.Location = new System.Drawing.Point(138, 94);
             this.cbx_tipoEncargado.Name = "cbx_tipoEncargado";
             this.cbx_tipoEncargado.Size = new System.Drawing.Size(240, 23);
             this.cbx_tipoEncargado.TabIndex = 7;
@@ -725,6 +729,12 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // IU_ActualizarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -743,7 +753,6 @@
             this.Name = "IU_ActualizarUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MODIFICAR USUARIO";
-            this.Load += new System.EventHandler(this.IU_ActualizarUsuario_Load);
             this.groupBox3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
@@ -817,5 +826,6 @@
         private System.Windows.Forms.TextBox txt_contraseña;
         private System.Windows.Forms.TextBox txt_nuevaContraseña;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

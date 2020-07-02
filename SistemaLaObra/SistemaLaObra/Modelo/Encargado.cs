@@ -233,6 +233,54 @@ namespace SistemaLaObra
             }
         }
 
+        public List<Encargado> mostrarDatos()
+        {
+            List<Encargado> lista = new List<Encargado>();
+            acceso = new AccesoDatos();
+            conexion = new SqlConnection(acceso.CadenaConexion());
+            consulta = new SqlCommand("SELECT * FROM Encargados", conexion);
+            try
+            {
+                conexion.Open();
+                lector = consulta.ExecuteReader();
+                while (lector.Read())
+                {
+                    lista.Add(new Encargado() 
+                    {
+                        CodigoEncargado = int.Parse(lector["codigoEncargado"].ToString()),
+                        Legajo = int.Parse(lector["legajo"].ToString()),
+                        Nombre = lector["nombre"].ToString(),
+                        Apellido = lector["apellido"].ToString(),
+                        CodigoTipoDocumento = int.Parse(lector["codigoTipoDocumento"].ToString()),
+                        NroDocumento = lector["nroDocumento"].ToString(),
+                        FechaNacimiento = (DateTime)lector["fechaNacimiento"],
+                        CodigoTipoTelefono = int.Parse(lector["codigoTipoTelefono"].ToString()),
+                        NroTelefono = lector["nroTelefono"].ToString(),
+                        Calle = lector["calle"].ToString(),
+                        Numero = lector["numero"].ToString(),
+                        Depto = lector["depto"].ToString(),
+                        Piso = lector["piso"].ToString(),
+                        CodigoPostal = lector["codigoPostal"].ToString(),
+                        NombreBarrio = lector["nombreBarrio"].ToString(),
+                        CodigoLocalidad = int.Parse(lector["codigoLocalidad"].ToString()),
+                        CodigoUsuario = int.Parse(lector["codigoUsuario"].ToString()),
+                        CodigoMiEmpresa = int.Parse(lector["codigoMiEmpresa"].ToString())
+                    });                    
+                }
+                return lista;
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.ToString());
+                return lista;
+            }
+            finally
+            {
+                lector.Close();
+                conexion.Close();
+            }
+        }
+
         public Encargado obtenerDatos(int codigoEncargado)
         {
             acceso = new AccesoDatos();

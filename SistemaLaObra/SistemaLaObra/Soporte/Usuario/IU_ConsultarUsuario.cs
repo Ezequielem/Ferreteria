@@ -1,4 +1,5 @@
 ﻿using SistemaLaObra.InicioSesion;
+using SistemaLaObra.Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,21 +14,19 @@ namespace SistemaLaObra.Soporte
 {
     public partial class IU_ConsultarUsuario : Form
     {
-        public Usuario Usuario { get; set; }
-        public List<Usuario> ListaUsuarios { get; set; }
-        public ListaTipoEncargado ListaTipoEncargado { get; set; }
         public Encargado Encargado { get; set; }
-        public TipoEncargado TipoEncargado { get; set; }
+        public List<Encargado> ListaEncargados { get; set; }
+        public TipoDeAcceso_X_Usuario TipoDeAcceso_X_Usuario { get; set; }        
+        public TipoDeAcceso TipoDeAcceso { get; set; }
         IU_DatosUsuario interfazDatosUsuario;
 
         public IU_ConsultarUsuario()
         {
             InitializeComponent();
-            Usuario = new Usuario();
-            ListaUsuarios = new List<Usuario>();
-            ListaTipoEncargado = new ListaTipoEncargado();
             Encargado = new Encargado();
-            TipoEncargado = new TipoEncargado();
+            ListaEncargados = new List<Encargado>();
+            TipoDeAcceso_X_Usuario = new TipoDeAcceso_X_Usuario();            
+            TipoDeAcceso = new TipoDeAcceso();
         }
 
         //BOTONES
@@ -61,28 +60,46 @@ namespace SistemaLaObra.Soporte
         {
             Cursor.Current = Cursors.WaitCursor;
             dgv_usuarios.Rows.Clear();
-            ListaUsuarios.Clear();
-            ListaUsuarios = Usuario.mostrarDatos();            
-            foreach (var item in ListaUsuarios)
+            ListaEncargados.Clear();
+            ListaEncargados = Encargado.mostrarDatos();            
+            foreach (var item in ListaEncargados)
             {
-                Encargado.mostrarDatos(Encargado.obtenerCodigoEncargado(item.CodigoUsuario));
-                TipoEncargado.mostrarDatos(ListaTipoEncargado.obtenerCodigoTipoEncargado(item.CodigoUsuario));
-
-                dgv_usuarios.Rows.Add(item.NombreUsuario, Encargado.Nombre, Encargado.Apellido, TipoEncargado.Descripcion, item.CodigoUsuario);
+                string acceso = string.Empty;
+                item.Usuario.mostrarDatos(item.CodigoUsuario);
+                foreach (var item1 in TipoDeAcceso_X_Usuario.mostrarDatos(item.Usuario))
+                {
+                    TipoDeAcceso.mostrarDatos(item1.CodigoTipoAcceso);
+                    acceso += TipoDeAcceso.Descripcion + " ";
+                }
+                dgv_usuarios.Rows.Add(
+                    item.Usuario.NombreUsuario, 
+                    item.Nombre, 
+                    item.Apellido, 
+                    acceso, 
+                    item.Usuario.CodigoUsuario);
             }
             Cursor.Current = Cursors.Default;
         }
 
-        private void cargarDataGrid(List<Usuario> lista)
+        private void cargarDataGrid(List<Encargado> lista)
         {
             Cursor.Current = Cursors.WaitCursor;
             dgv_usuarios.Rows.Clear();
             foreach (var item in lista)
             {
-                Encargado.mostrarDatos(Encargado.obtenerCodigoEncargado(item.CodigoUsuario));
-                TipoEncargado.mostrarDatos(ListaTipoEncargado.obtenerCodigoTipoEncargado(item.CodigoUsuario));
-
-                dgv_usuarios.Rows.Add(item.NombreUsuario, Encargado.Nombre, Encargado.Apellido, TipoEncargado.Descripcion, item.CodigoUsuario);
+                string acceso = string.Empty;
+                item.Usuario.mostrarDatos(item.CodigoUsuario);
+                foreach (var item1 in TipoDeAcceso_X_Usuario.mostrarDatos(item.Usuario))
+                {
+                    TipoDeAcceso.mostrarDatos(item1.CodigoTipoAcceso);
+                    acceso += TipoDeAcceso.Descripcion + " ";
+                }
+                dgv_usuarios.Rows.Add(
+                    item.Usuario.NombreUsuario,
+                    item.Nombre,
+                    item.Apellido,
+                    acceso,
+                    item.Usuario.CodigoUsuario);
             }
             Cursor.Current = Cursors.Default;
         }
@@ -91,16 +108,21 @@ namespace SistemaLaObra.Soporte
 
         private void dgv_usuarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Usuario.mostrarDatos(int.Parse(dgv_usuarios.CurrentRow.Cells[4].Value.ToString()));
-            Encargado.mostrarDatos(Encargado.obtenerCodigoEncargado(Usuario.CodigoUsuario));
+            Encargado.Usuario.mostrarDatos(int.Parse(dgv_usuarios.CurrentRow.Cells[4].Value.ToString()));
+            Encargado.mostrarDatos(Encargado.obtenerCodigoEncargado(Encargado.Usuario.CodigoUsuario));
             Encargado.Localidad.mostrarDatos(Encargado.CodigoLocalidad);
             Encargado.MiEmpresa.mostrarDatos(Encargado.CodigoMiEmpresa);
             Encargado.TipoDocumento.mostrarDatos(Encargado.CodigoTipoDocumento);
             Encargado.TipoTelefono.mostrarDatos(Encargado.CodigoTipoTelefono);
-            TipoEncargado.mostrarDatos(ListaTipoEncargado.obtenerCodigoTipoEncargado(Usuario.CodigoUsuario));
+            string acceso = string.Empty;
+            foreach (var item in TipoDeAcceso_X_Usuario.mostrarDatos(Encargado.Usuario))
+            {
+                TipoDeAcceso.mostrarDatos(item.CodigoTipoAcceso);
+                acceso += TipoDeAcceso.Descripcion + " ";
+            }
             interfazDatosUsuario = new IU_DatosUsuario();
-            interfazDatosUsuario.txt_usuario.Text = Usuario.NombreUsuario;
-            interfazDatosUsuario.txt_tipoEncargado.Text = TipoEncargado.Descripcion;
+            interfazDatosUsuario.txt_usuario.Text = Encargado.Usuario.NombreUsuario;
+            interfazDatosUsuario.txt_tipoEncargado.Text = acceso;
             interfazDatosUsuario.txt_legajo.Text = Encargado.Legajo.ToString();
             interfazDatosUsuario.txt_nombre.Text = Encargado.Nombre;
             interfazDatosUsuario.txt_apellido.Text = Encargado.Apellido;
@@ -135,8 +157,8 @@ namespace SistemaLaObra.Soporte
             }
             else
             {
-                ListaUsuarios = ListaUsuarios.Where(x => x.NombreUsuario.Contains(txt_nombreUsuario.Text)).ToList();
-                cargarDataGrid(ListaUsuarios);
+                ListaEncargados = ListaEncargados.Where(x => x.Usuario.NombreUsuario.Contains(txt_nombreUsuario.Text)).ToList();
+                cargarDataGrid(ListaEncargados);
             }
         }
 

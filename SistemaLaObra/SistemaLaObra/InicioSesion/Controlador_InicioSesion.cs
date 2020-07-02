@@ -1,5 +1,6 @@
 ﻿using SistemaLaObra.Compras;
 using SistemaLaObra.Logistica;
+using SistemaLaObra.Modelo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,26 +13,26 @@ namespace SistemaLaObra.InicioSesion
     class Controlador_InicioSesion
     {
         public IU_InicioSesion interfazInicioSesion { get; set; }
-        Usuario usuario;
-        Encargado encargado;
-        TipoEncargado tipoEncargado;
-        HistorialSesion historialSesion;
-        
+        public Usuario Usuario { get; set; }
+        public Encargado Encargado { get; set; }
+        public TipoDeAcceso TipoDeAcceso { get; set; }
+        public HistorialSesion HistorialSesion { get; set; }
+
         public Controlador_InicioSesion()
         {
-            usuario = new Usuario();
-            encargado = new Encargado();
-            tipoEncargado = new TipoEncargado();
-            historialSesion = new HistorialSesion();
+            Usuario = new Usuario();
+            Encargado = new Encargado();
+            TipoDeAcceso = new TipoDeAcceso();
+            HistorialSesion = new HistorialSesion();
         }
 
         public bool usuarioEmpleado(string nombreUsuario)
         {
-            int codigoUsuario = usuario.obtenerCodigoUsuario(nombreUsuario);
+            int codigoUsuario = Usuario.obtenerCodigoUsuario(nombreUsuario);
             if (codigoUsuario != 0)
             {
-                usuario.mostrarDatos(codigoUsuario);
-                encargado.mostrarDatos(encargado.obtenerCodigoEncargado(usuario.CodigoUsuario));
+                Usuario.mostrarDatos(codigoUsuario);
+                Encargado.mostrarDatos(Encargado.obtenerCodigoEncargado(Usuario.CodigoUsuario));
                 return true;
             }
             else
@@ -42,7 +43,7 @@ namespace SistemaLaObra.InicioSesion
 
         public bool contraseñaEmpleado(string contraseña)
         {
-            if (usuario.comprobarContraseña(contraseña))
+            if (Usuario.comprobarContraseña(contraseña))
             {
                 return true;
             }
@@ -54,29 +55,29 @@ namespace SistemaLaObra.InicioSesion
 
         public void tomarFechaHora()
         {
-            historialSesion.FechaHoraInicio = DateTime.Now;
+            HistorialSesion.FechaHoraInicio = DateTime.Now;
         }
 
         public void iniciarSesion()
         {
             //Se registra en historial inicio
-            historialSesion.CodigoUsuario = usuario.CodigoUsuario;
-            historialSesion.CodigoHistorial = historialSesion.ultimoNumeroHistorial() + 1;
-            historialSesion.crear(historialSesion);
+            HistorialSesion.CodigoUsuario = Usuario.CodigoUsuario;
+            HistorialSesion.CodigoHistorial = HistorialSesion.ultimoNumeroHistorial() + 1;
+            HistorialSesion.crear(HistorialSesion);
 
             //Obtenemos el tipo de encargado
-            tipoEncargado.mostrarDatos(usuario.obtenerCodigoTipoDeEncargado(usuario.CodigoUsuario));
+            TipoDeAcceso.mostrarDatos(Usuario.obtenerCodigoTipoDeEncargado(Usuario.CodigoUsuario));
 
             //Verificamos que interfaz traer
             iniciarInterfazCorrespondiente();
 
             //Enviamos informacion del usuario y el historial al contenedor principal
-            interfazInicioSesion.interfazContenedora.CodigoHistorial = historialSesion.CodigoHistorial;
+            interfazInicioSesion.interfazContenedora.CodigoHistorial = HistorialSesion.CodigoHistorial;
         }
 
         private void iniciarInterfazCorrespondiente()
         {
-            if (tipoEncargado.Descripcion == "VENTA")
+            if (TipoDeAcceso.Descripcion == "VENTA")
             {
                 interfazInicioSesion.interfazContenedora.pnl_opciones.Visible = true;
                 interfazInicioSesion.interfazContenedora.btn_ventas.Visible = true;
@@ -92,7 +93,7 @@ namespace SistemaLaObra.InicioSesion
             }
             else
             {
-                if (tipoEncargado.Descripcion == "COMPRA")
+                if (TipoDeAcceso.Descripcion == "COMPRA")
                 {
                     interfazInicioSesion.interfazContenedora.pnl_opciones.Visible = true;
                     interfazInicioSesion.interfazContenedora.btn_ventas.Visible = true;
@@ -108,7 +109,7 @@ namespace SistemaLaObra.InicioSesion
                 }
                 else
                 {
-                    if (tipoEncargado.Descripcion == "LOGISTICA")
+                    if (TipoDeAcceso.Descripcion == "LOGISTICA")
                     {
                         interfazInicioSesion.interfazContenedora.pnl_opciones.Visible = true;
                         interfazInicioSesion.interfazContenedora.btn_ventas.Visible = true;
@@ -124,7 +125,7 @@ namespace SistemaLaObra.InicioSesion
                     }
                     else
                     {
-                        if (tipoEncargado.Descripcion == "SOPORTE")
+                        if (TipoDeAcceso.Descripcion == "SOPORTE")
                         {
                             interfazInicioSesion.interfazContenedora.pnl_opciones.Visible = true;
                             interfazInicioSesion.interfazContenedora.btn_ventas.Visible = true;
@@ -160,15 +161,15 @@ namespace SistemaLaObra.InicioSesion
             }
 
             //Depositamos la info despues del inicio para consulta
-            interfazInicioSesion.interfazContenedora.UsuarioActivo = usuario;
-            interfazInicioSesion.interfazContenedora.EncargadoActivo = encargado;
+            interfazInicioSesion.interfazContenedora.UsuarioActivo = Usuario;
+            interfazInicioSesion.interfazContenedora.EncargadoActivo = Encargado;
 
             //Luego de traer la interfaz correspondiente
             interfazInicioSesion.interfazContenedora.ms_btnInicioSesion.Visible = false;
             interfazInicioSesion.interfazContenedora.ms_btnCerrarSesion.Visible = true;
             interfazInicioSesion.interfazContenedora.lbl_usuario.Text = interfazInicioSesion.interfazContenedora.UsuarioActivo.NombreUsuario;
             interfazInicioSesion.interfazContenedora.lbl_nombreApellidoEncargado.Text = interfazInicioSesion.interfazContenedora.EncargadoActivo.Nombre + " " + interfazInicioSesion.interfazContenedora.EncargadoActivo.Apellido;
-            interfazInicioSesion.interfazContenedora.lbl_tipoEncargado.Text = tipoEncargado.Descripcion;
+            interfazInicioSesion.interfazContenedora.lbl_tipoEncargado.Text = TipoDeAcceso.Descripcion;
             interfazInicioSesion.interfazContenedora.lbl_usuario.Visible = true;
             interfazInicioSesion.interfazContenedora.lbl_nombreApellidoEncargado.Visible = true;
             interfazInicioSesion.interfazContenedora.lbl_tipoEncargado.Visible = true;            

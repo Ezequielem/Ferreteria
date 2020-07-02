@@ -308,7 +308,6 @@
     <Compile Include="Modelo\Encargado.cs" />
     <Compile Include="Modelo\EstadoRecepcion.cs" />
     <Compile Include="Modelo\ListaProveedoresArticulo.cs" />
-    <Compile Include="Modelo\ListaTipoEncargado.cs" />
     <Compile Include="Logistica\RegistrarIngresoDeProducto\IU_RegistroIngresoProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -328,6 +327,8 @@
     <Compile Include="InicioSesion\IU_InicioSesion.Designer.cs">
       <DependentUpon>IU_InicioSesion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\TipoDeAcceso.cs" />
+    <Compile Include="Modelo\TipoDeAcceso_X_Usuario.cs" />
     <Compile Include="Modelo\TipoFactura.cs" />
     <Compile Include="Modelo\Usuario.cs" />
     <Compile Include="Logistica\ActualizarEstadoOrden\Controlador_ActualizarEstadoRemito.cs" />
@@ -542,7 +543,6 @@
     <Compile Include="Modelo\Sub3TipoArticulo.cs" />
     <Compile Include="Modelo\TipoArticulo.cs" />
     <Compile Include="Modelo\TipoDocumento.cs" />
-    <Compile Include="Modelo\TipoEncargado.cs" />
     <Compile Include="Modelo\Ubicacion.cs" />
     <Compile Include="Modelo\UnidadDeMedida.cs" />
     <Compile Include="Ventas\ActualizarNotaDeCredito\Controlador_ActualizarNotaDeCredito.cs" />

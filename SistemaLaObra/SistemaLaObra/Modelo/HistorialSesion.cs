@@ -9,14 +9,17 @@ using System.Windows.Forms;
 
 namespace SistemaLaObra
 {
-    class HistorialSesion
+    public class HistorialSesion
     {
+        SqlConnection conexion;
+        SqlDataAdapter adaptador;
+        SqlDataReader lector;
+        SqlCommand consulta;
+
         public int CodigoHistorial { get; set; }
         public DateTime FechaHoraInicio { get; set; }
         public DateTime FechaHoraCierre { get; set; }
         public int CodigoUsuario { get; set; }
-
-        List<HistorialSesion> listaHistorialSesion;
         
         public HistorialSesion()
         {
@@ -24,16 +27,10 @@ namespace SistemaLaObra
             CodigoUsuario = 0;
         }
 
-        private AccesoDatos acceso;
-        private SqlConnection conexion;
-        private SqlDataAdapter adaptador;
-        private SqlDataReader lector;
-        private SqlCommand consulta;
-
         public void crear(HistorialSesion historial)
         {
-            AccesoDatos acceso = new AccesoDatos();
-            conexion = new SqlConnection(acceso.CadenaConexion());
+            AccesoDatos s = new AccesoDatos();
+            conexion = new SqlConnection(s.CadenaConexion());
             adaptador = new SqlDataAdapter();
 
             SqlCommand alta = new SqlCommand("INSERT INTO HistorialSesiones (codigoHistorial,fechaHoraInicio,codigoUsuario) VALUES (@codigoHistorial,@fechaHoraInicio,@codigoUsuario)", conexion);
@@ -64,8 +61,8 @@ namespace SistemaLaObra
         public int ultimoNumeroHistorial()
         {
             int ultimoNumeroHistorial = 0;
-            acceso = new AccesoDatos();
-            conexion = new SqlConnection(acceso.CadenaConexion());
+            AccesoDatos s = new AccesoDatos();
+            conexion = new SqlConnection(s.CadenaConexion());
             consulta = new SqlCommand("SELECT MAX(codigoHistorial) AS codigo FROM HistorialSesiones", conexion);
             try
             {
@@ -94,8 +91,8 @@ namespace SistemaLaObra
 
         public void actualizarHistorial(int codigoHistorial, DateTime fechaHoraCierre)
         {
-            AccesoDatos acceso = new AccesoDatos();
-            conexion = new SqlConnection(acceso.CadenaConexion());
+            AccesoDatos s = new AccesoDatos();
+            conexion = new SqlConnection(s.CadenaConexion());
             adaptador = new SqlDataAdapter();
 
             SqlCommand modificacion = new SqlCommand("UPDATE HistorialSesiones SET fechaHoraCierre=@fechaHoraCierre WHERE codigoHistorial=@codigoHistorial", conexion);
@@ -121,26 +118,24 @@ namespace SistemaLaObra
             }
         }
 
-        public List<HistorialSesion> mostrarDatosColeccion(int codigoUsuario)
+        public List<HistorialSesion> mostrarDatos(int codigoUsuario)
         {
-            listaHistorialSesion = new List<HistorialSesion>();
-
-            acceso = new AccesoDatos();
-            conexion = new SqlConnection(acceso.CadenaConexion());
-            conexion.Open();
-
+            List<HistorialSesion> lista = new List<HistorialSesion>();
+            AccesoDatos s = new AccesoDatos();
+            conexion = new SqlConnection(s.CadenaConexion());
+            SqlCommand consulta = new SqlCommand(@"SELECT * FROM HistorialSesiones 
+                                                    WHERE codigoUsuario='" + codigoUsuario + "'", conexion);
             try
             {
-                SqlCommand consulta = new SqlCommand("SELECT * FROM HistorialSesiones WHERE codigoUsuario='"+codigoUsuario+"'", conexion);
-                SqlDataReader lector = consulta.ExecuteReader();
+                conexion.Open();
+                lector = consulta.ExecuteReader();
                 while (lector.Read())
                 {
                     DateTime fechaHoraCierre;
                     bool resultado = DateTime.TryParse(lector["fechaHoraCierre"].ToString(), out fechaHoraCierre);
-
                     if (resultado)
                     {
-                        listaHistorialSesion.Add(new HistorialSesion()
+                        lista.Add(new HistorialSesion()
                         {
                             CodigoHistorial = int.Parse(lector["codigoHistorial"].ToString()),
                             FechaHoraInicio = (DateTime)lector["fechaHoraInicio"],
@@ -149,24 +144,25 @@ namespace SistemaLaObra
                     }
                     else
                     {
-                        listaHistorialSesion.Add(new HistorialSesion()
+                        lista.Add(new HistorialSesion()
                         {
                             CodigoHistorial = int.Parse(lector["codigoHistorial"].ToString()),
                             FechaHoraInicio = (DateTime)lector["fechaHoraInicio"]
                         });
                     }
                 }
+                return lista;
             }
             catch (SqlException excepcion)
             {
                 MessageBox.Show(excepcion.ToString());
+                return lista;
             }
             finally
             {
                 conexion.Close();
-            }
-            return listaHistorialSesion;
+                lector.Close();
+            }            
         }
-
     }
 }

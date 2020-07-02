@@ -6,38 +6,37 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaLaObra
+namespace SistemaLaObra.Modelo
 {
-    public class TipoEncargado
+    public class TipoDeAcceso
     {
-        public List<TipoEncargado> listaTipoEncargado;
-
-        public int CodigoTipoEncargado { get; set; }
-        public string Descripcion { get; set; }
-
-        public TipoEncargado()
-        {
-            CodigoTipoEncargado = 0;
-            Descripcion = "";
-        }
-
         private AccesoDatos acceso;
         private SqlConnection conexion;
         private SqlDataReader lector;
         private SqlCommand consulta;
 
-        public void mostrarDatos(int codigoTipoEncargado)
+        public int CodigoTipoAcceso { get; set; }
+        public string Descripcion { get; set; }
+
+        public TipoDeAcceso()
+        {
+            CodigoTipoAcceso = 0;
+            Descripcion = "";
+        }        
+
+        public void mostrarDatos(int codigoTipoDeAcceso)
         {
             acceso = new AccesoDatos();
             conexion = new SqlConnection(acceso.CadenaConexion());
-            consulta = new SqlCommand("SELECT * FROM TiposEncargados WHERE codigoTipoEncargado='" + codigoTipoEncargado + "'", conexion);
+            consulta = new SqlCommand(@"select codigoTipoAcceso, descripcion from TiposDeAccesos 
+                                        where codigoTipoAcceso='"+ codigoTipoDeAcceso +"'", conexion);
             try
             {
                 conexion.Open();
                 lector = consulta.ExecuteReader();
                 if (lector.Read())
                 {
-                    CodigoTipoEncargado = int.Parse(lector["codigoTipoEncargado"].ToString());
+                    codigoTipoDeAcceso = int.Parse(lector["codigoTipoAcceso"].ToString());
                     Descripcion = lector["descripcion"].ToString();
                 }
             }
@@ -52,33 +51,35 @@ namespace SistemaLaObra
             }
         }
 
-        public List<TipoEncargado> mostrarDatosColeccion()
+        public List<TipoDeAcceso> mostrarDatos()
         {
-            listaTipoEncargado = new List<TipoEncargado>();
+            List<TipoDeAcceso> lista = new List<TipoDeAcceso>();
 
             acceso = new AccesoDatos();
             conexion = new SqlConnection(acceso.CadenaConexion());
-            conexion.Open();
-
+            SqlCommand consulta = new SqlCommand("select codigoTipoAcceso, descripcion from TiposDeAccesos", conexion);            
             try
             {
-                SqlCommand consulta = new SqlCommand("SELECT * FROM TiposEncargados", conexion);
-                SqlDataReader lector = consulta.ExecuteReader();
+                conexion.Open();
+                lector = consulta.ExecuteReader();
                 while (lector.Read())
                 {
-                    listaTipoEncargado.Add(new TipoEncargado() { CodigoTipoEncargado = int.Parse(lector["codigoTipoEncargado"].ToString()), Descripcion = lector["descripcion"].ToString() });
+                    lista.Add(new TipoDeAcceso() { 
+                        CodigoTipoAcceso = int.Parse(lector["codigoTipoAcceso"].ToString()), 
+                        Descripcion = lector["descripcion"].ToString() });
                 }
+                return lista;
             }
             catch (SqlException excepcion)
             {
                 MessageBox.Show(excepcion.ToString());
+                return lista;
             }
             finally
             {
                 conexion.Close();
+                lector.Close();
             }
-            return listaTipoEncargado;
         }
-
     }
 }

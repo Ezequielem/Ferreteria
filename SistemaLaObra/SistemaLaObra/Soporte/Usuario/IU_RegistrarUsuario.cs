@@ -1,4 +1,5 @@
 ﻿using SistemaLaObra.InicioSesion;
+using SistemaLaObra.Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,7 @@ namespace SistemaLaObra.Soporte
     public partial class IU_RegistrarUsuario : Form
     {
         public Encargado Encargado { get; set; }
-        public TipoEncargado TipoEncargado { get; set; }
+        public TipoDeAcceso TipoDeAcceso { get; set; }
         public Provincia Provincia { get; set; }
         public Departamento Departamento { get; set; }
         public TipoTelefono TipoTelefono { get; set; }
@@ -26,7 +27,7 @@ namespace SistemaLaObra.Soporte
         {
             InitializeComponent();
             Encargado = new Encargado();
-            TipoEncargado = new TipoEncargado();
+            TipoDeAcceso = new TipoDeAcceso();
             TipoTelefono = new TipoTelefono();
             TipoDocumento = new TipoDocumento();
             Provincia = new Provincia();
@@ -138,16 +139,17 @@ namespace SistemaLaObra.Soporte
             }
         }
 
-        private void cargarTiposEncargados()
+        private void cargarTiposAccesos()
         {
-            cbx_tipoEncargado.ValueMember = "CodigoTipoEncargado";
-            cbx_tipoEncargado.DisplayMember = "Descripcion";
-            cbx_tipoEncargado.DataSource = TipoEncargado.mostrarDatosColeccion();
+            chx_tipoDeAcceso.ValueMember = "CodigoTipoEncargado";
+            chx_tipoDeAcceso.DisplayMember = "Descripcion";
+            chx_tipoDeAcceso.DataSource = TipoDeAcceso.mostrarDatos();
         }
 
         private void tomarSeleccionTipoEncargado()
         {
-            codigoTipoEncargado = (int.Parse(cbx_tipoEncargado.SelectedValue.ToString()));
+            //            
+            //codigoTipoEncargado = (int.Parse(cbx_tipoEncargado.SelectedValue.ToString()));
 
         }
 
@@ -305,7 +307,7 @@ namespace SistemaLaObra.Soporte
 
         private void IU_RegistrarUsuario_Load(object sender, EventArgs e)
         {
-            cargarTiposEncargados();
+            cargarTiposAccesos();
             cargarTipoDocumento();
             cargarTipoTelefono();
             cargarProvincias();
