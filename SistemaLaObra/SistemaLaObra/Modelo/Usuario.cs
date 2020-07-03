@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaLaObra.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -56,36 +57,7 @@ namespace SistemaLaObra.InicioSesion
             {
                 conexion.Close();
             }
-        }
-
-        public void crearEnListaTipoEncargado(int codigoUsuario, int codigoTipoEncargado)
-        {
-            acceso = new AccesoDatos();
-            conexion = new SqlConnection(acceso.CadenaConexion());
-            consulta = new SqlCommand("INSERT INTO ListaTiposEncargados (codigoUsuario,codigoTipoEncargado) VALUES (@codigoUsuario,@codigoTipoEncargado)", conexion);
-            adaptador = new SqlDataAdapter();
-            adaptador.InsertCommand = consulta;
-
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoUsuario", SqlDbType.Int));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@codigoTipoEncargado", SqlDbType.Int));
-
-            adaptador.InsertCommand.Parameters["@codigoUsuario"].Value = codigoUsuario;
-            adaptador.InsertCommand.Parameters["@codigoTipoEncargado"].Value = codigoTipoEncargado;
-
-            try
-            {
-                conexion.Open();
-                adaptador.InsertCommand.ExecuteNonQuery();
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show(error.Message);
-            }
-            finally
-            {
-                conexion.Close();
-            }
-        }
+        }       
 
         public void mostrarDatos(int codigoUsuario)
         {
@@ -208,31 +180,37 @@ namespace SistemaLaObra.InicioSesion
                 return false;
         }
 
-        public int obtenerCodigoTipoDeEncargado(int codigoUsuario)
+        public List<TipoDeAcceso_X_Usuario> obtenerTipoAcceso(int codigoUsuario)
         {
-            int codigoTipoEncargado = 0;
+            List<TipoDeAcceso_X_Usuario> lista = new List<TipoDeAcceso_X_Usuario>();
             acceso = new AccesoDatos();
             conexion = new SqlConnection(acceso.CadenaConexion());
-            consulta = new SqlCommand("SELECT * FROM ListaTiposEncargados WHERE codigoUsuario='" + codigoUsuario + "'", conexion);
+            consulta = new SqlCommand(@"select CodigoTipoAcceso, CodigoUsuario from TiposDeAccesos_X_Usuarios 
+                                        where CodigoUsuario='" + codigoUsuario +"'", conexion);
             try
             {
                 conexion.Open();
                 lector = consulta.ExecuteReader();
-                if (lector.Read())
+                while (lector.Read())
                 {
-                    codigoTipoEncargado = int.Parse(lector["codigoTipoEncargado"].ToString());
+                    lista.Add(new TipoDeAcceso_X_Usuario() 
+                    { 
+                        CodigoTipoAcceso=int.Parse(lector["CodigoTipoAcceso"].ToString()),
+                        CodigoUsuario=int.Parse(lector["CodigoUsuario"].ToString())
+                    });                    
                 }
+                return lista;
             }
             catch (Exception error)
             {
                 MessageBox.Show(error.Message);
+                return lista;
             }
             finally
             {
                 lector.Close();
                 conexion.Close();
             }
-            return codigoTipoEncargado;
         }
 
         public bool confirmarUsuario(string nombreUsuario)

@@ -16,6 +16,7 @@ namespace SistemaLaObra.InicioSesion
         public Usuario Usuario { get; set; }
         public Encargado Encargado { get; set; }
         public TipoDeAcceso TipoDeAcceso { get; set; }
+        public List<TipoDeAcceso_X_Usuario> ListaTipoDeAcceso_X_Usuario { get; set; }
         public HistorialSesion HistorialSesion { get; set; }
 
         public Controlador_InicioSesion()
@@ -23,6 +24,7 @@ namespace SistemaLaObra.InicioSesion
             Usuario = new Usuario();
             Encargado = new Encargado();
             TipoDeAcceso = new TipoDeAcceso();
+            ListaTipoDeAcceso_X_Usuario = new List<TipoDeAcceso_X_Usuario>();
             HistorialSesion = new HistorialSesion();
         }
 
@@ -65,8 +67,12 @@ namespace SistemaLaObra.InicioSesion
             HistorialSesion.CodigoHistorial = HistorialSesion.ultimoNumeroHistorial() + 1;
             HistorialSesion.crear(HistorialSesion);
 
-            //Obtenemos el tipo de encargado
-            TipoDeAcceso.mostrarDatos(Usuario.obtenerCodigoTipoDeEncargado(Usuario.CodigoUsuario));
+             ListaTipoDeAcceso_X_Usuario = Usuario.obtenerTipoAcceso(Usuario.CodigoUsuario);        
+
+            //BORRAR ESTO DESPUES
+            TipoDeAcceso.Descripcion = "ACCESO TOTAL";
+            //
+
 
             //Verificamos que interfaz traer
             iniciarInterfazCorrespondiente();

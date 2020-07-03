@@ -20,8 +20,8 @@ namespace SistemaLaObra.Soporte
         public Departamento Departamento { get; set; }
         public TipoTelefono TipoTelefono { get; set; }
         public TipoDocumento TipoDocumento { get; set; }
+        public List<TipoDeAcceso> ListaTipoDeAccesos { get; set; }
         Validaciones validaciones;
-        int codigoTipoEncargado;
 
         public IU_RegistrarUsuario()
         {
@@ -33,6 +33,7 @@ namespace SistemaLaObra.Soporte
             Provincia = new Provincia();
             Departamento = new Departamento();
             validaciones = new Validaciones();
+            ListaTipoDeAccesos = new List<TipoDeAcceso>();
         }
 
         //BOTONES
@@ -69,10 +70,15 @@ namespace SistemaLaObra.Soporte
                             tomarCodigoPostal();
                             tomarSeleccionLocalidad();
                             tomarEmpresa();
+                            tomarTipoAccesoPorUsuario();
                             Encargado.Usuario.crear(Encargado.Usuario);
                             Encargado.Usuario.mostrarDatos(Encargado.Usuario.NombreUsuario);
                             Encargado.crear(Encargado);
-                            Encargado.Usuario.crearEnListaTipoEncargado(Encargado.Usuario.CodigoUsuario, codigoTipoEncargado);
+
+
+                            //Encargado.Usuario.crearEnListaTipoEncargado(Encargado.Usuario.CodigoUsuario, codigoTipoEncargado);
+                            
+                            
                             this.Close();
                         }
                         else
@@ -141,9 +147,9 @@ namespace SistemaLaObra.Soporte
 
         private void cargarTiposAccesos()
         {
-            chx_tipoDeAcceso.ValueMember = "CodigoTipoEncargado";
-            chx_tipoDeAcceso.DisplayMember = "Descripcion";
-            chx_tipoDeAcceso.DataSource = TipoDeAcceso.mostrarDatos();
+            chlbx_tipoDeAcceso.DataSource = TipoDeAcceso.mostrarDatos();
+            chlbx_tipoDeAcceso.ValueMember = "CodigoTipoAcceso";
+            chlbx_tipoDeAcceso.DisplayMember = "Descripcion";            
         }
 
         private void tomarSeleccionTipoEncargado()
@@ -295,6 +301,19 @@ namespace SistemaLaObra.Soporte
             Encargado.CodigoMiEmpresa = int.Parse(cbx_empresa.SelectedValue.ToString());
             Encargado.MiEmpresa.mostrarDatos(Encargado.CodigoMiEmpresa);
         }
+
+        private void tomarTipoAccesoPorUsuario()
+        {
+            foreach (var item in chlbx_tipoDeAcceso.CheckedItems)
+            {
+                TipoDeAcceso acceso = (TipoDeAcceso)item;
+                ListaTipoDeAccesos.Add(new TipoDeAcceso()
+                {
+                    CodigoTipoAcceso = acceso.CodigoTipoAcceso,
+                    Descripcion=acceso.Descripcion
+                });
+            }            
+        }
         
         private void cargarEmpresas()
         {
@@ -304,16 +323,6 @@ namespace SistemaLaObra.Soporte
         }
 
         //EVENTOS
-
-        private void IU_RegistrarUsuario_Load(object sender, EventArgs e)
-        {
-            cargarTiposAccesos();
-            cargarTipoDocumento();
-            cargarTipoTelefono();
-            cargarProvincias();
-            cargarEmpresas();
-            inicializarListaCombos();
-        }
 
         private void cbx_provincia_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -348,6 +357,18 @@ namespace SistemaLaObra.Soporte
         private void txt_apellido_KeyPress(object sender, KeyPressEventArgs e)
         {
             validaciones.soloLetras(e);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            cargarTiposAccesos();
+            cargarTipoDocumento();
+            cargarTipoTelefono();
+            cargarProvincias();
+            cargarEmpresas();
+            inicializarListaCombos();
+            txt_nombreUsuario.Focus();
         }
     }
 }
