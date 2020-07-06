@@ -377,7 +377,7 @@
             this.cbx_tipoTelefono.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbx_tipoTelefono.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_tipoTelefono.FormattingEnabled = true;
-            this.cbx_tipoTelefono.Location = new System.Drawing.Point(110, 82);
+            this.cbx_tipoTelefono.Location = new System.Drawing.Point(110, 81);
             this.cbx_tipoTelefono.Name = "cbx_tipoTelefono";
             this.cbx_tipoTelefono.Size = new System.Drawing.Size(110, 23);
             this.cbx_tipoTelefono.TabIndex = 17;
@@ -682,7 +682,7 @@
             this.cbx_localidad.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbx_localidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_localidad.FormattingEnabled = true;
-            this.cbx_localidad.Location = new System.Drawing.Point(98, 108);
+            this.cbx_localidad.Location = new System.Drawing.Point(98, 107);
             this.cbx_localidad.Name = "cbx_localidad";
             this.cbx_localidad.Size = new System.Drawing.Size(260, 23);
             this.cbx_localidad.TabIndex = 9;

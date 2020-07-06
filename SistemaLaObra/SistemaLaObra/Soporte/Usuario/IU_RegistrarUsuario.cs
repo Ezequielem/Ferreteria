@@ -128,13 +128,7 @@ namespace SistemaLaObra.Soporte
                 tomarCodigoPostal();
                 tomarSeleccionLocalidad();
                 tomarEmpresa();
-                Encargado.Usuario.crear(Encargado.Usuario);
-                Encargado.Usuario.mostrarDatos(Encargado.Usuario.NombreUsuario);
-                Encargado.crear(Encargado);
-                foreach (var item in ListaTipoDeAccesos)
-                {
-                    TipoDeAcceso_X_Usuario.crear(item, Encargado.Usuario);
-                }                
+                registrar();           
                 this.Close();
             }          
         }
@@ -251,6 +245,17 @@ namespace SistemaLaObra.Soporte
                     Descripcion=acceso.Descripcion
                 });
             }            
+        }
+
+        private void registrar()
+        {
+            Encargado.Usuario.crear(Encargado.Usuario);
+            Encargado.Usuario.mostrarDatos(Encargado.Usuario.NombreUsuario);
+            Encargado.crear(Encargado);
+            foreach (var item in ListaTipoDeAccesos)
+            {
+                TipoDeAcceso_X_Usuario.crear(item, Encargado.Usuario);
+            }
         }
         
         private void cargarEmpresas()

@@ -16,26 +16,27 @@ namespace SistemaLaObra.Soporte
     {
         public Encargado Encargado { get; set; }
         public TipoDeAcceso TipoDeAcceso { get; set; }
-        public TipoDeAcceso_X_Usuario TipoDeAcceso_X_Usuario { get; set; }
-        public TipoTelefono TipoTelefono { get; set; }
-        public TipoDocumento TipoDocumento { get; set; }
         public Provincia Provincia { get; set; }
         public Departamento Departamento { get; set; }
-        public Localidad Localidad { get; set; }
+        public TipoTelefono TipoTelefono { get; set; }
+        public TipoDocumento TipoDocumento { get; set; }
+        public List<TipoDeAcceso> ListaTipoDeAccesos { get; set; }
+        public TipoDeAcceso_X_Usuario TipoDeAcceso_X_Usuario { get; set; }
+        public List<TipoDeAcceso_X_Usuario> ListaTipoDeAccesos_X_Usuarios { get; set; }
         Validaciones validaciones;
-        int codigoTipoEncargado;
 
         public IU_ActualizarUsuario()
         {
             InitializeComponent();
             Encargado = new Encargado();
             TipoDeAcceso = new TipoDeAcceso();
-            TipoDeAcceso_X_Usuario = new TipoDeAcceso_X_Usuario();
-            TipoTelefono = new TipoTelefono();
-            TipoDocumento = new TipoDocumento();
             Provincia = new Provincia();
             Departamento = new Departamento();
-            Localidad = new Localidad();
+            TipoTelefono = new TipoTelefono();
+            TipoDocumento = new TipoDocumento();
+            ListaTipoDeAccesos = new List<TipoDeAcceso>();
+            TipoDeAcceso_X_Usuario = new TipoDeAcceso_X_Usuario();
+            ListaTipoDeAccesos_X_Usuarios = new List<TipoDeAcceso_X_Usuario>();
             validaciones = new Validaciones();
         }
 
@@ -43,43 +44,94 @@ namespace SistemaLaObra.Soporte
 
         private void btn_actualizarDatos_Click(object sender, EventArgs e)
         {
-            if (tomarContraseña())
+            tomarTipoAccesoPorUsuario();
+            if (validaciones.campoVacio(txt_nombreUsuario.Text))
             {
-                tomarSeleccionTipoEncargado();
-                if (txt_legajo.Text != "" && txt_nombre.Text != "" && txt_apellido.Text != "" && txt_nroDocumento.Text != "" && txt_nroTelefono.Text != "")
-                {
-                    tomarNombreEncargado();
-                    tomarApellidoEncargado();
-                    tomarSeleccionTipoDocumento();
-                    tomarNroDocumento();
-                    tomarFechaNacimiento();
-                    tomarSeleccionTipoTelefono();
-                    tomarNroTelefono();
-
-                    if (txt_calle.Text != "" && txt_numero.Text != "" && txt_barrio.Text != "")
-                    {
-                        tomarCalle();
-                        tomarNumero();
-                        tomarDepto();
-                        tomarPiso();
-                        tomarBarrio();
-                        tomarCodigoPostal();
-                        tomarSeleccionLocalidad();
-                        tomarEmpresa();
-                        //Usuario.actualizarContraseña(Usuario.CodigoUsuario, Usuario.Contraseña);
-                        //ListaTipoEncargado.actualizar(codigoTipoEncargado, Usuario.CodigoUsuario);
-                        Encargado.actualizar(Encargado);
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Falta ingresar uno o varios datos domiciliarios", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Falta ingresar uno o varios datos personales", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
+                MessageBox.Show("Debe ingresar nombre de usuario",
+                    "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (Encargado.Usuario.existe(txt_nombre.Text))
+            {
+                MessageBox.Show("El usuario ya existe", "Advertencia!!!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (validaciones.campoVacio(txt_contraseña.Text))
+            {
+                MessageBox.Show("Debe ingresar contraseña",
+                    "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (!txt_contraseña.Text.Equals(txt_confirmarContraseña.Text))
+            {
+                MessageBox.Show("Las contraseñas no coinciden",
+                    "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (ListaTipoDeAccesos.Count == 0)
+            {
+                MessageBox.Show("Debe ingresar al menos un tipo de acceso",
+                    "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (validaciones.campoVacio(txt_legajo.Text))
+            {
+                MessageBox.Show("Debe ingresar legajo",
+                    "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (validaciones.campoVacio(txt_nombre.Text))
+            {
+                MessageBox.Show("Debe ingresar nombre",
+                   "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (validaciones.campoVacio(txt_apellido.Text))
+            {
+                MessageBox.Show("Debe ingresar apellido",
+                   "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (validaciones.campoVacio(txt_nroDocumento.Text))
+            {
+                MessageBox.Show("Debe ingresar número de documento",
+                   "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (validaciones.campoVacio(txt_nroTelefono.Text))
+            {
+                MessageBox.Show("Debe ingresar número de teléfono",
+                   "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (validaciones.campoVacio(txt_calle.Text))
+            {
+                MessageBox.Show("Debe ingresar calle",
+                   "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (validaciones.campoVacio(txt_numero.Text))
+            {
+                MessageBox.Show("Debe ingresar número de casa",
+                   "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (validaciones.campoVacio(txt_barrio.Text))
+            {
+                MessageBox.Show("Debe ingresar barrio",
+                   "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                tomarUsuario();
+                tomarContraseña();
+                tomarLegajo();
+                tomarNombreEncargado();
+                tomarApellidoEncargado();
+                tomarSeleccionTipoDocumento();
+                tomarNroDocumento();
+                tomarFechaNacimiento();
+                tomarSeleccionTipoTelefono();
+                tomarNroTelefono();
+                tomarCalle();
+                tomarNumero();
+                tomarDepto();
+                tomarPiso();
+                tomarBarrio();
+                tomarCodigoPostal();
+                tomarSeleccionLocalidad();
+                tomarEmpresa();
+                actualizar();
+                this.Close();
             }
         }
 
@@ -94,19 +146,17 @@ namespace SistemaLaObra.Soporte
         {
             Encargado.Usuario.mostrarDatos(id);
             Encargado.mostrarDatos(Encargado.obtenerCodigoEncargado(Encargado.Usuario.CodigoUsuario));
+            ListaTipoDeAccesos_X_Usuarios = TipoDeAcceso_X_Usuario.mostrarDatos(Encargado.Usuario);
             btn_actualizarDatos.Enabled = true;
         }
 
         private void mostrarDatosUsuario()
         {
-            cargarProvincias();
-            cargarDepartamentos();
-            cargarLocalidades();
-            cargarTiposAccesos();
-            cargarTipoDocumento();
-            cargarTipoTelefono();
             txt_nombreUsuario.Text = Encargado.Usuario.NombreUsuario;
-
+            foreach (var item in ListaTipoDeAccesos_X_Usuarios)
+            {
+                
+            }
             //TipoEncargado.mostrarDatos();
             //cbx_tipoEncargado.Text = TipoEncargado.Descripcion;
 
@@ -134,78 +184,45 @@ namespace SistemaLaObra.Soporte
             //Provincia.mostrarDatos(Encargado.CodigoProvincia);
             cbx_provincia.Text = Provincia.NombreProvincia;
             //cbx_departamento.Text = Departamento.mostrarNombre(Encargado.CodigoDepartamento);
-            cbx_localidad.Text = Localidad.mostrarNombre(Encargado.CodigoLocalidad);
+            //cbx_localidad.Text = Localidad.mostrarNombre(Encargado.CodigoLocalidad);
         }
 
-        private void cargarTiposAccesos()
+        private void tomarUsuario()
         {
-            cbx_tipoEncargado.ValueMember = "CodigoTipoEncargado";
-            cbx_tipoEncargado.DisplayMember = "Descripcion";
-            cbx_tipoEncargado.DataSource = TipoDeAcceso.mostrarDatos();
+            Encargado.Usuario.NombreUsuario = txt_nombreUsuario.Text;
         }
 
-        private void cargarTipoDocumento()
+        private void tomarContraseña()
         {
-            cbx_tipoDocumento.ValueMember = "CodigoTipoDocumento";
-            cbx_tipoDocumento.DisplayMember = "Descripcion";
-            cbx_tipoDocumento.DataSource = TipoDocumento.mostrarDatosColeccion();
+            Encargado.Usuario.Contraseña = txt_contraseña.Text;
         }
 
-        private void cargarTipoTelefono()
+        private void tomarLegajo()
         {
-            cbx_tipoTelefono.ValueMember = "CodigoTipoTelefono";
-            cbx_tipoTelefono.DisplayMember = "Descripcion";
-            cbx_tipoTelefono.DataSource = TipoTelefono.mostrarDatos();
+            Encargado.Legajo = int.Parse(txt_legajo.Text);
         }
 
-        private void cargarProvincias()
+        private void tomarTipoAccesoPorUsuario()
         {
-            cbx_provincia.ValueMember = "CodigoProvincia";
-            cbx_provincia.DisplayMember = "NombreProvincia";
-            cbx_provincia.DataSource = Provincia.mostrarDatos();
-        }               
-
-        private bool tomarContraseña()
-        {
-            if (txt_nuevaContraseña.Text != "")
+            foreach (var item in chlbx_tipoDeAcceso.CheckedItems)
             {
-                if (txt_nuevaContraseña.Text.Equals(txt_nuevaContraseña.Text))
+                TipoDeAcceso acceso = (TipoDeAcceso)item;
+                ListaTipoDeAccesos.Add(new TipoDeAcceso()
                 {
-                    Encargado.Usuario.Contraseña = txt_nuevaContraseña.Text;
-                    return true;
-                }
-                else
-                {
-                    MessageBox.Show("Las contraseñas no coinciden", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return false;
-                }
+                    CodigoTipoAcceso = acceso.CodigoTipoAcceso,
+                    Descripcion = acceso.Descripcion
+                });
             }
-            else
-            {
-                MessageBox.Show("No ingreso contraseña", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return false;
-            }
-        }
-
-        private void tomarSeleccionTipoEncargado()
-        {
-            codigoTipoEncargado = (int.Parse(cbx_tipoEncargado.SelectedValue.ToString()));
         }
 
         private void tomarNombreEncargado()
         {
-            if (txt_nombre.Text != string.Empty)
-            {
-                Encargado.Nombre = txt_nombre.Text;
-            }
+            Encargado.Nombre = txt_nombre.Text;
         }
 
         private void tomarApellidoEncargado()
         {
-            if (txt_apellido.Text != string.Empty)
-            {
-                Encargado.Apellido = txt_apellido.Text;
-            }
+            Encargado.Apellido = txt_apellido.Text;
         }
 
         private void tomarSeleccionTipoDocumento()
@@ -215,15 +232,12 @@ namespace SistemaLaObra.Soporte
 
         private void tomarNroDocumento()
         {
-            if (txt_nroDocumento.Text != string.Empty)
-            {
-                Encargado.NroDocumento = txt_nroDocumento.Text;
-            }
+            Encargado.NroDocumento = txt_nroDocumento.Text;
         }
 
         private void tomarFechaNacimiento()
         {
-            Encargado.FechaNacimiento = Convert.ToDateTime(txt_fechaNacimiento.Value.ToString("dd/MM/yyyy"));
+            Encargado.FechaNacimiento = txt_fechaNacimiento.Value;
         }
 
         private void tomarSeleccionTipoTelefono()
@@ -233,10 +247,7 @@ namespace SistemaLaObra.Soporte
 
         private void tomarNroTelefono()
         {
-            if (txt_nroTelefono.Text != string.Empty)
-            {
-                Encargado.NroTelefono = txt_nroTelefono.Text;
-            }
+            Encargado.NroTelefono = txt_nroTelefono.Text;
         }
 
         private void tomarCalle()
@@ -246,10 +257,7 @@ namespace SistemaLaObra.Soporte
 
         private void tomarNumero()
         {
-            if (int.Parse(txt_numero.Text) != 0)
-            {
-                //Encargado.Numero = int.Parse(txt_numero.Text);
-            }
+            Encargado.Numero = txt_numero.Text;
         }
 
         private void tomarDepto()
@@ -269,10 +277,7 @@ namespace SistemaLaObra.Soporte
 
         private void tomarCodigoPostal()
         {
-            if (int.Parse(txt_codigoPostal.Text) != 0)
-            {
-                //Encargado.CodigoPostal = int.Parse(txt_codigoPostal.Text);
-            }
+            Encargado.CodigoPostal = txt_codigoPostal.Text;
         }
 
         private void tomarSeleccionLocalidad()
@@ -284,6 +289,39 @@ namespace SistemaLaObra.Soporte
         {
             Encargado.CodigoMiEmpresa = int.Parse(cbx_empresa.SelectedValue.ToString());
             Encargado.MiEmpresa.mostrarDatos(Encargado.CodigoMiEmpresa);
+        }
+
+        private void actualizar()
+        {
+            //CAMBIAR
+            Encargado.Usuario.crear(Encargado.Usuario);
+            Encargado.Usuario.mostrarDatos(Encargado.Usuario.NombreUsuario);
+            Encargado.crear(Encargado);
+            foreach (var item in ListaTipoDeAccesos)
+            {
+                TipoDeAcceso_X_Usuario.crear(item, Encargado.Usuario);
+            }
+        }
+
+        private void cargarEmpresas()
+        {
+            cbx_empresa.DisplayMember = "NombreFantasia";
+            cbx_empresa.ValueMember = "CodigoMiEmpresa";
+            cbx_empresa.DataSource = Encargado.MiEmpresa.mostrarDatos();
+        }
+
+        private void cargarTiposAccesos()
+        {
+            chlbx_tipoDeAcceso.DataSource = TipoDeAcceso.mostrarDatos();
+            chlbx_tipoDeAcceso.ValueMember = "CodigoTipoAcceso";
+            chlbx_tipoDeAcceso.DisplayMember = "Descripcion";
+        }
+
+        private void cargarProvincias()
+        {
+            cbx_provincia.ValueMember = "CodigoProvincia";
+            cbx_provincia.DisplayMember = "NombreProvincia";
+            cbx_provincia.DataSource = Provincia.mostrarDatos();
         }
 
         private void cargarDepartamentos()
@@ -302,7 +340,43 @@ namespace SistemaLaObra.Soporte
             cbx_localidad.DataSource = Departamento.conocerLocalidad(codigoDepartamento);
         }
 
+        private void cargarTipoTelefono()
+        {
+            cbx_tipoTelefono.ValueMember = "CodigoTipoTelefono";
+            cbx_tipoTelefono.DisplayMember = "Descripcion";
+            cbx_tipoTelefono.DataSource = TipoTelefono.mostrarDatos();
+        }
+
+        private void cargarTipoDocumento()
+        {
+            cbx_tipoDocumento.ValueMember = "CodigoTipoDocumento";
+            cbx_tipoDocumento.DisplayMember = "Descripcion";
+            cbx_tipoDocumento.DataSource = TipoDocumento.mostrarDatosColeccion();
+        }
+
         //EVENTOS
+
+        private void cbx_provincia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cargarDepartamentos();
+        }
+
+        private void cbx_departamento_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            cargarLocalidades();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            cargarTiposAccesos();
+            cargarTipoDocumento();
+            cargarTipoTelefono();
+            cargarProvincias();
+            cargarEmpresas();            
+            mostrarDatosUsuario();
+            txt_nombreUsuario.Focus();
+        }
 
         private void txt_legajo_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -319,16 +393,6 @@ namespace SistemaLaObra.Soporte
             validaciones.soloNumeros(e);
         }
 
-        private void txt_numero_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validaciones.soloNumeros(e);
-        }
-
-        private void txt_codigoPostal_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validaciones.soloNumeros(e);
-        }
-
         private void txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             validaciones.soloLetras(e);
@@ -337,22 +401,6 @@ namespace SistemaLaObra.Soporte
         private void txt_apellido_KeyPress(object sender, KeyPressEventArgs e)
         {
             validaciones.soloLetras(e);
-        }
-
-        private void cbx_provincia_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cargarDepartamentos();
-        }
-
-        private void cbx_departamento_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            cargarLocalidades();
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            timer1.Stop();
-            mostrarDatosUsuario();
         }
     }
 }

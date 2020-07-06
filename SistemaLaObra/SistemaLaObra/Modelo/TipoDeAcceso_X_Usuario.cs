@@ -158,5 +158,35 @@ namespace SistemaLaObra.Modelo
                 lector.Close();
             }
         }
+
+        public bool existe(TipoDeAcceso_X_Usuario objeto)
+        {
+            AccesoDatos s = new AccesoDatos();
+            conexion = new SqlConnection(s.CadenaConexion());
+            consulta = new SqlCommand("select CodigoTipoAcceso, CodigoUsuario from TiposDeAccesos_X_Usuarios where CodigoTipoAcceso='"+ objeto.CodigoTipoAcceso +"' and CodigoUsuario='"+ objeto.CodigoUsuario +"'", conexion);
+            try
+            {
+                conexion.Open();
+                lector = consulta.ExecuteReader();
+                if (lector.Read())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                return false;
+            }
+            finally
+            {
+                conexion.Close();
+                lector.Close();
+            }
+        }
     }
 }
