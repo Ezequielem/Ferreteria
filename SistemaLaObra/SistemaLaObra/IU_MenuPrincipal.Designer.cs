@@ -34,8 +34,8 @@
             this.ms_btnCerrarSesion = new System.Windows.Forms.ToolStripMenuItem();
             this.baseDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generarScriptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lbl_tipoEncargado = new System.Windows.Forms.Label();
+            this.pnl_inferior = new System.Windows.Forms.Panel();
+            this.lbl_tipoDeAcceso = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_usuario = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,7 +50,7 @@
             this.btn_logistica = new System.Windows.Forms.Button();
             this.pnl_subMenu = new System.Windows.Forms.Panel();
             this.ms_menuOpciones.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnl_inferior.SuspendLayout();
             this.pnl_opciones.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -103,34 +103,34 @@
             this.generarScriptToolStripMenuItem.Text = "Generar Script backup";
             this.generarScriptToolStripMenuItem.Click += new System.EventHandler(this.generarScriptToolStripMenuItem_Click);
             // 
-            // panel2
+            // pnl_inferior
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.Control;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.lbl_tipoEncargado);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.lbl_usuario);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.lbl_nombreApellidoEncargado);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 703);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1008, 24);
-            this.panel2.TabIndex = 17;
+            this.pnl_inferior.BackColor = System.Drawing.SystemColors.Control;
+            this.pnl_inferior.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnl_inferior.Controls.Add(this.lbl_tipoDeAcceso);
+            this.pnl_inferior.Controls.Add(this.label3);
+            this.pnl_inferior.Controls.Add(this.lbl_usuario);
+            this.pnl_inferior.Controls.Add(this.label2);
+            this.pnl_inferior.Controls.Add(this.lbl_nombreApellidoEncargado);
+            this.pnl_inferior.Controls.Add(this.label1);
+            this.pnl_inferior.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnl_inferior.Location = new System.Drawing.Point(0, 703);
+            this.pnl_inferior.Name = "pnl_inferior";
+            this.pnl_inferior.Size = new System.Drawing.Size(1008, 24);
+            this.pnl_inferior.TabIndex = 17;
+            this.pnl_inferior.Visible = false;
             // 
-            // lbl_tipoEncargado
+            // lbl_tipoDeAcceso
             // 
-            this.lbl_tipoEncargado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lbl_tipoDeAcceso.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_tipoEncargado.AutoSize = true;
-            this.lbl_tipoEncargado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tipoEncargado.Location = new System.Drawing.Point(586, 2);
-            this.lbl_tipoEncargado.Name = "lbl_tipoEncargado";
-            this.lbl_tipoEncargado.Size = new System.Drawing.Size(127, 15);
-            this.lbl_tipoEncargado.TabIndex = 6;
-            this.lbl_tipoEncargado.Text = "Tipo de encargado";
-            this.lbl_tipoEncargado.Visible = false;
+            this.lbl_tipoDeAcceso.AutoSize = true;
+            this.lbl_tipoDeAcceso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tipoDeAcceso.Location = new System.Drawing.Point(636, 2);
+            this.lbl_tipoDeAcceso.Name = "lbl_tipoDeAcceso";
+            this.lbl_tipoDeAcceso.Size = new System.Drawing.Size(0, 15);
+            this.lbl_tipoDeAcceso.TabIndex = 6;
+            this.lbl_tipoDeAcceso.Visible = false;
             // 
             // label3
             // 
@@ -138,11 +138,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(491, 3);
+            this.label3.Location = new System.Drawing.Point(541, 3);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 15);
+            this.label3.Size = new System.Drawing.Size(93, 15);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Tipo encargado:";
+            this.label3.Text = "Tipo de acceso:";
             // 
             // lbl_usuario
             // 
@@ -252,7 +252,6 @@
             this.btn_soporte.Text = "SOPORTE";
             this.btn_soporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_soporte.UseVisualStyleBackColor = false;
-            this.btn_soporte.Visible = false;
             this.btn_soporte.Click += new System.EventHandler(this.btn_soporte_Click);
             // 
             // btn_ventas
@@ -275,7 +274,6 @@
             this.btn_ventas.Text = "VENTAS";
             this.btn_ventas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_ventas.UseVisualStyleBackColor = false;
-            this.btn_ventas.Visible = false;
             this.btn_ventas.Click += new System.EventHandler(this.btn_ventas_Click);
             // 
             // btn_estadistica
@@ -297,7 +295,6 @@
             this.btn_estadistica.Text = "ESTADÍSTICA";
             this.btn_estadistica.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_estadistica.UseVisualStyleBackColor = false;
-            this.btn_estadistica.Visible = false;
             this.btn_estadistica.Click += new System.EventHandler(this.btn_estadistica_Click);
             // 
             // btn_compras
@@ -319,7 +316,6 @@
             this.btn_compras.Text = "COMPRAS";
             this.btn_compras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_compras.UseVisualStyleBackColor = false;
-            this.btn_compras.Visible = false;
             this.btn_compras.Click += new System.EventHandler(this.btn_compras_Click);
             // 
             // btn_logistica
@@ -341,7 +337,6 @@
             this.btn_logistica.Text = "LOGÍSTICA";
             this.btn_logistica.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_logistica.UseVisualStyleBackColor = false;
-            this.btn_logistica.Visible = false;
             this.btn_logistica.Click += new System.EventHandler(this.btn_logistica_Click);
             // 
             // pnl_subMenu
@@ -364,7 +359,7 @@
             this.ClientSize = new System.Drawing.Size(1008, 727);
             this.Controls.Add(this.pnl_subMenu);
             this.Controls.Add(this.pnl_opciones);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pnl_inferior);
             this.Controls.Add(this.ms_menuOpciones);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
@@ -376,8 +371,8 @@
             this.Load += new System.EventHandler(this.IU_MenuPrincipal_Load);
             this.ms_menuOpciones.ResumeLayout(false);
             this.ms_menuOpciones.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.pnl_inferior.ResumeLayout(false);
+            this.pnl_inferior.PerformLayout();
             this.pnl_opciones.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -386,7 +381,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.Button btn_soporte;
         public System.Windows.Forms.Button btn_logistica;
         public System.Windows.Forms.Button btn_compras;
@@ -400,11 +394,12 @@
         public System.Windows.Forms.Label lbl_nombreApellidoEncargado;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label lbl_usuario;
-        public System.Windows.Forms.Label lbl_tipoEncargado;
+        public System.Windows.Forms.Label lbl_tipoDeAcceso;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.Button btn_estadistica;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ToolStripMenuItem baseDeDatosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generarScriptToolStripMenuItem;
+        public System.Windows.Forms.Panel pnl_inferior;
     }
 }

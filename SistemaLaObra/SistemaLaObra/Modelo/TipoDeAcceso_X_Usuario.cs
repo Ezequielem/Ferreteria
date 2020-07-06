@@ -1,6 +1,7 @@
 ﻿using SistemaLaObra.InicioSesion;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -27,9 +28,32 @@ namespace SistemaLaObra.Modelo
 
         //METODOS
 
-        public void crear()
+        public void crear(TipoDeAcceso tipoAcceso, Usuario usuario)
         {
+            AccesoDatos s = new AccesoDatos();
+            conexion = new SqlConnection(s.CadenaConexion());
+            consulta = new SqlCommand("insert into TiposDeAccesos_X_Usuarios (CodigoTipoAcceso, CodigoUsuario) values (@CodigoTipoAcceso, @CodigoUsuario)", conexion);
+            try
+            {
+                adaptador = new SqlDataAdapter();
+                adaptador.InsertCommand = consulta;
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@CodigoTipoAcceso", SqlDbType.Int));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@CodigoUsuario", SqlDbType.Int));
 
+                adaptador.InsertCommand.Parameters["@CodigoTipoAcceso"].Value = tipoAcceso.CodigoTipoAcceso;
+                adaptador.InsertCommand.Parameters["@CodigoUsuario"].Value = usuario.CodigoUsuario;
+
+                conexion.Open();
+                adaptador.InsertCommand.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                conexion.Close();
+            }
         }
 
         public void actualizar()

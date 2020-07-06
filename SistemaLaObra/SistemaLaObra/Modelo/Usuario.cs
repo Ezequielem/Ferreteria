@@ -36,16 +36,15 @@ namespace SistemaLaObra.InicioSesion
             acceso = new AccesoDatos();
             conexion = new SqlConnection(acceso.CadenaConexion());
             consulta = new SqlCommand(@"INSERT INTO Usuarios (nombreUsuario,contraseña) 
-                                        VALUES (@nombreUsuario,@contraseña)",conexion);
-            adaptador = new SqlDataAdapter();
-            adaptador.InsertCommand = consulta;
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nombreUsuario", SqlDbType.VarChar));
-            adaptador.InsertCommand.Parameters.Add(new SqlParameter("@contraseña", SqlDbType.VarChar));
-            adaptador.InsertCommand.Parameters["@nombreUsuario"].Value = usuario.NombreUsuario;
-            adaptador.InsertCommand.Parameters["@contraseña"].Value = usuario.Contraseña;
-
+                                        VALUES (@nombreUsuario,@contraseña)",conexion);            
             try
             {
+                adaptador = new SqlDataAdapter();
+                adaptador.InsertCommand = consulta;
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@nombreUsuario", SqlDbType.VarChar));
+                adaptador.InsertCommand.Parameters.Add(new SqlParameter("@contraseña", SqlDbType.VarChar));
+                adaptador.InsertCommand.Parameters["@nombreUsuario"].Value = usuario.NombreUsuario;
+                adaptador.InsertCommand.Parameters["@contraseña"].Value = usuario.Contraseña;
                 conexion.Open();
                 adaptador.InsertCommand.ExecuteNonQuery();
             }
@@ -211,37 +210,7 @@ namespace SistemaLaObra.InicioSesion
                 lector.Close();
                 conexion.Close();
             }
-        }
-
-        public bool confirmarUsuario(string nombreUsuario)
-        {
-            acceso = new AccesoDatos();
-            conexion = new SqlConnection(acceso.CadenaConexion());
-            consulta = new SqlCommand("SELECT nombreUsuario FROM Usuarios where nombreUsuario='"+ nombreUsuario +"'", conexion);
-            try
-            {
-                conexion.Open();
-                lector = consulta.ExecuteReader();
-                if (lector.Read())
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            catch (Exception error)
-            {                
-                MessageBox.Show(error.Message);
-                return false;
-            }
-            finally
-            {
-                lector.Close();
-                conexion.Close();
-            }
-        }       
+        }        
 
         public void actualizarContraseña(int codigoUsuario, string nuevaContraseña)
         {
@@ -256,6 +225,36 @@ namespace SistemaLaObra.InicioSesion
             catch (Exception error)
             {
                 MessageBox.Show(error.Message);
+            }
+            finally
+            {
+                lector.Close();
+                conexion.Close();
+            }
+        }
+
+        public bool existe(string nombreUsuario)
+        {
+            acceso = new AccesoDatos();
+            conexion = new SqlConnection(acceso.CadenaConexion());
+            consulta = new SqlCommand("SELECT nombreUsuario FROM Usuarios where nombreUsuario='" + nombreUsuario + "'", conexion);
+            try
+            {
+                conexion.Open();
+                lector = consulta.ExecuteReader();
+                if (lector.Read())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+                return false;
             }
             finally
             {

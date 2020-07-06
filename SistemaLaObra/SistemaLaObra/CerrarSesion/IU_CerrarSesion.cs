@@ -53,7 +53,7 @@ namespace SistemaLaObra.CerrarSesion
 
                 InterfazContenedora.lbl_usuario.Visible = false;
                 InterfazContenedora.lbl_nombreApellidoEncargado.Visible = false;
-                InterfazContenedora.lbl_tipoEncargado.Visible = false;
+                InterfazContenedora.lbl_tipoDeAcceso.Visible = false;
 
             }
             else
@@ -79,7 +79,7 @@ namespace SistemaLaObra.CerrarSesion
 
                     InterfazContenedora.lbl_usuario.Visible = false;
                     InterfazContenedora.lbl_nombreApellidoEncargado.Visible = false;
-                    InterfazContenedora.lbl_tipoEncargado.Visible = false;
+                    InterfazContenedora.lbl_tipoDeAcceso.Visible = false;
                 }
             }
             this.Close();
