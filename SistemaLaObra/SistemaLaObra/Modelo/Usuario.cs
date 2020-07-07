@@ -29,8 +29,6 @@ namespace SistemaLaObra.InicioSesion
             Contraseña = "";
         }
 
-        List<Usuario> listaUsuario;
-
         public void crear(Usuario usuario)
         {
             acceso = new AccesoDatos();
@@ -56,7 +54,36 @@ namespace SistemaLaObra.InicioSesion
             {
                 conexion.Close();
             }
-        }       
+        }
+
+        public void actualizar(Usuario usuario)
+        {
+            acceso = new AccesoDatos();
+            conexion = new SqlConnection(acceso.CadenaConexion());
+            consulta = new SqlCommand(@"update Usuarios set nombreUsuario=@nombreUsuario, contraseña=@contraseña where codigoUsuario=@codigoUsuario", conexion);
+            try
+            {
+                adaptador = new SqlDataAdapter();
+                adaptador.UpdateCommand = consulta;
+                adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@nombreUsuario", SqlDbType.VarChar));
+                adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@contraseña", SqlDbType.VarChar));
+                adaptador.UpdateCommand.Parameters.Add(new SqlParameter("@codigoUsuario", SqlDbType.Int));
+                adaptador.UpdateCommand.Parameters["@nombreUsuario"].Value = usuario.NombreUsuario;
+                adaptador.UpdateCommand.Parameters["@contraseña"].Value = usuario.Contraseña;
+                adaptador.UpdateCommand.Parameters["@codigoUsuario"].Value = usuario.CodigoUsuario;
+                conexion.Open();
+                consulta.ExecuteNonQuery();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
+            finally
+            {
+                lector.Close();
+                conexion.Close();
+            }
+        }
 
         public void mostrarDatos(int codigoUsuario)
         {
@@ -114,8 +141,7 @@ namespace SistemaLaObra.InicioSesion
 
         public List<Usuario> mostrarDatos()
         {
-            listaUsuario = new List<Usuario>();
-
+            List<Usuario> listaUsuario = new List<Usuario>();
             acceso = new AccesoDatos();
             conexion = new SqlConnection(acceso.CadenaConexion());
             consulta = new SqlCommand("SELECT codigoUsuario,nombreUsuario FROM Usuarios", conexion);
@@ -210,28 +236,7 @@ namespace SistemaLaObra.InicioSesion
                 lector.Close();
                 conexion.Close();
             }
-        }        
-
-        public void actualizarContraseña(int codigoUsuario, string nuevaContraseña)
-        {
-            acceso = new AccesoDatos();
-            conexion = new SqlConnection(acceso.CadenaConexion());
-            consulta = new SqlCommand("UPDATE Usuarios SET contraseña='"+nuevaContraseña+"' WHERE codigoUsuario='"+codigoUsuario+"'", conexion);
-            try
-            {
-                conexion.Open();
-                consulta.ExecuteNonQuery();
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show(error.Message);
-            }
-            finally
-            {
-                lector.Close();
-                conexion.Close();
-            }
-        }
+        }                
 
         public bool existe(string nombreUsuario)
         {

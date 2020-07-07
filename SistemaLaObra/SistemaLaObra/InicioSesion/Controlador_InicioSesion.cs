@@ -104,6 +104,11 @@ namespace SistemaLaObra.InicioSesion
                 }
             }
             interfazInicioSesion.interfazContenedora.pnl_opciones.Visible=true;
+            interfazInicioSesion.interfazContenedora.btn_ventas.Visible = true;
+            interfazInicioSesion.interfazContenedora.btn_compras.Visible = true;
+            interfazInicioSesion.interfazContenedora.btn_logistica.Visible = true;
+            interfazInicioSesion.interfazContenedora.btn_estadistica.Visible = true;
+            interfazInicioSesion.interfazContenedora.btn_soporte.Visible = true;
             interfazInicioSesion.interfazContenedora.pnl_subMenu.Visible = true;
             interfazInicioSesion.interfazContenedora.pnl_inferior.Visible = true;
             interfazInicioSesion.Close();

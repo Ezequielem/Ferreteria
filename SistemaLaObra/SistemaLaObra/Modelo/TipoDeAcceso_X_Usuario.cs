@@ -56,9 +56,28 @@ namespace SistemaLaObra.Modelo
             }
         }
 
-        public void actualizar()
+        public void borrar(TipoDeAcceso tipoAcceso, Usuario usuario)
         {
-
+            AccesoDatos s = new AccesoDatos();
+            conexion = new SqlConnection(s.CadenaConexion());
+            consulta = new SqlCommand(@"delete from TiposDeAccesos_X_Usuarios 
+                                        where CodigoTipoAcceso='"+ tipoAcceso.CodigoTipoAcceso +"' and " +
+                                        "CodigoUsuario='"+ usuario.CodigoUsuario +"'", conexion);
+            try
+            {
+                conexion.Open();
+                adaptador = new SqlDataAdapter();
+                adaptador.DeleteCommand = consulta;
+                adaptador.DeleteCommand.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                conexion.Close();
+            }
         }
 
         public List<TipoDeAcceso_X_Usuario> mostrarDatos()

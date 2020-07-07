@@ -82,6 +82,9 @@ namespace SistemaLaObra.CerrarSesion
                     InterfazContenedora.lbl_tipoDeAcceso.Visible = false;
                 }
             }
+            InterfazContenedora.lbl_usuario.Text = string.Empty;
+            InterfazContenedora.lbl_nombreApellidoEncargado.Text = string.Empty;
+            InterfazContenedora.lbl_tipoDeAcceso.Text = string.Empty;
             this.Close();
         }
 

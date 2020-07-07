@@ -145,7 +145,8 @@ namespace SistemaLaObra.Soporte
         public void opcionActualizarUsuario(int id)
         {
             Encargado.Usuario.mostrarDatos(id);
-            Encargado.mostrarDatos(Encargado.obtenerCodigoEncargado(Encargado.Usuario.CodigoUsuario));
+            Encargado.mostrarDatos(Encargado.obtenerCodigoEncargado(Encargado.Usuario.CodigoUsuario));            
+            Encargado.Localidad.mostrarDatos(Encargado.CodigoLocalidad);
             ListaTipoDeAccesos_X_Usuarios = TipoDeAcceso_X_Usuario.mostrarDatos(Encargado.Usuario);
             btn_actualizarDatos.Enabled = true;
         }
@@ -153,38 +154,32 @@ namespace SistemaLaObra.Soporte
         private void mostrarDatosUsuario()
         {
             txt_nombreUsuario.Text = Encargado.Usuario.NombreUsuario;
-            foreach (var item in ListaTipoDeAccesos_X_Usuarios)
+            for (int i = 0; i < chlbx_tipoDeAcceso.Items.Count; i++)
             {
-                
+                var tipoAcceso = (TipoDeAcceso)chlbx_tipoDeAcceso.Items[i];
+                if (ListaTipoDeAccesos_X_Usuarios.Where(x => x.CodigoTipoAcceso == tipoAcceso.CodigoTipoAcceso).ToList().Count > 0)
+                {
+                    chlbx_tipoDeAcceso.SetItemChecked(i, true);
+                }                
             }
-            //TipoEncargado.mostrarDatos();
-            //cbx_tipoEncargado.Text = TipoEncargado.Descripcion;
-
-            //DATOS ENCARGADO//
-            gb_datosPersonales.Enabled = true;
             txt_legajo.Text = Encargado.Legajo.ToString();
             txt_nombre.Text = Encargado.Nombre;
-            txt_apellido.Text = Encargado.Apellido;
-            TipoDocumento.mostrarDatos(Encargado.CodigoTipoDocumento);
-            cbx_tipoDocumento.Text = TipoDocumento.Descripcion;
+            txt_apellido.Text = Encargado.Apellido;            
+            cbx_tipoDocumento.SelectedValue = Encargado.CodigoTipoDocumento;
             txt_nroDocumento.Text = Encargado.NroDocumento;
-            txt_fechaNacimiento.Value = Convert.ToDateTime(Encargado.FechaNacimiento);
-            TipoTelefono.mostrarDatos(Encargado.CodigoTipoTelefono);
-            cbx_tipoTelefono.Text = TipoTelefono.Descripcion;
+            txt_fechaNacimiento.Value = Encargado.FechaNacimiento;            
+            cbx_tipoTelefono.SelectedValue = Encargado.CodigoTipoTelefono;
             txt_nroTelefono.Text = Encargado.NroTelefono;
-
-            //DATOS DOMICILIARIOS
-            gb_domicilio.Enabled = true;
             txt_calle.Text = Encargado.Calle;
             txt_numero.Text = Encargado.Numero.ToString();
             txt_depto.Text = Encargado.Depto;
             txt_piso.Text = Encargado.Piso;
             txt_barrio.Text = Encargado.NombreBarrio;
-            txt_codigoPostal.Text = Encargado.CodigoPostal.ToString();
-            //Provincia.mostrarDatos(Encargado.CodigoProvincia);
-            cbx_provincia.Text = Provincia.NombreProvincia;
-            //cbx_departamento.Text = Departamento.mostrarNombre(Encargado.CodigoDepartamento);
-            //cbx_localidad.Text = Localidad.mostrarNombre(Encargado.CodigoLocalidad);
+            txt_codigoPostal.Text = Encargado.CodigoPostal.ToString();            
+            cbx_provincia.SelectedValue = Encargado.Localidad.Departamento.Provincia.CodigoProvincia;
+            cbx_departamento.SelectedValue = Encargado.Localidad.Departamento.CodigoDepartamento;
+            cbx_localidad.SelectedValue = Encargado.Localidad.CodigoLocalidad;
+            cbx_empresa.SelectedValue = Encargado.CodigoMiEmpresa;
         }
 
         private void tomarUsuario()
@@ -206,6 +201,7 @@ namespace SistemaLaObra.Soporte
         {
             foreach (var item in chlbx_tipoDeAcceso.CheckedItems)
             {
+                ListaTipoDeAccesos.Clear();
                 TipoDeAcceso acceso = (TipoDeAcceso)item;
                 ListaTipoDeAccesos.Add(new TipoDeAcceso()
                 {
@@ -227,7 +223,7 @@ namespace SistemaLaObra.Soporte
 
         private void tomarSeleccionTipoDocumento()
         {
-            Encargado.CodigoTipoDocumento = int.Parse(cbx_tipoTelefono.SelectedValue.ToString());
+            Encargado.CodigoTipoDocumento = int.Parse(cbx_tipoDocumento.SelectedValue.ToString());
         }
 
         private void tomarNroDocumento()
@@ -293,13 +289,26 @@ namespace SistemaLaObra.Soporte
 
         private void actualizar()
         {
-            //CAMBIAR
-            Encargado.Usuario.crear(Encargado.Usuario);
-            Encargado.Usuario.mostrarDatos(Encargado.Usuario.NombreUsuario);
-            Encargado.crear(Encargado);
-            foreach (var item in ListaTipoDeAccesos)
+            Encargado.Usuario.actualizar(Encargado.Usuario);
+            Encargado.actualizar(Encargado);
+            for (int i = 0; i < chlbx_tipoDeAcceso.Items.Count; i++)
             {
-                TipoDeAcceso_X_Usuario.crear(item, Encargado.Usuario);
+                var tipoAcceso = (TipoDeAcceso)chlbx_tipoDeAcceso.Items[i];
+                bool chequeado = chlbx_tipoDeAcceso.GetItemChecked(i);
+                if (chequeado)
+                {
+                    if (ListaTipoDeAccesos_X_Usuarios.Where(x => x.CodigoTipoAcceso == tipoAcceso.CodigoTipoAcceso).ToList().Count == 0)
+                    {
+                        TipoDeAcceso_X_Usuario.crear(tipoAcceso, Encargado.Usuario);
+                    }                    
+                }
+                else
+                {
+                    if (ListaTipoDeAccesos_X_Usuarios.Where(x => x.CodigoTipoAcceso == tipoAcceso.CodigoTipoAcceso).ToList().Count > 0)
+                    {
+                        TipoDeAcceso_X_Usuario.borrar(tipoAcceso, Encargado.Usuario);
+                    }                    
+                }
             }
         }
 
