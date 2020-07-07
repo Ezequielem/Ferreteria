@@ -14,6 +14,7 @@ using SistemaLaObra.CerrarSesion;
 using SistemaLaObra.Estadística;
 using System.IO;
 using System.Threading;
+using SistemaLaObra.Modelo;
 
 namespace SistemaLaObra
 {

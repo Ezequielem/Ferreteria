@@ -1,5 +1,4 @@
-﻿using SistemaLaObra.InicioSesion;
-using SistemaLaObra.Modelo;
+﻿using SistemaLaObra.Modelo;
 using System;
 using System.Collections.Generic;
 using System.Data;

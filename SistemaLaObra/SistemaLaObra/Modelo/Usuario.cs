@@ -1,5 +1,4 @@
-﻿using SistemaLaObra.Modelo;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -8,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaLaObra.InicioSesion
+namespace SistemaLaObra.Modelo
 {
     public class Usuario
     {
@@ -34,7 +33,7 @@ namespace SistemaLaObra.InicioSesion
             acceso = new AccesoDatos();
             conexion = new SqlConnection(acceso.CadenaConexion());
             consulta = new SqlCommand(@"INSERT INTO Usuarios (nombreUsuario,contraseña) 
-                                        VALUES (@nombreUsuario,@contraseña)",conexion);            
+                                        VALUES (@nombreUsuario,@contraseña)", conexion);
             try
             {
                 adaptador = new SqlDataAdapter();
@@ -89,7 +88,7 @@ namespace SistemaLaObra.InicioSesion
         {
             acceso = new AccesoDatos();
             conexion = new SqlConnection(acceso.CadenaConexion());
-            consulta = new SqlCommand("SELECT * FROM Usuarios WHERE codigoUsuario='"+codigoUsuario+"'",conexion);
+            consulta = new SqlCommand("SELECT * FROM Usuarios WHERE codigoUsuario='" + codigoUsuario + "'", conexion);
             try
             {
                 conexion.Open();
@@ -211,18 +210,18 @@ namespace SistemaLaObra.InicioSesion
             acceso = new AccesoDatos();
             conexion = new SqlConnection(acceso.CadenaConexion());
             consulta = new SqlCommand(@"select CodigoTipoAcceso, CodigoUsuario from TiposDeAccesos_X_Usuarios 
-                                        where CodigoUsuario='" + codigoUsuario +"'", conexion);
+                                        where CodigoUsuario='" + codigoUsuario + "'", conexion);
             try
             {
                 conexion.Open();
                 lector = consulta.ExecuteReader();
                 while (lector.Read())
                 {
-                    lista.Add(new TipoDeAcceso_X_Usuario() 
-                    { 
-                        CodigoTipoAcceso=int.Parse(lector["CodigoTipoAcceso"].ToString()),
-                        CodigoUsuario=int.Parse(lector["CodigoUsuario"].ToString())
-                    });                    
+                    lista.Add(new TipoDeAcceso_X_Usuario()
+                    {
+                        CodigoTipoAcceso = int.Parse(lector["CodigoTipoAcceso"].ToString()),
+                        CodigoUsuario = int.Parse(lector["CodigoUsuario"].ToString())
+                    });
                 }
                 return lista;
             }
@@ -236,7 +235,7 @@ namespace SistemaLaObra.InicioSesion
                 lector.Close();
                 conexion.Close();
             }
-        }                
+        }
 
         public bool existe(string nombreUsuario)
         {

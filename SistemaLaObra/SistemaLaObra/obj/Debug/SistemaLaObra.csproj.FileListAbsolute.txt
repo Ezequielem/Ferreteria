@@ -587,7 +587,6 @@ C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\Sist
 C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_ActualizarTarjeta.resources
 C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_ActualizarTiposArticulo.resources
 C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_ActualizarUbicacion.resources
-C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_ActualizarUsuario.resources
 C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.IU_ConsultarArticulo.resources
 C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_ConsultarEmpresa.resources
 C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_ConsultarHistorialSesiones.resources
@@ -687,3 +686,5 @@ C:\Users\EZEQUIEL\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra
 C:\Users\EZEQUIEL\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\es\Microsoft.VisualStudio.Data.Core.resources.dll
 C:\Users\EZEQUIEL\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\es\Microsoft.VisualStudio.GraphModel.resources.dll
 C:\Users\EZEQUIEL\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.exe.config
+C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.UsuariosSistema.IU_ActualizarUsuario.resources
+C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.UsuariosSistema.IU_ValidacionUsuario.resources

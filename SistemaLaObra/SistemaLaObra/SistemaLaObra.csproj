@@ -386,10 +386,10 @@
     <Compile Include="Soporte\Ubicacion\IU_ActualizarUbicacion.Designer.cs">
       <DependentUpon>IU_ActualizarUbicacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\Usuario\IU_ActualizarUsuario.cs">
+    <Compile Include="Soporte\UsuariosSistema\IU_ActualizarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\Usuario\IU_ActualizarUsuario.Designer.cs">
+    <Compile Include="Soporte\UsuariosSistema\IU_ActualizarUsuario.Designer.cs">
       <DependentUpon>IU_ActualizarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Soporte\Empresa\IU_ConsultarEmpresa.cs">
@@ -398,10 +398,10 @@
     <Compile Include="Soporte\Empresa\IU_ConsultarEmpresa.Designer.cs">
       <DependentUpon>IU_ConsultarEmpresa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\Usuario\IU_ConsultarHistorialSesiones.cs">
+    <Compile Include="Soporte\UsuariosSistema\IU_ConsultarHistorialSesiones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\Usuario\IU_ConsultarHistorialSesiones.Designer.cs">
+    <Compile Include="Soporte\UsuariosSistema\IU_ConsultarHistorialSesiones.Designer.cs">
       <DependentUpon>IU_ConsultarHistorialSesiones.cs</DependentUpon>
     </Compile>
     <Compile Include="Soporte\Marca\IU_ConsultarMarca.cs">
@@ -416,16 +416,16 @@
     <Compile Include="Soporte\Ubicacion\IU_ConsultarUbicacion.Designer.cs">
       <DependentUpon>IU_ConsultarUbicacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\Usuario\IU_ConsultarUsuario.cs">
+    <Compile Include="Soporte\UsuariosSistema\IU_ConsultarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\Usuario\IU_ConsultarUsuario.Designer.cs">
+    <Compile Include="Soporte\UsuariosSistema\IU_ConsultarUsuario.Designer.cs">
       <DependentUpon>IU_ConsultarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\Usuario\IU_DatosUsuario.cs">
+    <Compile Include="Soporte\UsuariosSistema\IU_DatosUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\Usuario\IU_DatosUsuario.Designer.cs">
+    <Compile Include="Soporte\UsuariosSistema\IU_DatosUsuario.Designer.cs">
       <DependentUpon>IU_DatosUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Soporte\Empresa\IU_DetalleMiEmpresa.cs">
@@ -482,10 +482,10 @@
     <Compile Include="Soporte\Ubicacion\IU_RegistrarUbicacion.Designer.cs">
       <DependentUpon>IU_RegistrarUbicacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\Usuario\IU_RegistrarUsuario.cs">
+    <Compile Include="Soporte\UsuariosSistema\IU_RegistrarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\Usuario\IU_RegistrarUsuario.Designer.cs">
+    <Compile Include="Soporte\UsuariosSistema\IU_RegistrarUsuario.Designer.cs">
       <DependentUpon>IU_RegistrarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Soporte\Reportes\DataSetPrincipal.cs">
@@ -545,6 +545,12 @@
     <Compile Include="Modelo\TipoDocumento.cs" />
     <Compile Include="Modelo\Ubicacion.cs" />
     <Compile Include="Modelo\UnidadDeMedida.cs" />
+    <Compile Include="Soporte\UsuariosSistema\IU_ValidacionUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Soporte\UsuariosSistema\IU_ValidacionUsuario.Designer.cs">
+      <DependentUpon>IU_ValidacionUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventas\ActualizarNotaDeCredito\Controlador_ActualizarNotaDeCredito.cs" />
     <Compile Include="Ventas\ActualizarNotaDeCredito\IU_ActualizarNotaDeCredito.cs">
       <SubType>Form</SubType>
@@ -605,10 +611,10 @@
     <Compile Include="Soporte\Articulo\IU_ActualizarArticulo.Designer.cs">
       <DependentUpon>IU_ActualizarArticulo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\IU_MenuPrincipalSoporte.cs">
+    <Compile Include="Soporte\UsuariosSistema\IU_MenuPrincipalSoporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\IU_MenuPrincipalSoporte.Designer.cs">
+    <Compile Include="Soporte\UsuariosSistema\IU_MenuPrincipalSoporte.Designer.cs">
       <DependentUpon>IU_MenuPrincipalSoporte.cs</DependentUpon>
     </Compile>
     <Compile Include="Soporte\Articulo\IU_RegistrarArticulo.cs">
@@ -873,7 +879,7 @@
     <EmbeddedResource Include="Soporte\Ubicacion\IU_ActualizarUbicacion.resx">
       <DependentUpon>IU_ActualizarUbicacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\Usuario\IU_ActualizarUsuario.resx">
+    <EmbeddedResource Include="Soporte\UsuariosSistema\IU_ActualizarUsuario.resx">
       <DependentUpon>IU_ActualizarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Soporte\Articulo\IU_ConsultarArticulo.resx">
@@ -882,7 +888,7 @@
     <EmbeddedResource Include="Soporte\Empresa\IU_ConsultarEmpresa.resx">
       <DependentUpon>IU_ConsultarEmpresa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\Usuario\IU_ConsultarHistorialSesiones.resx">
+    <EmbeddedResource Include="Soporte\UsuariosSistema\IU_ConsultarHistorialSesiones.resx">
       <DependentUpon>IU_ConsultarHistorialSesiones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Soporte\Marca\IU_ConsultarMarca.resx">
@@ -891,10 +897,10 @@
     <EmbeddedResource Include="Soporte\Ubicacion\IU_ConsultarUbicacion.resx">
       <DependentUpon>IU_ConsultarUbicacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\Usuario\IU_ConsultarUsuario.resx">
+    <EmbeddedResource Include="Soporte\UsuariosSistema\IU_ConsultarUsuario.resx">
       <DependentUpon>IU_ConsultarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\Usuario\IU_DatosUsuario.resx">
+    <EmbeddedResource Include="Soporte\UsuariosSistema\IU_DatosUsuario.resx">
       <DependentUpon>IU_DatosUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Soporte\Empresa\IU_DetalleMiEmpresa.resx">
@@ -903,7 +909,7 @@
     <EmbeddedResource Include="Soporte\Empresa\IU_EliminarMiEmpresa.resx">
       <DependentUpon>IU_EliminarMiEmpresa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\IU_MenuPrincipalSoporte.resx">
+    <EmbeddedResource Include="Soporte\UsuariosSistema\IU_MenuPrincipalSoporte.resx">
       <DependentUpon>IU_MenuPrincipalSoporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Soporte\Empresa\IU_ModificarEmpresa.resx">
@@ -930,7 +936,7 @@
     <EmbeddedResource Include="Soporte\Ubicacion\IU_RegistrarUbicacion.resx">
       <DependentUpon>IU_RegistrarUbicacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\Usuario\IU_RegistrarUsuario.resx">
+    <EmbeddedResource Include="Soporte\UsuariosSistema\IU_RegistrarUsuario.resx">
       <DependentUpon>IU_RegistrarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Soporte\Reportes\InformeAnualVentas\IU_ReporteAnualVentas.resx">
@@ -961,6 +967,9 @@
       <DependentUpon>IU_ReporteTopEncargadosXPeriodo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Soporte\Reportes\InformeTopEncargadosXPeriodo\ReporteTopEncargados.rdlc" />
+    <EmbeddedResource Include="Soporte\UsuariosSistema\IU_ValidacionUsuario.resx">
+      <DependentUpon>IU_ValidacionUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventas\ActualizarClienteMayorista\IU_ActualizarClienteMayorista.resx">
       <DependentUpon>IU_ActualizarClienteMayorista.cs</DependentUpon>
     </EmbeddedResource>

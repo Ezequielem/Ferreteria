@@ -14,8 +14,6 @@ namespace SistemaLaObra.Soporte
 {
     public partial class IU_ConsultarHistorialSesiones : Form
     {
-
-        public Usuario Usuario { get; set; }
         public Encargado Encargado { get; set; }
         public TipoDeAcceso TipoDeAcceso { get; set; }
         public TipoDeAcceso_X_Usuario TipoDeAcceso_X_Usuario { get; set; }
@@ -23,9 +21,8 @@ namespace SistemaLaObra.Soporte
 
         public IU_ConsultarHistorialSesiones()
         {
-            InitializeComponent();
-            Usuario = new Usuario();
-            Encargado = new Encargado();
+            InitializeComponent();            
+            Encargado = new Encargado();            
             TipoDeAcceso = new TipoDeAcceso();
             TipoDeAcceso_X_Usuario = new TipoDeAcceso_X_Usuario();
             HistorialSesion = new HistorialSesion();
@@ -36,17 +33,17 @@ namespace SistemaLaObra.Soporte
             if (txt_nombreUsuario.Text != string.Empty)
             {
                 dgv_historial.Rows.Clear();
-                Usuario.mostrarDatos(txt_nombreUsuario.Text);                
-                if (Usuario.CodigoUsuario != 0)
+                Encargado.Usuario.mostrarDatos(txt_nombreUsuario.Text);                
+                if (Encargado.Usuario.CodigoUsuario != 0)
                 {
                     string acceso=string.Empty;
-                    foreach (var item in TipoDeAcceso_X_Usuario.mostrarDatos(Usuario))
+                    foreach (var item in TipoDeAcceso_X_Usuario.mostrarDatos(Encargado.Usuario))
                     {
                         TipoDeAcceso.mostrarDatos(item.CodigoTipoAcceso);
                         acceso += TipoDeAcceso.Descripcion + " ";
                     }
-                    Encargado.mostrarDatos(Encargado.obtenerCodigoEncargado(Usuario.CodigoUsuario));
-                    List<HistorialSesion> lista = HistorialSesion.mostrarDatos(Usuario.CodigoUsuario);
+                    Encargado.mostrarDatos(Encargado.obtenerCodigoEncargado(Encargado.Usuario.CodigoUsuario));
+                    List<HistorialSesion> lista = HistorialSesion.mostrarDatos(Encargado.Usuario.CodigoUsuario);
                     foreach (var item in lista)
                     {
 
