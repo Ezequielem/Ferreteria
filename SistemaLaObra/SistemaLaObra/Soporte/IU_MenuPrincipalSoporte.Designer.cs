@@ -1,4 +1,4 @@
-﻿namespace SistemaLaObra
+﻿namespace SistemaLaObra.Soporte
 {
     partial class IU_MenuPrincipalSoporte
     {

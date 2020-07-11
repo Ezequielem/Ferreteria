@@ -611,10 +611,10 @@
     <Compile Include="Soporte\Articulo\IU_ActualizarArticulo.Designer.cs">
       <DependentUpon>IU_ActualizarArticulo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Soporte\UsuariosSistema\IU_MenuPrincipalSoporte.cs">
+    <Compile Include="Soporte\IU_MenuPrincipalSoporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Soporte\UsuariosSistema\IU_MenuPrincipalSoporte.Designer.cs">
+    <Compile Include="Soporte\IU_MenuPrincipalSoporte.Designer.cs">
       <DependentUpon>IU_MenuPrincipalSoporte.cs</DependentUpon>
     </Compile>
     <Compile Include="Soporte\Articulo\IU_RegistrarArticulo.cs">
@@ -909,7 +909,7 @@
     <EmbeddedResource Include="Soporte\Empresa\IU_EliminarMiEmpresa.resx">
       <DependentUpon>IU_EliminarMiEmpresa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Soporte\UsuariosSistema\IU_MenuPrincipalSoporte.resx">
+    <EmbeddedResource Include="Soporte\IU_MenuPrincipalSoporte.resx">
       <DependentUpon>IU_MenuPrincipalSoporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Soporte\Empresa\IU_ModificarEmpresa.resx">

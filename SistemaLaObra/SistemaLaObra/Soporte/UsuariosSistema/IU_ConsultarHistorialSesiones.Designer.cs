@@ -35,6 +35,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_buscarHistorial = new System.Windows.Forms.Button();
             this.txt_nombreUsuario = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgv_historial = new System.Windows.Forms.DataGridView();
             this.col_fechaHoraInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_fechaHoraCierre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,11 +43,10 @@
             this.col_apellidoEncargado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_tipoEncargado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_salir = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_historial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_historial)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -94,12 +94,13 @@
             // 
             this.btn_buscarHistorial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btn_buscarHistorial.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_buscarHistorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_buscarHistorial.Image = global::SistemaLaObra.Properties.Resources.buscar;
-            this.btn_buscarHistorial.Location = new System.Drawing.Point(394, 27);
+            this.btn_buscarHistorial.Location = new System.Drawing.Point(394, 28);
             this.btn_buscarHistorial.Name = "btn_buscarHistorial";
-            this.btn_buscarHistorial.Size = new System.Drawing.Size(96, 40);
+            this.btn_buscarHistorial.Size = new System.Drawing.Size(152, 39);
             this.btn_buscarHistorial.TabIndex = 2;
-            this.btn_buscarHistorial.Text = "Buscar\r\nHistorial";
+            this.btn_buscarHistorial.Text = "Buscar Historial";
             this.btn_buscarHistorial.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_buscarHistorial.UseVisualStyleBackColor = false;
             this.btn_buscarHistorial.Click += new System.EventHandler(this.btn_buscarHistorial_Click);
@@ -112,6 +113,16 @@
             this.txt_nombreUsuario.Name = "txt_nombreUsuario";
             this.txt_nombreUsuario.Size = new System.Drawing.Size(217, 21);
             this.txt_nombreUsuario.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pictureBox1.Image = global::SistemaLaObra.Properties.Resources.historialGris_64;
+            this.pictureBox1.Location = new System.Drawing.Point(690, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // dgv_historial
             // 
@@ -134,9 +145,11 @@
             this.col_apellidoEncargado,
             this.col_tipoEncargado});
             this.dgv_historial.Location = new System.Drawing.Point(9, 96);
+            this.dgv_historial.MultiSelect = false;
             this.dgv_historial.Name = "dgv_historial";
             this.dgv_historial.ReadOnly = true;
             this.dgv_historial.RowHeadersVisible = false;
+            this.dgv_historial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_historial.Size = new System.Drawing.Size(757, 231);
             this.dgv_historial.TabIndex = 3;
             // 
@@ -171,7 +184,7 @@
             // col_tipoEncargado
             // 
             this.col_tipoEncargado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_tipoEncargado.HeaderText = "Tipo Encargado";
+            this.col_tipoEncargado.HeaderText = "Tipo de Acceso";
             this.col_tipoEncargado.Name = "col_tipoEncargado";
             this.col_tipoEncargado.ReadOnly = true;
             // 
@@ -188,16 +201,6 @@
             this.btn_salir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_salir.UseVisualStyleBackColor = false;
             this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pictureBox1.Image = global::SistemaLaObra.Properties.Resources.historialGris_64;
-            this.pictureBox1.Location = new System.Drawing.Point(690, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
             // 
             // IU_ConsultarHistorialSesiones
             // 
@@ -216,8 +219,8 @@
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_historial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_historial)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -227,15 +230,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgv_historial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_fechaHoraInicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_fechaHoraCierre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_nombreEncargado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_apellidoEncargado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_tipoEncargado;
         private System.Windows.Forms.Button btn_buscarHistorial;
         private System.Windows.Forms.TextBox txt_nombreUsuario;
         private System.Windows.Forms.Button btn_salir;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_fechaHoraInicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_fechaHoraCierre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_nombreEncargado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_apellidoEncargado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_tipoEncargado;
     }
 }

@@ -1,5 +1,4 @@
-﻿using SistemaLaObra.Soporte;
-using SistemaLaObra.Soporte.UsuariosSistema;
+﻿using SistemaLaObra.Soporte.UsuariosSistema;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +13,7 @@ using System.Windows.Forms;
 
 
 
-namespace SistemaLaObra
+namespace SistemaLaObra.Soporte
 {
     public partial class IU_MenuPrincipalSoporte : Form
     {

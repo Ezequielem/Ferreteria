@@ -257,12 +257,10 @@ C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra
 C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_ActualizarTarjeta.resources
 C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_ActualizarTiposArticulo.resources
 C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_ActualizarUbicacion.resources
-C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_ActualizarUsuario.resources
 C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.IU_ConsultarArticulo.resources
 C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_ConsultarHistorialSesiones.resources
 C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_ConsultarUsuario.resources
 C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_DatosUsuario.resources
-C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.IU_MenuPrincipalSoporte.resources
 C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.IU_RegistrarArticulo.resources
 C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_RegistrarMarca.resources
 C:\Users\Ezequiel\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_RegistrarProveedorArticulo.resources
@@ -688,3 +686,6 @@ C:\Users\EZEQUIEL\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra
 C:\Users\EZEQUIEL\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.exe.config
 C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.UsuariosSistema.IU_ActualizarUsuario.resources
 C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.UsuariosSistema.IU_ValidacionUsuario.resources
+C:\Users\EZEQUIEL\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.UsuariosSistema.IU_ActualizarUsuario.resources
+C:\Users\EZEQUIEL\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.UsuariosSistema.IU_ValidacionUsuario.resources
+C:\Users\EZEQUIEL\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_MenuPrincipalSoporte.resources
