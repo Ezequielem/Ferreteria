@@ -238,6 +238,12 @@
     <Compile Include="Compras\ConsultarProveedor\IU_ConsultarProveedor.Designer.cs">
       <DependentUpon>IU_ConsultarProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="InicioSesion\IU_PuntoDeVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InicioSesion\IU_PuntoDeVenta.Designer.cs">
+      <DependentUpon>IU_PuntoDeVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\AccesoDatos.cs" />
     <Compile Include="Modelo\Articulo.cs" />
     <Compile Include="Modelo\Banco.cs" />
@@ -322,6 +328,7 @@
     </Compile>
     <Compile Include="Modelo\Marca.cs" />
     <Compile Include="Modelo\MiEmpresa.cs" />
+    <Compile Include="Modelo\PuntoDeVenta.cs" />
     <Compile Include="Modelo\Recepcion.cs" />
     <Compile Include="Modelo\FormaPago.cs" />
     <Compile Include="Modelo\HistorialSesion.cs" />
@@ -333,6 +340,7 @@
     <Compile Include="InicioSesion\IU_InicioSesion.Designer.cs">
       <DependentUpon>IU_InicioSesion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\SistemaDeFacturacion.cs" />
     <Compile Include="Modelo\TipoDeAcceso.cs" />
     <Compile Include="Modelo\TipoDeAcceso_X_Usuario.cs" />
     <Compile Include="Modelo\TipoFactura.cs" />
@@ -852,6 +860,9 @@
     <EmbeddedResource Include="InicioSesion\IU_InicioSesion.resx">
       <DependentUpon>IU_InicioSesion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InicioSesion\IU_PuntoDeVenta.resx">
+      <DependentUpon>IU_PuntoDeVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IU_MenuPrincipal.resx">
       <DependentUpon>IU_MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -1123,6 +1134,9 @@
     </Content>
     <Content Include="images\icono-ferreteria_32.ico" />
     <Content Include="images\icono-ferreteria_64.ico" />
+    <None Include="Resources\sucursal_32.png" />
+    <None Include="Resources\sucursal_64.png" />
+    <None Include="Resources\sucursal_128.png" />
     <None Include="Resources\eliminar_128.png" />
     <None Include="Resources\eliminar_32.png" />
     <None Include="Resources\eliminar_64.png" />

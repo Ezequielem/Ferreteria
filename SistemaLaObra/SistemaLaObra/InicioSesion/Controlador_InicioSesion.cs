@@ -70,6 +70,8 @@ namespace SistemaLaObra.InicioSesion
             //Enviamos informacion del usuario y el historial al contenedor principal
             interfazInicioSesion.interfazContenedora.CodigoHistorial = HistorialSesion.CodigoHistorial;
             interfazInicioSesion.interfazContenedora.EncargadoActivo.MiEmpresa.mostrarDatos(interfazInicioSesion.interfazContenedora.EncargadoActivo.CodigoMiEmpresa);
+            interfazInicioSesion.interfazContenedora.Text += "              " + interfazInicioSesion.interfazContenedora.EncargadoActivo.MiEmpresa.NombreFantasia;
+            interfazInicioSesion.interfazContenedora.baseDeDatosToolStripMenuItem.Visible = true;
         }
 
         private void iniciarInterfazCorrespondiente()

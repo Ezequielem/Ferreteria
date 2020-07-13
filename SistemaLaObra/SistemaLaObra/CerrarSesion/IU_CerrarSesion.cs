@@ -85,6 +85,8 @@ namespace SistemaLaObra.CerrarSesion
             InterfazContenedora.lbl_usuario.Text = string.Empty;
             InterfazContenedora.lbl_nombreApellidoEncargado.Text = string.Empty;
             InterfazContenedora.lbl_tipoDeAcceso.Text = string.Empty;
+            InterfazContenedora.Text = "Ferro System v2.0";
+            InterfazContenedora.baseDeDatosToolStripMenuItem.Visible = false;
             this.Close();
         }
 

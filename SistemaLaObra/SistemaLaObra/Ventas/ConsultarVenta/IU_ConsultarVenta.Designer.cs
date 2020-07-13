@@ -106,6 +106,7 @@
             this.dgv_listadoVentas.Name = "dgv_listadoVentas";
             this.dgv_listadoVentas.ReadOnly = true;
             this.dgv_listadoVentas.RowHeadersVisible = false;
+            this.dgv_listadoVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_listadoVentas.Size = new System.Drawing.Size(922, 363);
             this.dgv_listadoVentas.TabIndex = 0;
             this.dgv_listadoVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_listadoVentas_CellContentClick);

@@ -398,8 +398,8 @@
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.Button btn_estadistica;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.ToolStripMenuItem baseDeDatosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generarScriptToolStripMenuItem;
         public System.Windows.Forms.Panel pnl_inferior;
+        public System.Windows.Forms.ToolStripMenuItem baseDeDatosToolStripMenuItem;
     }
 }

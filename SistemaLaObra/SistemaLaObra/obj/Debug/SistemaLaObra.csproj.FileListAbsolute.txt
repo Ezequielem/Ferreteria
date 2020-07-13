@@ -695,3 +695,4 @@ C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\PdfS
 C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\PdfSharp.Charting.xml
 C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\de\PdfSharp.resources.dll
 C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\de\PdfSharp.Charting.resources.dll
+C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.InicioSesion.IU_PuntoDeVenta.resources

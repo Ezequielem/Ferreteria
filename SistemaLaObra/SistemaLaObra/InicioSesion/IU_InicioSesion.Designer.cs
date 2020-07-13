@@ -214,7 +214,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "IU_InicioSesion";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Inicio de sesion";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.IU_InicioSesion_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();

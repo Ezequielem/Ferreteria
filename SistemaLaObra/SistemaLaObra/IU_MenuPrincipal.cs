@@ -16,6 +16,7 @@ namespace SistemaLaObra
     {
         IU_InicioSesion interfazInicioSesion;
         IU_CerrarSesion interfazCerrarSesion;
+        IU_PuntoDeVenta interfazPuntoVenta;
         HistorialSesion historialSesion;
         SaveFileDialog saveFile;
         public AccesoDatos AccesoADatos { get; set; }
@@ -24,18 +25,24 @@ namespace SistemaLaObra
 
         //PROPIEDADES DONDE SE ALMACENAN LA INFORMACION DEL ENCARGADO Y USUARIO
         public Encargado EncargadoActivo { get; set; }
+        public PuntoDeVenta PuntoDeVenta { get; set; }
 
         public IU_MenuPrincipal()
         {
             InitializeComponent();
-            interfazInicioSesion = new IU_InicioSesion();
+            interfazInicioSesion = new IU_InicioSesion();            
             saveFile = new SaveFileDialog();
+            PuntoDeVenta = new PuntoDeVenta();
         }
 
         private void IU_MenuPrincipal_Load(object sender, EventArgs e)
         {
-            interfazInicioSesion.interfazContenedora = this;
+            baseDeDatosToolStripMenuItem.Visible = false;
+            interfazInicioSesion.interfazContenedora = this;            
             interfazInicioSesion.ShowDialog();
+            interfazPuntoVenta = new IU_PuntoDeVenta();
+            interfazPuntoVenta.IUContenedora = this;
+            interfazPuntoVenta.ShowDialog();
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -46,6 +53,9 @@ namespace SistemaLaObra
         private void ms_btnInicioSesion_Click(object sender, EventArgs e)
         {
             interfazInicioSesion.ShowDialog();
+            interfazPuntoVenta = new IU_PuntoDeVenta();
+            interfazPuntoVenta.IUContenedora = this;
+            interfazPuntoVenta.ShowDialog();
         }
 
         private void btn_ventas_Click(object sender, EventArgs e)
