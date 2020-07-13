@@ -193,10 +193,7 @@ namespace SistemaLaObra.Soporte
 
         private void txt_precio_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!e.KeyChar.Equals('.'))
-            {
-                validar.soloNumeros(e);
-            }
+            validar.permitirNumeroMonetarioDosDecimales(e, txt_precio.Text);
         }
     }
 }

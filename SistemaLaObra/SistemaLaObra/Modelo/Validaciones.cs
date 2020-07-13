@@ -74,13 +74,11 @@ namespace SistemaLaObra
                 }
                 else if (Char.IsSeparator(e.KeyChar))
                 {
-                    e.Handled = true;
-                    MessageBox.Show("No se permite ingresar 'ESPACIOS' ", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    e.Handled = true;                    
                 }
                 else
                 {
-                    e.Handled = true;
-                    MessageBox.Show("Por favor, solo ingrese 'NUMEROS' ", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    e.Handled = true;                    
                 }
             }
             catch (Exception error)
@@ -178,14 +176,12 @@ namespace SistemaLaObra
                 }
                 else if (e.KeyChar.Equals('.'))
                 {
-                    e.Handled = true;
-                    MessageBox.Show("Solo se deben ingresar numeros 'ENTEROS' ", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    e.Handled = true;                    
 
                 }
                 else if (Char.IsSeparator(e.KeyChar))
                 {
-                    e.Handled = true;
-                    MessageBox.Show("No se permite ingresar 'ESPACIOS' ", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    e.Handled = true;                    
                 }
               
             }
@@ -273,6 +269,66 @@ namespace SistemaLaObra
             catch (Exception)
             {
                 return false;
+            }
+        }        
+
+        public void permitirNumeroMonetarioDosDecimales(KeyPressEventArgs e, string cadena)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                if (cadena.Contains("."))
+                {
+                    int b = 0;
+                    int contador = 0;
+                    foreach (var item in cadena)
+                    {
+                        if (b == 1)
+                        {
+                            contador++;
+                        }
+                        if (item.ToString() == ".")
+                        {
+                            b = 1;
+                        }
+                    }
+                    if (contador < 2)
+                    {
+                        e.Handled = false;
+                    }
+                    else
+                    {
+                        e.Handled = true;
+                    }
+                }
+                else
+                {
+                    e.Handled = false;
+                }
+            }
+            else
+            {
+                if (Char.IsControl(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    if (e.KeyChar.ToString() == ".")
+                    {
+                        if (!cadena.Contains("."))
+                        {
+                            e.Handled = false;
+                        }
+                        else
+                        {
+                            e.Handled = true;
+                        }
+                    }
+                    else
+                    {
+                        e.Handled = true;
+                    }
+                }
             }
         }
     }

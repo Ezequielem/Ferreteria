@@ -111,7 +111,6 @@ namespace SistemaLaObra
 
         private void btn_registrarVenta_Click(object sender, EventArgs e)
         {
-            tomarFacturacion();
             if (lbl_cargoEnvio.Text != "$ 0.00" && dgv_productos.Rows.Count == 0 && listaEntrega.Count != 0)
             {
                 controlador.generarNvoNumeroVentaParaRemito();
@@ -172,18 +171,11 @@ namespace SistemaLaObra
             if (lbl_importeTotal.Text != "0.00" && dgv_productos.Rows.Count != 0)
             {
                 btn_registrarVenta.Enabled = true;
-                chx_facturacion.Enabled = true;
             }                
             else
             {
                 btn_registrarVenta.Enabled = false;
-                chx_facturacion.Enabled = false;
             }                
-        }
-
-        public void tomarFacturacion()
-        {
-            controlador.venta.Facturacion = chx_facturacion.Checked;
         }
 
         private void tomarOpcionRegistrarVenta()
@@ -201,9 +193,7 @@ namespace SistemaLaObra
             rb_clienteMinorista.Enabled = false;
             ch_cargoEnvio.Checked = true;
             ch_notaCredito.Enabled = false;
-            btn_registrarVenta.Enabled = true;
-            chx_facturacion.Enabled = true;
-            
+            btn_registrarVenta.Enabled = true;            
             controlador.procesarSoloEnvio(entregaInstanciada);
         }
 
@@ -222,8 +212,6 @@ namespace SistemaLaObra
             
             ch_notaCredito.Enabled = false;
             btn_registrarVenta.Enabled = true;
-            chx_facturacion.Enabled = true;
-
             controlador.procesarSoloEnvio(this.listaEntrega);
         }
      
@@ -380,7 +368,6 @@ namespace SistemaLaObra
             btn_buscarDatos.Enabled = true;
             gb_productos.Enabled = false;
             btn_registrarVenta.Enabled = false;
-            chx_facturacion.Enabled = false;
         }
     }
 }

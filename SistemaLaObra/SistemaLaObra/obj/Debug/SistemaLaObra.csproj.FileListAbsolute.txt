@@ -592,7 +592,6 @@ C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\Sist
 C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_ConsultarUbicacion.resources
 C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_ConsultarUsuario.resources
 C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_DatosUsuario.resources
-C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.IU_MenuPrincipalSoporte.resources
 C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.IU_RegistrarArticulo.resources
 C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_RegistrarMarca.resources
 C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_RegistrarProveedorArticulo.resources
@@ -689,3 +688,10 @@ C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\Sist
 C:\Users\EZEQUIEL\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.UsuariosSistema.IU_ActualizarUsuario.resources
 C:\Users\EZEQUIEL\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.UsuariosSistema.IU_ValidacionUsuario.resources
 C:\Users\EZEQUIEL\Source\Repos\Ezequielem\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_MenuPrincipalSoporte.resources
+C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.IU_MenuPrincipalSoporte.resources
+C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\PdfSharp.Charting.dll
+C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\PdfSharp.dll
+C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\PdfSharp.xml
+C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\PdfSharp.Charting.xml
+C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\de\PdfSharp.resources.dll
+C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\de\PdfSharp.Charting.resources.dll

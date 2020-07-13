@@ -22,8 +22,7 @@ namespace SistemaLaObra
 
         public int CodigoHistorial { get; set; }
 
-        //PROPIEDADES DONDE SE ALMACENAN LA INFORMACION DEL USUARIO Y ENCARGADO
-        public Usuario UsuarioActivo { get; set; }
+        //PROPIEDADES DONDE SE ALMACENAN LA INFORMACION DEL ENCARGADO Y USUARIO
         public Encargado EncargadoActivo { get; set; }
 
         public IU_MenuPrincipal()

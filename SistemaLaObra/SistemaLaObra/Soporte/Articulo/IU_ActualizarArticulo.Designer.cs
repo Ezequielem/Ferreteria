@@ -140,6 +140,7 @@
             this.txt_precioCoste.ReadOnly = true;
             this.txt_precioCoste.Size = new System.Drawing.Size(188, 21);
             this.txt_precioCoste.TabIndex = 7;
+            this.txt_precioCoste.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_precioCoste_KeyPress);
             // 
             // lbl_precioCoste
             // 
@@ -264,7 +265,7 @@
             this.cbx_categoria3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbx_categoria3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_categoria3.FormattingEnabled = true;
-            this.cbx_categoria3.Location = new System.Drawing.Point(144, 384);
+            this.cbx_categoria3.Location = new System.Drawing.Point(144, 383);
             this.cbx_categoria3.Name = "cbx_categoria3";
             this.cbx_categoria3.Size = new System.Drawing.Size(188, 23);
             this.cbx_categoria3.TabIndex = 16;
@@ -284,7 +285,7 @@
             this.cbx_categoria2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbx_categoria2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_categoria2.FormattingEnabled = true;
-            this.cbx_categoria2.Location = new System.Drawing.Point(144, 351);
+            this.cbx_categoria2.Location = new System.Drawing.Point(144, 352);
             this.cbx_categoria2.Name = "cbx_categoria2";
             this.cbx_categoria2.Size = new System.Drawing.Size(188, 23);
             this.cbx_categoria2.TabIndex = 15;
@@ -295,7 +296,7 @@
             this.cbx_categoria1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbx_categoria1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_categoria1.FormattingEnabled = true;
-            this.cbx_categoria1.Location = new System.Drawing.Point(144, 322);
+            this.cbx_categoria1.Location = new System.Drawing.Point(144, 323);
             this.cbx_categoria1.Name = "cbx_categoria1";
             this.cbx_categoria1.Size = new System.Drawing.Size(188, 23);
             this.cbx_categoria1.TabIndex = 14;
@@ -316,7 +317,7 @@
             this.cbx_categoria.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbx_categoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_categoria.FormattingEnabled = true;
-            this.cbx_categoria.Location = new System.Drawing.Point(144, 293);
+            this.cbx_categoria.Location = new System.Drawing.Point(144, 294);
             this.cbx_categoria.Name = "cbx_categoria";
             this.cbx_categoria.Size = new System.Drawing.Size(188, 23);
             this.cbx_categoria.TabIndex = 13;
@@ -345,7 +346,7 @@
             this.cbx_ubicacion.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbx_ubicacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_ubicacion.FormattingEnabled = true;
-            this.cbx_ubicacion.Location = new System.Drawing.Point(144, 235);
+            this.cbx_ubicacion.Location = new System.Drawing.Point(144, 236);
             this.cbx_ubicacion.Name = "cbx_ubicacion";
             this.cbx_ubicacion.Size = new System.Drawing.Size(188, 23);
             this.cbx_ubicacion.TabIndex = 10;
@@ -355,7 +356,7 @@
             this.cbx_unidadDeMedida.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbx_unidadDeMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_unidadDeMedida.FormattingEnabled = true;
-            this.cbx_unidadDeMedida.Location = new System.Drawing.Point(144, 206);
+            this.cbx_unidadDeMedida.Location = new System.Drawing.Point(144, 207);
             this.cbx_unidadDeMedida.Name = "cbx_unidadDeMedida";
             this.cbx_unidadDeMedida.Size = new System.Drawing.Size(188, 23);
             this.cbx_unidadDeMedida.TabIndex = 9;
@@ -419,7 +420,7 @@
             this.cbx_marca.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbx_marca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_marca.FormattingEnabled = true;
-            this.cbx_marca.Location = new System.Drawing.Point(144, 90);
+            this.cbx_marca.Location = new System.Drawing.Point(144, 91);
             this.cbx_marca.Name = "cbx_marca";
             this.cbx_marca.Size = new System.Drawing.Size(268, 23);
             this.cbx_marca.TabIndex = 4;

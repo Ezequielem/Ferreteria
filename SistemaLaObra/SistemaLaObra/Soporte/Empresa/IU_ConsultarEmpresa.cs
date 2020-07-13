@@ -15,6 +15,7 @@ namespace SistemaLaObra.Soporte
     {
         public MiEmpresa MiEmpresa { get; set; }
         public List<MiEmpresa> ListaMiEmpresa { get; set; }
+        public IU_MenuPrincipal IUContenedora { get; set; }
 
 
         public IU_ConsultarEmpresa()
@@ -44,6 +45,7 @@ namespace SistemaLaObra.Soporte
             {
                 IU_ModificarEmpresa interfaz = new IU_ModificarEmpresa();
                 interfaz.opcionModificarEmpresa(int.Parse(dgv_empresas.CurrentRow.Cells[4].Value.ToString()));
+                interfaz.IUContenedora = this.IUContenedora;
                 interfaz.ShowDialog();
                 cargarDataGrid();
             }            

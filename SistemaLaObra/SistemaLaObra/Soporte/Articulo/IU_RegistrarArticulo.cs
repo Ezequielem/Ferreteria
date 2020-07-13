@@ -258,18 +258,12 @@ namespace SistemaLaObra
 
         private void txt_precio_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!e.KeyChar.Equals('.'))
-            {
-                validar.soloNumeros(e);
-            }
+            validar.permitirNumeroMonetarioDosDecimales(e, txt_precio.Text);
         }
 
         private void txt_coste_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!e.KeyChar.Equals('.'))
-            {
-                validar.soloNumeros(e);
-            }            
+            validar.permitirNumeroMonetarioDosDecimales(e, txt_coste.Text);       
         }
 
         private void nud_stock_KeyPress(object sender, KeyPressEventArgs e)

@@ -13,7 +13,6 @@ namespace SistemaLaObra.InicioSesion
     class Controlador_InicioSesion
     {
         public IU_InicioSesion interfazInicioSesion { get; set; }
-        public Usuario Usuario { get; set; }
         public Encargado Encargado { get; set; }
         public TipoDeAcceso TipoDeAcceso { get; set; }
         public List<TipoDeAcceso_X_Usuario> ListaTipoDeAcceso_X_Usuario { get; set; }
@@ -21,7 +20,6 @@ namespace SistemaLaObra.InicioSesion
 
         public Controlador_InicioSesion()
         {
-            Usuario = new Usuario();
             Encargado = new Encargado();
             TipoDeAcceso = new TipoDeAcceso();
             ListaTipoDeAcceso_X_Usuario = new List<TipoDeAcceso_X_Usuario>();
@@ -30,11 +28,11 @@ namespace SistemaLaObra.InicioSesion
 
         public bool usuarioEmpleado(string nombreUsuario)
         {
-            int codigoUsuario = Usuario.obtenerCodigoUsuario(nombreUsuario);
+            int codigoUsuario = Encargado.Usuario.obtenerCodigoUsuario(nombreUsuario);
             if (codigoUsuario != 0)
             {
-                Usuario.mostrarDatos(codigoUsuario);
-                Encargado.mostrarDatos(Encargado.obtenerCodigoEncargado(Usuario.CodigoUsuario));
+                Encargado.Usuario.mostrarDatos(codigoUsuario);
+                Encargado.mostrarDatos(Encargado.obtenerCodigoEncargado(Encargado.Usuario.CodigoUsuario));
                 return true;
             }
             else
@@ -45,7 +43,7 @@ namespace SistemaLaObra.InicioSesion
 
         public bool contraseñaEmpleado(string contraseña)
         {
-            if (Usuario.comprobarContraseña(contraseña))
+            if (Encargado.Usuario.comprobarContraseña(contraseña))
             {
                 return true;
             }
@@ -63,14 +61,15 @@ namespace SistemaLaObra.InicioSesion
         public void iniciarSesion()
         {
             //Se registra en historial inicio
-            HistorialSesion.CodigoUsuario = Usuario.CodigoUsuario;
+            HistorialSesion.CodigoUsuario = Encargado.Usuario.CodigoUsuario;
             HistorialSesion.CodigoHistorial = HistorialSesion.ultimoNumeroHistorial() + 1;
             HistorialSesion.crear(HistorialSesion);
-            ListaTipoDeAcceso_X_Usuario = Usuario.obtenerTipoAcceso(Usuario.CodigoUsuario);        
+            ListaTipoDeAcceso_X_Usuario = Encargado.Usuario.obtenerTipoAcceso(Encargado.Usuario.CodigoUsuario);        
             //Verificamos que interfaz traer
             iniciarInterfazCorrespondiente();
             //Enviamos informacion del usuario y el historial al contenedor principal
             interfazInicioSesion.interfazContenedora.CodigoHistorial = HistorialSesion.CodigoHistorial;
+            interfazInicioSesion.interfazContenedora.EncargadoActivo.MiEmpresa.mostrarDatos(interfazInicioSesion.interfazContenedora.EncargadoActivo.CodigoMiEmpresa);
         }
 
         private void iniciarInterfazCorrespondiente()
@@ -113,13 +112,12 @@ namespace SistemaLaObra.InicioSesion
             interfazInicioSesion.interfazContenedora.pnl_inferior.Visible = true;
             interfazInicioSesion.Close();
             //Depositamos la info despues del inicio para consulta
-            interfazInicioSesion.interfazContenedora.UsuarioActivo = Usuario;
             interfazInicioSesion.interfazContenedora.EncargadoActivo = Encargado;
             //Luego de traer la interfaz correspondiente
             interfazInicioSesion.interfazContenedora.ms_btnInicioSesion.Visible = false;
             interfazInicioSesion.interfazContenedora.ms_btnCerrarSesion.Visible = true;
             interfazInicioSesion.interfazContenedora.lbl_usuario.Text = 
-                interfazInicioSesion.interfazContenedora.UsuarioActivo.NombreUsuario;
+                interfazInicioSesion.interfazContenedora.EncargadoActivo.Usuario.NombreUsuario;
             interfazInicioSesion.interfazContenedora.lbl_nombreApellidoEncargado.Text = 
                 interfazInicioSesion.interfazContenedora.EncargadoActivo.Nombre + " " + 
                 interfazInicioSesion.interfazContenedora.EncargadoActivo.Apellido;

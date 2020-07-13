@@ -303,10 +303,7 @@ namespace SistemaLaObra
 
         private void txt_precioUnitario_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!e.KeyChar.Equals('.'))
-            {
-                validar.soloNumeros(e);
-            }            
+            validar.permitirNumeroMonetarioDosDecimales(e, txt_precioUnitario.Text);            
         }
 
         private void cbx_categoria_SelectedIndexChanged(object sender, EventArgs e)
@@ -325,6 +322,11 @@ namespace SistemaLaObra
         private void cbx_categoria2_SelectedIndexChanged(object sender, EventArgs e)
         {
             cargarCategoria3();
+        }
+
+        private void txt_precioCoste_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.permitirNumeroMonetarioDosDecimales(e, txt_precioCoste.Text);
         }
     }
 }

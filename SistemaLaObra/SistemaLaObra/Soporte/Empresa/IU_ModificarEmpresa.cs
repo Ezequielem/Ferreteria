@@ -24,6 +24,7 @@ namespace SistemaLaObra.Soporte
         public List<Localidad> ListaLocalidades { get; set; }
         public List<TipoTelefono> ListaTipoTelefono { get; set; }
         public List<CondicionIva> ListaCondicionIva { get; set; }
+        public IU_MenuPrincipal IUContenedora { get; set; }
         Validaciones validacion;
 
         public IU_ModificarEmpresa()
@@ -103,6 +104,7 @@ namespace SistemaLaObra.Soporte
                 tomarTipoTelefono();
                 tomarCondicionIva();
                 modificar();
+                actualizarActivo();
                 this.Close();
             }
         }
@@ -277,6 +279,14 @@ namespace SistemaLaObra.Soporte
         private void modificar()
         {
             MiEmpresa.modificar(MiEmpresa);
+        }
+
+        private void actualizarActivo()
+        {
+            if (IUContenedora.EncargadoActivo.CodigoMiEmpresa == MiEmpresa.CodigoMiEmpresa)
+            {
+                IUContenedora.EncargadoActivo.MiEmpresa.mostrarDatos(MiEmpresa.CodigoMiEmpresa);
+            }
         }
 
         //EVENTOS

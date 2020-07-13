@@ -322,8 +322,12 @@ namespace SistemaLaObra
         {
             buscarUltimoNroVenta();
             venta.CodigoEncargado = InterfazVenta.InterfazContenedora.EncargadoActivo.CodigoEncargado;
-
-            if (mostrarVistaPrevia())
+            
+            if (InterfazVenta.InterfazContenedora.EncargadoActivo.MiEmpresa.Facturacion)
+            {
+                MessageBox.Show("La facturacion no está habilitada", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
             {
                 if (venta.CodigoClienteMayorista != 0 && InterfazVenta.txt_razonSocial.Text != "")
                 {
@@ -343,12 +347,8 @@ namespace SistemaLaObra
                     registrarEntregas();
                 }
                 InterfazVenta.ventaRegistrada = true;
-                MessageBox.Show("La venta se registro exitosamente","Informacion",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("La venta se registro exitosamente", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 InterfazVenta.Close();
-            }
-            else
-            {
-                MessageBox.Show("La venta no se confirmo","Advertencia",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
             }
         }
 
