@@ -1,6 +1,6 @@
-﻿namespace SistemaLaObra.Soporte
+﻿namespace SistemaLaObra.Soporte.Empresa.Sucursal
 {
-    partial class IU_ConsultarEmpresa
+    partial class IU_ConsultarPuntoVenta
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_ConsultarEmpresa));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IU_ConsultarPuntoVenta));
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_sucursales = new System.Windows.Forms.Button();
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_modificar = new System.Windows.Forms.Button();
             this.btn_registrar = new System.Windows.Forms.Button();
@@ -40,19 +39,19 @@
             this.gb_datosUsuario = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_nombreEmpresa = new System.Windows.Forms.TextBox();
-            this.dgv_empresas = new System.Windows.Forms.DataGridView();
+            this.txt_nombreSucursal = new System.Windows.Forms.TextBox();
+            this.dgv_sucursales = new System.Windows.Forms.DataGridView();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.col_nombreFantasia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_nombreRazon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_fechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gb_datosUsuario.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_empresas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_sucursales)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -61,41 +60,24 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.btn_sucursales, 0, 6);
             this.tableLayoutPanel2.Controls.Add(this.btn_eliminar, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.btn_modificar, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.btn_registrar, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.pictureBox1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btn_aceptar, 0, 8);
+            this.tableLayoutPanel2.Controls.Add(this.btn_aceptar, 0, 6);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(732, 12);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 9;
+            this.tableLayoutPanel2.RowCount = 7;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(135, 487);
-            this.tableLayoutPanel2.TabIndex = 20;
-            // 
-            // btn_sucursales
-            // 
-            this.btn_sucursales.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_sucursales.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_sucursales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_sucursales.Image = global::SistemaLaObra.Properties.Resources.sucursal_32;
-            this.btn_sucursales.Location = new System.Drawing.Point(4, 317);
-            this.btn_sucursales.Name = "btn_sucursales";
-            this.btn_sucursales.Size = new System.Drawing.Size(128, 50);
-            this.btn_sucursales.TabIndex = 18;
-            this.btn_sucursales.Text = "Sucursal";
-            this.btn_sucursales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_sucursales.UseVisualStyleBackColor = false;
-            this.btn_sucursales.Click += new System.EventHandler(this.btn_sucursales_Click);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(135, 387);
+            this.tableLayoutPanel2.TabIndex = 22;
             // 
             // btn_eliminar
             // 
@@ -103,7 +85,7 @@
             this.btn_eliminar.BackColor = System.Drawing.SystemColors.Control;
             this.btn_eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_eliminar.Image = global::SistemaLaObra.Properties.Resources.eliminar_32;
-            this.btn_eliminar.Location = new System.Drawing.Point(4, 205);
+            this.btn_eliminar.Location = new System.Drawing.Point(4, 214);
             this.btn_eliminar.Name = "btn_eliminar";
             this.btn_eliminar.Size = new System.Drawing.Size(128, 50);
             this.btn_eliminar.TabIndex = 18;
@@ -118,7 +100,7 @@
             this.btn_modificar.BackColor = System.Drawing.SystemColors.Control;
             this.btn_modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_modificar.Image = global::SistemaLaObra.Properties.Resources.actualizar;
-            this.btn_modificar.Location = new System.Drawing.Point(4, 149);
+            this.btn_modificar.Location = new System.Drawing.Point(4, 155);
             this.btn_modificar.Name = "btn_modificar";
             this.btn_modificar.Size = new System.Drawing.Size(128, 50);
             this.btn_modificar.TabIndex = 19;
@@ -133,7 +115,7 @@
             this.btn_registrar.BackColor = System.Drawing.SystemColors.Control;
             this.btn_registrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_registrar.Image = global::SistemaLaObra.Properties.Resources.registrar;
-            this.btn_registrar.Location = new System.Drawing.Point(4, 93);
+            this.btn_registrar.Location = new System.Drawing.Point(4, 96);
             this.btn_registrar.Name = "btn_registrar";
             this.btn_registrar.Size = new System.Drawing.Size(128, 50);
             this.btn_registrar.TabIndex = 20;
@@ -145,7 +127,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pictureBox1.Image = global::SistemaLaObra.Properties.Resources.empresaGris_64;
+            this.pictureBox1.Image = global::SistemaLaObra.Properties.Resources.sucursal_64;
             this.pictureBox1.Location = new System.Drawing.Point(68, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(64, 64);
@@ -158,7 +140,7 @@
             this.btn_aceptar.BackColor = System.Drawing.SystemColors.Control;
             this.btn_aceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_aceptar.Image = global::SistemaLaObra.Properties.Resources.aceptarSeleccionar;
-            this.btn_aceptar.Location = new System.Drawing.Point(4, 434);
+            this.btn_aceptar.Location = new System.Drawing.Point(4, 334);
             this.btn_aceptar.Name = "btn_aceptar";
             this.btn_aceptar.Size = new System.Drawing.Size(128, 50);
             this.btn_aceptar.TabIndex = 17;
@@ -173,14 +155,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gb_datosUsuario.Controls.Add(this.tableLayoutPanel1);
-            this.gb_datosUsuario.Controls.Add(this.dgv_empresas);
+            this.gb_datosUsuario.Controls.Add(this.dgv_sucursales);
             this.gb_datosUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb_datosUsuario.Location = new System.Drawing.Point(12, 12);
             this.gb_datosUsuario.Name = "gb_datosUsuario";
-            this.gb_datosUsuario.Size = new System.Drawing.Size(714, 487);
-            this.gb_datosUsuario.TabIndex = 19;
+            this.gb_datosUsuario.Size = new System.Drawing.Size(714, 387);
+            this.gb_datosUsuario.TabIndex = 21;
             this.gb_datosUsuario.TabStop = false;
-            this.gb_datosUsuario.Text = "EMPRESA";
+            this.gb_datosUsuario.Text = "SUCURSAL";
             // 
             // tableLayoutPanel1
             // 
@@ -188,7 +170,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txt_nombreEmpresa, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txt_nombreSucursal, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 20);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -203,69 +185,76 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 15);
+            this.label1.Size = new System.Drawing.Size(104, 15);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre empresa:";
+            this.label1.Text = "Nombre sucursal:";
             // 
-            // txt_nombreEmpresa
+            // txt_nombreSucursal
             // 
-            this.txt_nombreEmpresa.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_nombreEmpresa.Location = new System.Drawing.Point(123, 9);
-            this.txt_nombreEmpresa.Name = "txt_nombreEmpresa";
-            this.txt_nombreEmpresa.Size = new System.Drawing.Size(574, 21);
-            this.txt_nombreEmpresa.TabIndex = 1;
-            this.txt_nombreEmpresa.TextChanged += new System.EventHandler(this.txt_nombreEmpresa_TextChanged);
+            this.txt_nombreSucursal.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txt_nombreSucursal.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_nombreSucursal.Location = new System.Drawing.Point(123, 9);
+            this.txt_nombreSucursal.Name = "txt_nombreSucursal";
+            this.txt_nombreSucursal.Size = new System.Drawing.Size(574, 21);
+            this.txt_nombreSucursal.TabIndex = 1;
+            this.txt_nombreSucursal.TextChanged += new System.EventHandler(this.txt_nombreSucursal_TextChanged);
             // 
-            // dgv_empresas
+            // dgv_sucursales
             // 
-            this.dgv_empresas.AllowUserToAddRows = false;
-            this.dgv_empresas.AllowUserToDeleteRows = false;
-            this.dgv_empresas.AllowUserToResizeRows = false;
-            this.dgv_empresas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv_empresas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_empresas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv_sucursales.AllowUserToAddRows = false;
+            this.dgv_sucursales.AllowUserToDeleteRows = false;
+            this.dgv_sucursales.AllowUserToResizeRows = false;
+            this.dgv_sucursales.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgv_sucursales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_sucursales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_nombreFantasia,
             this.col_nombreRazon,
             this.col_cuit,
             this.col_fechaInicio,
             this.Id});
-            this.dgv_empresas.Location = new System.Drawing.Point(6, 66);
-            this.dgv_empresas.MultiSelect = false;
-            this.dgv_empresas.Name = "dgv_empresas";
-            this.dgv_empresas.ReadOnly = true;
-            this.dgv_empresas.RowHeadersVisible = false;
-            this.dgv_empresas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_empresas.Size = new System.Drawing.Size(700, 415);
-            this.dgv_empresas.TabIndex = 16;
-            this.dgv_empresas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_empresas_CellDoubleClick);
+            this.dgv_sucursales.Location = new System.Drawing.Point(6, 66);
+            this.dgv_sucursales.MultiSelect = false;
+            this.dgv_sucursales.Name = "dgv_sucursales";
+            this.dgv_sucursales.ReadOnly = true;
+            this.dgv_sucursales.RowHeadersVisible = false;
+            this.dgv_sucursales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_sucursales.Size = new System.Drawing.Size(700, 315);
+            this.dgv_sucursales.TabIndex = 16;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // col_nombreFantasia
             // 
-            this.col_nombreFantasia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_nombreFantasia.HeaderText = "Nombre de Fantasia";
+            this.col_nombreFantasia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.col_nombreFantasia.HeaderText = "Punto de venta";
+            this.col_nombreFantasia.MinimumWidth = 111;
             this.col_nombreFantasia.Name = "col_nombreFantasia";
             this.col_nombreFantasia.ReadOnly = true;
+            this.col_nombreFantasia.Width = 111;
             // 
             // col_nombreRazon
             // 
             this.col_nombreRazon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_nombreRazon.HeaderText = "Razón Social";
+            this.col_nombreRazon.HeaderText = "Sucursal";
             this.col_nombreRazon.Name = "col_nombreRazon";
             this.col_nombreRazon.ReadOnly = true;
             // 
             // col_cuit
             // 
             this.col_cuit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_cuit.HeaderText = "CUIT";
+            this.col_cuit.HeaderText = "Dirección";
             this.col_cuit.Name = "col_cuit";
             this.col_cuit.ReadOnly = true;
             // 
             // col_fechaInicio
             // 
             this.col_fechaInicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_fechaInicio.HeaderText = "Fecha de inicio";
+            this.col_fechaInicio.HeaderText = "Localidad";
             this.col_fechaInicio.Name = "col_fechaInicio";
             this.col_fechaInicio.ReadOnly = true;
             // 
@@ -276,31 +265,25 @@
             this.Id.ReadOnly = true;
             this.Id.Visible = false;
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 10;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // IU_ConsultarEmpresa
+            // IU_ConsultarPuntoVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(879, 511);
+            this.ClientSize = new System.Drawing.Size(879, 411);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.gb_datosUsuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "IU_ConsultarEmpresa";
+            this.Name = "IU_ConsultarPuntoVenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "CONSULTAR EMPRESA";
+            this.Text = "CONSULTAR SUCURSAL";
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gb_datosUsuario.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_empresas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_sucursales)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -308,6 +291,7 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Button btn_eliminar;
         private System.Windows.Forms.Button btn_modificar;
         private System.Windows.Forms.Button btn_registrar;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -315,15 +299,13 @@
         private System.Windows.Forms.GroupBox gb_datosUsuario;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_nombreEmpresa;
-        private System.Windows.Forms.DataGridView dgv_empresas;
+        private System.Windows.Forms.TextBox txt_nombreSucursal;
+        private System.Windows.Forms.DataGridView dgv_sucursales;
+        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_nombreFantasia;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_nombreRazon;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_cuit;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_fechaInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button btn_eliminar;
-        private System.Windows.Forms.Button btn_sucursales;
     }
 }

@@ -696,3 +696,6 @@ C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\PdfS
 C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\de\PdfSharp.resources.dll
 C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\bin\Debug\de\PdfSharp.Charting.resources.dll
 C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.InicioSesion.IU_PuntoDeVenta.resources
+C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.Empresa.Sucursal.IU_ConsultarPuntoVenta.resources
+C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.Empresa.Sucursal.IU_ModificarPuntoVenta.resources
+C:\Users\JUAN\source\Repos\Ferreteria\SistemaLaObra\SistemaLaObra\obj\Debug\SistemaLaObra.Soporte.Empresa.Sucursal.IU_RegistrarPuntoVenta.resources

@@ -1,4 +1,5 @@
 ﻿using SistemaLaObra.Modelo;
+using SistemaLaObra.Soporte.Empresa.Sucursal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ namespace SistemaLaObra.Soporte
     {
         public MiEmpresa MiEmpresa { get; set; }
         public List<MiEmpresa> ListaMiEmpresa { get; set; }
-        public IU_MenuPrincipal IUContenedora { get; set; }
+        public IU_MenuPrincipal IU_Contenedora { get; set; }
 
 
         public IU_ConsultarEmpresa()
@@ -45,7 +46,7 @@ namespace SistemaLaObra.Soporte
             {
                 IU_ModificarEmpresa interfaz = new IU_ModificarEmpresa();
                 interfaz.opcionModificarEmpresa(int.Parse(dgv_empresas.CurrentRow.Cells[4].Value.ToString()));
-                interfaz.IUContenedora = this.IUContenedora;
+                interfaz.IUContenedora = this.IU_Contenedora;
                 interfaz.ShowDialog();
                 cargarDataGrid();
             }            
@@ -56,9 +57,19 @@ namespace SistemaLaObra.Soporte
             if (dgv_empresas.Rows.Count != 0)
             {
                 IU_EliminarMiEmpresa interfaz = new IU_EliminarMiEmpresa();
-                interfaz.opcionEliminar(ListaMiEmpresa.Where(x => x.CodigoMiEmpresa== int.Parse(dgv_empresas.CurrentRow.Cells[4].Value.ToString())).FirstOrDefault());
+                interfaz.opcionEliminar(ListaMiEmpresa.Where(x => x.CodigoMiEmpresa== int.Parse(dgv_empresas.CurrentRow.Cells[4].Value.ToString())).FirstOrDefault(), IU_Contenedora);
                 interfaz.ShowDialog();
                 cargarDataGrid();
+            }
+        }
+
+        private void btn_sucursales_Click(object sender, EventArgs e)
+        {
+            if (dgv_empresas.Rows.Count != 0)
+            {
+                IU_ConsultarPuntoVenta interfaz = new IU_ConsultarPuntoVenta();
+                interfaz.opcionConsultarSucursal(ListaMiEmpresa.Where(x => x.CodigoMiEmpresa == int.Parse(dgv_empresas.CurrentRow.Cells[4].Value.ToString())).FirstOrDefault());
+                interfaz.ShowDialog();
             }
         }
 
@@ -131,6 +142,6 @@ namespace SistemaLaObra.Soporte
             IU_DetalleMiEmpresa interfaz = new IU_DetalleMiEmpresa();
             interfaz.opcionDetalle(ListaMiEmpresa.Where(x => x.CodigoMiEmpresa == int.Parse(dgv_empresas.CurrentRow.Cells[4].Value.ToString())).FirstOrDefault());
             interfaz.ShowDialog();            
-        }
+        }        
     }
 }

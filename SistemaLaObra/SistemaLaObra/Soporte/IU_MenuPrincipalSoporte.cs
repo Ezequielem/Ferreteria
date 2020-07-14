@@ -157,7 +157,7 @@ namespace SistemaLaObra.Soporte
         private void btn_consultarEmpresa_Click(object sender, EventArgs e)
         {
             InterfazConsultarEmpresa = new IU_ConsultarEmpresa();
-            InterfazConsultarEmpresa.IUContenedora = this.interfazContenedora;
+            InterfazConsultarEmpresa.IU_Contenedora = this.interfazContenedora;
             InterfazConsultarEmpresa.ShowDialog();
         }
     }

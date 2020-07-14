@@ -370,6 +370,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Soporte\Empresa\Sucursal\IU_ConsultarPuntoVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Soporte\Empresa\Sucursal\IU_ConsultarPuntoVenta.Designer.cs">
+      <DependentUpon>IU_ConsultarPuntoVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Soporte\Empresa\Sucursal\IU_DetalleSucursal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Soporte\Empresa\Sucursal\IU_DetalleSucursal.Designer.cs">
+      <DependentUpon>IU_DetalleSucursal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Soporte\Empresa\Sucursal\IU_ModificarPuntoVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Soporte\Empresa\Sucursal\IU_ModificarPuntoVenta.Designer.cs">
+      <DependentUpon>IU_ModificarPuntoVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Soporte\Empresa\Sucursal\IU_RegistrarPuntoVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Soporte\Empresa\Sucursal\IU_RegistrarPuntoVenta.Designer.cs">
+      <DependentUpon>IU_RegistrarPuntoVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Soporte\Marca\IU_ActualizarMarca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -880,6 +904,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Soporte\Articulo\IU_ActualizarArticulo.resx">
       <DependentUpon>IU_ActualizarArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Soporte\Empresa\Sucursal\IU_ConsultarPuntoVenta.resx">
+      <DependentUpon>IU_ConsultarPuntoVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Soporte\Empresa\Sucursal\IU_ModificarPuntoVenta.resx">
+      <DependentUpon>IU_ModificarPuntoVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Soporte\Empresa\Sucursal\IU_RegistrarPuntoVenta.resx">
+      <DependentUpon>IU_RegistrarPuntoVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Soporte\Marca\IU_ActualizarMarca.resx">
       <DependentUpon>IU_ActualizarMarca.cs</DependentUpon>
