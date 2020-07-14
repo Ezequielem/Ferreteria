@@ -49,6 +49,9 @@
             this.btn_compras = new System.Windows.Forms.Button();
             this.btn_logistica = new System.Windows.Forms.Button();
             this.pnl_subMenu = new System.Windows.Forms.Panel();
+            this.empresaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.datosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sucursalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ms_menuOpciones.SuspendLayout();
             this.pnl_inferior.SuspendLayout();
             this.pnl_opciones.SuspendLayout();
@@ -61,7 +64,8 @@
             this.ms_menuOpciones.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ms_btnInicioSesion,
             this.ms_btnCerrarSesion,
-            this.baseDeDatosToolStripMenuItem});
+            this.baseDeDatosToolStripMenuItem,
+            this.empresaToolStripMenuItem});
             this.ms_menuOpciones.Location = new System.Drawing.Point(0, 0);
             this.ms_menuOpciones.Name = "ms_menuOpciones";
             this.ms_menuOpciones.Size = new System.Drawing.Size(1008, 24);
@@ -352,6 +356,30 @@
             this.pnl_subMenu.TabIndex = 21;
             this.pnl_subMenu.Visible = false;
             // 
+            // empresaToolStripMenuItem
+            // 
+            this.empresaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.datosToolStripMenuItem,
+            this.sucursalesToolStripMenuItem});
+            this.empresaToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.empresaToolStripMenuItem.Name = "empresaToolStripMenuItem";
+            this.empresaToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.empresaToolStripMenuItem.Text = "Empresa";
+            // 
+            // datosToolStripMenuItem
+            // 
+            this.datosToolStripMenuItem.Name = "datosToolStripMenuItem";
+            this.datosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.datosToolStripMenuItem.Text = "Datos";
+            this.datosToolStripMenuItem.Click += new System.EventHandler(this.datosToolStripMenuItem_Click);
+            // 
+            // sucursalesToolStripMenuItem
+            // 
+            this.sucursalesToolStripMenuItem.Name = "sucursalesToolStripMenuItem";
+            this.sucursalesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sucursalesToolStripMenuItem.Text = "Sucursal";
+            this.sucursalesToolStripMenuItem.Click += new System.EventHandler(this.sucursalesToolStripMenuItem_Click);
+            // 
             // IU_MenuPrincipal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -401,5 +429,8 @@
         private System.Windows.Forms.ToolStripMenuItem generarScriptToolStripMenuItem;
         public System.Windows.Forms.Panel pnl_inferior;
         public System.Windows.Forms.ToolStripMenuItem baseDeDatosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem datosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sucursalesToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem empresaToolStripMenuItem;
     }
 }

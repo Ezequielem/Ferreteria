@@ -87,6 +87,7 @@ namespace SistemaLaObra.CerrarSesion
             InterfazContenedora.lbl_tipoDeAcceso.Text = string.Empty;
             InterfazContenedora.Text = "Ferro System v2.0";
             InterfazContenedora.baseDeDatosToolStripMenuItem.Visible = false;
+            InterfazContenedora.empresaToolStripMenuItem.Visible = false;
             this.Close();
         }
 

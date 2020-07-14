@@ -38,6 +38,7 @@ namespace SistemaLaObra
         private void IU_MenuPrincipal_Load(object sender, EventArgs e)
         {
             baseDeDatosToolStripMenuItem.Visible = false;
+            empresaToolStripMenuItem.Visible = false;
             interfazInicioSesion.interfazContenedora = this;            
             interfazInicioSesion.ShowDialog();
             interfazPuntoVenta = new IU_PuntoDeVenta();
@@ -157,6 +158,20 @@ namespace SistemaLaObra
             AccesoADatos = new AccesoDatos();
             File.WriteAllText(saveFile.FileName, AccesoADatos.generarScript());
             MessageBox.Show(new Form() { TopMost = true }, "BACKUP realizado con exito", "Exito", MessageBoxButtons.OK);
+        }
+
+        private void datosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IU_DetalleMiEmpresa interfaz = new IU_DetalleMiEmpresa();
+            interfaz.opcionDetalle(EncargadoActivo.MiEmpresa);
+            interfaz.ShowDialog();
+        }
+
+        private void sucursalesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            interfazPuntoVenta = new IU_PuntoDeVenta();
+            interfazPuntoVenta.IUContenedora = this;
+            interfazPuntoVenta.ShowDialog();
         }
     }
 }

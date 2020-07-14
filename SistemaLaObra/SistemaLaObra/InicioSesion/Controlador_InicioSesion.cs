@@ -72,6 +72,7 @@ namespace SistemaLaObra.InicioSesion
             interfazInicioSesion.interfazContenedora.EncargadoActivo.MiEmpresa.mostrarDatos(interfazInicioSesion.interfazContenedora.EncargadoActivo.CodigoMiEmpresa);
             interfazInicioSesion.interfazContenedora.Text += "              " + interfazInicioSesion.interfazContenedora.EncargadoActivo.MiEmpresa.NombreFantasia;
             interfazInicioSesion.interfazContenedora.baseDeDatosToolStripMenuItem.Visible = true;
+            interfazInicioSesion.interfazContenedora.empresaToolStripMenuItem.Visible = true;
         }
 
         private void iniciarInterfazCorrespondiente()
